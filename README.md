@@ -1,26 +1,27 @@
 # WaitPlaying
-### por Jaime García Sevilla
+## Final Project for Web Development Applications
+### by Jaime García Sevilla
 
-## Proyecto final de Desarrollo de Aplicaciones Web
+---
 
+## Project Description
 
-## Descripción del proyecto
-WaitPlaying es una plataforma web diseñada por mí para brindar información actualizada sobre las fechas de lanzamiento de videojuegos y permitir a los usuarios seguir sus títulos favoritos. Además, ofrezco la posibilidad de filtrar juegos por plataforma y ver qué títulos están disponibles en los servicios de suscripción a los que están suscritos los usuarios. Los usuarios también podrán acceder a un calendario con las fechas de lanzamiento de los juegos que hayan seleccionado para seguir.
+WaitPlaying is a web platform designed by me to provide updated information on the release dates of video games and allow users to follow their favorite titles. In addition, I offer the possibility to filter games by platform and see which titles are available on the subscription services that users are subscribed to. Users will also be able to access a calendar with the release dates of the games they have selected to follow.
 
-Este proyecto ha sido desarrollado con ReactJS en el front-end y Django en el back-end.
+This project has been developed with ReactJS on the front-end and Django on the back-end.
 
-## Objetivo del proyecto
-Mi objetivo es ofrecer a los usuarios una herramienta intuitiva y siempre actualizada para estar informados sobre las fechas de lanzamiento de videojuegos y seguir sus títulos favoritos. Además, quiero facilitar la búsqueda de juegos por plataforma y permitir a los usuarios conocer qué títulos están disponibles en los servicios de suscripción a los que están suscritos. Con el calendario, los usuarios podrán tener a mano las fechas de lanzamiento de los juegos que hayan elegido seguir.
+## Project Objective
+My goal is to offer users an intuitive and always updated tool to stay informed about the release dates of video games and follow their favorite titles. In addition, I want to make it easier to search for games by platform and allow users to know which titles are available on the subscription services to which they are subscribed. With the calendar, users will have at hand the release dates of the games they have chosen to follow.
 
 ## Características principales
-- Información actualizada sobre las fechas de lanzamiento de los videojuegos.
-- Opción de seguir juegos específicos.
-- Filtro de juegos por plataforma.
-- Visibilidad de qué juegos están disponibles en los servicios de suscripción a los que están suscritos los usuarios.
+- Updated information on the release dates of video games.
+- Option to follow specific games.
+- Game filter by platform.
+- Visibility of which games are available on the subscription services to which users are subscribed.
 
 ## Posibles futuras incorporaciones
-- Integración con redes sociales: permitir a los usuarios compartir información sobre juegos en sus perfiles de redes sociales, o conectarse a través de sus cuentas de redes sociales para utilizar la plataforma.
-- Sistema de recomendaciones: utilizar algoritmos de aprendizaje automático o análisis de datos para sugerir juegos a los usuarios basándose en sus gustos o en lo que están buscando.
-- Comentarios y reseñas de juegos: permitir a los usuarios escribir reseñas o comentarios sobre los juegos que hayan jugado, y mostrar esta información a otros usuarios como una forma de ayudarles a decidir qué juegos probar.
-- Alertas de lanzamiento: enviar notificaciones a los usuarios cuando se acerquen las fechas de lanzamiento de los juegos que hayan seleccionado para seguir, o cuando haya novedades importantes sobre esos títulos.
-- Sistema de puntos y recompensas: ofrecer a los usuarios puntos o recompensas por realizar ciertas acciones en la plataforma, como escribir reseñas o compartir información sobre juegos en redes sociales. Los usuarios podrían canjear estos puntos por recompensas, como descuentos en juegos o acceso a contenido exclusivo.
+- Social media integration: allow users to share information about games on their social media profiles, or connect through their social media accounts to use the platform.
+- Recommendation system: use machine learning algorithms or data analysis to suggest games to users based on their tastes or what they are looking for.
+- Game comments and reviews: allow users to write reviews or comments about the games they have played, and show this information to other users as a way to help them decide which games to try.
+- Release alerts: send notifications to users when the release dates of the games they have selected to follow are approaching, or when there are important news about those titles.
+- Points and rewards system: offer users points or rewards for performing certain actions on the platform, such as writing reviews or sharing information about games on social media. Users could redeem these points for rewards, such as discounts on games or access to exclusive content.
