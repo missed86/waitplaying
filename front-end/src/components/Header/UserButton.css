@@ -1,0 +1,11 @@
+.UserButton {
+    width: 35px;
+    height: 35px;
+}
+.avatar {
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: fill;
+    width: 35px;
+    height: 35px;
+}

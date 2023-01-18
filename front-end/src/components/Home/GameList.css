@@ -1,0 +1,29 @@
+/* @media only screen and  (max-width: 767px) {
+    .GameList {
+        grid-template-columns: repeat(auto-fill,minmax(165px,1fr));
+    }
+}
+@media only screen and  (max-width: 675px) {
+    .GameList {
+        grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    }
+}
+@media only screen and  (min-width: 1200px) {
+    .GameList {
+        grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    }
+} */
+.GameList {
+    /* display:flex;
+    gap:10px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
+    grid-gap: 15px;
+    /* width: 100%; */
+}
+.GameGroup {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,77 @@
+.Game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Game .main {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    margin:50px auto 0 auto;
+    max-width: 1000px;
+}
+.Game .backcover-wrapper {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -2;
+    filter: blur(10px);
+}
+.Game .backcover-wrapper .backcover {
+    width: 100vw;
+    height: 300px;
+    object-fit: cover;
+    max-width:100%; /* Esto es para arreglar el scroll horizontal */
+}
+.Game .main .side-menu {
+    background-color: rgba(47, 47, 47, 0.5);
+    padding:10px;
+    /* width: 200px; */
+    height: 100%;
+    border-radius: 10px;
+}
+.Game .main .side-menu .cover {
+    width: 264px;
+}
+.Game .main .side-menu .game-options {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.Game .main .side-menu .game-options .go-button {
+    flex:1;
+    /* justify-items: center; */
+    background-color: transparent;
+    color:grey;
+    padding:5px 10px;
+    border: 0;
+}
+.Game .main .side-menu .game-options .go-button:hover {
+    color:white
+}
+.Game .main .side-menu .game-options .go-button .go-icon {
+    width: 50%;
+    /* text-align: center; */
+    margin:0 auto;
+    padding:0;
+}
+.Game .main .description {
+    padding-top: 95px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left:20px;
+}
+.Game .main .description h1 {
+    margin: 0 0 20px 0;
+    font-size: 50px;
+    height:80px;
+    display:flex;
+    align-items: flex-end;
+    line-height: 60px;
+    text-shadow: 3px 3px 10px black;
+}
+.Game .main .description h2 {
+    margin: 0;
+    font-weight: 400;
+}

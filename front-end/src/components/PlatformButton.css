@@ -1,0 +1,38 @@
+.PlatformButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    padding: 5px 5px;
+    border-radius: 5px;
+    opacity: 50%;
+    min-width: 65px;
+    flex-shrink: 0;
+    user-select: none;
+}
+.PlatformButton.actived {
+    opacity: 1;
+}
+.PlatformButton .icon {
+    width: 20px;
+    margin-right: 10px;
+    padding-bottom: 2px;
+}
+.PlatformButton .label {
+    flex:1;
+    text-align: center;
+    white-space: pre;
+    user-select: none;
+}
+.playstation {
+    background-color: rgb(23, 23, 142);
+}
+.nintendo {
+    background-color: rgb(147, 21, 21);
+}
+.xbox {
+    background-color: rgb(14, 89, 45);
+}
+.pc {
+    background-color: rgb(94, 94, 94);
+}
