@@ -27,3 +27,10 @@
 .GameGroup {
     margin-bottom: 20px;
 }
+.date {
+    display:flex;
+    width: 100px;
+    padding:5px;
+    background-color: rgb(26, 26, 26);
+    margin: 10px 0;
+}

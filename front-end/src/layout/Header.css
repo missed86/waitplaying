@@ -22,7 +22,11 @@
 .Header .header-content .logo {
   /* width: 100px; */
   margin-left: 0px;
-  font-size: 20px;
+}
+.Header .header-content .logo svg {
+  height: 30px;
+  width: 180px;
+  
 }
 .Header .header-content .menu {
   margin:0 25px;
