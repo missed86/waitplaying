@@ -1,27 +1,36 @@
-body {
+html, body {
   background-color: #000000;
+  z-index: -1000;
   color: white;
   display:flex;
-  align-items: center;
+  /* align-items: center; */
+  width: 100%;
+  min-height: 100%;
 }
 body::-webkit-scrollbar {
   background-color: grey;
 }
 .App {
-  justify-content: center;
+  /* justify-content: center; */
   display:flex;
   flex-direction: column;
   /* padding: 0 20px; */
   width: 100%;
+  min-height: 100%;
 }
 main {
+  display: flex;
   padding: 0 30px;
+  flex-grow:2;
+  align-items: flex-start;
+  justify-content: center;;
 }
-/* @media screen and (max-width:768px) {
-  .App {
-    width:100%;
+ @media screen and (max-width:600px) {
+  main {
+    padding:0 10px;
   }
 }
+/*
 @media screen and (min-width:768px) and (max-width:1200px) {
   .App {
     width:768px;

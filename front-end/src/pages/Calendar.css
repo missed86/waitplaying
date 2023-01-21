@@ -1,0 +1,56 @@
+
+.Calendar-weekdays,
+.Calendar-cells {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	/* border: 1px solid grey */
+}
+.Calendar-weekdays {
+    text-align: center;
+}
+.Calendar-cells {
+    grid-template-rows: repeat(6, 1fr);
+    /* grid-auto-rows: minmax(150px, auto); */
+	flex: 1;
+}
+/* .Calendar-cell:first-child {
+    grid-column: 6;
+} */
+
+.Calendar {
+    display: flex;
+	flex-direction: column;
+	height: 100%;
+	/* max-height: 800px; */
+	flex: 1;
+	max-width: 800px;
+}
+
+.Calendar-month {
+	display: flex;
+	/* flex-grow:1; */
+	justify-content: space-between;
+	/* width: 100%; */
+	height: 50px;
+	align-items: center;
+}
+
+
+.Calendar-cell {
+    position:relative;
+    /* display: grid; */
+    text-align: right;
+    border: 1px solid rgb(49, 49, 49);
+    height: 100%;
+    width: 100%;
+}
+.CalendarCell-cover {
+    height: 100%;
+	width: 100%;
+    object-fit: cover;
+}
+.CalendarCell-day {
+    position:absolute;
+    right:0;
+    top:0;
+}

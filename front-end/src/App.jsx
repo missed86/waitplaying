@@ -6,6 +6,7 @@ import Header from "./layout/Header";
 import Home from "./pages/Home";
 import ComingSoon from "./pages/ComingSoon";
 import Game from "./pages/Game";
+import Calendar from "./pages/Calendar";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/coming" element={<ComingSoon />} />
 					<Route path="/game/:slug" element={<Game />} />
+					<Route path="/calendar/" element={<Calendar />} />
 				</Routes>
 			</main>
 		</div>

@@ -59,9 +59,16 @@
     width: 100%;
     /* align-self: flex-end; */
   }
+  
+  .Header .header-content {
+    margin: 0 10px;
+  }
 }
 @media only screen and (max-width:490px) {
   .Header .header-content .menu {
+    display:none;
+  }
+  .Header .header-content .search-bar {
     display:none;
   }
 }

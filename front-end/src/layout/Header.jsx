@@ -204,6 +204,9 @@ function Header() {
 						<li>
 							<Link to="/services">On Services</Link>
 						</li>
+						<li>
+							<Link to="/calendar">My calendar</Link>
+						</li>
 					</ul>
 				</div>
 				<SearchBar />
