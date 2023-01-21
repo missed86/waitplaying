@@ -8,7 +8,7 @@
 
 WaitPlaying es una plataforma web diseñada por mí para brindar información actualizada sobre las fechas de lanzamiento de videojuegos y permitir a los usuarios seguir sus títulos favoritos. Además, ofrezco la posibilidad de filtrar juegos por plataforma y ver qué títulos están disponibles en los servicios de suscripción a los que están suscritos los usuarios. Los usuarios también podrán acceder a un calendario con las fechas de lanzamiento de los juegos que hayan seleccionado para seguir.
 
-Este proyecto ha sido desarrollado con ReactJS en el front-end y Django en el back-end.
+Este proyecto ha sido desarrollado con ReactJS en el front-end y Django o FastAPI(decidiendo) en el back-end.
 
 ## Objetivo del proyecto
 Mi objetivo es ofrecer a los usuarios una herramienta intuitiva y siempre actualizada para estar informados sobre las fechas de lanzamiento de videojuegos y seguir sus títulos favoritos. Además, quiero facilitar la búsqueda de juegos por plataforma y permitir a los usuarios conocer qué títulos están disponibles en los servicios de suscripción a los que están suscritos. Con el calendario, los usuarios podrán tener a mano las fechas de lanzamiento de los juegos que hayan elegido seguir.
