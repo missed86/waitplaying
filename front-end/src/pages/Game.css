@@ -75,3 +75,32 @@
     margin: 0;
     font-weight: 400;
 }
+
+@media only screen and (max-width: 700px) {
+    .Game .main .side-menu .cover {
+        width: 200px;
+    }
+}
+@media only screen and (max-width: 470px) {
+    .Game .main {
+        margin-top: 10px;
+    }
+    .Game .main .side-menu {
+        margin:0 auto;
+    }
+    .Game .main .side-menu .cover {
+        width: 200px;
+    }
+    .Game .main {
+        flex-direction: column;
+    }
+    .Game .main .description h1 {
+        align-items: flex-start;
+        height: auto;
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .Game .main .description {
+       padding-top: 30px;
+    }
+}

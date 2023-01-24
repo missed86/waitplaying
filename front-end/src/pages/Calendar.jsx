@@ -30,6 +30,15 @@ const myGames = {
       id: "sda54d3sa",
     },
   ],
+  "2023-06-22": [
+    {
+      title: "Final Fantasy XVI",
+      slug: "final-fantasy-xvi",
+      cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5w3k.png",
+      platforms: ["PS5", "PC"],
+      id: "sda54d35sa",
+    },
+  ],
 };
 
 export default function Calendar() {

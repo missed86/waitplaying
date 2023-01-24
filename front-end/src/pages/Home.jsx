@@ -30,6 +30,15 @@ const games = {
 			id: "hft6hwetr5",
 		},
 	],
+	"22-06-2023": [
+		{
+			title: "Final Fantasy XVI",
+			slug: "final-fantasy-xvi",
+			cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5w3k.png",
+			platforms: ["PS5", "PC"],
+			id: "hft6hwetr6545",
+		},
+	],
 };
 
 function Home() {

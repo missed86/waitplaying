@@ -78,6 +78,17 @@ const games = {
     description:
       "A Plague Tale: Requiem is an action-adventure game similar to its predecessor. The player assumes control of Amicia and must face against both soldiers from the French Inquisition and hordes of rats that are spreading the black plague. Gameplay is largely similar to the first game, though the combat system is significantly expanded. The game features a progression system in which the player will be awarded additional skills and abilities. Stealth players will unlock skills that allow them to sneak around more efficiently, while those who prefer a more lethal approach will unlock additional combat skills. Locations are also larger, giving players additional options to progress.",
   },
+  "final-fantasy-xvi": {
+    title: "Final Fantasy XVI",
+    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5w3k.png",
+    backcover:
+      "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc8kw0.jpg",
+    genres: ["Adventure", "Role-playing (RPG)"],
+    platforms: ["PlayStation 5", "PC (Microsoft Windows)"],
+    releasedate: "Jun 22, 2023",
+    description:
+      "Final Fantasy XVI is an upcoming action role-playing game developed and published by Square Enix. It is the sixteenth game in the mainline Final Fantasy series and will be released for the PlayStation 5. It is being produced by Naoki Yoshida and directed by Hiroshi Takai.",
+  },
 };
 export default function Game() {
   const { slug } = useParams();
