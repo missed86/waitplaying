@@ -1,8 +1,4 @@
-/* @media only screen and  (max-width: 767px) {
-    .GameList {
-        grid-template-columns: repeat(auto-fill,minmax(165px,1fr));
-    }
-}
+/*
 @media only screen and  (max-width: 675px) {
     .GameList {
         grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
@@ -33,4 +29,9 @@
     padding:5px;
     background-color: rgb(26, 26, 26);
     margin: 10px 0;
+}
+@media only screen and (max-width: 450px) {
+   .GameList {
+       grid-template-columns: repeat(2, 1fr);
+   }
 }
