@@ -32,7 +32,7 @@
 - name (str)
 - parent_name (foreign key -> Game)
 - platforms (ArrayField (platform_id))
-- player_perspectives (ArrayField (player_persoective_id))
+- player_perspectives (ArrayField (player_perspective_id))
 - ports (ArrayField (game_id))
 - rating (double)
 - rating_count (int)
