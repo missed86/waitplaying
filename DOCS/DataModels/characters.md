@@ -1,11 +1,11 @@
 ## characters
 
-- akas (ArrayField (str))
+- akas (ManyToManyField (str))
 - checksum (uuid)
 - country_name (str)
 - created_at (unix timestamp)
 - description (str)
-- games (ArrayField (game_id))
+- games (ManyToManyField (game_id))
 - gender (**enum**)
 - mug_shot (foreign key -> Character_Mug_Shot)
 - name (str)

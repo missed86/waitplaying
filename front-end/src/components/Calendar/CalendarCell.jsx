@@ -6,7 +6,7 @@ export default function CalendarCell({ game, children, ...other }) {
 		<>
 			{game ? (
 				<Link to={`../game/${game[0].slug}`} className="no-link">
-					<div className="Calendar-cell" {...other}>
+					<div className="Calendar-cell has-game" {...other}>
 						<span class="CalendarCell-day">{children}</span>
 						{game && (
 							<img

@@ -7,17 +7,17 @@
 - country (integer)
 - created_at (unix timestamp)
 - description (str)
-- developed (ArrayField(game_id))
+- developed (ManyToManyField(game_id))
 - logo (foreing key -> CompanyLogos)
 - name (str)
 - parent (foreign key -> Companies)
-- published (ArrayField(game_id))
+- published (ManyToManyField(game_id))
 - slug (str)
 - start_date (unix timestamp)
 - start_date_category (**enum**)
 - updated_at (unix timestamp)
 - url (str)
-- websites (ArrayField(CompanyWebsite))
+- websites (ManyToManyField(CompanyWebsite))
 
 ```python
 change_date_categoryEnum = {

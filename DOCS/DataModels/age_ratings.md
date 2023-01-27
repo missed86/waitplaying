@@ -2,7 +2,7 @@
 
 - category (enum)
 - checksum (uuid)
-- content_descriptions (ArrayField (age_rating_content_descriptions_id))
+- content_descriptions (ManyToManyField (age_rating_content_descriptions_id))
 - rating (enum)
 - rating_cover_url (str)
 - synopsis (str)
