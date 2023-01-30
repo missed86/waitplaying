@@ -9,7 +9,7 @@ FLOAT = models.FloatField()
 
 ARRAY_OF_IDS = models.ManyToManyField('self', related_name='tabla_ejemplo', symmetrical=False)
 
-ENUM = models.IntegerField(max_length=20, choices=[(tag.value, tag.name) for tag in EjemploEnum])
+ENUM = models.IntegerField(choices=[(tag.value, tag.name) for tag in EjemploEnum])
 
 LONGTEXT = models.TextField()
 
