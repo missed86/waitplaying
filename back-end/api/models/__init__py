@@ -1,1 +1,1 @@
-from .game import Game, CategoryEnum, StatusEnum
+from .game import Game
