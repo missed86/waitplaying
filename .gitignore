@@ -1,2 +1,7 @@
-back-end/db.sqlite3
-__pycache__/
+
+/back-end/api/secret.py
+/back-end/waitplayingAPI/__pycache__
+/back-end/api/__pycache__
+/back-end/api/models/__pycache__
+/back-end/api/migrations/__pycache__
+/back-end/db.sqlite3
