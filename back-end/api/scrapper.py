@@ -1,5 +1,6 @@
 from .models import Game, Cover, Platform, Screenshot, Scrapping
 from django.db.models import Max
+from django.http import HttpResponse
 
 import requests
 import time
@@ -125,59 +126,59 @@ def scrape_platforms():
     while True:
         query = requests.post(games_url, headers = {'Client-ID':client_id, 'Authorization':'Bearer '+access_token}, data = 'fields *; offset '+str(offset)+'; limit 500;')
         if query.status_code == 200:
-            # try:
+            try:
             # print(query.json())
-            for data in query.json():
-                id = data['id'] if 'id' in data else None
-                abbreviation = data['abbreviation'] if 'abbreviation' in data else None
-                alternative_name = data['alternative_name'] if 'alternative_name' in data else None
-                # platform_logo = data['platform_logo'] if 'platform_logo' in data else None
-                # platform_family = data['platform_family'] if 'platform_family' in data else None
-                category = data['category'] if 'category'in data else None
-                generation = data['generation'] if 'generation'in data else None
-                name = data['name'] if 'name'in data else None
-                slug = data['slug'] if 'slug'in data else None
-                # summary = data['summary'] if 'summary'in data else None
+                for data in query.json():
+                    id = data['id'] if 'id' in data else None
+                    abbreviation = data['abbreviation'] if 'abbreviation' in data else None
+                    alternative_name = data['alternative_name'] if 'alternative_name' in data else None
+                    # platform_logo = data['platform_logo'] if 'platform_logo' in data else None
+                    # platform_family = data['platform_family'] if 'platform_family' in data else None
+                    category = data['category'] if 'category'in data else None
+                    generation = data['generation'] if 'generation'in data else None
+                    name = data['name'] if 'name'in data else None
+                    slug = data['slug'] if 'slug'in data else None
+                    # summary = data['summary'] if 'summary'in data else None
 
-                created_at = data['created_at'] if 'created_at' in data else None
-                updated_at = data['updated_at'] if 'updated_at' in data else None
+                    created_at = data['created_at'] if 'created_at' in data else None
+                    updated_at = data['updated_at'] if 'updated_at' in data else None
 
-                platform = Platform(id=id,
-                            name=name,
-                            slug=slug,
-                            category=category,
-                            abbreviation=abbreviation,
-                            alternative_name=alternative_name,
-                            generation=generation,
-                            created_at=created_at,
-                            updated_at=updated_at,
-                            # summary=summary,
-                            # url=url,
-                            # platform_logo = platform_logo,
-                            # platform_family = platform_family,
-                            )
-                platform.save()
+                    platform = Platform(id=id,
+                                name=name,
+                                slug=slug,
+                                category=category,
+                                abbreviation=abbreviation,
+                                alternative_name=alternative_name,
+                                generation=generation,
+                                created_at=created_at,
+                                updated_at=updated_at,
+                                # summary=summary,
+                                # url=url,
+                                # platform_logo = platform_logo,
+                                # platform_family = platform_family,
+                                )
+                    platform.save()
 
-                print(end='\x1b[2K')
-                print("Scrapping Games: ", id, name,
-                      'Successfully added', end="\r")
-                total += 1
-            if len(query.json()) < 500:
+                    print(end='\x1b[2K')
+                    print("Scrapping Games: ", id, name,
+                        'Successfully added', end="\r")
+                    total += 1
+                if len(query.json()) < 500:
 
-                end_time = time.time()
-                elapsed_time = end_time - start_time
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
 
-                print(end='\x1b[2K')
-                print("Terminado Games: Se han guardado " + str(total) + " elementos en",
-                      time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
+                    print(end='\x1b[2K')
+                    print("Terminado Games: Se han guardado " + str(total) + " elementos en",
+                        time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
-                break
+                    break
 
-            else:
-                offset += 500
+                else:
+                    offset += 500
 
-            # except:
-            #     print("\nFailed to insert into MySQL table {}\n")
+            except:
+                print("\nFailed to insert into MySQL table {}\n")
         else:
             print("Error: ", response.status_code)
             print(response.json())
