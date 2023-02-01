@@ -45,7 +45,7 @@ def scrape_games():
                                     sort id asc; \
                                     };')
         if query.status_code == 200:
-            try:
+            # try:
             # print(query.json())
             
                 for data in query.json()[0]['result']:
@@ -100,8 +100,8 @@ def scrape_games():
                         time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
                     #Update the value of updated_at
-                    max_id = Scrapping.objects.aggregate(Max('id'))['id__max']
-                    max_updated_at = Scrapping.objects.aggregate(Max('updated_at'))['updated_at__max']
+                    max_id = Game.objects.aggregate(Max('id'))['id__max']
+                    max_updated_at = Game.objects.aggregate(Max('updated_at'))['updated_at__max']
                     Scrapping.objects.filter(table_name='Game').update(last_id=max_id, updated_at=max_updated_at)
 
                     break
@@ -109,8 +109,8 @@ def scrape_games():
                 else:
                     offset += 500
 
-            except:
-                print("\nFailed {}\n")
+            # except:
+            #     print("\nFailed {}\n")
         else:
             print("Error: ", response.status_code)
             print(response.json())
