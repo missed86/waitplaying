@@ -14,11 +14,14 @@ class PlatformAdmin(admin.ModelAdmin):
 class ScrappingAdmin(admin.ModelAdmin):
     list_display = ['table_name', 'updated_at', 'last_id']
 
+class ReleaseDateAdmin(admin.ModelAdmin):
+    list_display = ['id', 'platform', 'date', 'updated_at']
+
 
 admin.site.register(Game, GameAdmin)
 
 admin.site.register(Platform, PlatformAdmin)
-admin.site.register(ReleaseDate)
+admin.site.register(ReleaseDate, ReleaseDateAdmin)
 admin.site.register(Cover)
 admin.site.register(Screenshot)
 admin.site.register(Scrapping, ScrappingAdmin)

@@ -12,11 +12,11 @@ class CategoryEnum(Enum):
 
 class Platform(models.Model):
     id = models.IntegerField(primary_key=True)
-    category = models.IntegerField(choices=[(tag.name, tag.value) for tag in CategoryEnum])
-    abbreviation = models.CharField(max_length=255)
-    alternative_name = models.CharField(max_length=255)
+    category = models.IntegerField(choices=[(tag.name, tag.value) for tag in CategoryEnum], null=True)
+    abbreviation = models.CharField(max_length=255, null=True)
+    alternative_name = models.CharField(max_length=255, null=True)
     created_at = models.IntegerField()
     updated_at = models.IntegerField()
-    generation = models.IntegerField()
-    name = models.CharField(max_length=255)
-    slug = models.CharField(max_length=255)
+    generation = models.IntegerField(null=True)
+    name = models.CharField(max_length=255, null=True)
+    slug = models.CharField(max_length=255, null=True)

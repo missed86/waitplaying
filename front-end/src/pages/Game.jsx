@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useQuery } from "react-query";
 import "./Game.css";
 
 const ICONS = {
@@ -37,6 +38,11 @@ const ICONS = {
     </svg>
   ),
 };
+
+const CoverURL = (id) =>
+  `https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
+const ScreenshotURL = (id) =>
+  `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${id}.jpg`;
 
 const games = {
   "god-of-war-ragnarok": {
@@ -92,47 +98,73 @@ const games = {
 };
 export default function Game() {
   const { slug } = useParams();
-  const {
-    title,
+  const options = {
+    method: "GET",
+  };
+  const { data, error, status } = useQuery(`game-${slug}`, () =>
+    fetch(`http://127.0.0.1:8000/api/games/${slug}`, options)
+      .then((response) => response.json())
+      .catch((err) => {
+        throw err;
+      })
+  );
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  console.log(data);
+  let {
+    name,
     cover,
-    backcover,
-    genres,
-    releasedate,
-    description,
+    screenshots,
+    // genres,
+    first_release_date,
+    summary,
     platforms,
-  } = games[slug];
+  } = data[0];
+  screenshots = screenshots.split(",");
+  platforms = platforms.split(",");
+
   return (
     <div className="Game">
       <div className="backcover-wrapper">
-        <img className="backcover" src={backcover} alt={title} />
+        <img
+          className="backcover"
+          src={ScreenshotURL(screenshots[0])}
+          alt={name}
+        />
       </div>
       <div className="main">
         <div className="side-menu">
-          <img className="cover" src={cover} alt={title} />
-					<div className="game-options">
-
-          <button className="go-button">
-            <div className="go-icon">{ICONS.add}</div>
-            <span>Follow</span>
-          </button>
-          <button className="go-button">
-            <div className="go-icon">{ICONS.like}</div>
-            <span>Like</span>
-          </button>
-          <button className="go-button">
-            <div className="go-icon">{ICONS.dislike}</div>
-            <span>Dislike</span>
-          </button>
-					</div>
+          <img className="cover" src={CoverURL(cover)} alt={name} />
+          <div className="game-options">
+            <button className="go-button">
+              <div className="go-icon">{ICONS.add}</div>
+              <span>Follow</span>
+            </button>
+            <button className="go-button">
+              <div className="go-icon">{ICONS.like}</div>
+              <span>Like</span>
+            </button>
+            <button className="go-button">
+              <div className="go-icon">{ICONS.dislike}</div>
+              <span>Dislike</span>
+            </button>
+          </div>
         </div>
         <div className="description">
           <div className="title">
-            <h1>{title}</h1>
-            <h2>{releasedate}</h2>
+            <h1>{name}</h1>
+            <h2>{first_release_date}</h2>
           </div>
           <p>{platforms.join(", ")}</p>
-          <p>{genres.join(", ")}</p>
-          <p>{description}</p>
+          {/* <p>{genres.join(", ")}</p> */}
+          <p>{summary}</p>
         </div>
       </div>
     </div>

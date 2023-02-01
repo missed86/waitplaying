@@ -7,13 +7,14 @@ from rest_framework import generics, viewsets, permissions, status, exceptions
 from rest_framework.response import Response
 from .serializers import GameSerializer
 
-from .scrapper import scrape_games, scrape_platforms
+from .scrapper import scrape_games, scrape_platforms, scrape_release_dates
 
 
-def home_page_view(request):
-    # scrape_platforms()
+def scrapping_view(request):
+    scrape_platforms()
     scrape_games()
-    return HttpResponse("Algo hace")
+    scrape_release_dates()
+    return HttpResponse("Scrapped")
 
 
 class GameDetailsView(generics.ListAPIView):

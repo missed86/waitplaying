@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import "./App.css";
 
@@ -8,8 +9,12 @@ import ComingSoon from "./pages/ComingSoon";
 import Game from "./pages/Game";
 import Calendar from "./pages/Calendar";
 
+
+const queryClient = new QueryClient()
+
 function App() {
 	return (
+		<QueryClientProvider client={queryClient}>
 		<div className="App">
 			<Header />
 			<main>
@@ -21,6 +26,7 @@ function App() {
 				</Routes>
 			</main>
 		</div>
+		</QueryClientProvider>
 	);
 }
 
