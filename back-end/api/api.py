@@ -15,13 +15,10 @@ class NextGamesSet(viewsets.ModelViewSet):
     serializer_class = GameSerializer
 
     def get_queryset(self):
-        queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by('first_release_date').values('first_release_date').annotate(total=Count('id'))[:10]
+        queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by('first_release_date').values('first_release_date').annotate(total=Count('id'))[:100]
 
         games_grouped = {}
-        for date_obj in queryset:
-            first_release_date = date_obj['first_release_date']
-            total = date_obj['total']
-            games = Game.objects.filter(first_release_date=first_release_date)
-            games_grouped[first_release_date] = {'total': total, 'games': games}
+        for date, in queryset.values_list('first_release_date').distinct():
+            games_grouped[date] = queryset.filter(first_release_date=date)
 
         return games_grouped
