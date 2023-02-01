@@ -20,5 +20,5 @@ from api.views import scrapping_view
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('api.urls')),
-    path('api/scrapping', scrapping_view, name='home')
+    path('api/scrapping', scrapping_view, name='scrapping')
 ]
