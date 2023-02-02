@@ -1,13 +1,13 @@
 # from django.shortcuts import render
 
-from api.models import Game  # , Company, Platform, ReleaseDate, Cover, Screenshot
+from api.models import Game, ReleaseDate  # , Company, Platform, Cover, Screenshot
 
 from django.http import HttpResponse
-from django.db.models import Count
+from django.db.models import Count, Prefetch
 from rest_framework import generics, viewsets, permissions, status, exceptions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import GameSerializer, NextGamesSerializer
+from .serializers import GameSerializer, NextGamesSerializer, GameReleasedByDateSerializer
 from datetime import datetime
 
 from .scrapper import scrape_games, scrape_platforms, scrape_release_dates
@@ -62,3 +62,18 @@ class NextGamesView(APIView):
 
         serializer = self.serializer_class([{'first_release_date': date, 'games': games} for date, games in games_grouped.items()], many=True)
         return Response(serializer.data)
+
+
+class GamesByDateView(generics.ListAPIView):
+    serializer_class = GameReleasedByDateSerializer
+
+    def get_queryset(self):
+        date = self.kwargs.get("date")
+        return ReleaseDate.objects.filter(date=date).values('date','game').distinct().prefetch_related(
+            Prefetch("game", queryset=Game.objects.only("id", "name"))
+        )
+    # def get_queryset(self):
+    #     date = self.kwargs.get("date")
+    #     return ReleaseDate.objects.filter(date=date).prefetch_related(
+    #         Prefetch("game", queryset=Game.objects.only("id", "name"))
+    #     )

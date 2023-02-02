@@ -27,10 +27,10 @@ class Game(models.Model):
     cover = models.CharField(max_length=255, null=True)
     first_release_date = models.DateField(null=True)
     name = models.CharField(max_length=255, null=True)
-    platforms = models.TextField(null=True)
+    # platforms = models.TextField(null=True)
     screenshots = models.TextField(null=True)
-    # platforms = models.ManyToManyField(
-    #     'Platform', related_name='game_platform', null=True)
+    platforms = models.ManyToManyField(
+        'Platform')
     # screenshots = models.ManyToManyField(
     #     'Screenshot', related_name='game_screenshot', null=True)
     slug = models.CharField(max_length=255, null=True)

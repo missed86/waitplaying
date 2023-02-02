@@ -13,7 +13,7 @@ Lanzamiento PS4 : 15 de noviembre de 2013 (1384470000)
 Lanzamiento XboxOne: 22 de noviembre de 2013
 """
 
-DBSTARTDATE = 1584470000
+DBSTARTDATE = 1684470000
 # DBSTARTDATE = 1384470000
 
 url = "https://id.twitch.tv/oauth2/token"
@@ -54,7 +54,7 @@ def scrape_games():
                                 'Authorization': 'Bearer '+access_token
                                     },
                             data='query games "Wait" { \
-                                    fields *, platforms.abbreviation, cover.image_id, \
+                                    fields *, cover.image_id, \
                                         artworks.image_id, screenshots.image_id; \
                                     where updated_at > '+str(cuttime)+' \
                                         & first_release_date > '+str(DBSTARTDATE)+'; \
@@ -63,7 +63,7 @@ def scrape_games():
                                     sort id asc; \
                                     };')
         if query.status_code == 200:
-            try:
+            # try:
                 # print(query.json())
 
                 for data in query.json()[0]['result']:
@@ -79,15 +79,17 @@ def scrape_games():
                     url = data['url'] if 'url' in data else None
                     # genres = ','.join(str(e) for e in data['genres']) if 'genres' in data else None
                     # print(data['id'],data['platforms'])
-                    platforms = ','.join(e['abbreviation'] for e in data['platforms']
-                                         if 'abbreviation' in e) if 'platforms' in data else None
+                    platforms = data['platforms'] if 'platforms' in data else None
+                    # platforms = ','.join(e['abbreviation'] for e in data['platforms']
+                    #                      if 'abbreviation' in e) if 'platforms' in data else None
                     screenshots = ','.join(
                         e['image_id'] for e in data['screenshots']) if 'screenshots' in data else None
                     # artworks = ','.join(str(e['image_id']) for e in data['artworks']) if 'artworks' in data else None
 
                     created_at = data['created_at'] if 'created_at' in data else None
                     updated_at = data['updated_at'] if 'updated_at' in data else None
-
+                    
+                    
                     game = Game(id=id,
                                 name=name,
                                 slug=slug,
@@ -99,11 +101,13 @@ def scrape_games():
                                 summary=summary,
                                 storyline=storyline,
                                 url=url,
-
-                                platforms=platforms,
+                                # platforms=platforms,
                                 screenshots=screenshots,
                                 )
                     game.save()
+
+                    platformsField = Platform.objects.filter(id__in=platforms)
+                    game.platforms.set(platformsField)
 
                     print(end='\x1b[2K')
                     print("Scrapping Games: ", id, name,
@@ -130,8 +134,8 @@ def scrape_games():
                 else:
                     offset += 500
 
-            except:
-                print("\nFailed {}\n")
+            # except:
+            #     print("\nFailed {}\n")
         else:
             print("Error: ", response.status_code)
             print(response.json())
@@ -196,7 +200,7 @@ def scrape_platforms():
                     platform.save()
 
                     print(end='\x1b[2K')
-                    print("Scrapping Games: ", id, name,
+                    print("Scrapping Platforms: ", id, name,
                           'Successfully added', end="\r")
                     total += 1
                 except:
@@ -208,7 +212,7 @@ def scrape_platforms():
                 elapsed_time = end_time - start_time
 
                 print(end='\x1b[2K')
-                print("Terminado Games: Se han guardado " + str(total) + " elementos en",
+                print("Terminado Platforms: Se han guardado " + str(total) + " elementos en",
                       time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
                 # Update the value of updated_at
@@ -250,7 +254,8 @@ def scrape_release_dates():
                 'Client-ID': client_id, 
                 'Authorization': 'Bearer '+access_token
                 },
-            data='fields *; where updated_at > '+str(cuttime)+' \
+            data='fields *; \
+                where updated_at > '+str(cuttime)+' & date > '+str(DBSTARTDATE)+'\
                 & date > '+str(DBSTARTDATE)+'; \
                 offset '+str(offset)+'; \
                 limit 500;')
@@ -259,7 +264,7 @@ def scrape_release_dates():
             for data in query.json():
                 try:
                     id = data['id'] if 'id' in data else None
-                    date = data['date'] if 'date' in data else None
+                    date = datetime.datetime.fromtimestamp(data['date']).strftime('%Y-%m-%d') if 'date' in data else None
                     m = data['m'] if 'm' in data else None
                     y = data['y'] if 'y' in data else None
                     game = data['game'] if 'game' in data else None
@@ -282,7 +287,7 @@ def scrape_release_dates():
                     release_date.save()
 
                     print(end='\x1b[2K')
-                    print("Scrapping Games: ", id, date,
+                    print("Scrapping Release Dates: ", id, date,
                           'Successfully added', end="\r")
                     total += 1
                 except:
@@ -294,7 +299,7 @@ def scrape_release_dates():
                 elapsed_time = end_time - start_time
 
                 print(end='\x1b[2K')
-                print("Terminado Games: Se han guardado " + str(total) + " elementos en",
+                print("Terminado Release Dates: Se han guardado " + str(total) + " elementos en",
                       time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
                 # Update the value of updated_at
