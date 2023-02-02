@@ -12,7 +12,7 @@ class PlatformSerializer (serializers.ModelSerializer):
 class ReleaseDateSerializer(serializers.ModelSerializer):
     class Meta:
         model = ReleaseDate
-        fields = ('__all__')
+        fields = ('game', 'platform', 'date')
 
 # class GameSerializerStandard(serializers.ModelSerializer):
 #     class Meta:
@@ -42,15 +42,15 @@ class NextGamesSerializer(serializers.Serializer):
         return GameSerializer(instance['games'], many=True).data
 
 
-class GameReleasedByDateSerializer(serializers.ModelSerializer):
 
-    class GameInner(serializers.ModelSerializer):
-        class Meta:
-            model = Game
-            fields = ('__all__')
-
-    game = GameInner()
-
+class SimpleGame(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ('__all__')
+class GameDatesSerializer(serializers.ModelSerializer):
+    game = SimpleGame()
+    platform = PlatformSerializer()
     class Meta:
         model = ReleaseDate
-        fields = ('date', 'game')
+        fields = ('date', 'platform', 'game', 'games')
+        # read_only_fields = ('__all__')

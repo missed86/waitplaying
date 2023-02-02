@@ -13,7 +13,7 @@ Lanzamiento PS4 : 15 de noviembre de 2013 (1384470000)
 Lanzamiento XboxOne: 22 de noviembre de 2013
 """
 
-DBSTARTDATE = 1684470000
+DBSTARTDATE = 1672527600
 # DBSTARTDATE = 1384470000
 
 url = "https://id.twitch.tv/oauth2/token"

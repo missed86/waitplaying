@@ -1,13 +1,13 @@
 # from django.shortcuts import render
-
-from api.models import Game, ReleaseDate  # , Company, Platform, Cover, Screenshot
+from itertools import groupby
+from api.models import Game, ReleaseDate, Platform  # , Company, Cover, Screenshot
 
 from django.http import HttpResponse
 from django.db.models import Count, Prefetch
-from rest_framework import generics, viewsets, permissions, status, exceptions
+from rest_framework import generics, viewsets, permissions, serializers, exceptions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import GameSerializer, NextGamesSerializer, GameReleasedByDateSerializer
+from .serializers import GameSerializer, NextGamesSerializer, GameDatesSerializer, SimpleGame
 from datetime import datetime
 
 from .scrapper import scrape_games, scrape_platforms, scrape_release_dates
@@ -48,12 +48,6 @@ class NextGamesView(APIView):
         queryset = Game.objects.filter(first_release_date__gte=datetime.now()).order_by(
             'first_release_date').distinct()[:10].values('first_release_date').annotate(total=Count('id'))
         dates = queryset.values_list('first_release_date', flat=True)
-        # queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
-        #     'first_release_date').distinct()[:1].values('first_release_date').annotate(total=Count('id'))
-        # dates = queryset.values_list('first_release_date', flat=True)
-        # queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
-        #     'first_release_date').values('first_release_date').annotate(total=Count('id'))
-        # dates = queryset.values_list('first_release_date', flat=True).distinct()[:10]
 
         games_grouped = {}
         for date in dates:
@@ -64,16 +58,73 @@ class NextGamesView(APIView):
         return Response(serializer.data)
 
 
-class GamesByDateView(generics.ListAPIView):
-    serializer_class = GameReleasedByDateSerializer
+def group_games(queryset, date):
+    result = []
+    queryset = queryset.values("game", "platform__abbreviation")
+    queryset = sorted(queryset, key=lambda x: x["game"])
+    for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+        platforms = [x["platform__abbreviation"] for x in game_group]
+        game = Game.objects.get(id=game)
+        serializer = SimpleGame(game)
+        result.append({"date": date, "game": serializer.data, "platforms": platforms})
+    return result
 
-    def get_queryset(self):
+class GamesByDateView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = GameDatesSerializer
+    def get(self, request, date, format=None):
         date = self.kwargs.get("date")
-        return ReleaseDate.objects.filter(date=date).values('date','game').distinct().prefetch_related(
-            Prefetch("game", queryset=Game.objects.only("id", "name"))
-        )
+        queryset = ReleaseDate.objects.filter(date=date)
+        return Response(group_games(queryset, date))
+# def group_games(queryset, date):
+#     result = []
+#     queryset = queryset.values("game", "platform__name")
+#     queryset = sorted(queryset, key=lambda x: x["game"])
+#     for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+#         platforms = [x["platform__name"] for x in game_group]
+#         game = Game.objects.get(id=game)
+#         serializer = SimpleGame(game)
+#         result.append({"date": date, "game": serializer.data, "platforms": platforms})
+#     return result
+
+# class GamesByDateView(APIView):
+#     permission_classes = [permissions.AllowAny]
+#     serializer_class = GameDatesSerializer
+#     def get(self, request, date, format=None):
+#         date = self.kwargs.get("date")
+#         queryset = ReleaseDate.objects.filter(date=date)
+#         return Response(group_games(queryset, date))
+
+
+
+# class GamesByDateView(APIView):
+#     class SimpleGame(serializers.ModelSerializer):
+        
+#         class Meta:
+#             model = Game
+#             fields = ('__all__')
+    
+#     def get(self, request, date, format=None):
+#         release_dates = ReleaseDate.objects.filter(date=date)
+#         games = Game.objects.filter(releasedate__in=release_dates).distinct()
+#         platforms = Platform.objects.filter(releasedate__in=release_dates).distinct()
+#         platforms_serializer = PlatformSerializer(platforms, many=True)
+#         games_serializer = self.SimpleGame(games, many=True)
+        
+#         return Response({'platforms': platforms_serializer.data , 'games': games_serializer.data})
+
+        
+# class GamesByDateView(generics.ListAPIView):
+#     serializer_class = GameReleasedByDateSerializer
+#     def get_queryset(self):
+#         date = self.kwargs.get("date")
+#         return ReleaseDate.objects.filter(date=date)
     # def get_queryset(self):
-    #     date = self.kwargs.get("date")
-    #     return ReleaseDate.objects.filter(date=date).prefetch_related(
-    #         Prefetch("game", queryset=Game.objects.only("id", "name"))
-    #     )
+    #     release_dates = ReleaseDate.objects.values('date').distinct()
+    #     result = []
+    #     for release_date in release_dates:
+    #         date = release_date['date']
+    #         games = ReleaseDate.objects.filter(date=date).values('game__name').distinct()
+    #         platforms = ReleaseDate.objects.filter(date=date).values('platform').distinct()
+    #         result.append({'date': date, 'games': games, 'platforms': platforms})
+    #     return result
