@@ -25,7 +25,7 @@ class Game(models.Model):
     category = models.IntegerField(
         choices=[(tag.value, tag.name) for tag in CategoryEnum], null=True)
     cover = models.CharField(max_length=255, null=True)
-    first_release_date = models.IntegerField(null=True)
+    first_release_date = models.DateField(null=True)
     name = models.CharField(max_length=255, null=True)
     platforms = models.TextField(null=True)
     screenshots = models.TextField(null=True)

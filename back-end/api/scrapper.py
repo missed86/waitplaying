@@ -3,6 +3,7 @@ from django.db.models import Max
 from django.http import HttpResponse
 
 import requests
+import datetime
 import time
 from . import secret
 # from datetime import datetime
@@ -67,7 +68,8 @@ def scrape_games():
                     id = data['id'] if 'id' in data else None
                     category = data['category'] if 'category' in data else None
                     cover = data['cover']['image_id'] if 'cover' in data else None
-                    first_release_date = data['first_release_date'] if 'first_release_date' in data else None
+                    first_release_date = datetime.datetime.fromtimestamp(data['first_release_date']).strftime('%Y-%m-%d') if 'first_release_date' in data else None
+                    # first_release_date = data['first_release_date'] if 'first_release_date' in data else None
                     name = data['name'] if 'name' in data else None
                     slug = data['slug'] if 'slug' in data else None
                     summary = data['summary'] if 'summary' in data else None

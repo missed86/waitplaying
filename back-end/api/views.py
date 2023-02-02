@@ -48,8 +48,8 @@ class NextGamesView(APIView):
 
     def get(self, request, format=None):
         queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
-            'first_release_date').values('first_release_date').annotate(total=Count('id')).distinct()
-        dates = queryset.values_list('first_release_date', flat=True)[:10]
+            'first_release_date').distinct()[:1].values('first_release_date').annotate(total=Count('id'))
+        dates = queryset.values_list('first_release_date', flat=True)
         # queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
         #     'first_release_date').values('first_release_date').annotate(total=Count('id'))
         # dates = queryset.values_list('first_release_date', flat=True).distinct()[:10]
