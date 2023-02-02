@@ -9,7 +9,7 @@ class GameSerializer(serializers.ModelSerializer):
         # read_only_fields = ('__all__')
 
 class NextGamesSerializer(serializers.Serializer):
-    first_release_date = serializers.IntegerField()
+    first_release_date = serializers.DateField()
     games = serializers.SerializerMethodField()
     
     def get_games(self, instance):

@@ -13,7 +13,8 @@ Lanzamiento PS4 : 15 de noviembre de 2013 (1384470000)
 Lanzamiento XboxOne: 22 de noviembre de 2013
 """
 
-DBSTARTDATE = 1384470000
+DBSTARTDATE = 1584470000
+# DBSTARTDATE = 1384470000
 
 url = "https://id.twitch.tv/oauth2/token"
 
@@ -29,6 +30,7 @@ output = response.json()
 access_token = output['access_token']
 expires_in = output['expires_in']
 token_type = output['token_type']
+
 
 
 def scrape_games():

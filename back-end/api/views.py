@@ -44,12 +44,13 @@ class GameDetailsView(generics.ListAPIView):
 
 class NextGamesView(APIView):
     serializer_class = NextGamesSerializer
-    print(datetime.now().timestamp())
-
     def get(self, request, format=None):
-        queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
-            'first_release_date').distinct()[:1].values('first_release_date').annotate(total=Count('id'))
+        queryset = Game.objects.filter(first_release_date__gte=datetime.now()).order_by(
+            'first_release_date').distinct()[:10].values('first_release_date').annotate(total=Count('id'))
         dates = queryset.values_list('first_release_date', flat=True)
+        # queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
+        #     'first_release_date').distinct()[:1].values('first_release_date').annotate(total=Count('id'))
+        # dates = queryset.values_list('first_release_date', flat=True)
         # queryset = Game.objects.filter(first_release_date__gte=int(datetime.now().timestamp())).order_by(
         #     'first_release_date').values('first_release_date').annotate(total=Count('id'))
         # dates = queryset.values_list('first_release_date', flat=True).distinct()[:10]
