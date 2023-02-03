@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 router.register('games', GameViewSet, 'games')
 
 urlpatterns = [
-    path('api/games/<slug>)/', GameDetailsView.as_view()),
+    path('api/games/<slug>/', GameDetailsView.as_view()),
     path('api/releases/<str:date>/', GamesByDateView.as_view()),
     path('api/nextgames/', NextGamesView.as_view(), name='next-games'),
     path('api/', include(router.urls))

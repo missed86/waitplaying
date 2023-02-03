@@ -32,6 +32,7 @@ const ICONS = {
   ),
 };
 
+const CoverURL = (cover) => `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`
 const main_platforms = ["PS5", "SeriesX/S", "PC"];
 
 const only_main_platforms = (array) =>
@@ -57,7 +58,7 @@ export default function GameCard({ image, title, platforms }) {
           {platforms.length < 3
             ? platforms.map((platform) => {
                 return (
-                  <span key={platform} className="platform-pill">
+                  <span key={platform+title} className="platform-pill">
                     {platform}
                   </span>
                 );
@@ -66,7 +67,7 @@ export default function GameCard({ image, title, platforms }) {
                 .slice(0, 3)
                 .map((platform) => {
                   return (
-                    <span key={platform} className="platform-pill">
+                    <span key={platform+title} className="platform-pill">
                       {platform}
                     </span>
                   );
@@ -89,7 +90,7 @@ export default function GameCard({ image, title, platforms }) {
           <span className="title">{title}</span>
         </div>
       </div>
-      <img className="cover" src={image} alt={title} />
+      <img className="cover" src={CoverURL(image)} alt={title} />
     </div>
   );
 }

@@ -29,6 +29,7 @@ class Game(models.Model):
     name = models.CharField(max_length=255, null=True)
     # platforms = models.TextField(null=True)
     screenshots = models.TextField(null=True)
+    artworks = models.TextField(null=True)
     platforms = models.ManyToManyField(
         'Platform')
     # screenshots = models.ManyToManyField(

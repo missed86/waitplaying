@@ -13,7 +13,7 @@ Lanzamiento PS4 : 15 de noviembre de 2013 (1384470000)
 Lanzamiento XboxOne: 22 de noviembre de 2013
 """
 
-DBSTARTDATE = 1672527600
+DBSTARTDATE = 1640991600
 # DBSTARTDATE = 1384470000
 
 url = "https://id.twitch.tv/oauth2/token"
@@ -84,6 +84,8 @@ def scrape_games():
                     #                      if 'abbreviation' in e) if 'platforms' in data else None
                     screenshots = ','.join(
                         e['image_id'] for e in data['screenshots']) if 'screenshots' in data else None
+                    artworks = ','.join(
+                        e['image_id'] for e in data['artworks']) if 'artworks' in data else None
                     # artworks = ','.join(str(e['image_id']) for e in data['artworks']) if 'artworks' in data else None
 
                     created_at = data['created_at'] if 'created_at' in data else None

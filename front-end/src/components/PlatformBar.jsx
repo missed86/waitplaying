@@ -36,6 +36,9 @@ const platforms = [
 ];
 
 function PlatformBar() {
+  const handleFilterChange = filter => {
+    props.setFilters(prevFilters => [...prevFilters, filter]);
+  };
   return (
       <div className="PlatformBar">
         {platforms.map((element) => (
@@ -44,6 +47,7 @@ function PlatformBar() {
             name={element.name}
             icon={element.icon}
             color={element.color}
+            onClick={() => handleFilterChange(platform.name)}
           />
         ))}
       </div>

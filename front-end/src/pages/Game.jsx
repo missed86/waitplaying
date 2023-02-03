@@ -127,8 +127,8 @@ export default function Game() {
     summary,
     platforms,
   } = data[0];
-  screenshots = screenshots.split(",");
-  platforms = platforms.split(",");
+  screenshots = screenshots !== null ? screenshots.split(",") : [];
+  platforms;
 
   return (
     <div className="Game">
@@ -162,7 +162,7 @@ export default function Game() {
             <h1>{name}</h1>
             <h2>{first_release_date}</h2>
           </div>
-          <p>{platforms.join(", ")}</p>
+          <p>{platforms.map(e=>e.name).sort().join(", ")}</p>
           {/* <p>{genres.join(", ")}</p> */}
           <p>{summary}</p>
         </div>

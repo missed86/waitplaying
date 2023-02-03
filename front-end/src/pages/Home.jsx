@@ -1,6 +1,7 @@
 // import GameGroup from "../components/GameGroup";
 import GameList from "../components/Home/GameList";
 import PlatformBar from "../components/PlatformBar";
+import {useState} from "react"
 
 import "./Home.css";
 
@@ -41,14 +42,17 @@ const games = {
 	],
 };
 
+const dates = ["2023-02-03", "2023-02-02", "2023-02-01"]
+
 function Home() {
+	const [filters, setFilters] = useState([]);
 	return (
 		<div className="Home">
-			<PlatformBar />
+			<PlatformBar filters={filters} setFilters={setFilters} />
 			<h1>New Releases</h1>
 			{
-				Object.keys(games).map((date) => (
-					<GameList key={date} date={date} games={games[date]} />
+				dates.map((date) => (
+					<GameList key={date} date={date} filter={filters}/>
 				))
 			}
 		</div>
