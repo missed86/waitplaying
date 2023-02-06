@@ -9,6 +9,7 @@
     min-width: 65px;
     flex-shrink: 0;
     user-select: none;
+    cursor:pointer;
 }
 .PlatformButton.actived {
     opacity: 1;

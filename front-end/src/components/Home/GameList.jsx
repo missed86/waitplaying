@@ -1,15 +1,35 @@
 import { Link } from "react-router-dom";
 import GameCard from "../GameCard";
 import {useQuery} from "react-query"
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { useState, useRef, useEffect } from 'react'
+
 
 import "./GameList.css";
-import { useEffect } from "react";
+
+function getFormattedDate(date) {
+  const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+  date = new Date(date)
+  const today = new Date();
+  const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
+
+  if (date.toDateString() === today.toDateString()) {
+    return "Today";
+  } else if (date.toDateString() === yesterday.toDateString()) {
+    return "Yesterday";
+  } else {
+    return date.toLocaleDateString("default", options);
+  }
+}
+
 
 export default function GameList({ date, filters }) {
-	useEffect(() => {
-    console.log("GameList updated", filters);
-  }, [filters]);
+  const [parent, enableAnimations] = useAutoAnimate()
 
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
+  // console.log(filter)
 	const options = {
     method: "GET",
   };
@@ -28,21 +48,21 @@ export default function GameList({ date, filters }) {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+	const platformsFilter = filters
+  // console.log("Data",data);
+  if (!data.length || !data.some(({platforms}) => platforms.some(e=>platformsFilter.includes(e)))) {
+    return null;
+  }
 
-	const platformsFilter = ["PS5", "PS4", "Switch", "PC", "Series X"]
-  console.log("Data",data);
-	console.log("Filters", filters)
-  
 
 
 	return (
-		<div className="GameGroup">
-			<div className="date">{date}</div>
-			<div className="GameList">
-				{data.map(({game, platforms}) => (
-					platforms.some(e=>platformsFilter.includes(e))?
-					<Link key={game.id} to={`/game/${game.slug}`} className="no-link">
-						{/* {console.log(game)} */}
+		<div className="GameGroup" ref={parent}>
+			<div className="date">{getFormattedDate(date)}</div>
+			<div className="GameList" ref={parent}>
+				{!data || data.length === 0 ? null : data.map(({game, platforms}) => (
+					platforms.some(e=>platformsFilter.includes(e)) && game.cover!= null?
+					<Link key={game.id} to={`/game/${game.slug}`} className="no-link flex">
 						<GameCard image={game.cover} title={game.name} platforms={platforms} />
 					</Link>
 				:""))}

@@ -4,4 +4,5 @@
     flex-direction: row;
     gap: 10px;
     overflow-x: hidden;
+    flex-wrap: wrap;
 }

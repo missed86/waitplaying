@@ -33,12 +33,14 @@ const ICONS = {
 };
 
 const CoverURL = (cover) => `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`
-const main_platforms = ["PS5", "SeriesX/S", "PC"];
+const main_platforms = ["PS5", "PS4", "Series X", "PC"];
 
 const only_main_platforms = (array) =>
   array.filter((p) => main_platforms.includes(p));
 
 export default function GameCard({ image, title, platforms }) {
+
+  platforms = [...new Set(platforms)]
   const handleClick = (event) => {
     event.preventDefault();
     // console.log(event);
@@ -55,7 +57,7 @@ export default function GameCard({ image, title, platforms }) {
       </div>
       <div className="hover">
         <div className="platforms">
-          {platforms.length < 3
+          {platforms.length <= 3
             ? platforms.map((platform) => {
                 return (
                   <span key={platform+title} className="platform-pill">

@@ -29,6 +29,8 @@
     width: auto; */
   box-sizing: border-box;
   max-width: 100%;
+  object-fit: cover;
+  aspect-ratio: 0.75;
 }
 .GameCard .hover {
   position: absolute;
