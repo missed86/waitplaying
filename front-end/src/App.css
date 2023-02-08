@@ -1,18 +1,28 @@
-html, body {
+html,
+body {
   background-color: #000000;
   z-index: -1000;
   color: white;
-  display:flex;
+  display: flex;
   /* align-items: center; */
   width: 100%;
   min-height: 100%;
 }
 body::-webkit-scrollbar {
-  background-color: grey;
+  width: 10px;
+  background-color: black;
+}
+body::-webkit-scrollbar-track {
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  padding: 10px;
+  border-radius: 5px;
 }
 .App {
   /* justify-content: center; */
-  display:flex;
+  display: flex;
   flex-direction: column;
   /* padding: 0 20px; */
   width: 100%;
@@ -21,13 +31,13 @@ body::-webkit-scrollbar {
 main {
   display: flex;
   padding: 0 30px;
-  flex-grow:2;
+  flex-grow: 2;
   align-items: flex-start;
-  justify-content: center;;
+  justify-content: center;
 }
- @media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   main {
-    padding:0 10px;
+    padding: 0 10px;
   }
 }
 /*

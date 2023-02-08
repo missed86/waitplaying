@@ -12,11 +12,14 @@ function getFormattedDate(date) {
   date = new Date(date)
   const today = new Date();
   const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
+  const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
 
   if (date.toDateString() === today.toDateString()) {
     return "Today";
   } else if (date.toDateString() === yesterday.toDateString()) {
     return "Yesterday";
+  } else if (date.toDateString() === tomorrow.toDateString()) {
+    return "Tomorrow";
   } else {
     return date.toLocaleDateString("default", options);
   }
@@ -49,9 +52,9 @@ export default function GameList({ date, filters }) {
     return <div>Error: {error.message}</div>;
   }
   data.sort((a,b)=>{
-    if (a.game.rating === null) return 1;
-    if (b.game.rating === null) return -1;
-    return b.game.rating - a.game.rating;
+    if (a.game.total_rating_count === null) return 1;
+    if (b.game.total_rating_count === null) return -1;
+    return b.game.total_rating_count - a.game.total_rating_count;
   })
 	const platformsFilter = filters
   // console.log("Data",data);

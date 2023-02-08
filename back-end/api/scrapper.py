@@ -13,8 +13,9 @@ Lanzamiento PS4 : 15 de noviembre de 2013 (1384470000)
 Lanzamiento XboxOne: 22 de noviembre de 2013
 """
 
-DBSTARTDATE = 1640991600
+# DBSTARTDATE = 1640991600
 # DBSTARTDATE = 1384470000
+DBSTARTDATE = 0
 
 url = "https://id.twitch.tv/oauth2/token"
 
@@ -62,90 +63,90 @@ def scrape_games():
                                     sort id asc; \
                                     };')
         if query.status_code == 200:
-            # try:
+            try:
             # print(query.json())
 
-            for data in query.json()[0]['result']:
-                id = data['id'] if 'id' in data else None
-                category = data['category'] if 'category' in data else None
-                cover = data['cover']['image_id'] if 'cover' in data else None
-                first_release_date = datetime.datetime.fromtimestamp(data['first_release_date']).strftime(
-                    '%Y-%m-%d') if 'first_release_date' in data else None
-                # first_release_date = data['first_release_date'] if 'first_release_date' in data else None
-                name = data['name'] if 'name' in data else None
-                slug = data['slug'] if 'slug' in data else None
-                summary = data['summary'] if 'summary' in data else None
-                storyline = data['storyline'] if 'storyline' in data else None
-                url = data['url'] if 'url' in data else None
-                # genres = ','.join(str(e) for e in data['genres']) if 'genres' in data else None
-                # print(data['id'],data['platforms'])
-                platforms = data['platforms'] if 'platforms' in data else None
-                # platforms = ','.join(e['abbreviation'] for e in data['platforms']
-                #                      if 'abbreviation' in e) if 'platforms' in data else None
-                screenshots = ','.join(
-                    e['image_id'] for e in data['screenshots']) if 'screenshots' in data else None
-                artworks = ','.join(
-                    e['image_id'] for e in data['artworks']) if 'artworks' in data else None
-                # artworks = ','.join(str(e['image_id']) for e in data['artworks']) if 'artworks' in data else None
+                for data in query.json()[0]['result']:
+                    id = data['id'] if 'id' in data else None
+                    category = data['category'] if 'category' in data else None
+                    cover = data['cover']['image_id'] if 'cover' in data else None
+                    first_release_date = datetime.datetime.fromtimestamp(data['first_release_date']).strftime(
+                        '%Y-%m-%d') if 'first_release_date' in data else None
+                    # first_release_date = data['first_release_date'] if 'first_release_date' in data else None
+                    name = data['name'] if 'name' in data else None
+                    slug = data['slug'] if 'slug' in data else None
+                    summary = data['summary'] if 'summary' in data else None
+                    storyline = data['storyline'] if 'storyline' in data else None
+                    url = data['url'] if 'url' in data else None
+                    # genres = ','.join(str(e) for e in data['genres']) if 'genres' in data else None
+                    # print(data['id'],data['platforms'])
+                    platforms = data['platforms'] if 'platforms' in data else None
+                    # platforms = ','.join(e['abbreviation'] for e in data['platforms']
+                    #                      if 'abbreviation' in e) if 'platforms' in data else None
+                    screenshots = ','.join(
+                        e['image_id'] for e in data['screenshots']) if 'screenshots' in data else None
+                    artworks = ','.join(
+                        e['image_id'] for e in data['artworks']) if 'artworks' in data else None
+                    # artworks = ','.join(str(e['image_id']) for e in data['artworks']) if 'artworks' in data else None
 
-                created_at = data['created_at'] if 'created_at' in data else None
-                updated_at = data['updated_at'] if 'updated_at' in data else None
+                    created_at = data['created_at'] if 'created_at' in data else None
+                    updated_at = data['updated_at'] if 'updated_at' in data else None
 
-                rating_count = data['rating_count'] if 'rating_count' in data else None
-                rating = data['rating'] if 'rating' in data else None
-                total_rating_count = data['total_rating_count'] if 'total_rating_count' in data else None
-                total_rating = data['total_rating'] if 'total_rating' in data else None
+                    rating_count = data['rating_count'] if 'rating_count' in data else None
+                    rating = data['rating'] if 'rating' in data else None
+                    total_rating_count = data['total_rating_count'] if 'total_rating_count' in data else None
+                    total_rating = data['total_rating'] if 'total_rating' in data else None
 
-                game = Game(id=id,
-                            name=name,
-                            slug=slug,
-                            category=category,
-                            cover=cover,
-                            created_at=created_at,
-                            updated_at=updated_at,
-                            first_release_date=first_release_date,
-                            summary=summary,
-                            storyline=storyline,
-                            url=url,
-                            # platforms=platforms,
-                            screenshots=screenshots,
-                            rating_count=rating_count,
-                            rating=rating,
-                            total_rating_count=total_rating_count,
-                            total_rating=total_rating,
-                            )
-                game.save()
+                    game = Game(id=id,
+                                name=name,
+                                slug=slug,
+                                category=category,
+                                cover=cover,
+                                created_at=created_at,
+                                updated_at=updated_at,
+                                first_release_date=first_release_date,
+                                summary=summary,
+                                storyline=storyline,
+                                url=url,
+                                # platforms=platforms,
+                                screenshots=screenshots,
+                                rating_count=rating_count,
+                                rating=rating,
+                                total_rating_count=total_rating_count,
+                                total_rating=total_rating,
+                                )
+                    game.save()
 
-                platformsField = Platform.objects.filter(id__in=platforms)
-                game.platforms.set(platformsField)
+                    platformsField = Platform.objects.filter(id__in=platforms)
+                    game.platforms.set(platformsField)
 
-                print(end='\x1b[2K')
-                print("Scrapping Games: ", id, name,
-                      'Successfully added', end="\r")
-                total += 1
-            if len(query.json()[0]['result']) < 500:
+                    print(end='\x1b[2K')
+                    print("Scrapping Games: ", id, name,
+                        'Successfully added', end="\r")
+                    total += 1
+                if len(query.json()[0]['result']) < 500:
 
-                end_time = time.time()
-                elapsed_time = end_time - start_time
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
 
-                print(end='\x1b[2K')
-                print("Terminado Games: Se han guardado " + str(total) + " elementos en",
-                      time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
+                    print(end='\x1b[2K')
+                    print("Terminado Games: Se han guardado " + str(total) + " elementos en",
+                        time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
-                # Update the value of updated_at
-                max_id = Game.objects.aggregate(Max('id'))['id__max']
-                max_updated_at = Game.objects.aggregate(
-                    Max('updated_at'))['updated_at__max']
-                Scrapping.objects.filter(table_name='Game').update(
-                    last_id=max_id, updated_at=max_updated_at)
+                    # Update the value of updated_at
+                    max_id = Game.objects.aggregate(Max('id'))['id__max']
+                    max_updated_at = Game.objects.aggregate(
+                        Max('updated_at'))['updated_at__max']
+                    Scrapping.objects.filter(table_name='Game').update(
+                        last_id=max_id, updated_at=max_updated_at)
 
-                break
+                    break
 
-            else:
-                offset += 500
+                else:
+                    offset += 500
 
-            # except:
-            #     print("\nFailed {}\n")
+            except:
+                print("\nFailed {}\n")
         else:
             print("Error: ", response.status_code)
             print(response.json())
@@ -303,19 +304,8 @@ def scrape_release_dates():
                     total += 1
                 except Game.DoesNotExist:
                     pass
-                    """release_date = ReleaseDate(id=id,
-                                               date=date,
-                                               m=m,
-                                               y=y,
-                                               game=None,
-                                               platform=Platform.objects.get(
-                                                   id=platform),
-                                               region=region,
-                                               created_at=created_at,
-                                               updated_at=updated_at,
-                                               )
-                    release_date.save()
-                    print("\nEl juego ", id, "no aparece en la base de datos")"""
+                except Platform.DoesNotExist:
+                    pass
             if len(query.json()) < 500:
 
                 end_time = time.time()
