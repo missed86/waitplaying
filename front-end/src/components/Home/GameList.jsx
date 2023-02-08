@@ -48,6 +48,11 @@ export default function GameList({ date, filters }) {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  data.sort((a,b)=>{
+    if (a.game.rating === null) return 1;
+    if (b.game.rating === null) return -1;
+    return b.game.rating - a.game.rating;
+  })
 	const platformsFilter = filters
   // console.log("Data",data);
   if (!data.length || !data.some(({platforms}) => platforms.some(e=>platformsFilter.includes(e)))) {

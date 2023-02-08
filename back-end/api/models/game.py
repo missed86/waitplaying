@@ -40,5 +40,9 @@ class Game(models.Model):
     url = models.CharField(max_length=255, null=True)
     created_at = models.IntegerField(null=True)
     updated_at = models.IntegerField(null=True)
+    rating_count = models.IntegerField(null=True)
+    rating = models.FloatField(null=True)
+    total_rating_count = models.IntegerField(null=True)
+    total_rating = models.FloatField(null=True)
     # artworks = models.
 

@@ -76,6 +76,8 @@ class GamesByDateView(APIView):
         date = self.kwargs.get("date")
         queryset = ReleaseDate.objects.filter(date=date)
         return Response(group_games(queryset, date))
+
+
 # def group_games(queryset, date):
 #     result = []
 #     queryset = queryset.values("game", "platform__name")
