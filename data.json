@@ -1,0 +1,5095 @@
+[
+	[
+		"C1LM235H6FZ1",
+		{
+			"title": "Army of Two\u2122",
+			"short_title": "Army of Two\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "army-of-two",
+			"console": true
+		}
+	],
+	[
+		"BZKZFMQG2K2K",
+		{
+			"title": "Battlefield\u2122 Hardline",
+			"short_title": "Battlefield\u2122 Hardline",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "battlefield-hardline",
+			"console": true
+		}
+	],
+	[
+		"BZ2N7TQ0XCF2",
+		{
+			"title": "Battlefield\u2122 V",
+			"short_title": "Battlefield\u2122 V",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "battlefield-v",
+			"console": true
+		}
+	],
+	[
+		"BTPDCJXNFSZL",
+		{
+			"title": "Black Desert",
+			"short_title": "Black Desert",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "black-desert",
+			"console": true
+		}
+	],
+	[
+		"C2X6ZCNKN2WR",
+		{
+			"title": "Conan Exiles",
+			"short_title": "Conan Exiles",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "conan-exiles",
+			"console": true
+		}
+	],
+	[
+		"9N5Q1VBD1ZWZ",
+		{
+			"title": "CrossfireX: Operation Catalyst",
+			"short_title": "",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "crossfirex-operation-catalyst",
+			"console": true
+		}
+	],
+	[
+		"C5DZH514BX37",
+		{
+			"title": "EA SPORTS\u2122 UFC\u00ae 3",
+			"short_title": "EA SPORTS\u2122 UFC\u00ae 3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "ea-sports-ufc-3",
+			"console": true
+		}
+	],
+	[
+		"9NN50LXZT18Z",
+		{
+			"title": "FIFA 21 Standard Edition Xbox One & Xbox Series X|S",
+			"short_title": "\u00a0FIFA 21 Standard Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "fifa-21-standard-edition-xbox-one-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9N6639H7VGH4",
+		{
+			"title": "GoldenEye 007",
+			"short_title": "GoldenEye 007",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "goldeneye-007",
+			"console": true
+		}
+	],
+	[
+		"BRMKDCZT0C4L",
+		{
+			"title": "LEGO\u00ae Star Wars\u2122: The Skywalker Saga",
+			"short_title": "LEGO\u00ae Star Wars\u2122: The Skywalker Saga",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "lego-star-wars-the-skywalker-saga",
+			"console": true
+		}
+	],
+	[
+		"BZPR04V49BMH",
+		{
+			"title": "Mass Effect\u2122: Andromeda",
+			"short_title": "Mass Effect\u2122: Andromeda",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "mass-effect-andromeda",
+			"console": true
+		}
+	],
+	[
+		"9NQ19C36R0VD",
+		{
+			"title": "Minecraft Preview",
+			"short_title": "Minecraft Preview",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "minecraft-preview",
+			"console": true
+		}
+	],
+	[
+		"9N27DBP8GNNB",
+		{
+			"title": "NINJA GAIDEN 3: Razor's Edge",
+			"short_title": "NINJA GAIDEN 3: Razor's Edge",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "ninja-gaiden-3-razors-edge",
+			"console": true
+		}
+	],
+	[
+		"9NZ5QW71X49G",
+		{
+			"title": "NINJA GAIDEN \u03a3",
+			"short_title": "NINJA GAIDEN \u03a3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "ninja-gaiden-\u03c3",
+			"console": true
+		}
+	],
+	[
+		"9PGSC3PW4N8Z",
+		{
+			"title": "NINJA GAIDEN \u03a32",
+			"short_title": "NINJA GAIDEN \u03a32",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "ninja-gaiden-\u03c32",
+			"console": true
+		}
+	],
+	[
+		"BXVCFBJBNS17",
+		{
+			"title": "The Elder Scrolls III: Morrowind",
+			"short_title": "Morrowind",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "the-elder-scrolls-iii-morrowind",
+			"console": true
+		}
+	],
+	[
+		"9PLFD17M47K3",
+		{
+			"title": "The Sims\u2122 4 EA Play Edition",
+			"short_title": "The Sims\u2122 4 EA Play Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "1753-01-01T00:00:00.0000000Z",
+			"slug": "the-sims-4-ea-play-edition",
+			"console": true
+		}
+	],
+	[
+		"BRXTM276DLPR",
+		{
+			"title": "STAR WARS\u2122 Battlefront\u2122",
+			"short_title": "STAR WARS\u2122 Battlefront\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2017-08-16T23:00:00.0000000Z",
+			"slug": "star-wars-battlefront",
+			"console": true
+		}
+	],
+	[
+		"9PLMGFWCFZ9G",
+		{
+			"title": "Super Lucky's Tale",
+			"short_title": "Super Lucky's Tale",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2017-11-06T23:00:00.0000000Z",
+			"slug": "super-luckys-tale",
+			"console": true
+		}
+	],
+	[
+		"BZ92FB6PWXFJ",
+		{
+			"title": "Costume Quest 2",
+			"short_title": "Costume Quest 2",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2018-10-01T10:00:00.0000000Z",
+			"slug": "costume-quest-2",
+			"console": true
+		}
+	],
+	[
+		"C512KLS2GPD3",
+		{
+			"title": "The Walking Dead: Michonne - Ep. 2, Give No Shelter",
+			"short_title": "The Walking Dead: Michonne - Episode 2",
+			"end_date": "2799-03-28T09:59:59.0000000Z",
+			"start_date": "2019-03-28T00:00:00.0000000Z",
+			"slug": "the-walking-dead-michonne---ep-2-give-no-shelter",
+			"console": true
+		}
+	],
+	[
+		"BT7L901WBLXD",
+		{
+			"title": "The Walking Dead: Michonne - Ep. 3, What We Deserve",
+			"short_title": "The Walking Dead: Michonne - Episode 3",
+			"end_date": "2799-03-28T09:59:59.0000000Z",
+			"start_date": "2019-03-28T00:00:00.0000000Z",
+			"slug": "the-walking-dead-michonne---ep-3-what-we-deserve",
+			"console": true
+		}
+	],
+	[
+		"BQT21VXFS52F",
+		{
+			"title": "Gears of War: Ultimate Edition",
+			"short_title": "Gears of War: Ultimate Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2019-11-01T00:00:00.0000000Z",
+			"slug": "gears-of-war-ultimate-edition",
+			"console": true
+		}
+	],
+	[
+		"C47GZZBMR5WG",
+		{
+			"title": "Dragon Age\u2122: Inquisition",
+			"short_title": "Dragon Age\u2122: Inquisition",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2020-06-15T15:00:00.0000000Z",
+			"slug": "dragon-age-inquisition",
+			"console": true
+		}
+	],
+	[
+		"BZW2R4STVDNK",
+		{
+			"title": "Fe",
+			"short_title": "Fe",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2020-06-15T15:00:00.0000000Z",
+			"slug": "fe",
+			"console": true
+		}
+	],
+	[
+		"9PBLVTGXLV7D",
+		{
+			"title": "Madden NFL 21 Xbox One",
+			"short_title": "Madden NFL 21",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-06-16T14:00:00.0000000Z",
+			"slug": "madden-nfl-21-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9NW6RJDFKV5V",
+		{
+			"title": "Madden NFL 21 Xbox Series X|S",
+			"short_title": "Madden NFL 21 Xbox Series X|S",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-06-16T14:00:00.0000000Z",
+			"slug": "madden-nfl-21-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9N4DNRXMJ381",
+		{
+			"title": "FIFA 21 Xbox One",
+			"short_title": "FIFA 21 Xbox One ",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-06-18T23:00:00.0000000Z",
+			"slug": "fifa-21-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9PLLM41KB8T2",
+		{
+			"title": "FIFA 21 Xbox Series X|S",
+			"short_title": "FIFA 21 Xbox Series X|S",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-06-18T23:00:00.0000000Z",
+			"slug": "fifa-21-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"BNCZHKWRZ7BR",
+		{
+			"title": "Peggle 2",
+			"short_title": "Peggle 2",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2020-06-23T10:00:00.0000000Z",
+			"slug": "peggle-2",
+			"console": true
+		}
+	],
+	[
+		"9N8NJ74FZTG9",
+		{
+			"title": "Minecraft Dungeons",
+			"short_title": "Minecraft Dungeons",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-06-26T00:00:00.0000000Z",
+			"slug": "minecraft-dungeons",
+			"console": true
+		}
+	],
+	[
+		"BWZ8BZ85X5HK",
+		{
+			"title": "NHL\u00ae 21",
+			"short_title": "NHL\u00ae  21",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-07-21T16:00:00.0000000Z",
+			"slug": "nhl-21",
+			"console": true
+		}
+	],
+	[
+		"9MX7Q207JGTW",
+		{
+			"title": "Rocket Arena",
+			"short_title": "Rocket Arena",
+			"end_date": "2220-07-14T21:59:59.0000000Z",
+			"start_date": "2020-08-24T13:00:00.0000000Z",
+			"slug": "rocket-arena",
+			"console": true
+		}
+	],
+	[
+		"BVR64CDJ01FJ",
+		{
+			"title": "Banjo Kazooie: N n B",
+			"short_title": "Banjo Kazooie: N n B",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "banjo-kazooie-n-n-b",
+			"console": true
+		}
+	],
+	[
+		"BSJG7TTSWVJ2",
+		{
+			"title": "Banjo-Kazooie",
+			"short_title": "Banjo-Kazooie",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "banjo-kazooie",
+			"console": true
+		}
+	],
+	[
+		"BX27S00SKW1V",
+		{
+			"title": "Banjo-Tooie",
+			"short_title": "Banjo-Tooie",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "banjo-tooie",
+			"console": true
+		}
+	],
+	[
+		"BRRVN5198461",
+		{
+			"title": "Jetpac Refuelled",
+			"short_title": "Jetpac Refuelled",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "jetpac-refuelled",
+			"console": true
+		}
+	],
+	[
+		"BV83SM3191S5",
+		{
+			"title": "Kameo",
+			"short_title": "Kameo",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "kameo",
+			"console": true
+		}
+	],
+	[
+		"C0SWGV4560W1",
+		{
+			"title": "Perfect Dark",
+			"short_title": "Perfect Dark",
+			"end_date": "2799-06-30T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "perfect-dark",
+			"console": true
+		}
+	],
+	[
+		"BZF7N4FQWHNR",
+		{
+			"title": "Perfect Dark Zero",
+			"short_title": "Perfect Dark Zero",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "perfect-dark-zero",
+			"console": true
+		}
+	],
+	[
+		"BSXSL6WBJ0V7",
+		{
+			"title": "Viva Pi\u00f1ata",
+			"short_title": "Viva Pi\u00f1ata",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "viva-pi\u00f1ata",
+			"console": true
+		}
+	],
+	[
+		"BS1NPTPJGD4G",
+		{
+			"title": "Viva Pi\u00f1ata: TIP",
+			"short_title": "Viva Pi\u00f1ata: TIP",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2020-09-01T00:00:00.0000000Z",
+			"slug": "viva-pi\u00f1ata-tip",
+			"console": true
+		}
+	],
+	[
+		"BTXM0C9C3B1S",
+		{
+			"title": "Bejeweled 2",
+			"short_title": "Bejeweled 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "bejeweled-2",
+			"console": true
+		}
+	],
+	[
+		"BR7QJW8V9L2S",
+		{
+			"title": "Bejeweled 3",
+			"short_title": "Bejeweled 3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "bejeweled-3",
+			"console": true
+		}
+	],
+	[
+		"BTCS0LP052HL",
+		{
+			"title": "BLACK\u2122",
+			"short_title": "BLACK\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "black",
+			"console": true
+		}
+	],
+	[
+		"BNN7BPDZ6GQB",
+		{
+			"title": "Crysis",
+			"short_title": "Crysis",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "crysis",
+			"console": true
+		}
+	],
+	[
+		"BQBTGDT4P54J",
+		{
+			"title": "Crysis 2",
+			"short_title": "Crysis 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "crysis-2",
+			"console": true
+		}
+	],
+	[
+		"BNKKJL1VRR5P",
+		{
+			"title": "Crysis\u00ae 3",
+			"short_title": "Crysis\u00ae\u00a03",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "crysis-3",
+			"console": true
+		}
+	],
+	[
+		"C0X6N5963CTW",
+		{
+			"title": "Dante's Inferno\u2122",
+			"short_title": "Dante's Inferno\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "dantes-inferno",
+			"console": true
+		}
+	],
+	[
+		"C4GQQJJSZSZJ",
+		{
+			"title": "Dead Space\u2122 Ignition",
+			"short_title": "Dead Space\u2122 Ignition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "dead-space-ignition",
+			"console": true
+		}
+	],
+	[
+		"BRBRQCVTJG2D",
+		{
+			"title": "Feeding Frenzy",
+			"short_title": "Feeding Frenzy",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "feeding-frenzy",
+			"console": true
+		}
+	],
+	[
+		"BQ192SFB694X",
+		{
+			"title": "Feeding Frenzy 2",
+			"short_title": "Feeding Frenzy 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "feeding-frenzy-2",
+			"console": true
+		}
+	],
+	[
+		"BZ910SG8ML8X",
+		{
+			"title": "Heavy Weapon",
+			"short_title": "Heavy Weapon",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "heavy-weapon",
+			"console": true
+		}
+	],
+	[
+		"C43H00X6KZRJ",
+		{
+			"title": "Medal of Honor Airborne",
+			"short_title": "Medal of Honor Airborne",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "medal-of-honor-airborne",
+			"console": true
+		}
+	],
+	[
+		"BP96WRTVD7C1",
+		{
+			"title": "Mirror's Edge\u2122",
+			"short_title": "Mirror's Edge\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "mirrors-edge",
+			"console": true
+		}
+	],
+	[
+		"BSCCQL7DZ9KD",
+		{
+			"title": "Peggle",
+			"short_title": "Peggle",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "peggle",
+			"console": true
+		}
+	],
+	[
+		"BR1D9CR82ZM8",
+		{
+			"title": "Plants vs. Zombies",
+			"short_title": "Plants vs. Zombies",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "plants-vs-zombies",
+			"console": true
+		}
+	],
+	[
+		"BWK0Q0RQMH7V",
+		{
+			"title": "SSX",
+			"short_title": "SSX",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "ssx",
+			"console": true
+		}
+	],
+	[
+		"C4SG06H48738",
+		{
+			"title": "Zuma",
+			"short_title": "Zuma",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "zuma",
+			"console": true
+		}
+	],
+	[
+		"BR9MPWXFBCRC",
+		{
+			"title": "Zuma's Revenge!",
+			"short_title": "Zuma's Revenge!",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-09-21T00:00:00.0000000Z",
+			"slug": "zumas-revenge",
+			"console": true
+		}
+	],
+	[
+		"9P5FRHDPNTC6",
+		{
+			"title": "F1 2020",
+			"short_title": "F1 2020",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-11-23T00:00:00.0000000Z",
+			"slug": "f1-2020",
+			"console": true
+		}
+	],
+	[
+		"C5JGRR1LFVW8",
+		{
+			"title": "State of Decay: Year-One",
+			"short_title": "State of Decay: Year-One",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2020-12-08T18:00:00.0000000Z",
+			"slug": "state-of-decay-year-one",
+			"console": true
+		}
+	],
+	[
+		"BVX4Z50ZBH5Q",
+		{
+			"title": "NBA LIVE 19",
+			"short_title": "NBA LIVE 19",
+			"end_date": "2098-12-31T23:59:59.0000000Z",
+			"start_date": "2021-01-04T10:00:00.0000000Z",
+			"slug": "nba-live-19",
+			"console": true
+		}
+	],
+	[
+		"C4060P46HH4D",
+		{
+			"title": "Sea of Solitude",
+			"short_title": "Sea of Solitude",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2021-01-04T10:00:00.0000000Z",
+			"slug": "sea-of-solitude",
+			"console": true
+		}
+	],
+	[
+		"BW85KQB8Q31M",
+		{
+			"title": "Ori and the Blind Forest: Definitive Edition",
+			"short_title": "Ori: DE",
+			"end_date": "2799-03-26T23:59:59.0000000Z",
+			"start_date": "2021-02-08T08:00:00.0000000Z",
+			"slug": "ori-and-the-blind-forest-definitive-edition",
+			"console": true
+		}
+	],
+	[
+		"BV0K9LMLQ9W5",
+		{
+			"title": "Halo: Spartan Assault",
+			"short_title": "Halo: Spartan Assault",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2021-02-16T10:00:00.0000000Z",
+			"slug": "halo-spartan-assault",
+			"console": true
+		}
+	],
+	[
+		"C1ZWH2BZ9TSF",
+		{
+			"title": "Joy Ride Turbo",
+			"short_title": "Joy Ride Turbo",
+			"end_date": "2799-04-29T23:59:59.0000000Z",
+			"start_date": "2021-04-30T00:00:00.0000000Z",
+			"slug": "joy-ride-turbo",
+			"console": true
+		}
+	],
+	[
+		"9P0T51BDDWVT",
+		{
+			"title": "Battlefield\u2122 2042 Xbox Series X|S",
+			"short_title": "Battlefield\u2122 2042",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2021-06-09T15:00:00.0000000Z",
+			"slug": "battlefield-2042-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"BRG51C5MWFSG",
+		{
+			"title": "BLiNX: The Time Sweeper",
+			"short_title": "BLiNX",
+			"end_date": "2799-07-18T23:59:59.0000000Z",
+			"start_date": "2021-07-26T00:00:00.0000000Z",
+			"slug": "blinx-the-time-sweeper",
+			"console": true
+		}
+	],
+	[
+		"C4B8XR1LCXR5",
+		{
+			"title": "Crimson Skies\u00ae: High Road to Revenge\u2122",
+			"short_title": "Crimson Skies\u00ae: High Road to Revenge\u2122",
+			"end_date": "2799-07-18T23:59:59.0000000Z",
+			"start_date": "2021-07-26T00:00:00.0000000Z",
+			"slug": "crimson-skies-high-road-to-revenge",
+			"console": true
+		}
+	],
+	[
+		"9PCCFDH6LMQJ",
+		{
+			"title": "Nuclear Throne",
+			"short_title": "Nuclear Throne",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2021-09-09T00:00:00.0000000Z",
+			"slug": "nuclear-throne",
+			"console": true
+		}
+	],
+	[
+		"9PDGC1Z6ZHTP",
+		{
+			"title": "NHL\u00ae 94 REWIND",
+			"short_title": "NHL\u00ae 94 REWIND",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2021-11-04T15:00:00.0000000Z",
+			"slug": "nhl-94-rewind",
+			"console": true
+		}
+	],
+	[
+		"9PP5G1F0C2B6",
+		{
+			"title": "Halo Infinite",
+			"short_title": "Halo Infinite ",
+			"end_date": "2799-08-24T23:59:59.0000000Z",
+			"start_date": "2021-11-15T18:00:00.0000000Z",
+			"slug": "halo-infinite",
+			"console": true
+		}
+	],
+	[
+		"9P8XJRLCLH2P",
+		{
+			"title": "Moonlighter",
+			"short_title": "",
+			"end_date": "2023-05-16T09:59:59.0000000Z",
+			"start_date": "2021-12-16T10:00:00.0000000Z",
+			"slug": "moonlighter",
+			"console": true
+		}
+	],
+	[
+		"9P1P5Q3BNM7J",
+		{
+			"title": "Phoenix Point",
+			"short_title": "",
+			"end_date": "2799-09-30T23:59:59.0000000Z",
+			"start_date": "2022-01-01T10:00:00.0000000Z",
+			"slug": "phoenix-point",
+			"console": true
+		}
+	],
+	[
+		"9PJGM0T0827V",
+		{
+			"title": "DIRT 5",
+			"short_title": "DIRT 5",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2022-01-03T10:00:00.0000000Z",
+			"slug": "dirt-5",
+			"console": true
+		}
+	],
+	[
+		"BS0PFBB91B3V",
+		{
+			"title": "GRID",
+			"short_title": "GRID",
+			"end_date": "2299-12-30T23:59:59.0000000Z",
+			"start_date": "2022-01-03T10:00:00.0000000Z",
+			"slug": "grid",
+			"console": true
+		}
+	],
+	[
+		"9PJHCZL8T5J8",
+		{
+			"title": "MLB\u00ae The Show\u2122 22 Xbox One",
+			"short_title": "",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-01-31T17:00:00.0000000Z",
+			"slug": "mlb-the-show-22-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9MXM0G8RP4H4",
+		{
+			"title": "MLB\u00ae The Show\u2122 22 Xbox Series X | S",
+			"short_title": "",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-01-31T17:00:00.0000000Z",
+			"slug": "mlb-the-show-22-xbox-series-x-s",
+			"console": true
+		}
+	],
+	[
+		"BSLTQT4L0RLV",
+		{
+			"title": "Contrast",
+			"short_title": "Contrast",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-02-03T00:00:00.0000000Z",
+			"slug": "contrast",
+			"console": true
+		}
+	],
+	[
+		"C37XBX7DCBZ0",
+		{
+			"title": "Descenders",
+			"short_title": "Descenders",
+			"end_date": "2799-05-14T23:59:59.0000000Z",
+			"start_date": "2022-02-15T10:00:00.0000000Z",
+			"slug": "descenders",
+			"console": true
+		}
+	],
+	[
+		"9N6PB00DXQ7H",
+		{
+			"title": "Olija",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-03-01T10:00:00.0000000Z",
+			"slug": "olija",
+			"console": true
+		}
+	],
+	[
+		"9NPPK20VCTGM",
+		{
+			"title": "Surgeon Simulator 2",
+			"short_title": "Surgeon Sim2",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2022-03-01T10:00:00.0000000Z",
+			"slug": "surgeon-simulator-2",
+			"console": true
+		}
+	],
+	[
+		"9NFM39PSFXJD",
+		{
+			"title": "Townscaper",
+			"short_title": "",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2022-03-02T00:00:00.0000000Z",
+			"slug": "townscaper",
+			"console": true
+		}
+	],
+	[
+		"BPN08ZDRPSFK",
+		{
+			"title": "Gears of War",
+			"short_title": "Gears of War",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2022-03-08T10:00:00.0000000Z",
+			"slug": "gears-of-war",
+			"console": true
+		}
+	],
+	[
+		"BSHMMGRP84N4",
+		{
+			"title": "Gears of War: Judgment",
+			"short_title": "Gears of War: Judgment",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2022-03-08T10:00:00.0000000Z",
+			"slug": "gears-of-war-judgment",
+			"console": true
+		}
+	],
+	[
+		"BQMQ3K1BLV1T",
+		{
+			"title": "Burnout\u2122 Paradise Remastered",
+			"short_title": "Burnout\u2122 Paradise Remastered",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-03-15T10:00:00.0000000Z",
+			"slug": "burnout-paradise-remastered",
+			"console": true
+		}
+	],
+	[
+		"9NP6V9LFVJ87",
+		{
+			"title": "Super Mega Baseball 3",
+			"short_title": "Super Mega Baseball 3",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-03-15T10:00:00.0000000Z",
+			"slug": "super-mega-baseball-3",
+			"console": true
+		}
+	],
+	[
+		"9PJGGX9XJXPB",
+		{
+			"title": "Undertale",
+			"short_title": "",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2022-03-16T10:00:00.0000000Z",
+			"slug": "undertale",
+			"console": true
+		}
+	],
+	[
+		"9PM85QK6C13H",
+		{
+			"title": "Spelunky 2",
+			"short_title": "",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2022-04-13T00:00:00.0000000Z",
+			"slug": "spelunky-2",
+			"console": true
+		}
+	],
+	[
+		"C41ZDFQ82M1G",
+		{
+			"title": "The Long Dark",
+			"short_title": "The Long Dark",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2022-04-16T10:00:00.0000000Z",
+			"slug": "the-long-dark",
+			"console": true
+		}
+	],
+	[
+		"9N6J02VPG635",
+		{
+			"title": "F1\u00ae 2021",
+			"short_title": "F1\u00ae 2021",
+			"end_date": "2299-08-10T23:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "f1-2021",
+			"console": true
+		}
+	],
+	[
+		"C1SDBNRFXT1D",
+		{
+			"title": "Gears of War 2",
+			"short_title": "Gears of War 2",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "gears-of-war-2",
+			"console": true
+		}
+	],
+	[
+		"BPKDQSSFQ9WV",
+		{
+			"title": "Gears of War 3",
+			"short_title": "Gears of War 3",
+			"end_date": "2799-08-31T23:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "gears-of-war-3",
+			"console": true
+		}
+	],
+	[
+		"BQR7QS0F8SJ3",
+		{
+			"title": "The Walking Dead: A New Frontier - The Complete Season (Episodes 1-5)",
+			"short_title": "The Walking Dead: A New Frontier - Complete",
+			"end_date": "2099-04-18T09:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "the-walking-dead-a-new-frontier---the-complete-season",
+			"console": true
+		}
+	],
+	[
+		"C2XNJC9WK15X",
+		{
+			"title": "The Walking Dead: Michonne - The Complete Season",
+			"short_title": "The Walking Dead: Michonne",
+			"end_date": "2799-03-28T09:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "the-walking-dead-michonne---the-complete-season",
+			"console": true
+		}
+	],
+	[
+		"C2DQXX0CB42F",
+		{
+			"title": "The Walking Dead: Season Two",
+			"short_title": "The Walking Dead: Season 2",
+			"end_date": "2799-02-28T09:59:59.0000000Z",
+			"start_date": "2022-04-22T10:00:00.0000000Z",
+			"slug": "the-walking-dead-season-two",
+			"console": true
+		}
+	],
+	[
+		"BW6B077FCH11",
+		{
+			"title": "The Walking Dead: The Complete First Season",
+			"short_title": "The Walking Dead: Season One",
+			"end_date": "2799-02-08T09:59:59.0000000Z",
+			"start_date": "2022-05-03T10:00:00.0000000Z",
+			"slug": "the-walking-dead-the-complete-first-season",
+			"console": true
+		}
+	],
+	[
+		"9PLSCHRN5715",
+		{
+			"title": "Zombie Army 4: Dead War",
+			"short_title": "Zombie Army 4: Dead War",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2022-05-03T10:00:00.0000000Z",
+			"slug": "zombie-army-4-dead-war",
+			"console": true
+		}
+	],
+	[
+		"C1QQ7GM9HLKG",
+		{
+			"title": "Battlefield 1943\u2122",
+			"short_title": "Battlefield 1943\u2122",
+			"end_date": "2023-04-28T11:59:59.0000000Z",
+			"start_date": "2022-05-06T10:00:00.0000000Z",
+			"slug": "battlefield-1943",
+			"console": true
+		}
+	],
+	[
+		"BQ81KKJMM7ZD",
+		{
+			"title": "Battlefield: Bad Company",
+			"short_title": "Battlefield: Bad Co.",
+			"end_date": "2023-04-28T11:59:59.0000000Z",
+			"start_date": "2022-05-06T10:00:00.0000000Z",
+			"slug": "battlefield-bad-company",
+			"console": true
+		}
+	],
+	[
+		"BSNZHRCKC13J",
+		{
+			"title": "Alice: Madness Returns",
+			"short_title": "Alice: Madness Returns",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-05-10T10:00:00.0000000Z",
+			"slug": "alice-madness-returns",
+			"console": true
+		}
+	],
+	[
+		"BRRSMNBM1QGG",
+		{
+			"title": "LIGHTNING RETURNS FFXIII",
+			"short_title": "LIGHTNING RETURNS FFXIII",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2022-05-10T10:00:00.0000000Z",
+			"slug": "lightning-returns-ffxiii",
+			"console": true
+		}
+	],
+	[
+		"9P934697Z4W4",
+		{
+			"title": "Edge of Eternity",
+			"short_title": "Edge of Eternity",
+			"end_date": "2023-08-16T09:59:59.0000000Z",
+			"start_date": "2022-05-11T14:00:00.0000000Z",
+			"slug": "edge-of-eternity",
+			"console": true
+		}
+	],
+	[
+		"9NW4Z3HPJVKW",
+		{
+			"title": "Skul: The Hero Slayer",
+			"short_title": "",
+			"end_date": "2023-02-16T09:59:59.0000000Z",
+			"start_date": "2022-05-12T10:00:00.0000000Z",
+			"slug": "skul-the-hero-slayer",
+			"console": true
+		}
+	],
+	[
+		"9NK7HNCG0R8D",
+		{
+			"title": "Infernax",
+			"short_title": "",
+			"end_date": "2023-02-16T09:59:59.0000000Z",
+			"start_date": "2022-05-31T10:00:00.0000000Z",
+			"slug": "infernax",
+			"console": true
+		}
+	],
+	[
+		"C2592KJZ0Q1X",
+		{
+			"title": "Double Dragon Neon",
+			"short_title": "Double Dragon Neon",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-06-01T10:00:00.0000000Z",
+			"slug": "double-dragon-neon",
+			"console": true
+		}
+	],
+	[
+		"BRPGP6H8P26F",
+		{
+			"title": "DiRT Rally 2.0",
+			"short_title": "DiRT Rally 2.0",
+			"end_date": "2779-12-30T23:59:59.0000000Z",
+			"start_date": "2022-06-07T10:00:00.0000000Z",
+			"slug": "dirt-rally-20",
+			"console": true
+		}
+	],
+	[
+		"BX4J85JZNGXQ",
+		{
+			"title": "Clustertruck",
+			"short_title": "ClusterTruck",
+			"end_date": "2023-04-01T09:59:59.0000000Z",
+			"start_date": "2022-06-14T10:00:00.0000000Z",
+			"slug": "clustertruck",
+			"console": true
+		}
+	],
+	[
+		"9NBLGGH43KZB",
+		{
+			"title": "ASTRONEER",
+			"short_title": "ASTRONEER",
+			"end_date": "2024-06-16T09:59:59.0000000Z",
+			"start_date": "2022-06-16T10:00:00.0000000Z",
+			"slug": "astroneer",
+			"console": true
+		}
+	],
+	[
+		"9PC4RWP34M2D",
+		{
+			"title": "Totally Accurate Battle Simulator",
+			"short_title": "TABS",
+			"end_date": "2027-06-16T09:59:59.0000000Z",
+			"start_date": "2022-06-16T10:00:00.0000000Z",
+			"slug": "totally-accurate-battle-simulator",
+			"console": true
+		}
+	],
+	[
+		"9MZGGWHPKQ4C",
+		{
+			"title": "Tainted Grail: Conquest",
+			"short_title": "TG: Conquest",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2022-06-20T00:00:00.0000000Z",
+			"slug": "tainted-grail-conquest",
+			"console": true
+		}
+	],
+	[
+		"BRN6BHDHB58J",
+		{
+			"title": "Battlefield 3\u2122",
+			"short_title": "Battlefield 3\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-07-12T10:00:00.0000000Z",
+			"slug": "battlefield-3",
+			"console": true
+		}
+	],
+	[
+		"9N7KBCL0NC5H",
+		{
+			"title": "Unsouled",
+			"short_title": "Unsouled",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2022-07-27T00:00:00.0000000Z",
+			"slug": "unsouled",
+			"console": true
+		}
+	],
+	[
+		"9P0FQ0XCV0LB",
+		{
+			"title": "Bugsnax",
+			"short_title": "Bugsnax",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2022-07-27T13:00:00.0000000Z",
+			"slug": "bugsnax",
+			"console": true
+		}
+	],
+	[
+		"9N8C03GW2TRB",
+		{
+			"title": "Loot River",
+			"short_title": "Loot River",
+			"end_date": "2024-05-01T09:59:59.0000000Z",
+			"start_date": "2022-08-01T00:00:00.0000000Z",
+			"slug": "loot-river",
+			"console": true
+		}
+	],
+	[
+		"9NFT6MRTH9KV",
+		{
+			"title": "Madden NFL 22 Xbox One",
+			"short_title": "Madden NFL 22 Xbox One",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-08-01T10:00:00.0000000Z",
+			"slug": "madden-nfl-22-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9NVHLDZNKH94",
+		{
+			"title": "Madden NFL 22 Xbox Series X|S",
+			"short_title": "Madden NFL 22 Xbox Series X|S",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-08-01T10:00:00.0000000Z",
+			"slug": "madden-nfl-22-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9NCG3X89KRLD",
+		{
+			"title": "NINJA GAIDEN: Master Collection",
+			"short_title": "NINJA GAIDEN: Master Collection",
+			"end_date": "2024-06-01T09:59:59.0000000Z",
+			"start_date": "2022-08-01T10:00:00.0000000Z",
+			"slug": "ninja-gaiden-master-collection",
+			"console": true
+		}
+	],
+	[
+		"9N3DKKRHSJBT",
+		{
+			"title": "Cooking Simulator",
+			"short_title": "",
+			"end_date": "2023-08-16T09:59:59.0000000Z",
+			"start_date": "2022-08-11T14:00:00.0000000Z",
+			"slug": "cooking-simulator",
+			"console": true
+		}
+	],
+	[
+		"9PM9ZVWT18WR",
+		{
+			"title": "Little Witch in the Woods (Game Preview)",
+			"short_title": "",
+			"end_date": "2024-05-16T09:59:59.0000000Z",
+			"start_date": "2022-08-15T00:00:00.0000000Z",
+			"slug": "little-witch-in-the-woods",
+			"console": true
+		}
+	],
+	[
+		"9PJPV2PC3MWR",
+		{
+			"title": "ANVIL : Vault Breaker (Game Preview)",
+			"short_title": "",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2022-08-16T10:00:00.0000000Z",
+			"slug": "anvil-vault-breaker",
+			"console": true
+		}
+	],
+	[
+		"BRJLJ6RPLQTJ",
+		{
+			"title": "Dead Space (2008)",
+			"short_title": "Dead Space (2008)",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-08-16T10:00:00.0000000Z",
+			"slug": "dead-space",
+			"console": true
+		}
+	],
+	[
+		"9MT6TG9CXR2H",
+		{
+			"title": "This War of Mine: Final Cut",
+			"short_title": "This War of Mine: Final Cut",
+			"end_date": "2023-11-16T09:59:59.0000000Z",
+			"start_date": "2022-08-16T10:00:00.0000000Z",
+			"slug": "this-war-of-mine-final-cut",
+			"console": true
+		}
+	],
+	[
+		"C11KKHB5H7QJ",
+		{
+			"title": "Unravel",
+			"short_title": "Unravel",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-08-16T10:00:00.0000000Z",
+			"slug": "unravel",
+			"console": true
+		}
+	],
+	[
+		"9PDRJWHBSK88",
+		{
+			"title": "Recompile",
+			"short_title": "Recompile",
+			"end_date": "2023-02-16T09:59:59.0000000Z",
+			"start_date": "2022-08-16T22:00:00.0000000Z",
+			"slug": "recompile",
+			"console": true
+		}
+	],
+	[
+		"9N9J38LPVSM3",
+		{
+			"title": "FIFA 22 Xbox One",
+			"short_title": "FIFA 22 Xbox One",
+			"end_date": "2799-12-30T22:59:59.0000000Z",
+			"start_date": "2022-08-23T10:00:00.0000000Z",
+			"slug": "fifa-22-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9N1CS194W1Q6",
+		{
+			"title": "FIFA 22 Xbox Series X|S",
+			"short_title": "FIFA 22 Xbox Series X|S",
+			"end_date": "2799-12-30T22:59:59.0000000Z",
+			"start_date": "2022-08-23T10:00:00.0000000Z",
+			"slug": "fifa-22-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9NRDC9PXDQ5N",
+		{
+			"title": "NHL\u00ae 22 Xbox One",
+			"short_title": "NHL\u00ae 22 Xbox One",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-08-23T10:00:00.0000000Z",
+			"slug": "nhl-22-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9MT364N9QK38",
+		{
+			"title": "NHL\u00ae 22 Xbox Series X|S",
+			"short_title": "NHL\u00ae 22 Xbox Series X|S",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-08-23T10:00:00.0000000Z",
+			"slug": "nhl-22-xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9NNZJ389GSW2",
+		{
+			"title": "RESEARCH and DESTROY",
+			"short_title": "RESEARCH and DESTROY",
+			"end_date": "2024-05-01T09:59:59.0000000Z",
+			"start_date": "2022-08-30T10:00:00.0000000Z",
+			"slug": "research-and-destroy",
+			"console": true
+		}
+	],
+	[
+		"9PK5G9HBH6NH",
+		{
+			"title": "Disc Room",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-09-05T00:00:00.0000000Z",
+			"slug": "disc-room",
+			"console": true
+		}
+	],
+	[
+		"BWL72GR7Z7GK",
+		{
+			"title": "Stellaris: Console Edition",
+			"short_title": "Stellaris",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2022-09-06T10:00:00.0000000Z",
+			"slug": "stellaris-console-edition",
+			"console": true
+		}
+	],
+	[
+		"9PPFBQG81Q5J",
+		{
+			"title": "Besiege Console (Game Preview)",
+			"short_title": "Besiege",
+			"end_date": "2023-02-16T09:59:59.0000000Z",
+			"start_date": "2022-09-13T10:00:00.0000000Z",
+			"slug": "besiege-console",
+			"console": true
+		}
+	],
+	[
+		"9NB7FZ2GV5N1",
+		{
+			"title": "Dreamscaper",
+			"short_title": "Dreamscaper",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2022-09-13T10:00:00.0000000Z",
+			"slug": "dreamscaper",
+			"console": true
+		}
+	],
+	[
+		"9N8WRDC25K6J",
+		{
+			"title": "Pikuniku",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-09-13T10:00:00.0000000Z",
+			"slug": "pikuniku",
+			"console": true
+		}
+	],
+	[
+		"9P5VMG8D4P4B",
+		{
+			"title": "Power Rangers: Battle for the Grid",
+			"short_title": "Power Rangers: Battle for the Grid",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-09-13T10:00:00.0000000Z",
+			"slug": "power-rangers-battle-for-the-grid",
+			"console": true
+		}
+	],
+	[
+		"9NS3673HVH41",
+		{
+			"title": "Teenage Mutant Ninja Turtles: Shredder's Revenge",
+			"short_title": "",
+			"end_date": "2023-06-16T09:59:59.0000000Z",
+			"start_date": "2022-09-14T13:00:00.0000000Z",
+			"slug": "teenage-mutant-ninja-turtles-shredders-revenge",
+			"console": true
+		}
+	],
+	[
+		"9P8WMQ1S4TF9",
+		{
+			"title": "OMORI",
+			"short_title": "OMORI",
+			"end_date": "2023-06-16T09:59:59.0000000Z",
+			"start_date": "2022-09-15T00:00:00.0000000Z",
+			"slug": "omori",
+			"console": true
+		}
+	],
+	[
+		"9N6PHQ93Z451",
+		{
+			"title": "Shadowrun Returns",
+			"short_title": "Shadowrun Returns",
+			"end_date": "2025-06-16T09:59:59.0000000Z",
+			"start_date": "2022-09-19T16:00:00.0000000Z",
+			"slug": "shadowrun-returns",
+			"console": true
+		}
+	],
+	[
+		"9PKJTP6DTND3",
+		{
+			"title": "Shadowrun: Dragonfall - Director's Cut",
+			"short_title": "Shadowrun: Dragonfall - Director's Cut",
+			"end_date": "2025-06-16T09:59:59.0000000Z",
+			"start_date": "2022-09-19T16:00:00.0000000Z",
+			"slug": "shadowrun-dragonfall---directors-cut",
+			"console": true
+		}
+	],
+	[
+		"9N7V5R3VLMJZ",
+		{
+			"title": "Shadowrun: Hong Kong - Extended Edition",
+			"short_title": "Shadowrun: Hong Kong - Extended Edition",
+			"end_date": "2025-06-16T09:59:59.0000000Z",
+			"start_date": "2022-09-19T16:00:00.0000000Z",
+			"slug": "shadowrun-hong-kong---extended-edition",
+			"console": true
+		}
+	],
+	[
+		"C0JN2J76L7C9",
+		{
+			"title": "Battlefield Bad Company 2",
+			"short_title": "Battlefield Bad Company 2",
+			"end_date": "2023-04-28T11:59:59.0000000Z",
+			"start_date": "2022-09-20T10:00:00.0000000Z",
+			"slug": "battlefield-bad-company-2",
+			"console": true
+		}
+	],
+	[
+		"9PKLF2W8J0TF",
+		{
+			"title": "Umurangi Generation Special Edition",
+			"short_title": "Umurangi Generation",
+			"end_date": "2023-05-16T09:59:59.0000000Z",
+			"start_date": "2022-09-20T10:00:00.0000000Z",
+			"slug": "umurangi-generation-special-edition",
+			"console": true
+		}
+	],
+	[
+		"BQ4M1XWXFKHB",
+		{
+			"title": "ScreamRide",
+			"short_title": "ScreamRide",
+			"end_date": "2799-06-14T23:59:59.0000000Z",
+			"start_date": "2022-09-27T10:00:00.0000000Z",
+			"slug": "screamride",
+			"console": true
+		}
+	],
+	[
+		"BV0NM309K1TL",
+		{
+			"title": "Goat Simulator",
+			"short_title": "Goat Simulator",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2022-10-01T10:00:00.0000000Z",
+			"slug": "goat-simulator",
+			"console": true
+		}
+	],
+	[
+		"9PN9WG83X4XF",
+		{
+			"title": "Aragami 2",
+			"short_title": "",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-10-04T10:00:00.0000000Z",
+			"slug": "aragami-2",
+			"console": true
+		}
+	],
+	[
+		"9PHK9D8CLQCG",
+		{
+			"title": "Genesis Noir",
+			"short_title": "Genesis Noir",
+			"end_date": "2024-01-01T09:59:59.0000000Z",
+			"start_date": "2022-10-04T10:00:00.0000000Z",
+			"slug": "genesis-noir",
+			"console": true
+		}
+	],
+	[
+		"9P87CGF1TCCX",
+		{
+			"title": "Kraken Academy!!",
+			"short_title": "Kraken Academy",
+			"end_date": "2023-04-01T09:59:59.0000000Z",
+			"start_date": "2022-10-04T10:00:00.0000000Z",
+			"slug": "kraken-academy",
+			"console": true
+		}
+	],
+	[
+		"9MVXMVT8ZKWC",
+		{
+			"title": "Minecraft",
+			"short_title": "Minecraft",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-10-11T16:00:00.0000000Z",
+			"slug": "minecraft",
+			"console": true
+		}
+	],
+	[
+		"9P3NT9H51RMR",
+		{
+			"title": "Escape Academy",
+			"short_title": "Escape Academy",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-10-12T04:00:00.0000000Z",
+			"slug": "escape-academy",
+			"console": true
+		}
+	],
+	[
+		"BQSCNS1T8PHQ",
+		{
+			"title": "Dead Cells",
+			"short_title": "Dead Cells",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "dead-cells",
+			"console": true
+		}
+	],
+	[
+		"9PC4C9NLP3ZD",
+		{
+			"title": "Dicey Dungeons",
+			"short_title": "Dicey Dungeons",
+			"end_date": "2023-05-16T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "dicey-dungeons",
+			"console": true
+		}
+	],
+	[
+		"9NJG36MFVR1L",
+		{
+			"title": "Exo One",
+			"short_title": "",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "exo-one",
+			"console": true
+		}
+	],
+	[
+		"9P7VCSGBP9KL",
+		{
+			"title": "Moonglow Bay",
+			"short_title": "",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "moonglow-bay",
+			"console": true
+		}
+	],
+	[
+		"9N23WV1HGLTQ",
+		{
+			"title": "Spacelines from the Far Out",
+			"short_title": "Spacelines",
+			"end_date": "2024-06-01T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "spacelines-from-the-far-out",
+			"console": true
+		}
+	],
+	[
+		"9PPBVK3TK83M",
+		{
+			"title": "Tetris\u00ae Effect: Connected",
+			"short_title": "",
+			"end_date": "2023-05-16T09:59:59.0000000Z",
+			"start_date": "2022-10-18T10:00:00.0000000Z",
+			"slug": "tetris-effect-connected",
+			"console": true
+		}
+	],
+	[
+		"BV02TBL15DX3",
+		{
+			"title": "Amnesia: Collection",
+			"short_title": "Amnesia: Collection",
+			"end_date": "2024-04-16T09:59:59.0000000Z",
+			"start_date": "2022-10-20T00:00:00.0000000Z",
+			"slug": "amnesia-collection",
+			"console": true
+		}
+	],
+	[
+		"C23M2TC1ZFPJ",
+		{
+			"title": "SOMA",
+			"short_title": "SOMA",
+			"end_date": "2024-04-16T09:59:59.0000000Z",
+			"start_date": "2022-10-20T00:00:00.0000000Z",
+			"slug": "soma",
+			"console": true
+		}
+	],
+	[
+		"BRL7GC0GP1BM",
+		{
+			"title": "7 Days to Die",
+			"short_title": "7 Days to Die",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "7-days-to-die",
+			"console": true
+		}
+	],
+	[
+		"C2PB7STLJGS0",
+		{
+			"title": "Dead Space\u2122 2",
+			"short_title": "Dead Space\u2122 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "dead-space-2",
+			"console": true
+		}
+	],
+	[
+		"BP73LMGB1DFD",
+		{
+			"title": "Dead Space\u2122 3",
+			"short_title": "Dead Space\u2122 3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "dead-space-3",
+			"console": true
+		}
+	],
+	[
+		"BQG162F04T2L",
+		{
+			"title": "FIGHT NIGHT CHAMPION",
+			"short_title": "FIGHT NIGHT CHAMPION",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "fight-night-champion",
+			"console": true
+		}
+	],
+	[
+		"9MZVSHQZ666K",
+		{
+			"title": "Kill It With Fire",
+			"short_title": "KIWF",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "kill-it-with-fire",
+			"console": true
+		}
+	],
+	[
+		"C0SFCF4PBRSZ",
+		{
+			"title": "Max: The Curse of Brotherhood",
+			"short_title": "Max: The Curse of Brotherhood",
+			"end_date": "2100-06-12T23:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "max-the-curse-of-brotherhood",
+			"console": true
+		}
+	],
+	[
+		"C3VM0TMWNZ5M",
+		{
+			"title": "Need for Speed Rivals",
+			"short_title": "Need for Speed\u2122 Rivals",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "need-for-speed-rivals",
+			"console": true
+		}
+	],
+	[
+		"BXWJNW4170RM",
+		{
+			"title": "Need for Speed\u2122",
+			"short_title": "Need for Speed\u2122",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "need-for-speed",
+			"console": true
+		}
+	],
+	[
+		"BRZZLBF5T245",
+		{
+			"title": "Need for Speed\u2122 Heat",
+			"short_title": "Need for Speed\u2122 Heat ",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "need-for-speed-heat",
+			"console": true
+		}
+	],
+	[
+		"9NMBJQ0265ZK",
+		{
+			"title": "Need for Speed\u2122 Hot Pursuit Remastered",
+			"short_title": "NFS Hot Pursuit Remastered",
+			"end_date": "2220-10-05T21:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "need-for-speed-hot-pursuit-remastered",
+			"console": true
+		}
+	],
+	[
+		"C355T88BBX1S",
+		{
+			"title": "Need for Speed\u2122 Payback",
+			"short_title": "Need for Speed\u2122 Payback",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2022-11-01T10:00:00.0000000Z",
+			"slug": "need-for-speed-payback",
+			"console": true
+		}
+	],
+	[
+		"9P6SRW1HVW9K",
+		{
+			"title": "Farming Simulator 22",
+			"short_title": "",
+			"end_date": "2023-11-16T09:59:59.0000000Z",
+			"start_date": "2022-11-08T00:00:00.0000000Z",
+			"slug": "farming-simulator-22",
+			"console": true
+		}
+	],
+	[
+		"9NP539LHJD8S",
+		{
+			"title": "Frostpunk: Console Edition",
+			"short_title": "Frostpunk: Console Edition",
+			"end_date": "2024-07-16T09:59:59.0000000Z",
+			"start_date": "2022-11-08T10:00:00.0000000Z",
+			"slug": "frostpunk-console-edition",
+			"console": true
+		}
+	],
+	[
+		"9NV2VTVG0L31",
+		{
+			"title": "Chinatown Detective Agency",
+			"short_title": "Chinatown Detective Agency",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2022-11-15T10:00:00.0000000Z",
+			"slug": "chinatown-detective-agency",
+			"console": true
+		}
+	],
+	[
+		"9P16M6LF0QFH",
+		{
+			"title": "My Friend Pedro",
+			"short_title": "Pedro",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-11-16T10:00:00.0000000Z",
+			"slug": "my-friend-pedro",
+			"console": true
+		}
+	],
+	[
+		"9NLX3GWW0HF1",
+		{
+			"title": "Fuga: Melodies of Steel",
+			"short_title": "Fuga",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-11-22T10:00:00.0000000Z",
+			"slug": "fuga-melodies-of-steel",
+			"console": true
+		}
+	],
+	[
+		"9NKKDCVR3VW9",
+		{
+			"title": "OPUS: Echo of Starsong - Full Bloom Edition",
+			"short_title": "",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2022-11-23T00:00:00.0000000Z",
+			"slug": "opus-echo-of-starsong---full-bloom-edition",
+			"console": true
+		}
+	],
+	[
+		"9NL4KTK0N4CG",
+		{
+			"title": "A Memoir Blue",
+			"short_title": "A Memoir Blue",
+			"end_date": "2023-04-01T09:59:59.0000000Z",
+			"start_date": "2022-11-29T10:00:00.0000000Z",
+			"slug": "a-memoir-blue",
+			"console": true
+		}
+	],
+	[
+		"9NPC5398SCQ6",
+		{
+			"title": "Evil Genius 2: World Domination",
+			"short_title": "Evil Genius 2",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-11-29T10:00:00.0000000Z",
+			"slug": "evil-genius-2-world-domination",
+			"console": true
+		}
+	],
+	[
+		"9N673ZL1TCS7",
+		{
+			"title": "Paradise Killer",
+			"short_title": "Paradise Killer",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2022-11-29T10:00:00.0000000Z",
+			"slug": "paradise-killer",
+			"console": true
+		}
+	],
+	[
+		"9NVR4ZQKNBSB",
+		{
+			"title": "Superliminal",
+			"short_title": "",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-11-29T10:00:00.0000000Z",
+			"slug": "superliminal",
+			"console": true
+		}
+	],
+	[
+		"9NH5HN11FG4M",
+		{
+			"title": "Unpacking",
+			"short_title": "Unpacking",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2022-11-29T10:00:00.0000000Z",
+			"slug": "unpacking",
+			"console": true
+		}
+	],
+	[
+		"C0VQBXFNZ1Q0",
+		{
+			"title": "The Walking Dead: The Final Season - The Complete Season",
+			"short_title": "The Walking Dead: The Final Season Complete",
+			"end_date": "2024-12-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T00:00:00.0000000Z",
+			"slug": "the-walking-dead-the-final-season---the-complete-season",
+			"console": true
+		}
+	],
+	[
+		"9NZG72SH3H4W",
+		{
+			"title": "Totally Reliable Delivery Service",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-12-01T00:00:00.0000000Z",
+			"slug": "totally-reliable-delivery-service",
+			"console": true
+		}
+	],
+	[
+		"9N5JRWWGMS1R",
+		{
+			"title": "ARK: Ultimate Survivor Edition",
+			"short_title": "ARK: Ultimate Survivor Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "ark-ultimate-survivor-edition",
+			"console": true
+		}
+	],
+	[
+		"C4GH8N6ZXG5L",
+		{
+			"title": "Cities: Skylines - Xbox One Edition",
+			"short_title": "Cities: Skylines",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "cities-skylines---xbox-one-edition",
+			"console": true
+		}
+	],
+	[
+		"9MZ8RZSD0NFQ",
+		{
+			"title": "Crusader Kings III",
+			"short_title": "Crusader Kings III",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "crusader-kings-iii",
+			"console": true
+		}
+	],
+	[
+		"C0N22P73QZ60",
+		{
+			"title": "Dead by Daylight",
+			"short_title": "Dead by Daylight",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "dead-by-daylight",
+			"console": true
+		}
+	],
+	[
+		"9NHFVWX1V7QJ",
+		{
+			"title": "Deep Rock Galactic",
+			"short_title": "Deep Rock Galactic",
+			"end_date": "2024-11-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "deep-rock-galactic",
+			"console": true
+		}
+	],
+	[
+		"9PB86W3JK8Z5",
+		{
+			"title": "MechWarrior 5: Mercenaries",
+			"short_title": "MW5: Mercs",
+			"end_date": "2799-05-17T23:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "mechwarrior-5-mercenaries",
+			"console": true
+		}
+	],
+	[
+		"9NVN8NSXDK41",
+		{
+			"title": "PAW Patrol The Movie: Adventure City Calls",
+			"short_title": "PAW Patrol The Movie",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "paw-patrol-the-movie-adventure-city-calls",
+			"console": true
+		}
+	],
+	[
+		"9PP8Q82H79LC",
+		{
+			"title": "Sniper Elite 5",
+			"short_title": "Sniper Elite 5",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "sniper-elite-5",
+			"console": true
+		}
+	],
+	[
+		"C3D891Z6TNQM",
+		{
+			"title": "Stardew Valley",
+			"short_title": "Stardew Valley",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2022-12-01T10:00:00.0000000Z",
+			"slug": "stardew-valley",
+			"console": true
+		}
+	],
+	[
+		"9NSF0BGH8D86",
+		{
+			"title": "Disney Dreamlight Valley",
+			"short_title": "Disney Dreamlight Valley",
+			"end_date": "2023-02-16T13:59:59.0000000Z",
+			"start_date": "2022-12-05T13:00:00.0000000Z",
+			"slug": "disney-dreamlight-valley",
+			"console": true
+		}
+	],
+	[
+		"9N961B11FJ4W",
+		{
+			"title": "Hello Neighbor 2",
+			"short_title": "Hello Neighbor 2",
+			"end_date": "2024-12-16T09:59:59.0000000Z",
+			"start_date": "2022-12-05T23:00:00.0000000Z",
+			"slug": "hello-neighbor-2",
+			"console": true
+		}
+	],
+	[
+		"9NN7NF8N5Q5C",
+		{
+			"title": "Empire of Sin",
+			"short_title": "Empire of Sin",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2022-12-06T10:00:00.0000000Z",
+			"slug": "empire-of-sin",
+			"console": true
+		}
+	],
+	[
+		"9PD5BM2Z8C4L",
+		{
+			"title": "Vampire Survivors",
+			"short_title": "Vampire Survivors",
+			"end_date": "2023-02-07T23:59:59.0000000Z",
+			"start_date": "2022-12-10T08:00:00.0000000Z",
+			"slug": "vampire-survivors",
+			"console": true
+		}
+	],
+	[
+		"9PM1905P9LQ6",
+		{
+			"title": "Immortality",
+			"short_title": "IMMORTALITY",
+			"end_date": "2024-09-01T09:59:59.0000000Z",
+			"start_date": "2022-12-12T10:00:00.0000000Z",
+			"slug": "immortality",
+			"console": true
+		}
+	],
+	[
+		"9NLRT31Z4RWM",
+		{
+			"title": "TUNIC",
+			"short_title": "TUNIC",
+			"end_date": "2024-03-16T09:59:59.0000000Z",
+			"start_date": "2022-12-12T10:00:00.0000000Z",
+			"slug": "tunic",
+			"console": true
+		}
+	],
+	[
+		"9MV2S7Q5PHSW",
+		{
+			"title": "Forager",
+			"short_title": "Forager",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2022-12-13T10:00:00.0000000Z",
+			"slug": "forager",
+			"console": true
+		}
+	],
+	[
+		"9MV6MCVLT8GR",
+		{
+			"title": "Lonely Mountains: Downhill",
+			"short_title": "Lonely Mountains: Downhill",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2022-12-13T10:00:00.0000000Z",
+			"slug": "lonely-mountains-downhill",
+			"console": true
+		}
+	],
+	[
+		"9NSFGM8J6MBJ",
+		{
+			"title": "Trailmakers",
+			"short_title": "Trailmakers",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-12-13T10:00:00.0000000Z",
+			"slug": "trailmakers",
+			"console": true
+		}
+	],
+	[
+		"BQ9T0JF0D3L4",
+		{
+			"title": "Wasteland 3",
+			"short_title": "Wasteland 3",
+			"end_date": "2799-09-19T23:59:59.0000000Z",
+			"start_date": "2022-12-13T10:00:00.0000000Z",
+			"slug": "wasteland-3",
+			"console": true
+		}
+	],
+	[
+		"9NCF3MRQ8480",
+		{
+			"title": "You Suck at Parking",
+			"short_title": "You Suck at Parking",
+			"end_date": "2024-09-16T09:59:59.0000000Z",
+			"start_date": "2022-12-13T17:00:00.0000000Z",
+			"slug": "you-suck-at-parking",
+			"console": true
+		}
+	],
+	[
+		"9PMGFL6KM0T2",
+		{
+			"title": "Rainbow Billy: The Curse of the Leviathan",
+			"short_title": "Rainbow Billy",
+			"end_date": "2024-12-16T09:59:59.0000000Z",
+			"start_date": "2022-12-15T00:00:00.0000000Z",
+			"slug": "rainbow-billy-the-curse-of-the-leviathan",
+			"console": true
+		}
+	],
+	[
+		"9N1PS56BR6VK",
+		{
+			"title": "Somerville",
+			"short_title": "SOMERVILLE",
+			"end_date": "2023-02-12T23:59:59.0000000Z",
+			"start_date": "2022-12-15T00:00:00.0000000Z",
+			"slug": "somerville",
+			"console": true
+		}
+	],
+	[
+		"9MW9469V91LM",
+		{
+			"title": "Hollow Knight: Voidheart Edition",
+			"short_title": "Hollow Knight",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-12-16T10:00:00.0000000Z",
+			"slug": "hollow-knight-voidheart-edition",
+			"console": true
+		}
+	],
+	[
+		"9N5521ZQMQMJ",
+		{
+			"title": "Serious Sam 4",
+			"short_title": "Serious Sam 4",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-12-16T10:00:00.0000000Z",
+			"slug": "serious-sam-4",
+			"console": true
+		}
+	],
+	[
+		"9NBQHM0GM30N",
+		{
+			"title": "LAPIN (Game Preview)",
+			"short_title": "LAPIN",
+			"end_date": "2023-02-14T23:59:59.0000000Z",
+			"start_date": "2022-12-17T00:00:00.0000000Z",
+			"slug": "lapin",
+			"console": true
+		}
+	],
+	[
+		"9NZFZXDRZQLR",
+		{
+			"title": "NORCO",
+			"short_title": "",
+			"end_date": "2023-02-14T23:59:59.0000000Z",
+			"start_date": "2022-12-17T00:00:00.0000000Z",
+			"slug": "norco",
+			"console": true
+		}
+	],
+	[
+		"9P6W46XMDJM5",
+		{
+			"title": "Slay The Spire",
+			"short_title": "Slay the Spire",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2022-12-20T10:00:00.0000000Z",
+			"slug": "slay-the-spire",
+			"console": true
+		}
+	],
+	[
+		"9P4R2M0NRWNK",
+		{
+			"title": "Beacon Pines",
+			"short_title": "Beacon Pines",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-12-21T15:00:00.0000000Z",
+			"slug": "beacon-pines",
+			"console": true
+		}
+	],
+	[
+		"9N0TRF57SMQH",
+		{
+			"title": "SpiderHeck",
+			"short_title": "SpiderHeck",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2022-12-21T16:00:00.0000000Z",
+			"slug": "spiderheck",
+			"console": true
+		}
+	],
+	[
+		"9PHFJ0N31NV1",
+		{
+			"title": "Slime Rancher 2",
+			"short_title": "",
+			"end_date": "2024-09-16T09:59:59.0000000Z",
+			"start_date": "2022-12-21T17:00:00.0000000Z",
+			"slug": "slime-rancher-2",
+			"console": true
+		}
+	],
+	[
+		"9P77VD8MGJX8",
+		{
+			"title": "Moonscars",
+			"short_title": "Moonscars",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2022-12-26T16:00:00.0000000Z",
+			"slug": "moonscars",
+			"console": true
+		}
+	],
+	[
+		"9NDZ7NXFF622",
+		{
+			"title": "Death's Door",
+			"short_title": "",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "deaths-door",
+			"console": true
+		}
+	],
+	[
+		"9NLM4TTHCWSH",
+		{
+			"title": "Floppy Knights",
+			"short_title": "Floppy Knights",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "floppy-knights",
+			"console": true
+		}
+	],
+	[
+		"9PP09MJRH2XD",
+		{
+			"title": "Garden Story",
+			"short_title": "",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "garden-story",
+			"console": true
+		}
+	],
+	[
+		"C17GQF31D617",
+		{
+			"title": "INSIDE",
+			"short_title": "INSIDE",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "inside",
+			"console": true
+		}
+	],
+	[
+		"9P6FTM76L1S7",
+		{
+			"title": "Kentucky Route Zero: TV Edition",
+			"short_title": "",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "kentucky-route-zero-tv-edition",
+			"console": true
+		}
+	],
+	[
+		"9P5B81KVDGP1",
+		{
+			"title": "Maneater",
+			"short_title": "",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "maneater",
+			"console": true
+		}
+	],
+	[
+		"9PH1Q5TKPQCQ",
+		{
+			"title": "Midnight Fight Express",
+			"short_title": "Midnight Fight Express",
+			"end_date": "2023-08-16T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "midnight-fight-express",
+			"console": true
+		}
+	],
+	[
+		"9N4PGNQQ7ZFK",
+		{
+			"title": "Shredders",
+			"short_title": "Shredders",
+			"end_date": "2024-03-16T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "shredders",
+			"console": true
+		}
+	],
+	[
+		"9MT8HTJC4GSB",
+		{
+			"title": "The Dungeon Of Naheulbeuk: The Amulet Of Chaos - Chicken Edition",
+			"short_title": "The Dungeon of Naheulbeuk: The Amulet of Chaos",
+			"end_date": "2023-04-01T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "the-dungeon-of-naheulbeuk-the-amulet-of-chaos---chicken-edition",
+			"console": true
+		}
+	],
+	[
+		"9P008L2LS87F",
+		{
+			"title": "The Gunk",
+			"short_title": "The Gunk",
+			"end_date": "2024-12-16T09:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "the-gunk",
+			"console": true
+		}
+	],
+	[
+		"9P0B86JN5X28",
+		{
+			"title": "Weird West",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2022-12-27T10:00:00.0000000Z",
+			"slug": "weird-west",
+			"console": true
+		}
+	],
+	[
+		"9P8N66DTG10T",
+		{
+			"title": "Let's Build a Zoo",
+			"short_title": "",
+			"end_date": "2024-10-01T09:59:59.0000000Z",
+			"start_date": "2022-12-28T00:00:00.0000000Z",
+			"slug": "lets-build-a-zoo",
+			"console": true
+		}
+	],
+	[
+		"9P5ZDVMCJMFD",
+		{
+			"title": "Despot's Game",
+			"short_title": "Despot's Game",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2022-12-28T16:00:00.0000000Z",
+			"slug": "despots-game",
+			"console": true
+		}
+	],
+	[
+		"9PJ1045MHZJ0",
+		{
+			"title": "Soccer Story",
+			"short_title": "",
+			"end_date": "2023-02-26T23:59:59.0000000Z",
+			"start_date": "2022-12-29T00:00:00.0000000Z",
+			"slug": "soccer-story",
+			"console": true
+		}
+	],
+	[
+		"9NSBX56ZNP7X",
+		{
+			"title": "Eastward",
+			"short_title": "",
+			"end_date": "2023-03-01T12:59:59.0000000Z",
+			"start_date": "2022-12-31T13:00:00.0000000Z",
+			"slug": "eastward",
+			"console": true
+		}
+	],
+	[
+		"9N360TZQZ0TR",
+		{
+			"title": "Before We Leave",
+			"short_title": "Before We Leave",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-01T10:00:00.0000000Z",
+			"slug": "before-we-leave",
+			"console": true
+		}
+	],
+	[
+		"BS34VNW7H61F",
+		{
+			"title": "Pillars of Eternity: Complete Edition",
+			"short_title": "Pillars of Eternity",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-01T10:00:00.0000000Z",
+			"slug": "pillars-of-eternity-complete-edition",
+			"console": true
+		}
+	],
+	[
+		"9PL36RW9ZTPW",
+		{
+			"title": "Rubber Bandits",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-01-02T00:00:00.0000000Z",
+			"slug": "rubber-bandits",
+			"console": true
+		}
+	],
+	[
+		"C1H9V6SLK2K5",
+		{
+			"title": "Alien: Isolation",
+			"short_title": "Alien, Isolation",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "alien-isolation",
+			"console": true
+		}
+	],
+	[
+		"9NG07QJNK38J",
+		{
+			"title": "Among Us",
+			"short_title": "Among Us",
+			"end_date": "2023-06-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "among-us",
+			"console": true
+		}
+	],
+	[
+		"9N7GCF5SGCXC",
+		{
+			"title": "Battletoads",
+			"short_title": "Battletoads",
+			"end_date": "2799-08-19T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "battletoads",
+			"console": true
+		}
+	],
+	[
+		"9NJWFF2KHL6H",
+		{
+			"title": "Ben 10: Power Trip",
+			"short_title": "Ben 10: Power Trip",
+			"end_date": "2023-12-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "ben-10-power-trip",
+			"console": true
+		}
+	],
+	[
+		"9NX6XGVJ0J3D",
+		{
+			"title": "Bleeding Edge",
+			"short_title": "Bleeding Edge",
+			"end_date": "2799-03-24T07:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "bleeding-edge",
+			"console": true
+		}
+	],
+	[
+		"9N7CJX93ZGWN",
+		{
+			"title": "Chivalry 2",
+			"short_title": "Chivalry 2",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "chivalry-2",
+			"console": true
+		}
+	],
+	[
+		"9NN1Z8LHMFBV",
+		{
+			"title": "Chorus",
+			"short_title": "",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "chorus",
+			"console": true
+		}
+	],
+	[
+		"9N1NBJNDD08J",
+		{
+			"title": "Commandos 3 - HD Remaster",
+			"short_title": "Commandos 3 - HD Remaster",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "commandos-3---hd-remaster",
+			"console": true
+		}
+	],
+	[
+		"9NGCPXQG3NLZ",
+		{
+			"title": "Crown Trick",
+			"short_title": "Crown Trick",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "crown-trick",
+			"console": true
+		}
+	],
+	[
+		"9NKK6CX54183",
+		{
+			"title": "Day of the Tentacle Remastered",
+			"short_title": "",
+			"end_date": "2799-10-27T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "day-of-the-tentacle-remastered",
+			"console": true
+		}
+	],
+	[
+		"BSR9NLHVF1KL",
+		{
+			"title": "DayZ",
+			"short_title": "DayZ",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dayz",
+			"console": true
+		}
+	],
+	[
+		"9NP1G0T8JDMR",
+		{
+			"title": "DC League of Super-Pets: The Adventures of Krypto and Ace",
+			"short_title": "DC League of Super Pets",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dc-league-of-super-pets-the-adventures-of-krypto-and-ace",
+			"console": true
+		}
+	],
+	[
+		"9P5Z4530318L",
+		{
+			"title": "DEATHLOOP",
+			"short_title": "DEATHLOOP",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "deathloop",
+			"console": true
+		}
+	],
+	[
+		"C2GMBPMTHDDK",
+		{
+			"title": "Destroy All Humans!",
+			"short_title": "Destroy All Humans!",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "destroy-all-humans",
+			"console": true
+		}
+	],
+	[
+		"BSZM480TSWGP",
+		{
+			"title": "Dishonored 2",
+			"short_title": "Dishonored 2",
+			"end_date": "2799-09-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dishonored-2",
+			"console": true
+		}
+	],
+	[
+		"C299QVC2BSJF",
+		{
+			"title": "Dishonored\u00ae Definitive Edition",
+			"short_title": "Dishonored Definitive Edition",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dishonored-definitive-edition",
+			"console": true
+		}
+	],
+	[
+		"C3QH42WRGM3R",
+		{
+			"title": "DOOM",
+			"short_title": "DOOM",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "doom",
+			"console": true
+		}
+	],
+	[
+		"9P5S26314HWQ",
+		{
+			"title": "DOOM Eternal Standard Edition",
+			"short_title": "DOOM Eternal Standard Edition",
+			"end_date": "2799-09-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "doom-eternal-standard-edition",
+			"console": true
+		}
+	],
+	[
+		"BS9SX4Q6XJRF",
+		{
+			"title": "Dragon Age: Origins",
+			"short_title": "Dragon Age: Origins",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dragon-age-origins",
+			"console": true
+		}
+	],
+	[
+		"C4G76555T4QN",
+		{
+			"title": "Dragon Age\u2122 2",
+			"short_title": "Dragon Age\u2122 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dragon-age-2",
+			"console": true
+		}
+	],
+	[
+		"BZRK5C951KK7",
+		{
+			"title": "DRAGON BALL FIGHTERZ",
+			"short_title": "DRAGON BALL FIGHTERZ",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dragon-ball-fighterz",
+			"console": true
+		}
+	],
+	[
+		"9PFD00CZJ35V",
+		{
+			"title": "DRAGON QUEST BUILDERS 2",
+			"short_title": "DRAGON QUEST BUILDERS 2",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "dragon-quest-builders-2",
+			"console": true
+		}
+	],
+	[
+		"C2Q32JM0BPZL",
+		{
+			"title": "Fable Anniversary",
+			"short_title": "Fable Anniversary",
+			"end_date": "2799-08-31T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "fable-anniversary",
+			"console": true
+		}
+	],
+	[
+		"C2WKJJ9F5936",
+		{
+			"title": "Fable II",
+			"short_title": "Fable II",
+			"end_date": "2799-06-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "fable-ii",
+			"console": true
+		}
+	],
+	[
+		"BR46KM4D5B9L",
+		{
+			"title": "Fable III",
+			"short_title": "Fable III",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "fable-iii",
+			"console": true
+		}
+	],
+	[
+		"9P3ZRGNQVC7D",
+		{
+			"title": "Full Throttle Remastered",
+			"short_title": "",
+			"end_date": "2799-10-27T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "full-throttle-remastered",
+			"console": true
+		}
+	],
+	[
+		"BPQZT43FWD49",
+		{
+			"title": "Gang Beasts",
+			"short_title": "Gang Beasts",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "gang-beasts",
+			"console": true
+		}
+	],
+	[
+		"9P4KMR76PLLQ",
+		{
+			"title": "Gears 5 Game of the Year Edition",
+			"short_title": "",
+			"end_date": "2799-11-23T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "gears-5-game-of-the-year-edition",
+			"console": true
+		}
+	],
+	[
+		"9NBLGGH4PBBM",
+		{
+			"title": "Gears of War 4",
+			"short_title": "Gears of War 4",
+			"end_date": "2799-06-09T05:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "gears-of-war-4",
+			"console": true
+		}
+	],
+	[
+		"9NN3HCKW5TPC",
+		{
+			"title": "Gears Tactics",
+			"short_title": "Gears Tactics",
+			"end_date": "2799-11-09T15:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "gears-tactics",
+			"console": true
+		}
+	],
+	[
+		"C20WW4W29FQ1",
+		{
+			"title": "Generation Zero\u00ae",
+			"short_title": "Generation Zero \u00ae",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "generation-zero",
+			"console": true
+		}
+	],
+	[
+		"9PC288TN7R8K",
+		{
+			"title": "Grim Fandango Remastered",
+			"short_title": "",
+			"end_date": "2799-10-27T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "grim-fandango-remastered",
+			"console": true
+		}
+	],
+	[
+		"9PJTHRNVH62H",
+		{
+			"title": "Grounded",
+			"short_title": "Grounded",
+			"end_date": "2799-07-21T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "grounded",
+			"console": true
+		}
+	],
+	[
+		"9P87CLMPXSN6",
+		{
+			"title": "Gungrave G.O.R.E",
+			"short_title": "Gungrave G.O.R.E",
+			"end_date": "2023-02-20T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "gungrave-gore",
+			"console": true
+		}
+	],
+	[
+		"C4Z7QM8FSXM2",
+		{
+			"title": "Hellblade: Senua's Sacrifice",
+			"short_title": "Hellblade: Senua's Sacrifice",
+			"end_date": "2799-12-17T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "hellblade-senuas-sacrifice",
+			"console": true
+		}
+	],
+	[
+		"BSMZH25V6V46",
+		{
+			"title": "Human Fall Flat",
+			"short_title": "Human: Fall Flat",
+			"end_date": "2028-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "human-fall-flat",
+			"console": true
+		}
+	],
+	[
+		"9MWHMJ0SRBXV",
+		{
+			"title": "Jurassic World Evolution 2",
+			"short_title": "Jurassic World Evolution 2",
+			"end_date": "2023-11-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "jurassic-world-evolution-2",
+			"console": true
+		}
+	],
+	[
+		"9P9MC8B7R5FP",
+		{
+			"title": "Just Cause 4: Reloaded",
+			"short_title": "Reloaded",
+			"end_date": "2023-05-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "just-cause-4-reloaded",
+			"console": true
+		}
+	],
+	[
+		"BRX6HS1G5CDK",
+		{
+			"title": "Marvel's Avengers",
+			"short_title": "Marvel's Avengers",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "marvels-avengers",
+			"console": true
+		}
+	],
+	[
+		"9PGLL77C201J",
+		{
+			"title": "Marvel's Guardians of the Galaxy",
+			"short_title": "Marvel's Guardians of the Galaxy",
+			"end_date": "2023-03-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "marvels-guardians-of-the-galaxy",
+			"console": true
+		}
+	],
+	[
+		"9PMQDM08SNK9",
+		{
+			"title": "Microsoft Flight Simulator Standard 40th Anniversary Edition",
+			"short_title": "Microsoft Flight Simulator Standard 40th Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "microsoft-flight-simulator-standard-40th-anniversary-edition",
+			"console": true
+		}
+	],
+	[
+		"C48LBRJJCP2L",
+		{
+			"title": "Mirror's Edge\u2122 Catalyst",
+			"short_title": "Mirror's Edge\u2122 Catalyst",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "mirrors-edge-catalyst",
+			"console": true
+		}
+	],
+	[
+		"9P6N58X27150",
+		{
+			"title": "MotoGP\u212222",
+			"short_title": "MotoGP\u212222",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "motogp22",
+			"console": true
+		}
+	],
+	[
+		"9NDJLXD2X2DM",
+		{
+			"title": "My Friend Peppa Pig",
+			"short_title": "Peppa Pig",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "my-friend-peppa-pig",
+			"console": true
+		}
+	],
+	[
+		"BX1FZX1X4132",
+		{
+			"title": "My Time At Portia",
+			"short_title": "My Time at Portia",
+			"end_date": "2023-10-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "my-time-at-portia",
+			"console": true
+		}
+	],
+	[
+		"9MVVDHS95RCL",
+		{
+			"title": "NARAKA: BLADEPOINT - Standard Edition",
+			"short_title": "",
+			"end_date": "2023-02-14T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "naraka-bladepoint---standard-edition",
+			"console": true
+		}
+	],
+	[
+		"9NC781DK18GN",
+		{
+			"title": "Neon Abyss",
+			"short_title": "Neon Abyss",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "neon-abyss",
+			"console": true
+		}
+	],
+	[
+		"BQVQTL3PCH05",
+		{
+			"title": "No Man's Sky",
+			"short_title": "No Man's Sky",
+			"end_date": "2023-12-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "no-mans-sky",
+			"console": true
+		}
+	],
+	[
+		"9N9606CC950J",
+		{
+			"title": "OCTOPATH TRAVELER",
+			"short_title": "",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "octopath-traveler",
+			"console": true
+		}
+	],
+	[
+		"9N8CD0XZKLP4",
+		{
+			"title": "Ori and the Will of the Wisps",
+			"short_title": "Ori and the Will of the Wisps",
+			"end_date": "2799-04-10T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "ori-and-the-will-of-the-wisps",
+			"console": true
+		}
+	],
+	[
+		"9N3TF03KNTBD",
+		{
+			"title": "PAW Patrol Mighty Pups Save Adventure Bay",
+			"short_title": "Paw Patrol",
+			"end_date": "2023-12-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "paw-patrol-mighty-pups-save-adventure-bay",
+			"console": true
+		}
+	],
+	[
+		"9MWBT3HFCZ3Z",
+		{
+			"title": "PAW Patrol: Grand Prix",
+			"short_title": "PAW Patrol: Grand Prix",
+			"end_date": "2023-10-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "paw-patrol-grand-prix",
+			"console": true
+		}
+	],
+	[
+		"C2Z9D406G0KQ",
+		{
+			"title": "PAYDAY 2: CRIMEWAVE EDITION",
+			"short_title": "PAYDAY 2",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "payday-2-crimewave-edition",
+			"console": true
+		}
+	],
+	[
+		"BTJ0T8C04ZBV",
+		{
+			"title": "Plants vs. Zombies Garden Warfare",
+			"short_title": "Plants vs. Zombies Garden Warfare",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "plants-vs-zombies-garden-warfare",
+			"console": true
+		}
+	],
+	[
+		"BNRH7BRC1D02",
+		{
+			"title": "Plants vs. Zombies\u2122 Garden Warfare 2",
+			"short_title": "Plants vs. Zombies\u2122 Garden Warfare 2",
+			"end_date": "2098-12-31T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "plants-vs-zombies-garden-warfare-2",
+			"console": true
+		}
+	],
+	[
+		"9NHDJC0NW20M",
+		{
+			"title": "PowerWash Simulator",
+			"short_title": "PowerWash Simulator",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "powerwash-simulator",
+			"console": true
+		}
+	],
+	[
+		"BQMVWCMB8P59",
+		{
+			"title": "Prey",
+			"short_title": "Prey",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "prey",
+			"console": true
+		}
+	],
+	[
+		"9MZRSLLWKWDV",
+		{
+			"title": "Prodeus",
+			"short_title": "Prodeus",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "prodeus",
+			"console": true
+		}
+	],
+	[
+		"BR27BSZ2M3SR",
+		{
+			"title": "RAGE",
+			"short_title": "RAGE",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "rage",
+			"console": true
+		}
+	],
+	[
+		"C22T53SQ7FLM",
+		{
+			"title": "Rare Replay",
+			"short_title": "Rare Replay",
+			"end_date": "2799-06-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "rare-replay",
+			"console": true
+		}
+	],
+	[
+		"9P2N57MC619K",
+		{
+			"title": "Sea of Thieves",
+			"short_title": "Sea of Thieves",
+			"end_date": "2799-03-20T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "sea-of-thieves",
+			"console": true
+		}
+	],
+	[
+		"BNKDKQXMXRR2",
+		{
+			"title": "Skate 3",
+			"short_title": "Skate 3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "skate-3",
+			"console": true
+		}
+	],
+	[
+		"C3QWNCV55VLL",
+		{
+			"title": "skate. (2007)",
+			"short_title": "skate. (2007)",
+			"end_date": "2799-12-31T22:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "skate",
+			"console": true
+		}
+	],
+	[
+		"9NXNST9MKMK1",
+		{
+			"title": "Stranded Deep",
+			"short_title": "Stranded Deep",
+			"end_date": "2024-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "stranded-deep",
+			"console": true
+		}
+	],
+	[
+		"C27QL5JBKQ8M",
+		{
+			"title": "The Ascent",
+			"short_title": "The Ascent",
+			"end_date": "2023-02-08T21:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "the-ascent",
+			"console": true
+		}
+	],
+	[
+		"C2M8HBNVPT1T",
+		{
+			"title": "The Evil Within",
+			"short_title": "The Evil Within",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "the-evil-within",
+			"console": true
+		}
+	],
+	[
+		"C40860J5R2MP",
+		{
+			"title": "The Evil Within\u00ae 2",
+			"short_title": "The Evil Within 2",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "the-evil-within-2",
+			"console": true
+		}
+	],
+	[
+		"9NQTJK43NCQJ",
+		{
+			"title": "The Last Kids on Earth and the Staff of Doom",
+			"short_title": "The Last Kids on Earth",
+			"end_date": "2023-02-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "the-last-kids-on-earth-and-the-staff-of-doom",
+			"console": true
+		}
+	],
+	[
+		"BXBJQ1932138",
+		{
+			"title": "theHunter: Call of the Wild",
+			"short_title": "theHunter: Call of the Wild",
+			"end_date": "2023-06-16T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "thehunter-call-of-the-wild",
+			"console": true
+		}
+	],
+	[
+		"C0X2HNVH08FB",
+		{
+			"title": "Titanfall\u00ae 2",
+			"short_title": "Titanfall\u00ae 2",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "titanfall-2",
+			"console": true
+		}
+	],
+	[
+		"9PN99PX1P1LX",
+		{
+			"title": "Train Sim World\u00ae 3: Standard Edition",
+			"short_title": "TSW3",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "train-sim-world-3-standard-edition",
+			"console": true
+		}
+	],
+	[
+		"9MTCRVZQN3GV",
+		{
+			"title": "Trek to Yomi",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "trek-to-yomi",
+			"console": true
+		}
+	],
+	[
+		"9PCW1SMN9RGG",
+		{
+			"title": "Two Point Campus",
+			"short_title": "Two Point Campus ",
+			"end_date": "2023-02-09T14:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "two-point-campus",
+			"console": true
+		}
+	],
+	[
+		"C4VKLMG1HLZW",
+		{
+			"title": "Unravel Two",
+			"short_title": "Unravel Two",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "unravel-two",
+			"console": true
+		}
+	],
+	[
+		"C421ZX7RCG0W",
+		{
+			"title": "Wolfenstein: Youngblood",
+			"short_title": "Wolfenstein: Youngblood",
+			"end_date": "2799-02-17T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "wolfenstein-youngblood",
+			"console": true
+		}
+	],
+	[
+		"C4LLMHFQ1BXQ",
+		{
+			"title": "Wolfenstein\u00ae II: The New Colossus\u2122",
+			"short_title": "Wolfenstein\u00ae II: The New Colossus\u2122",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "wolfenstein-ii-the-new-colossus",
+			"console": true
+		}
+	],
+	[
+		"9NXCSWCQTNFG",
+		{
+			"title": "Yakuza: Like a Dragon",
+			"short_title": "Yakuza: Like a Dragon",
+			"end_date": "2023-02-14T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "yakuza-like-a-dragon",
+			"console": true
+		}
+	],
+	[
+		"9PMM5T8C0CN6",
+		{
+			"title": "Young Souls",
+			"short_title": "",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-01-03T10:00:00.0000000Z",
+			"slug": "young-souls",
+			"console": true
+		}
+	],
+	[
+		"9PDDP6ML6XHF",
+		{
+			"title": "Medieval Dynasty",
+			"short_title": "Medieval Dynasty",
+			"end_date": "2024-02-16T09:59:59.0000000Z",
+			"start_date": "2023-01-04T10:00:00.0000000Z",
+			"slug": "medieval-dynasty",
+			"console": true
+		}
+	],
+	[
+		"9PC2BJDXR2LK",
+		{
+			"title": "Mortal Shell: Enhanced Edition",
+			"short_title": "",
+			"end_date": "2023-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-05T00:00:00.0000000Z",
+			"slug": "mortal-shell-enhanced-edition",
+			"console": true
+		}
+	],
+	[
+		"9N1WWRPJ12FK",
+		{
+			"title": "Chained Echoes",
+			"short_title": "",
+			"end_date": "2023-03-07T23:59:59.0000000Z",
+			"start_date": "2023-01-07T00:00:00.0000000Z",
+			"slug": "chained-echoes",
+			"console": true
+		}
+	],
+	[
+		"9PC12991NZ5N",
+		{
+			"title": "Eville",
+			"short_title": "Eville",
+			"end_date": "2023-10-16T09:59:59.0000000Z",
+			"start_date": "2023-01-09T08:00:00.0000000Z",
+			"slug": "eville",
+			"console": true
+		}
+	],
+	[
+		"9NP4BGBLLLXM",
+		{
+			"title": "Monster Train",
+			"short_title": "Monster Train ",
+			"end_date": "2024-06-16T09:59:59.0000000Z",
+			"start_date": "2023-01-10T10:00:00.0000000Z",
+			"slug": "monster-train",
+			"console": true
+		}
+	],
+	[
+		"9N0T8V0R7MBC",
+		{
+			"title": "Turnip Boy Commits Tax Evasion",
+			"short_title": "Turnip Boy",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2023-01-10T10:00:00.0000000Z",
+			"slug": "turnip-boy-commits-tax-evasion",
+			"console": true
+		}
+	],
+	[
+		"BP9JQBJM0FNW",
+		{
+			"title": "Anthem\u2122",
+			"short_title": "Anthem\u2122",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-10T23:00:00.0000000Z",
+			"slug": "anthem",
+			"console": true
+		}
+	],
+	[
+		"9NL4714VTLRS",
+		{
+			"title": "High On Life",
+			"short_title": "High On Life",
+			"end_date": "2023-03-12T23:59:59.0000000Z",
+			"start_date": "2023-01-12T00:00:00.0000000Z",
+			"slug": "high-on-life",
+			"console": true
+		}
+	],
+	[
+		"9P544PGZXC0P",
+		{
+			"title": "DJMAX RESPECT V",
+			"short_title": "DJMAX RESPECT V",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-12T10:00:00.0000000Z",
+			"slug": "djmax-respect-v",
+			"console": true
+		}
+	],
+	[
+		"9MW7WD7J3PPK",
+		{
+			"title": "Potion Craft: Alchemist Simulator",
+			"short_title": "Potion Craft: Alchemist Simulator",
+			"end_date": "2023-03-13T16:59:59.0000000Z",
+			"start_date": "2023-01-12T17:00:00.0000000Z",
+			"slug": "potion-craft-alchemist-simulator",
+			"console": true
+		}
+	],
+	[
+		"BNRX1DN6GXM6",
+		{
+			"title": "Bridge Constructor Portal",
+			"short_title": "Bridge Constructor Portal",
+			"end_date": "2023-06-16T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "bridge-constructor-portal",
+			"console": true
+		}
+	],
+	[
+		"9N6F97F9WGL0",
+		{
+			"title": "Citizen Sleeper",
+			"short_title": "Citizen Sleeper",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "citizen-sleeper",
+			"console": true
+		}
+	],
+	[
+		"C5F2XDQPPJKZ",
+		{
+			"title": "Dishonored\u00ae: Death of the Outsider\u2122",
+			"short_title": "Dishonored: Death of the Outsider",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "dishonored-death-of-the-outsider",
+			"console": true
+		}
+	],
+	[
+		"9PLZPHBNHTMF",
+		{
+			"title": "DOOM (1993)",
+			"short_title": "DOOM (1993)",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "doom",
+			"console": true
+		}
+	],
+	[
+		"9NSL68D814GC",
+		{
+			"title": "DOOM 3",
+			"short_title": "DOOM 3",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "doom-3",
+			"console": true
+		}
+	],
+	[
+		"9MXND4PQLK3W",
+		{
+			"title": "DOOM 64",
+			"short_title": "DOOM 64",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "doom-64",
+			"console": true
+		}
+	],
+	[
+		"9PLT62LRF9V7",
+		{
+			"title": "DOOM II (Classic)",
+			"short_title": "DOOM II (Classic)",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "doom-ii",
+			"console": true
+		}
+	],
+	[
+		"BS6WJ2L56B10",
+		{
+			"title": "Fallout 76",
+			"short_title": "Fallout 76",
+			"end_date": "2799-03-16T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "fallout-76",
+			"console": true
+		}
+	],
+	[
+		"9N14G09PWG74",
+		{
+			"title": "Golf With Your Friends",
+			"short_title": "Golf With Your Friends",
+			"end_date": "2023-08-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "golf-with-your-friends",
+			"console": true
+		}
+	],
+	[
+		"9MZNS9NZ97PF",
+		{
+			"title": "Monster Sanctuary",
+			"short_title": "Monster Sanctuary",
+			"end_date": "2024-12-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "monster-sanctuary",
+			"console": true
+		}
+	],
+	[
+		"BVJLKDG2TX8H",
+		{
+			"title": "Overcooked! 2",
+			"short_title": "Overcooked! 2",
+			"end_date": "2024-12-16T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "overcooked-2",
+			"console": true
+		}
+	],
+	[
+		"9PJD2KMX7TZ6",
+		{
+			"title": "Pillars of Eternity II: Deadfire - Ultimate Edition",
+			"short_title": "Pillars of Eternity II: Deadfire",
+			"end_date": "2024-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "pillars-of-eternity-ii-deadfire---ultimate-edition",
+			"console": true
+		}
+	],
+	[
+		"9P1Z43KRNQD4",
+		{
+			"title": "Quake",
+			"short_title": "Quake",
+			"end_date": "2799-08-19T19:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "quake",
+			"console": true
+		}
+	],
+	[
+		"C2DCJ95ZXBMS",
+		{
+			"title": "RAGE 2",
+			"short_title": "RAGE 2",
+			"end_date": "2799-11-14T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "rage-2",
+			"console": true
+		}
+	],
+	[
+		"9NVBKDF85W8T",
+		{
+			"title": "Road 96",
+			"short_title": "Road 96",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "road-96",
+			"console": true
+		}
+	],
+	[
+		"9PNRSC0J6DT8",
+		{
+			"title": "SnowRunner",
+			"short_title": "SnowRunner",
+			"end_date": "2024-05-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "snowrunner",
+			"console": true
+		}
+	],
+	[
+		"BQ1W1T1FC14W",
+		{
+			"title": "The Elder Scrolls V: Skyrim Special Edition",
+			"short_title": "Skyrim Special Edition",
+			"end_date": "2799-12-13T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "the-elder-scrolls-v-skyrim-special-edition",
+			"console": true
+		}
+	],
+	[
+		"9P94PCKP864B",
+		{
+			"title": "The Riftbreaker",
+			"short_title": "Riftbreaker",
+			"end_date": "2023-04-16T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "the-riftbreaker",
+			"console": true
+		}
+	],
+	[
+		"9N5JX0CG1SVC",
+		{
+			"title": "The Yakuza Remastered Collection",
+			"short_title": "",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "the-yakuza-remastered-collection",
+			"console": true
+		}
+	],
+	[
+		"9NLLP82XVSKH",
+		{
+			"title": "Tinykin",
+			"short_title": "Tinykin",
+			"end_date": "2023-09-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "tinykin",
+			"console": true
+		}
+	],
+	[
+		"BT9FFLG51VVG",
+		{
+			"title": "Wolfenstein: The New Order",
+			"short_title": "Wolfenstein: The New Order",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "wolfenstein-the-new-order",
+			"console": true
+		}
+	],
+	[
+		"BPV4GXTDCNSH",
+		{
+			"title": "Wolfenstein: The Old Blood",
+			"short_title": "Wolfenstein: The Old Blood",
+			"end_date": "2799-03-11T23:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "wolfenstein-the-old-blood",
+			"console": true
+		}
+	],
+	[
+		"9NPP17LHJ3MK",
+		{
+			"title": "Yakuza 0",
+			"short_title": "Yakuza 0",
+			"end_date": "2024-04-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-0",
+			"console": true
+		}
+	],
+	[
+		"9N3460XCS8BC",
+		{
+			"title": "Yakuza 3 Remastered",
+			"short_title": "",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-3-remastered",
+			"console": true
+		}
+	],
+	[
+		"9NXFD44B98P4",
+		{
+			"title": "Yakuza 4 Remastered",
+			"short_title": "",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-4-remastered",
+			"console": true
+		}
+	],
+	[
+		"9NK23S9XBMZ6",
+		{
+			"title": "Yakuza 5 Remastered",
+			"short_title": "",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-5-remastered",
+			"console": true
+		}
+	],
+	[
+		"9NK3ZFC5R579",
+		{
+			"title": "Yakuza 6: The Song of Life",
+			"short_title": "Yakuza 6",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-6-the-song-of-life",
+			"console": true
+		}
+	],
+	[
+		"9NBJ51BD0LTH",
+		{
+			"title": "Yakuza Kiwami",
+			"short_title": "Yakuza Kiwami",
+			"end_date": "2024-04-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-kiwami",
+			"console": true
+		}
+	],
+	[
+		"9PBJL0NLFMK9",
+		{
+			"title": "Yakuza Kiwami 2",
+			"short_title": "Yakuza Kiwami 2",
+			"end_date": "2024-04-01T09:59:59.0000000Z",
+			"start_date": "2023-01-17T10:00:00.0000000Z",
+			"slug": "yakuza-kiwami-2",
+			"console": true
+		}
+	],
+	[
+		"9PMM21KVRD72",
+		{
+			"title": "Amnesia: Rebirth",
+			"short_title": "Amnesia: Rebirth",
+			"end_date": "2024-04-16T09:59:59.0000000Z",
+			"start_date": "2023-01-18T00:00:00.0000000Z",
+			"slug": "amnesia-rebirth",
+			"console": true
+		}
+	],
+	[
+		"9NCBTFHWJQNX",
+		{
+			"title": "Phantom Abyss (Game Preview)",
+			"short_title": "Phantom Abyss",
+			"end_date": "2024-04-16T09:59:59.0000000Z",
+			"start_date": "2023-01-18T00:00:00.0000000Z",
+			"slug": "phantom-abyss",
+			"console": true
+		}
+	],
+	[
+		"9NJWL0XVLP7T",
+		{
+			"title": "Persona 3 Portable",
+			"short_title": "Persona 3 Portable",
+			"end_date": "2023-02-18T04:59:59.0000000Z",
+			"start_date": "2023-01-19T05:00:00.0000000Z",
+			"slug": "persona-3-portable",
+			"console": true
+		}
+	],
+	[
+		"9PK4B09SMN5C",
+		{
+			"title": "Persona 4 Golden",
+			"short_title": "Persona 4 Golden",
+			"end_date": "2023-02-18T04:59:59.0000000Z",
+			"start_date": "2023-01-19T05:00:00.0000000Z",
+			"slug": "persona-4-golden",
+			"console": true
+		}
+	],
+	[
+		"9NM3TNRPQXLR",
+		{
+			"title": "Scorn",
+			"short_title": "Scorn",
+			"end_date": "2024-10-16T09:59:59.0000000Z",
+			"start_date": "2023-01-19T10:00:00.0000000Z",
+			"slug": "scorn",
+			"console": true
+		}
+	],
+	[
+		"9N1VP8WDQK4D",
+		{
+			"title": "Monster Hunter Rise",
+			"short_title": "Monster Hunter Rise",
+			"end_date": "2023-02-18T23:59:59.0000000Z",
+			"start_date": "2023-01-19T23:00:00.0000000Z",
+			"slug": "monster-hunter-rise",
+			"console": true
+		}
+	],
+	[
+		"9N17CM38WNN8",
+		{
+			"title": "Coffee Talk",
+			"short_title": "",
+			"end_date": "2023-08-16T09:59:59.0000000Z",
+			"start_date": "2023-01-24T10:00:00.0000000Z",
+			"slug": "coffee-talk",
+			"console": true
+		}
+	],
+	[
+		"C46KTZB9HK8B",
+		{
+			"title": "Insurgency: Sandstorm",
+			"short_title": "Insurgency: Sandstorm",
+			"end_date": "2024-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-24T10:00:00.0000000Z",
+			"slug": "insurgency-sandstorm",
+			"console": true
+		}
+	],
+	[
+		"9P01JWGQGQ9C",
+		{
+			"title": "Gunfire Reborn",
+			"short_title": "Gunfire Reborn",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-01-25T14:00:00.0000000Z",
+			"slug": "gunfire-reborn",
+			"console": true
+		}
+	],
+	[
+		"9PLF2RS7JRZL",
+		{
+			"title": "SIGNALIS",
+			"short_title": "SIGNALIS",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-01-25T14:00:00.0000000Z",
+			"slug": "signalis",
+			"console": true
+		}
+	],
+	[
+		"9NFTC552K3GJ",
+		{
+			"title": "Hi-Fi RUSH",
+			"short_title": "Hi-Fi RUSH",
+			"end_date": "2023-02-24T20:59:59.0000000Z",
+			"start_date": "2023-01-25T21:00:00.0000000Z",
+			"slug": "hi-fi-rush",
+			"console": true
+		}
+	],
+	[
+		"9NCBTKXHFF8K",
+		{
+			"title": "The Legend of Tianding",
+			"short_title": "The Legend of Tianding",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-01-30T00:00:00.0000000Z",
+			"slug": "the-legend-of-tianding",
+			"console": true
+		}
+	],
+	[
+		"9P47S7NJGWZL",
+		{
+			"title": "Roboquest (Game Preview)",
+			"short_title": "",
+			"end_date": "2023-03-01T16:59:59.0000000Z",
+			"start_date": "2023-01-30T17:00:00.0000000Z",
+			"slug": "roboquest",
+			"console": true
+		}
+	],
+	[
+		"BW9TWC8L4JCS",
+		{
+			"title": "Assassin's Creed\u00ae Odyssey",
+			"short_title": "Assassin's Creed\u00ae Odyssey",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T00:00:00.0000000Z",
+			"slug": "assassins-creed-odyssey",
+			"console": true
+		}
+	],
+	[
+		"BR7X7MVBBQKM",
+		{
+			"title": "Far Cry\u00ae 5",
+			"short_title": "Far Cry 5",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T00:00:00.0000000Z",
+			"slug": "far-cry-5",
+			"console": true
+		}
+	],
+	[
+		"9P4811KBD5R9",
+		{
+			"title": "JoJo's Bizarre Adventure: All-Star Battle R",
+			"short_title": "JoJo's Bizarre Adventure: All-Star Battle R",
+			"end_date": "2024-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T00:00:00.0000000Z",
+			"slug": "jojos-bizarre-adventure-all-star-battle-r",
+			"console": true
+		}
+	],
+	[
+		"C2N9CS4FS1QR",
+		{
+			"title": "Tom Clancy\u2019s Ghost Recon\u00ae Wildlands - Standard Edition",
+			"short_title": "Ghost Recon\u00ae Wildlands: Standard Edition",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T00:00:00.0000000Z",
+			"slug": "tom-clancys-ghost-recon-wildlands---standard-edition",
+			"console": true
+		}
+	],
+	[
+		"BSXLFN5QQZSC",
+		{
+			"title": "Watch Dogs\u00ae2",
+			"short_title": "Watch Dogs\u00ae2",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T00:00:00.0000000Z",
+			"slug": "watch-dogs2",
+			"console": true
+		}
+	],
+	[
+		"BWVBNCMF22ZK",
+		{
+			"title": "A Way Out",
+			"short_title": "A Way Out",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "a-way-out",
+			"console": true
+		}
+	],
+	[
+		"9NR7XDNVP5SW",
+		{
+			"title": "As Dusk Falls",
+			"short_title": "As Dusk Falls",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "as-dusk-falls",
+			"console": true
+		}
+	],
+	[
+		"BZGJRJC1FGF3",
+		{
+			"title": "Assassin's Creed\u00ae Origins",
+			"short_title": "Assassin's Creed\u00ae Origins",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "assassins-creed-origins",
+			"console": true
+		}
+	],
+	[
+		"BXLL06QN8HVP",
+		{
+			"title": "Back 4 Blood",
+			"short_title": "Back 4 Blood",
+			"end_date": "2024-04-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "back-4-blood",
+			"console": true
+		}
+	],
+	[
+		"BSLX1RNXR6H7",
+		{
+			"title": "Batman\u2122: Arkham Knight",
+			"short_title": "Batman\u2122: Arkham Knight",
+			"end_date": "2024-06-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "batman-arkham-knight",
+			"console": true
+		}
+	],
+	[
+		"BP15SF17LH13",
+		{
+			"title": "Battlefield 4",
+			"short_title": "Battlefield 4\u2122",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "battlefield-4",
+			"console": true
+		}
+	],
+	[
+		"BPL68T0XK96W",
+		{
+			"title": "Battlefield\u2122 1 Revolution",
+			"short_title": "Battlefield\u2122 1 Revolution",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "battlefield-1-revolution",
+			"console": true
+		}
+	],
+	[
+		"BRT1K9FV4LRR",
+		{
+			"title": "Broken Age",
+			"short_title": "Broken Age",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "broken-age",
+			"console": true
+		}
+	],
+	[
+		"C5DZFZ6NC5SQ",
+		{
+			"title": "Br\u00fctal Legend",
+			"short_title": "Br\u00fctal Legend",
+			"end_date": "2799-10-07T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "br\u00fctal-legend",
+			"console": true
+		}
+	],
+	[
+		"BR74RLMH966K",
+		{
+			"title": "Costume Quest",
+			"short_title": "Costume Quest",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "costume-quest",
+			"console": true
+		}
+	],
+	[
+		"9NXR6469DM2P",
+		{
+			"title": "Crackdown 3",
+			"short_title": "Crackdown 3 Bundle",
+			"end_date": "2799-06-09T06:58:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "crackdown-3",
+			"console": true
+		}
+	],
+	[
+		"9NWNX54ZMT1K",
+		{
+			"title": "Cricket 22",
+			"short_title": "Cricket 22",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "cricket-22",
+			"console": true
+		}
+	],
+	[
+		"9N6Z8DQXSQWH",
+		{
+			"title": "Disneyland Adventures",
+			"short_title": "Disneyland Adventures",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "disneyland-adventures",
+			"console": true
+		}
+	],
+	[
+		"9N29VZ9LRNNQ",
+		{
+			"title": "FAR: Changing Tides",
+			"short_title": "FAR: Changing Tides",
+			"end_date": "2023-03-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "far-changing-tides",
+			"console": true
+		}
+	],
+	[
+		"C4CBF3FHHCND",
+		{
+			"title": "FOR HONOR : MARCHING FIRE EDITION",
+			"short_title": "FOR HONOR : MARCHING FIRE EDITION",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "for-honor-marching-fire-edition",
+			"console": true
+		}
+	],
+	[
+		"9PNJXVCVWD4K",
+		{
+			"title": "Forza Horizon 4 Standard Edition",
+			"short_title": "Forza Horizon 4 Standard Edition",
+			"end_date": "2799-06-09T05:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "forza-horizon-4-standard-edition",
+			"console": true
+		}
+	],
+	[
+		"9NKX70BBCDRN",
+		{
+			"title": "Forza Horizon 5 Standard Edition",
+			"short_title": "Forza Horizon 5 Standard Edition",
+			"end_date": "2799-02-08T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "forza-horizon-5-standard-edition",
+			"console": true
+		}
+	],
+	[
+		"C2P985H1H42H",
+		{
+			"title": "Fuzion Frenzy\u00ae",
+			"short_title": "Fuzion Frenzy\u00ae",
+			"end_date": "2798-12-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "fuzion-frenzy",
+			"console": true
+		}
+	],
+	[
+		"BRRC2BP0G9P0",
+		{
+			"title": "Halo 5: Guardians",
+			"short_title": "Halo 5: Guardians",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "halo-5-guardians",
+			"console": true
+		}
+	],
+	[
+		"9NP1P1WFS0LB",
+		{
+			"title": "Halo Infinite (Campaign)",
+			"short_title": "Halo Infinite Campaign",
+			"end_date": "2799-03-07T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "halo-infinite",
+			"console": true
+		}
+	],
+	[
+		"C42KCJCLX6MX",
+		{
+			"title": "Halo Wars 2: Standard Edition",
+			"short_title": "Halo Wars 2: Standard Edition",
+			"end_date": "2099-02-01T19:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "halo-wars-2-standard-edition",
+			"console": true
+		}
+	],
+	[
+		"BPRPQSKXTD1L",
+		{
+			"title": "Halo Wars: Definitive Edition",
+			"short_title": "Halo Wars: Definitive Edition",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "halo-wars-definitive-edition",
+			"console": true
+		}
+	],
+	[
+		"9MT8PTGVHX2P",
+		{
+			"title": "Halo: The Master Chief Collection",
+			"short_title": "Halo: The Master Chief Collection",
+			"end_date": "2799-11-14T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "halo-the-master-chief-collection",
+			"console": true
+		}
+	],
+	[
+		"9NBFGKQLMV33",
+		{
+			"title": "House Flipper",
+			"short_title": "House Flipper",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "house-flipper",
+			"console": true
+		}
+	],
+	[
+		"C07KJZRH0L7S",
+		{
+			"title": "Immortals Fenyx Rising\u2122",
+			"short_title": "Immortals Fenyx Rising\u2122",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "immortals-fenyx-rising",
+			"console": true
+		}
+	],
+	[
+		"BPKVH4C4XV4N",
+		{
+			"title": "Injustice\u2122 2",
+			"short_title": "Injustice 2",
+			"end_date": "2024-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "injustice-2",
+			"console": true
+		}
+	],
+	[
+		"9NXVC0482QS5",
+		{
+			"title": "It Takes Two - Digital Version",
+			"short_title": "It Takes Two - Digital Version",
+			"end_date": "2220-12-11T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "it-takes-two---digital-version",
+			"console": true
+		}
+	],
+	[
+		"BVQ3FL3201P8",
+		{
+			"title": "Killer Instinct: Definitive Edition",
+			"short_title": "Killer Instinct: Definitive Edition",
+			"end_date": "2799-07-24T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "killer-instinct-definitive-edition",
+			"console": true
+		}
+	],
+	[
+		"9NVRJS95FLM9",
+		{
+			"title": "Lost in Random\u2122",
+			"short_title": "Lost in Random\u2122",
+			"end_date": "2799-03-28T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "lost-in-random",
+			"console": true
+		}
+	],
+	[
+		"BV5N90RDT0SH",
+		{
+			"title": "Mass Effect",
+			"short_title": "Mass Effect",
+			"end_date": "2799-08-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "mass-effect",
+			"console": true
+		}
+	],
+	[
+		"C0Z1N477W100",
+		{
+			"title": "Mass Effect 2",
+			"short_title": "Mass Effect 2",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "mass-effect-2",
+			"console": true
+		}
+	],
+	[
+		"C040H652PD98",
+		{
+			"title": "Mass Effect\u2122 3",
+			"short_title": "Mass Effect\u2122 3",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "mass-effect-3",
+			"console": true
+		}
+	],
+	[
+		"9P66GGSJR71M",
+		{
+			"title": "Matchpoint - Tennis Championships",
+			"short_title": "Matchpoint - Tennis Championships ",
+			"end_date": "2023-07-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "matchpoint---tennis-championships",
+			"console": true
+		}
+	],
+	[
+		"9PDXJP3805DN",
+		{
+			"title": "Metal: Hellsinger (Xbox Series X|S & PC)",
+			"short_title": "Metal: Hellsinger (Xbox Series X|S & PC)",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "metal-hellsinger",
+			"console": true
+		}
+	],
+	[
+		"9MT9Q2MBBZ0X",
+		{
+			"title": "Metal: Hellsinger (Xbox One)",
+			"short_title": "Metal: Hellsinger (Xbox One)",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "metal-hellsinger",
+			"console": true
+		}
+	],
+	[
+		"9PDV8FKWP3B4",
+		{
+			"title": "Middle-earth\u2122: Shadow of War\u2122",
+			"short_title": "Shadow of War",
+			"end_date": "2023-07-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "middle-earth-shadow-of-war",
+			"console": true
+		}
+	],
+	[
+		"BTC0L0BW6LWC",
+		{
+			"title": "Mortal Kombat 11",
+			"short_title": "MK11",
+			"end_date": "2024-06-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "mortal-kombat-11",
+			"console": true
+		}
+	],
+	[
+		"9P7SL78VHVMF",
+		{
+			"title": "Ni no Kuni Wrath of the White Witch\u2122 Remastered",
+			"short_title": "Ni no Kuni: Wrath of the White Witch Remastered",
+			"end_date": "2024-03-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "ni-no-kuni-wrath-of-the-white-witch-remastered",
+			"console": true
+		}
+	],
+	[
+		"9NX6K9HN4F4K",
+		{
+			"title": "Pentiment",
+			"short_title": "Pentiment",
+			"end_date": "2023-02-13T06:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "pentiment",
+			"console": true
+		}
+	],
+	[
+		"9NZDHXL9SJJ8",
+		{
+			"title": "Persona 5 Royal",
+			"short_title": "Persona 5 Royal",
+			"end_date": "2023-10-16T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "persona-5-royal",
+			"console": true
+		}
+	],
+	[
+		"C4HZC7LJG6PX",
+		{
+			"title": "Plants vs. Zombies: Battle for Neighborville\u2122",
+			"short_title": "Plants vs. Zombies: Battle for Neighborville\u2122",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "plants-vs-zombies-battle-for-neighborville",
+			"console": true
+		}
+	],
+	[
+		"C5HHPG1TXDNG",
+		{
+			"title": "Psychonauts",
+			"short_title": "Psychonauts",
+			"end_date": "2799-05-12T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "psychonauts",
+			"console": true
+		}
+	],
+	[
+		"9NBR2VXT87SJ",
+		{
+			"title": "Psychonauts 2",
+			"short_title": "Psychonauts 2",
+			"end_date": "2799-06-13T18:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "psychonauts-2",
+			"console": true
+		}
+	],
+	[
+		"BPNDKQN84N6L",
+		{
+			"title": "Quantum Break",
+			"short_title": "Quantum Break",
+			"end_date": "2799-06-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "quantum-break",
+			"console": true
+		}
+	],
+	[
+		"9NBLGGH1Z6FQ",
+		{
+			"title": "ReCore",
+			"short_title": "ReCore: Definitive Edition",
+			"end_date": "2799-06-09T05:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "recore",
+			"console": true
+		}
+	],
+	[
+		"9P3PL76N0KWZ",
+		{
+			"title": "Rush: A DisneyPixar Adventure",
+			"short_title": "Rush: A DisneyPixar Adventure",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "rush-a-disneypixar-adventure",
+			"console": true
+		}
+	],
+	[
+		"C4F7ZHLN6B2J",
+		{
+			"title": "Ryse: Legendary Edition",
+			"short_title": "Ryse: Legendary Edition",
+			"end_date": "2799-06-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "ryse-legendary-edition",
+			"console": true
+		}
+	],
+	[
+		"C2CSDTSCBZ0C",
+		{
+			"title": "STAR WARS Jedi: Fallen Order\u2122",
+			"short_title": "STAR WARS Jedi: Fallen Order\u2122",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "star-wars-jedi-fallen-order",
+			"console": true
+		}
+	],
+	[
+		"C0GWTPD0S8S1",
+		{
+			"title": "STAR WARS\u2122 Battlefront\u2122 II",
+			"short_title": "STAR WARS\u2122 Battlefront\u2122 II",
+			"end_date": "2799-12-30T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "star-wars-battlefront-ii",
+			"console": true
+		}
+	],
+	[
+		"BV9CWVQWNS4P",
+		{
+			"title": "STAR WARS\u2122: Squadrons",
+			"short_title": "STAR WARS\u2122: Squadrons",
+			"end_date": "2799-12-30T22:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "star-wars-squadrons",
+			"console": true
+		}
+	],
+	[
+		"9NT4X7P8B9NB",
+		{
+			"title": "State of Decay 2: Juggernaut Edition",
+			"short_title": "State of Decay 2: Juggernaut Edition",
+			"end_date": "2099-12-29T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "state-of-decay-2-juggernaut-edition",
+			"console": true
+		}
+	],
+	[
+		"BRZHFR5XBLQS",
+		{
+			"title": "Sunset Overdrive",
+			"short_title": "Sunset Overdrive",
+			"end_date": "2799-05-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "sunset-overdrive",
+			"console": true
+		}
+	],
+	[
+		"9NF83PRZK6K3",
+		{
+			"title": "Tell Me Why: Chapters 1-3",
+			"short_title": "Tell Me Why",
+			"end_date": "2799-09-19T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "tell-me-why-chapters-1-3",
+			"console": true
+		}
+	],
+	[
+		"9PN3VDFTB5HZ",
+		{
+			"title": "The Bard's Tale ARPG : Remastered and Resnarkled",
+			"short_title": "The Bard's Tale ARPG:  R&R",
+			"end_date": "2799-06-17T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "the-bards-tale-arpg-remastered-and-resnarkled",
+			"console": true
+		}
+	],
+	[
+		"C2B4T86TXLRS",
+		{
+			"title": "The Bard's Tale IV: Director's Cut",
+			"short_title": "The Bard\u2019s Tale IV: Director\u2019s Cut",
+			"end_date": "2799-08-27T14:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "the-bards-tale-iv-directors-cut",
+			"console": true
+		}
+	],
+	[
+		"9MVN4ND41DD3",
+		{
+			"title": "The Bard's Tale Trilogy",
+			"short_title": "The Bard's Tale Trilogy",
+			"end_date": "2799-08-13T14:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "the-bards-tale-trilogy",
+			"console": true
+		}
+	],
+	[
+		"BRKX5CRMRTC2",
+		{
+			"title": "The Elder Scrolls\u00ae Online",
+			"short_title": "The Elder Scrolls Online",
+			"end_date": "2798-12-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "the-elder-scrolls-online",
+			"console": true
+		}
+	],
+	[
+		"9NSHNMCM0JR8",
+		{
+			"title": "Tom Clancy's Rainbow Six\u00ae Siege Deluxe Edition",
+			"short_title": "Rainbow Six\u00ae Siege Deluxe Edition",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "tom-clancys-rainbow-six-siege-deluxe-edition",
+			"console": true
+		}
+	],
+	[
+		"BQND4NQXFFV2",
+		{
+			"title": "Torment: Tides of Numenera",
+			"short_title": "Torment: Tides of Numenera",
+			"end_date": "9998-12-30T00:00:00.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "torment-tides-of-numenera",
+			"console": true
+		}
+	],
+	[
+		"9N6781PMXC02",
+		{
+			"title": "Turbo Golf Racing (Game Preview)",
+			"short_title": "",
+			"end_date": "2024-08-01T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "turbo-golf-racing",
+			"console": true
+		}
+	],
+	[
+		"BPBV3PCB0X44",
+		{
+			"title": "UFC\u00ae 4",
+			"short_title": "UFC\u00ae 4",
+			"end_date": "2023-02-21T09:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "ufc-4",
+			"console": true
+		}
+	],
+	[
+		"C521HDXRTS7F",
+		{
+			"title": "Wasteland 2: Director's Cut",
+			"short_title": "Wasteland 2",
+			"end_date": "2799-05-18T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "wasteland-2-directors-cut",
+			"console": true
+		}
+	],
+	[
+		"9NGH1FK0RJGL",
+		{
+			"title": "Wasteland Remastered",
+			"short_title": "Wasteland Remastered",
+			"end_date": "2799-02-25T20:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "wasteland-remastered",
+			"console": true
+		}
+	],
+	[
+		"9PJ06TZX4NMH",
+		{
+			"title": "Zoo Tycoon: Ultimate Animal Collection",
+			"short_title": "Zoo Tycoon: Ultimate Animal Collection",
+			"end_date": "2798-12-31T23:59:59.0000000Z",
+			"start_date": "2023-01-31T10:00:00.0000000Z",
+			"slug": "zoo-tycoon-ultimate-animal-collection",
+			"console": true
+		}
+	],
+	[
+		"9N2Z748SPMTM",
+		{
+			"title": "Age of Empires II: Definitive Edition",
+			"short_title": "Age of Empires II: Definitive Edition",
+			"end_date": "2023-03-02T16:59:59.0000000Z",
+			"start_date": "2023-01-31T17:00:00.0000000Z",
+			"slug": "age-of-empires-ii-definitive-edition",
+			"console": true
+		}
+	],
+	[
+		"9P5D8B393ZZ4",
+		{
+			"title": "Inkulinati (Game Preview)",
+			"short_title": "Inkulinati",
+			"end_date": "2023-03-02T16:59:59.0000000Z",
+			"start_date": "2023-01-31T17:00:00.0000000Z",
+			"slug": "inkulinati",
+			"console": true
+		}
+	],
+	[
+		"9N27NM3BT3ML",
+		{
+			"title": "Danganronpa 2: Goodbye Despair Anniversary Edition",
+			"short_title": "",
+			"end_date": "2023-02-15T09:59:59.0000000Z",
+			"start_date": "2023-02-01T00:00:00.0000000Z",
+			"slug": "danganronpa-2-goodbye-despair-anniversary-edition",
+			"console": true
+		}
+	],
+	[
+		"9PMM6V93MRKW",
+		{
+			"title": "Danganronpa V3: Killing Harmony Anniversary Edition",
+			"short_title": "Danganronpa V3: Killing Harmony",
+			"end_date": "2023-02-15T09:59:59.0000000Z",
+			"start_date": "2023-02-01T00:00:00.0000000Z",
+			"slug": "danganronpa-v3-killing-harmony-anniversary-edition",
+			"console": true
+		}
+	],
+	[
+		"9NMD6VV08WGF",
+		{
+			"title": "Eiyuden Chronicle: Rising",
+			"short_title": "Eiyuden Chronicle: Rising ",
+			"end_date": "2023-02-15T09:59:59.0000000Z",
+			"start_date": "2023-02-01T00:00:00.0000000Z",
+			"slug": "eiyuden-chronicle-rising",
+			"console": true
+		}
+	],
+	[
+		"9PJ2FC2LK9QD",
+		{
+			"title": "Ghost Song",
+			"short_title": "Ghost Song",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-02-01T00:00:00.0000000Z",
+			"slug": "ghost-song",
+			"console": true
+		}
+	],
+	[
+		"9P47H1RVDWWW",
+		{
+			"title": "Zero Escape: The Nonary Games",
+			"short_title": "Zero Escape: The Nonary Games",
+			"end_date": "2023-02-15T09:59:59.0000000Z",
+			"start_date": "2023-02-01T00:00:00.0000000Z",
+			"slug": "zero-escape-the-nonary-games",
+			"console": true
+		}
+	],
+	[
+		"9N1KQPLTR7S5",
+		{
+			"title": "Solasta: Crown of the Magister",
+			"short_title": "",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-02-01T10:00:00.0000000Z",
+			"slug": "solasta-crown-of-the-magister",
+			"console": true
+		}
+	],
+	[
+		"BXRB4ZH2GJHK",
+		{
+			"title": "Tom Clancy\u2019s Rainbow Six\u00ae Extraction",
+			"short_title": "Tom Clancy\u2019s Rainbow Six\u00ae Extraction",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-01T10:00:00.0000000Z",
+			"slug": "tom-clancys-rainbow-six-extraction",
+			"console": true
+		}
+	],
+	[
+		"BXKVN6G9C5WJ",
+		{
+			"title": "Darkest Dungeon\u00ae",
+			"short_title": "Darkest Dungeon",
+			"end_date": "2024-02-01T09:59:59.0000000Z",
+			"start_date": "2023-02-02T00:00:00.0000000Z",
+			"slug": "darkest-dungeon",
+			"console": true
+		}
+	],
+	[
+		"9NCT9L7NFHX7",
+		{
+			"title": "GRID Legends",
+			"short_title": "GRID Legends",
+			"end_date": "2023-02-15T09:59:59.0000000Z",
+			"start_date": "2023-02-03T00:00:00.0000000Z",
+			"slug": "grid-legends",
+			"console": true
+		}
+	],
+	[
+		"9NN82NH949D5",
+		{
+			"title": "HITMAN World of Assassination",
+			"short_title": "HITMAN World of Assassination",
+			"end_date": "2023-05-01T09:59:59.0000000Z",
+			"start_date": "2023-02-03T00:00:00.0000000Z",
+			"slug": "hitman-world-of-assassination",
+			"console": true
+		}
+	],
+	[
+		"9PD5BFNZ4V7K",
+		{
+			"title": "Battlefield\u2122 2042 Xbox One",
+			"short_title": "Battlefield\u2122 2042",
+			"end_date": "2799-11-08T23:59:59.0000000Z",
+			"start_date": "2023-02-03T10:00:00.0000000Z",
+			"slug": "battlefield-2042-xbox-one",
+			"console": true
+		}
+	],
+	[
+		"9NKTJLP2HKWK",
+		{
+			"title": "Football Manager 2023 Console",
+			"short_title": "",
+			"end_date": "2023-11-01T09:59:59.0000000Z",
+			"start_date": "2023-02-06T00:00:00.0000000Z",
+			"slug": "football-manager-2023-console",
+			"console": true
+		}
+	],
+	[
+		"9PC4R8N1N2T6",
+		{
+			"title": "Return to Monkey Island",
+			"short_title": "Return to Monkey Island",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-02-06T17:00:00.0000000Z",
+			"slug": "return-to-monkey-island",
+			"console": true
+		}
+	],
+	[
+		"9ND0JVB184XL",
+		{
+			"title": "A Plague Tale: Requiem",
+			"short_title": "Requiem",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "a-plague-tale-requiem",
+			"console": true
+		}
+	],
+	[
+		"C29HQ887KH4B",
+		{
+			"title": "Fallout 3",
+			"short_title": "Fallout 3",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "fallout-3",
+			"console": true
+		}
+	],
+	[
+		"C3KLDKZBHNCZ",
+		{
+			"title": "Fallout 4",
+			"short_title": "Fallout 4",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "fallout-4",
+			"console": true
+		}
+	],
+	[
+		"BX3JNK07Z6QK",
+		{
+			"title": "Fallout: New Vegas",
+			"short_title": "Fallout: New Vegas",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "fallout-new-vegas",
+			"console": true
+		}
+	],
+	[
+		"9P825CZVX852",
+		{
+			"title": "HOT WHEELS UNLEASHED\u2122 - Game Of The Year Edition",
+			"short_title": "HOT WHEELS UNLEASHED\u2122 - Game Of The Year Edition",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "hot-wheels-unleashed---game-of-the-year-edition",
+			"console": true
+		}
+	],
+	[
+		"9NGZ7PN3W8DX",
+		{
+			"title": "HOT WHEELS UNLEASHED\u2122 - Game Of The Year Edition - Xbox Series X|S",
+			"short_title": "HOT WHEELS UNLEASHED\u2122 - GOTY - Xbox Series X|S",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "hot-wheels-unleashed---game-of-the-year-edition---xbox-series-xs",
+			"console": true
+		}
+	],
+	[
+		"9NPFJTM4HBH9",
+		{
+			"title": "Lawn Mowing Simulator",
+			"short_title": "Lawn Mowing Simulator",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "lawn-mowing-simulator",
+			"console": true
+		}
+	],
+	[
+		"9NFWSNN4JWKB",
+		{
+			"title": "Life is Strange: True Colors",
+			"short_title": "Life is Strange: True Colors",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "life-is-strange-true-colors",
+			"console": true
+		}
+	],
+	[
+		"9PKWHT7G60WQ",
+		{
+			"title": "Mass Effect\u2122 Legendary Edition",
+			"short_title": "Mass Effect\u2122 Legendary Edition",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "mass-effect-legendary-edition",
+			"console": true
+		}
+	],
+	[
+		"9MZN3SMXN824",
+		{
+			"title": "New Super Lucky's Tale",
+			"short_title": "",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "new-super-luckys-tale",
+			"console": true
+		}
+	],
+	[
+		"C5K89TFLSV19",
+		{
+			"title": "Oblivion",
+			"short_title": "Oblivion",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "oblivion",
+			"console": true
+		}
+	],
+	[
+		"C083G6BGJ334",
+		{
+			"title": "OUTRIDERS",
+			"short_title": "OUTRIDERS",
+			"end_date": "2023-02-13T23:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "outriders",
+			"console": true
+		}
+	],
+	[
+		"9P6W2Q41BB8V",
+		{
+			"title": "PAC-MAN MUSEUM+",
+			"short_title": "PAC-MAN Museum+",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "pac-man-museum",
+			"console": true
+		}
+	],
+	[
+		"BTNPS60N3114",
+		{
+			"title": "Terraria",
+			"short_title": "Terraria",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T00:00:00.0000000Z",
+			"slug": "terraria",
+			"console": true
+		}
+	],
+	[
+		"9ND8C4314ZZG",
+		{
+			"title": "Hardspace: Shipbreaker",
+			"short_title": "Hardspace",
+			"end_date": "2023-09-16T09:59:59.0000000Z",
+			"start_date": "2023-02-07T10:00:00.0000000Z",
+			"slug": "hardspace-shipbreaker",
+			"console": true
+		}
+	],
+	[
+		"BVTKN6CQ8W5F",
+		{
+			"title": "The Outer Worlds",
+			"short_title": "",
+			"end_date": "2023-02-14T09:59:59.0000000Z",
+			"start_date": "2023-02-07T10:00:00.0000000Z",
+			"slug": "the-outer-worlds",
+			"console": true
+		}
+	],
+	[
+		"BRJNRZ9N734V",
+		{
+			"title": "Wreckfest",
+			"short_title": "Wreckfest",
+			"end_date": "2023-11-16T09:59:59.0000000Z",
+			"start_date": "2023-02-07T10:00:00.0000000Z",
+			"slug": "wreckfest",
+			"console": true
+		}
+	]
+]
