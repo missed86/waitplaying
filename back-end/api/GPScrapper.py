@@ -50,14 +50,21 @@ def requestData(input):
         for game in response['Products']:
             responseID = game['ProductId']
             responseID = slugger(game['LocalizedProperties'][0]['ProductTitle'])
-            object[responseID] = {
-                'title': game['LocalizedProperties'][0]['ProductTitle'],
-                'short_title': game['LocalizedProperties'][0]['ShortTitle'],
-                'end_date': game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['EndDate'],
-                'start_date': game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['StartDate'],
-                'slug': slugger(game['LocalizedProperties'][0]['ProductTitle']),
-                key: True
-            }
+            # object[responseID] = {
+            #     'title': game['LocalizedProperties'][0]['ProductTitle'],
+            #     'short_title': game['LocalizedProperties'][0]['ShortTitle'],
+            #     'end_date': game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['EndDate'],
+            #     'start_date': game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['StartDate'],
+            #     'slug': slugger(game['LocalizedProperties'][0]['ProductTitle']),
+            #     key: True
+            # }
+            object[responseID] = object[responseID] if responseID in object else {}
+            object[responseID]['title'] = game['LocalizedProperties'][0]['ProductTitle']
+            object[responseID]['short_title'] = game['LocalizedProperties'][0]['ShortTitle']
+            object[responseID]['end_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['EndDate']
+            object[responseID]['start_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['StartDate']
+            object[responseID]['slug'] = slugger(game['LocalizedProperties'][0]['ProductTitle'])
+            object[responseID][key] = True
     
     return object
         
