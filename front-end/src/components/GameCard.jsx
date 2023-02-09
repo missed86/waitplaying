@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import "./GameCard.css";
 
 const ICONS = {
@@ -32,6 +33,15 @@ const ICONS = {
   ),
 };
 
+const Component = styled.div`
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+`
+
+
 const CoverURL = (cover) => `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`
 const main_platforms = ["PS5", "PS4", "Series X", "PC"];
 
@@ -48,7 +58,7 @@ export default function GameCard({ image, title, platforms }) {
   };
   const [actived, setActived] = useState(false);
   return (
-    <div className="GameCard">
+    <Component className="GameCard">
       <div
         className={`button ${actived ? "actived" : ""}`}
         onClick={handleClick}
@@ -93,6 +103,6 @@ export default function GameCard({ image, title, platforms }) {
         </div>
       </div>
       <img className="cover" src={CoverURL(image)} alt={title} />
-    </div>
+    </Component>
   );
 }

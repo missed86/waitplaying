@@ -3,9 +3,27 @@ import GameCard from "../GameCard";
 import {useQuery} from "react-query"
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useState, useRef, useEffect } from 'react'
+import styled  from "styled-components";
+// import "./GameList.css";
 
-
-import "./GameList.css";
+const GameGroup = styled.div`
+  margin-bottom: 20px;
+`
+const DateDiv = styled.div`
+  display:flex;
+  width: 100px;
+  padding:5px;
+  background-color: rgb(26, 26, 26);
+  margin: 10px 0; 
+`
+const List = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
+  grid-gap: 15px;
+  @media only screen and (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+ }
+`
 
 function getFormattedDate(date) {
   const options = { day: "2-digit", month: "2-digit", year: "numeric" };
@@ -65,16 +83,16 @@ export default function GameList({ date, filters }) {
 
 
 	return (
-		<div className="GameGroup" ref={parent}>
-			<div className="date">{getFormattedDate(date)}</div>
-			<div className="GameList" ref={parent}>
+		<GameGroup ref={parent}>
+			<DateDiv>{getFormattedDate(date)}</DateDiv>
+			<List ref={parent}>
 				{!data || data.length === 0 ? null : data.map(({game, platforms}) => (
 					platforms.some(e=>platformsFilter.includes(e)) && game.cover!= null?
 					<Link key={game.id} to={`/game/${game.slug}`} className="no-link flex">
 						<GameCard image={game.cover} title={game.name} platforms={platforms} />
 					</Link>
 				:""))}
-			</div>
-		</div>
+			</List>
+		</GameGroup>
 	);
 }

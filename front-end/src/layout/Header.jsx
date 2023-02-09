@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom";
 import SearchBar from "../components/Header/SearchBar";
 import UserButton from "../components/Header/UserButton";
-import "./Header.css";
+import styled from "styled-components";
+// import "./Header.css";
 
-const Logo = (
+const LogoSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
@@ -183,7 +184,7 @@ const Logo = (
     </g>
   </svg>
 );
-const MenuBtn = (
+const MenuBtnIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -201,14 +202,110 @@ const MenuBtn = (
     />
   </svg>
 );
+
+const Component = styled.div`
+  display:flex;
+  position:sticky;
+  top:0;
+  z-index:999;
+  background-color: rgba(0, 0, 0, 0.8);
+  height:56px;
+  align-items: center;
+  margin-bottom:15px;
+  justify-content: space-around;
+  width: 100%;
+`
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex:1;
+  margin: 0 30px;
+  gap:10px;
+  @media only screen and (max-width:540px) {
+    position:relative;
+  }
+  @media only screen and (max-width:970px) {
+    margin: 0 10px;
+  }
+`
+const MenuButton = styled.button`
+  display: none;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 50%;
+  border:none;
+
+  @media only screen and (max-width:970px) {
+    display:block;
+  }
+  @media only screen and (max-width:540px) {
+    display:block;
+  }
+`
+const Logo = styled.div`
+  margin-left: 0px;
+
+  svg {
+    height: 30px;
+    width: 180px;
+  }
+  @media only screen and (max-width:540px) {
+    margin: 0 auto;
+  }
+`
+const Menu = styled.div`
+  margin:0 25px;
+
+  ul{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+  li{
+    display:inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+  li a{
+    text-decoration: none;
+    color: gray;
+  }
+  li a:hover{
+    text-decoration: none;
+    color: white;
+  }
+
+  @media only screen and (max-width:970px) {
+    display:none;
+    width: 100%;
+  }
+  @media only screen and (max-width:540px) {
+    position:absolute;
+    top:45px;
+    left:-35px;
+    /* display:flex; */
+    opacity: 0.8;
+    background-color: #000;
+    padding:10px 20px;
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+`
+
 function Header() {
   return (
-    <header className="Header">
-      <div className="header-content">
-        <button className="menu-btn">{MenuBtn}</button>
-        <div className="logo">{Logo}</div>
-        <div className="menu-wrapper">
-          <div className="menu">
+    <Component>
+      <Wrapper>
+        <MenuButton>{MenuBtnIcon}</MenuButton>
+        <Logo>{LogoSvg}</Logo>
+          <Menu>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -226,12 +323,11 @@ function Header() {
                 <Link to="/calendar">My calendar</Link>
               </li>
             </ul>
-          </div>
-        </div>
+          </Menu>
         <SearchBar />
         <UserButton />
-      </div>
-    </header>
+      </Wrapper>
+    </Component>
   );
 }
 

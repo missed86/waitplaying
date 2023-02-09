@@ -1,7 +1,41 @@
-import './SearchBar.css'
+import styled from 'styled-components'
 
 // https://heroicons.com/
 // https://www.systemuicons.com/
+const Component = styled.div`
+  display: flex;
+  /* padding:0 50px 0 0; */
+  margin-left:15px;
+  position: relative;
+  flex-grow:1;
+  @media only screen and (max-width:540px) {
+    display:none;
+  }
+`
+const Input = styled.input`
+  flex-grow: 1;
+  padding:0 10px 0 040px;
+  background-color: rgb(39, 39, 39);
+  border: none;
+  border-radius: 5px;
+  height: 38px;
+  color:lightgrey;
+  &:focus-visible {
+    outline: none;
+  }
+  &::placeholder {
+    color:gray
+  }
+`
+const InputIcon = styled.span`
+  position: absolute;
+  color: lightgrey;
+  top: 9px;
+  left: 7px;
+  width: 20px;
+  height: 20px;
+`
+
 const SEARCH_ICON = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
@@ -10,9 +44,9 @@ const SEARCH_ICON = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
 
 export default function SearchBar() {
   return(
-    <div className="search-bar">
-        <input type="text" placeholder="Search"></input>
-        <span className="input-icon">{SEARCH_ICON}</span>
-      </div>
+    <Component>
+        <Input type="text" placeholder="Search"></Input>
+        <InputIcon>{SEARCH_ICON}</InputIcon>
+      </Component>
   )  
 }
