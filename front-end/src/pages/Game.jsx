@@ -44,58 +44,6 @@ const CoverURL = (id) =>
 const ScreenshotURL = (id) =>
   `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${id}.jpg`;
 
-const games = {
-  "god-of-war-ragnarok": {
-    title: "God of War: Ragnarök",
-    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s5v.png",
-    backcover:
-      "https://images.igdb.com/igdb/image/upload/t_screenshot_big/scd71z.jpg",
-    genres: ["Adventure", "Hack and slash/Beat 'em up"],
-    platforms: ["PlayStation 4", "PlayStation 5"],
-    releasedate: "Nov 09, 2022",
-    description:
-      "God of War: Ragnarök is the ninth installment in the God of War series and the sequel to 2018's God of War. Continuing with the Norse mythology theme, the game is set in ancient Norway and feature series protagonists Kratos, the former Greek God of War, and his young son Atreus. The game is expected to kick off the events of Ragnarök, where Kratos and Atreus must journey to each of the Nine Realms in search of answers as they prepare for the prophesied battle that will end the world.",
-  },
-  "the-callisto-protocol": {
-    title: "The Callisto Protocol",
-    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ymo.png",
-    backcover:
-      "https://images.igdb.com/igdb/image/upload/t_screenshot_big/schtuh.jpg",
-    genres: ["Adventure", "Shooter"],
-    platforms: [
-      "Xbox One",
-      "PlayStation 4",
-      "PlayStation 5",
-      "PC (Microsoft Windows)",
-      "Xbox Series X|S",
-    ],
-    releasedate: "Dec 02, 2022",
-    description:
-      "In this narrative-driven, third-person survival horror game set 300 years in the future, the player will take on the role of Jacob Lee – a victim of fate thrown into Black Iron Prison, a maximum-security penitentiary located on Jupiter's moon, Callisto. When inmates begin to transform into monstrous creatures, the prison is thrown into chaos.",
-  },
-  "a-plague-tale-requiem": {
-    title: "A Plague Tale: Requiem",
-    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5pwb.png",
-    backcover:
-      "https://images.igdb.com/igdb/image/upload/t_screenshot_big/scg9lz.jpg",
-    genres: ["Adventure", "Role-playing (RPG)"],
-    platforms: ["PlayStation 5", "PC (Microsoft Windows)", "Xbox Series X|S"],
-    releasedate: "Oct 18, 2022",
-    description:
-      "A Plague Tale: Requiem is an action-adventure game similar to its predecessor. The player assumes control of Amicia and must face against both soldiers from the French Inquisition and hordes of rats that are spreading the black plague. Gameplay is largely similar to the first game, though the combat system is significantly expanded. The game features a progression system in which the player will be awarded additional skills and abilities. Stealth players will unlock skills that allow them to sneak around more efficiently, while those who prefer a more lethal approach will unlock additional combat skills. Locations are also larger, giving players additional options to progress.",
-  },
-  "final-fantasy-xvi": {
-    title: "Final Fantasy XVI",
-    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5w3k.png",
-    backcover:
-      "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc8kw0.jpg",
-    genres: ["Adventure", "Role-playing (RPG)"],
-    platforms: ["PlayStation 5", "PC (Microsoft Windows)"],
-    releasedate: "Jun 22, 2023",
-    description:
-      "Final Fantasy XVI is an upcoming action role-playing game developed and published by Square Enix. It is the sixteenth game in the mainline Final Fantasy series and will be released for the PlayStation 5. It is being produced by Naoki Yoshida and directed by Hiroshi Takai.",
-  },
-};
 export default function Game() {
   const { slug } = useParams();
   const options = {
@@ -126,6 +74,7 @@ export default function Game() {
     first_release_date,
     summary,
     platforms,
+    ...extra
   } = data[0];
   screenshots = screenshots !== null ? screenshots.split(",") : [];
   platforms;
@@ -165,6 +114,10 @@ export default function Game() {
           <p>{platforms.map(e=>e.name).sort().join(", ")}</p>
           {/* <p>{genres.join(", ")}</p> */}
           <p>{summary}</p>
+          {console.log(extra)}
+          <p>Follows: {extra.follows}</p>
+          <p>Critic Rating: {Math.round(extra.aggregated_rating*10)/10}</p>
+          <p>User Rating: {Math.round(extra.total_rating*10)/10}</p>
         </div>
       </div>
     </div>

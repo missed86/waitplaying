@@ -96,6 +96,9 @@ def scrape_games():
                     rating = data['rating'] if 'rating' in data else None
                     total_rating_count = data['total_rating_count'] if 'total_rating_count' in data else None
                     total_rating = data['total_rating'] if 'total_rating' in data else None
+                    aggregated_rating_count = data['aggregated_rating_count'] if 'aggregated_rating_count' in data else None
+                    aggregated_rating = data['aggregated_rating'] if 'aggregated_rating' in data else None
+                    follows = data['follows'] if 'follows' in data else None
 
                     game = Game(id=id,
                                 name=name,
@@ -110,10 +113,14 @@ def scrape_games():
                                 url=url,
                                 # platforms=platforms,
                                 screenshots=screenshots,
+
                                 rating_count=rating_count,
                                 rating=rating,
                                 total_rating_count=total_rating_count,
                                 total_rating=total_rating,
+                                aggregated_rating_count=aggregated_rating_count,
+                                aggregated_rating=aggregated_rating,
+                                follows = follows
                                 )
                     game.save()
 

@@ -70,9 +70,15 @@ export default function GameList({ date, filters }) {
     return <div>Error: {error.message}</div>;
   }
   data.sort((a,b)=>{
-    if (a.game.total_rating_count === null) return 1;
-    if (b.game.total_rating_count === null) return -1;
-    return b.game.total_rating_count - a.game.total_rating_count;
+    if (a.game.follows === null && b.game.follows === null) {
+      return b.game.aggregated_rating - a.game.aggregated_rating;
+    } else if (a.game.follows === null) {
+      return 1;
+    } else if (b.game.follows === null) {
+      return -1;
+    } else {
+      return b.game.follows - a.game.follows;
+    }
   })
 	const platformsFilter = filters
   // console.log("Data",data);
