@@ -59,15 +59,33 @@ class NextGamesView(APIView):
 
 
 def group_games(queryset, date):
-    result = []
-    queryset = queryset.values("game", "platform__abbreviation")
-    queryset = sorted(queryset, key=lambda x: x["game"])
-    for game, game_group in groupby(queryset, key=lambda x: x["game"]):
-        platforms = [x["platform__abbreviation"] for x in game_group]
-        game = Game.objects.get(id=game)
-        serializer = SimpleGame(game)
-        result.append({"date": date, "game": serializer.data, "platforms": platforms})
-    return result
+  result = []
+  queryset = queryset.values("game", "platform__abbreviation", "platform__alternative_name")
+  queryset = sorted(queryset, key=lambda x: x["game"])
+  for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+    platforms = []
+    for x in game_group:
+        if x["platform__abbreviation"] is not None:
+            platforms.append(x["platform__abbreviation"])
+        else:
+            platforms.append(x["platform__alternative_name"])
+    game = Game.objects.get(id=game)
+    serializer = SimpleGame(game)
+    result.append({"date": date, "game": serializer.data, "platforms": platforms})
+  return result
+
+# def group_games(queryset, date):
+#     result = []
+#     queryset = queryset.values("game", "platform__abbreviation", "platform__alternative_name")
+#     queryset = sorted(queryset, key=lambda x: x["game"])
+#     for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+#         platforms = [x["platform__abbreviation"] for x in game_group]
+#         if platforms[0] is None:
+#             print(platforms)
+#         game = Game.objects.get(id=game)
+#         serializer = SimpleGame(game)
+#         result.append({"date": date, "game": serializer.data, "platforms": platforms})
+#     return result
 
 class GamesByDateView(APIView):
     permission_classes = [permissions.AllowAny]

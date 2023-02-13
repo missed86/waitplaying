@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import GameCard from "../GameCard";
+import GameCard from "./GameCard";
 import {useQuery} from "react-query"
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useState, useRef, useEffect } from 'react'
@@ -97,7 +97,10 @@ export default function GameList({ date, filters }) {
 					<Link key={game.id} to={`/game/${game.slug}`} className="no-link flex">
 						<GameCard image={game.cover} title={game.name} platforms={platforms} />
 					</Link>
-				:""))}
+				:""
+        )
+        )
+        }
 			</List>
 		</GameGroup>
 	);

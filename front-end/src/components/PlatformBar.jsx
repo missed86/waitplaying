@@ -27,6 +27,11 @@ const platforms = [
     color: "playstation",
   },
   {
+    name: "PSVR2",
+    icon: "playstation.svg",
+    color: "playstation",
+  },
+  {
     name: "Switch",
     icon: "switch.svg",
     color: "nintendo",

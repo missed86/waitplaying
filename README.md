@@ -13,13 +13,13 @@ This project has been developed with ReactJS on the front-end and Django on the 
 ## Project Objective
 My goal is to offer users an intuitive and always updated tool to stay informed about the release dates of video games and follow their favorite titles. In addition, I want to make it easier to search for games by platform and allow users to know which titles are available on the subscription services to which they are subscribed. With the calendar, users will have at hand the release dates of the games they have chosen to follow.
 
-## Características principales
+## Main Features
 - Updated information on the release dates of video games.
 - Option to follow specific games.
 - Game filter by platform.
 - Visibility of which games are available on the subscription services to which users are subscribed.
 
-## Posibles futuras incorporaciones
+## Potential future additions
 - Social media integration: allow users to share information about games on their social media profiles, or connect through their social media accounts to use the platform.
 - Recommendation system: use machine learning algorithms or data analysis to suggest games to users based on their tastes or what they are looking for.
 - Game comments and reviews: allow users to write reviews or comments about the games they have played, and show this information to other users as a way to help them decide which games to try.

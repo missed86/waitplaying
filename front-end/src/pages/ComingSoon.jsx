@@ -1,13 +1,13 @@
 // import GameGroup from "../components/GameGroup";
 import { useState } from "react";
-import GameList from "../components/Home/GameList";
+import GameList from "../components/GameList";
 import PlatformBar from "../components/PlatformBar";
 
 import "./Home.css";
 
 const dates = [];
 const today = new Date();
-const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC" ]
+const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2" ]
 
 for (let i = 0; i <= 10; i++) {
 	const nextDate = new Date();
