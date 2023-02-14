@@ -99,10 +99,10 @@ class SearchBoxView(generics.ListAPIView):
     serializer_class = GameSerializer
 
     def get_queryset(self):
-        queryset = Game.objects.all()
+        queryset = Game.objects.all().order_by('-first_release_date')
         query = self.request.GET.get("q")
         if query:
-            queryset = queryset.filter(name__icontains = query)
+            queryset = queryset.filter(name__icontains = query)[:5]
         return queryset
 
 

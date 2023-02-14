@@ -1,0 +1,17 @@
+:: DJ041 ::
+¿Cuál es el propósito de la Vista en el patrón MVT?
+{
+  = Contiene la lógica de negocio de la aplicación.
+  ~%-25% Define la estructura de los datos de la aplicación.
+  ~%-25% Define la interfaz de usuario de la aplicación.
+  ~%-25% Maneja la presentación de los datos al usuario.
+}
+
+:: DJ042 ::
+¿Cuál es el propósito de la Template en el patrón MVT?
+{
+  ~%-25% Contiene la lógica de negocio de la aplicación.
+  ~%-25% Define la estructura de los datos de la aplicación.
+  ~%-25% Define la interfaz de usuario de la aplicación.
+  = Maneja la presentación de los datos al usuario.
+}

@@ -79,12 +79,22 @@ export default function SearchBar() {
       setShowSearch(false);
     }
   };
-
+  const handleBlur = (event) => {
+		setShowSearch(false)
+	}
+  const handleFocus = (event) => {
+		setInputValue(event.target.value);
+    if (event.target.value.length > 2) {
+      setShowSearch(true);
+    } else {
+      setShowSearch(false);
+    }
+	}
 	return (
 		<Component>
-			<Input type="text" placeholder="Search" onChange={handleChange}></Input>
+			<Input onFocus={handleFocus} type="text" placeholder="Search"onChange={handleChange}></Input>
 			<InputIcon>{SEARCH_ICON}</InputIcon>
-			<SearchWindow query={inputValue} active={showSearch} className={showSearch ? "show" : ""}/>
+			<SearchWindow query={inputValue} setActive={setShowSearch} active={showSearch} className={showSearch ? "show" : ""}/>
 		</Component>
 	);
 }
