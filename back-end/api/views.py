@@ -95,6 +95,16 @@ class GamesByDateView(APIView):
         queryset = ReleaseDate.objects.filter(date=date)
         return Response(group_games(queryset, date))
 
+class SearchBoxView(generics.ListAPIView):
+    serializer_class = GameSerializer
+
+    def get_queryset(self):
+        queryset = Game.objects.all()
+        query = self.request.GET.get("q")
+        if query:
+            queryset = queryset.filter(name__icontains = query)
+        return queryset
+
 
 # def group_games(queryset, date):
 #     result = []

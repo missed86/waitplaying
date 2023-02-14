@@ -114,7 +114,6 @@ export default function Game() {
           <p>{platforms.map(e=>e.name).sort().join(", ")}</p>
           {/* <p>{genres.join(", ")}</p> */}
           <p>{summary}</p>
-          {console.log(extra)}
           <p>Follows: {extra.follows}</p>
           <p>Critic Rating: {Math.round(extra.aggregated_rating*10)/10}</p>
           <p>User Rating: {Math.round(extra.total_rating*10)/10}</p>
