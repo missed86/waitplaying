@@ -16,7 +16,7 @@ for (let i = 0; i <= 10; i++) {
 	dates.push(formattedDate);
   }
 
-function Home() {
+function HomePage() {
 	// const filter = platforms.filter((e) => e.actived === true).map((e) => e.name);
 	const [filters, setFilters] = useState(platforms)
 	return (
@@ -30,4 +30,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default HomePage;

@@ -16,7 +16,7 @@ for (let i = 0; i <= 10; i++) {
 	dates.push(formattedDate);
   }
 
-function ComingSoon() {
+function ComingSoonPage() {
 	// const filter = platforms.filter((e) => e.actived === true).map((e) => e.name);
 	const [filters, setFilters] = useState(platforms)
 	return (
@@ -30,4 +30,4 @@ function ComingSoon() {
 	);
 }
 
-export default ComingSoon;
+export default ComingSoonPage;

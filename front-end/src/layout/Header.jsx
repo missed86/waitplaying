@@ -6,7 +6,8 @@ import HiddenMenu from "../components/Header/HiddenMenu";
 import styled from "styled-components";
 import Logo from "../assets/logo";
 import MenuIcon from "../assets/menu-icon";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuthContext from "../context/AuthContext";
 // import "./Header.css";
 
 const Component = styled.div`
@@ -117,6 +118,7 @@ const Menu = styled.div`
 `;
 
 export default function Header() {
+  let {user} = useContext(AuthContext)
   const [showMenu, setShowMenu] = useState(false);
   const toogleMenu = () => {
     setShowMenu(!showMenu);
@@ -134,6 +136,7 @@ export default function Header() {
           <LogoDiv>{Logo}</LogoDiv>
         </Link>
         <Menu>
+          {user && user.username}
           <ul>
             <li>
               <Link to="/">Home</Link>

@@ -44,13 +44,13 @@ const CoverURL = (id) =>
 const ScreenshotURL = (id) =>
   `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${id}.jpg`;
 
-export default function Game() {
+export default function GamePage() {
   const { slug } = useParams();
   const options = {
     method: "GET",
   };
   const { data, error, status } = useQuery(`game-${slug}`, () =>
-    fetch(`http://127.0.0.1:8000/api/games/${slug}/`, options)
+    fetch(`http://127.0.0.1:8000/api/games/${slug}`, options)
       .then((response) => response.json())
       .catch((err) => {
         throw err;

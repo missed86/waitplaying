@@ -72,7 +72,7 @@ const Cells = styled.div`
 	grid-template-columns: repeat(7, 142px);
   flex: 1;
 `;
-export default function Calendar() {
+export default function CalendarPage() {
 	const [date, setDate] = useState(new Date());
 	const monthList = [
 		"January",
