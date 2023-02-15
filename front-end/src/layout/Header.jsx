@@ -12,7 +12,7 @@ import { useState } from "react";
 const Component = styled.div`
   display: flex;
   position: sticky;
-  top: -2px;
+  top: 0px;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.8);
   height: 56px;
@@ -142,7 +142,7 @@ export default function Header() {
               <Link to="/">Releases</Link>
             </li>
             <li>
-              <Link to="/coming">Coming Soon</Link>
+              <Link to="/coming-soon">Coming Soon</Link>
             </li>
             <li>
               <Link to="/services">On Services</Link>

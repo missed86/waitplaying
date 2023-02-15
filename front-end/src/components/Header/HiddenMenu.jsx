@@ -69,7 +69,7 @@ export default function HiddenMenu({ show, toogle, close }) {
             <Item>Releases</Item>
           </ItemLink>
 
-          <ItemLink onClick={close} to="/coming">
+          <ItemLink onClick={close} to="/coming-soon">
             <Item>Coming Soon</Item>
           </ItemLink>
 

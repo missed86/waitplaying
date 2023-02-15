@@ -18,9 +18,9 @@ function App() {
 					<main>
 						<Routes>
 							<Route path="/" element={<Home />} />
-							<Route path="/coming" element={<ComingSoon />} />
+							<Route path="/coming-soon" element={<ComingSoon />} />
 							<Route path="/game/:slug" element={<Game />} />
-							<Route path="/calendar/" element={<Calendar />} />
+							<Route path="/calendar" element={<Calendar />} />
 						</Routes>
 					</main>
 				</div>

@@ -292,18 +292,31 @@ def scrape_release_dates():
 
                     created_at = data['created_at'] if 'created_at' in data else None
                     updated_at = data['updated_at'] if 'updated_at' in data else None
-                    release_date = ReleaseDate(id=id,
-                                               date=date,
-                                               m=m,
-                                               y=y,
-                                               game=Game.objects.get(id=game),
-                                               platform=Platform.objects.get(
-                                                   id=platform),
-                                               region=region,
-                                               created_at=created_at,
-                                               updated_at=updated_at,
-                                               )
-                    release_date.save()
+                    select = ReleaseDate.objects.filter(game=Game.objects.get(id=game), platform=Platform.objects.get(id=platform))
+                    if select.exists():
+                        # Realiza la operación de actualización
+                        select = select.first() # Obtiene el primer objeto que cumple las condiciones
+                        select.date=date
+                        select.m=m
+                        select.y=y
+                        select.region=region
+                        select.created_at=created_at
+                        select.updated_at=updated_at
+                        select.save()
+                    else:
+                        # Realiza la operación de inserción
+                        objeto = ReleaseDate(id=id,
+                                                date=date,
+                                                m=m,
+                                                y=y,
+                                                game=Game.objects.get(id=game),
+                                                platform=Platform.objects.get(
+                                                    id=platform),
+                                                region=region,
+                                                created_at=created_at,
+                                                updated_at=updated_at,
+                                                )
+                        objeto.save()
 
                     print(end='\x1b[2K')
                     print("Scrapping Release Dates: ", id, date,

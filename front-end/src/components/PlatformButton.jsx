@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./PlatformButton.css";
-const ICON_PATH = "./assets/platforms/";
+const ICON_PATH = "/assets/platforms/";
 
 export default function PlatformButton({ name, icon, color, active, onClick }) {
   const [actived, setActived] = useState(true);
