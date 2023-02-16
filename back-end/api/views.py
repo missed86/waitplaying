@@ -1,16 +1,30 @@
 # from django.shortcuts import render
 from itertools import groupby
-from api.models import Game, ReleaseDate, Platform  # , Company, Cover, Screenshot
+from api.models import Game, ReleaseDate, Platform, Note  # , Company, Cover, Screenshot
 
 from django.http import HttpResponse
 from django.db.models import Count, Prefetch
-from rest_framework import generics, viewsets, permissions, serializers, exceptions
+from rest_framework import (generics, 
+                            viewsets, 
+                            permissions, 
+                            serializers, 
+                            exceptions)
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import GameSerializer, NextGamesSerializer, GameDatesSerializer, SimpleGame
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+
+from .serializers import (
+    GameSerializer, 
+    NextGamesSerializer, 
+    GameDatesSerializer, 
+    SimpleGame, 
+    NoteSerializer)
 from datetime import datetime
 
-from .scrapper import scrape_games, scrape_platforms, scrape_release_dates
+from .scrapper import (scrape_games, 
+                       scrape_platforms, 
+                       scrape_release_dates)
 
 
 def scrapping_view(request):
@@ -44,6 +58,7 @@ class GameDetailsView(generics.ListAPIView):
 
 class NextGamesView(APIView):
     serializer_class = NextGamesSerializer
+
     def get(self, request, format=None):
         queryset = Game.objects.filter(first_release_date__gte=datetime.now()).order_by(
             'first_release_date').distinct()[:10].values('first_release_date').annotate(total=Count('id'))
@@ -54,25 +69,28 @@ class NextGamesView(APIView):
             games_on_date = Game.objects.filter(first_release_date=date)
             games_grouped[date] = games_on_date
 
-        serializer = self.serializer_class([{'first_release_date': date, 'games': games} for date, games in games_grouped.items()], many=True)
+        serializer = self.serializer_class(
+            [{'first_release_date': date, 'games': games} for date, games in games_grouped.items()], many=True)
         return Response(serializer.data)
 
 
 def group_games(queryset, date):
-  result = []
-  queryset = queryset.values("game", "platform__abbreviation", "platform__alternative_name")
-  queryset = sorted(queryset, key=lambda x: x["game"])
-  for game, game_group in groupby(queryset, key=lambda x: x["game"]):
-    platforms = []
-    for x in game_group:
-        if x["platform__abbreviation"] is not None:
-            platforms.append(x["platform__abbreviation"])
-        else:
-            platforms.append(x["platform__alternative_name"])
-    game = Game.objects.get(id=game)
-    serializer = SimpleGame(game)
-    result.append({"date": date, "game": serializer.data, "platforms": platforms})
-  return result
+    result = []
+    queryset = queryset.values(
+        "game", "platform__abbreviation", "platform__alternative_name")
+    queryset = sorted(queryset, key=lambda x: x["game"])
+    for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+        platforms = []
+        for x in game_group:
+            if x["platform__abbreviation"] is not None:
+                platforms.append(x["platform__abbreviation"])
+            else:
+                platforms.append(x["platform__alternative_name"])
+        game = Game.objects.get(id=game)
+        serializer = SimpleGame(game)
+        result.append(
+            {"date": date, "game": serializer.data, "platforms": platforms})
+    return result
 
 # def group_games(queryset, date):
 #     result = []
@@ -90,10 +108,12 @@ def group_games(queryset, date):
 class GamesByDateView(APIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = GameDatesSerializer
+
     def get(self, request, date, format=None):
         date = self.kwargs.get("date")
         queryset = ReleaseDate.objects.filter(date=date)
         return Response(group_games(queryset, date))
+
 
 class SearchBoxView(generics.ListAPIView):
     serializer_class = GameSerializer
@@ -102,5 +122,13 @@ class SearchBoxView(generics.ListAPIView):
         queryset = Game.objects.all().order_by('-first_release_date')
         query = self.request.GET.get("q")
         if query:
-            queryset = queryset.filter(name__icontains = query)[:5]
+            queryset = queryset.filter(name__icontains=query)[:5]
         return queryset
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getNotes(request):
+    user = request.user
+    notes = user.note_set.all()
+    serializer = NoteSerializer(notes, many=True)
+    return Response(serializer.data)

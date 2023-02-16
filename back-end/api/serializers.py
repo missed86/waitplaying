@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Game, Platform, ReleaseDate
+from .models import Game, Platform, ReleaseDate, Note
 
 
 class PlatformSerializer (serializers.ModelSerializer):
@@ -54,3 +54,9 @@ class GameDatesSerializer(serializers.ModelSerializer):
         model = ReleaseDate
         fields = ('date', 'platform', 'game', 'games')
         # read_only_fields = ('__all__')
+
+
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = '__all__'

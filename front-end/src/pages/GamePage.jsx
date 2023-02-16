@@ -50,7 +50,7 @@ export default function GamePage() {
     method: "GET",
   };
   const { data, error, status } = useQuery(`game-${slug}`, () =>
-    fetch(`http://127.0.0.1:8000/api/games/${slug}`, options)
+    fetch(`http://127.0.0.1:8000/api/games/${slug}/`, options)
       .then((response) => response.json())
       .catch((err) => {
         throw err;

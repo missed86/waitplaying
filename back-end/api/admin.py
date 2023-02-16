@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Game, Company, Platform, ReleaseDate, Cover, Screenshot, Scrapping
+from api.models import Game, Company, Platform, ReleaseDate, Cover, Screenshot, Scrapping, Note
 
 
 class GameAdmin(admin.ModelAdmin):
@@ -26,3 +26,5 @@ admin.site.register(Cover)
 admin.site.register(Screenshot)
 admin.site.register(Scrapping, ScrappingAdmin)
 # admin.site.register(YourModelAdmin)
+
+admin.site.register(Note)
