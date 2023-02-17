@@ -6,6 +6,7 @@ import PlatformButton from "./PlatformButton";
 // import { useContext, useEffect, useState } from "react";
 
 import styled from "styled-components"
+import { useEffect } from "react";
 
 const Component = styled.div`
   margin: 0 0 20px 0;
@@ -55,6 +56,7 @@ const platforms = [
 
 function PlatformBar({filters, setFilters}) {
   // console.log(platforms)
+  
   const handleClick = (filter) => {
     const filtersCopy = [...filters];
     const index = filtersCopy.indexOf(filter);
@@ -64,11 +66,10 @@ function PlatformBar({filters, setFilters}) {
       filtersCopy.splice(index, 1);
     }
     setFilters(filtersCopy);
-    // console.log(filters)
   };
-  // useEffect(()=>{
-
-  // },[filters])
+  useEffect(()=>{
+    localStorage.setItem("filtersStore", JSON.stringify(filters));
+  },[filters])
   return (
       <Component>
         {platforms.map((element) => (

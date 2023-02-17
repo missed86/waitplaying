@@ -18,7 +18,11 @@ for (let i = 0; i <= 10; i++) {
 
 function ComingSoonPage() {
 	// const filter = platforms.filter((e) => e.actived === true).map((e) => e.name);
-	const [filters, setFilters] = useState(platforms)
+	const [filters, setFilters] = useState(
+		localStorage.getItem("filtersStore")
+		  ? JSON.parse(localStorage.getItem("filtersStore"))
+		  : platforms
+	  );
 	return (
 		<div className="Home">
 			<PlatformBar filters={filters} setFilters={setFilters}/>

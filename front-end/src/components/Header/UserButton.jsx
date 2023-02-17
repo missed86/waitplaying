@@ -1,107 +1,47 @@
 // import './UserButton.css'
-import {useContext, useState} from 'react'
-import styled from "styled-components"
-import AuthContext from "../../context/AuthContext";
-import StyledLink from '../StyledLink';
+import { useEffect, useState, useRef } from "react";
+import styled from "styled-components";
+import UserMenu from "./UserMenu";
 
 const Component = styled.div`
-    width: 35px;
-    height: 35px;
-    position: relative;
-`
+  width: 35px;
+  height: 35px;
+  position: relative;
+  cursor: pointer;
+`;
 const Avatar = styled.img`
-    overflow: hidden;
-    border-radius: 50%;
-    object-fit: fill;
-    width: 35px;
-    height: 35px;
-`
-const UserMenu = styled.div`
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    top: 45px;
-    right: 0;
-    width: 300px;
-    background-color: #404040;
-    border-radius: 10px;
-    overflow: hidden;
-`
-
-const Header = styled.div`
-    display: flex;
-    flex-grow:1;
-    flex-direction: row;
-    padding: 10px;
-    border-bottom: 1px solid #707070;
-`
-
-const AvatarWrapper = styled.div`
-    padding:0 10px;
-    justify-content: center;
-    align-items: center;
-    display:flex;
-`
-
-const UserData = styled.div`
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    flex:1;
-`
-const UserText = styled.span``
-const EmailText = styled.span``
-
-const Menu = styled.div`
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display:flex;
-        li{
-            display:flex;
-            height:45px;
-            padding: 0 10px;
-            align-items: center;
-            flex:1;
-
-            &:hover {
-                background-color: #505050;
-            }
-        }    
-    }
-`
+  overflow: hidden;
+  border-radius: 50%;
+  object-fit: fill;
+  width: 35px;
+  height: 35px;
+`;
 
 export default function UserButton() {
-    const {user, logoutUser} = useContext(AuthContext)
-    return (
-        <Component>
-            <Avatar src="/assets/default_user.png" alt="default_user"/>
-            {user ?
-                <UserMenu>
-                    <Header>
-                        <AvatarWrapper><Avatar src="/assets/default_user.png" alt="default_user"/></AvatarWrapper>
-                        <UserData>
-                            <UserText>{user.username}</UserText>
-                            <EmailText>{user.username}</EmailText>
-                        </UserData>
-                    </Header>
-                    <Menu>
-                        <ul>
-                            <li onClick={logoutUser}>LOGOUT</li>
-                        </ul>
-                    </Menu>
-                </UserMenu>
-                :
-                <UserMenu>
-                    <Menu>
-                        <ul>
-                        <li><StyledLink to="/login">LOGIN</StyledLink></li>
-                        </ul>
-                    </Menu>
-                </UserMenu>
-            }
-        </Component>
-    )
+  const [actived, setActived] = useState(false);
+  const modalEl = useRef();
+
+  const handleClick = () => {
+    setActived(!actived);
+  };
+  useEffect(() => {
+    const handler = (event) => {
+      if (!modalEl.current) {
+        return;
+      }
+      if (!modalEl.current.contains(event.target)) {
+        setActived(false);
+      }
+    };
+    document.addEventListener("click", handler, true);
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  }, []);
+  return (
+    <Component ref={modalEl} onClick={handleClick}>
+      <Avatar src="/assets/default_user.png" alt="default_user" />
+      <UserMenu actived={actived} />
+    </Component>
+  );
 }
