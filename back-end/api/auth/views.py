@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status, generics
@@ -10,6 +9,7 @@ from api.models import Game
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from api.serializers import UserGameSetsSerializer
 from api.models import UserGameSet
@@ -47,29 +47,57 @@ def getRoutes(request):
 #     game = request.game
 #     serializer = UserGameSetsSerializer(user, game)
 
-# @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+
 class UserGameSetsView(APIView):
     serializer_class = UserGameSetsSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, game_id):
-        user = request.user.id
+        user = request.user
+        print
+        game = get_object_or_404(Game, id=game_id)
+        # print(user, game)
         try:
-            queryset = UserGameSet.objects.get(user=user, game_id=game_id)
+            queryset = UserGameSet.objects.get(user=user, game=game)
         except UserGameSet.DoesNotExist:
             return Response({"detail": "Object not found"}, status=status.HTTP_404_NOT_FOUND)
         serializer = self.serializer_class(queryset)
         return Response(serializer.data)
 
     def post(self, request, game_id):
-        user = request.user.id
-        game = get_object_or_404(Game, pk=game_id)
+        data = request.data
+        user = request.user
+        game = get_object_or_404(Game, id=game_id)
+        validator = {'user':user.id, 'game':game.id, 'mark':data['mark'], 'like':data['like']}
+        # print(validator)
         try:
             user_game_set = UserGameSet.objects.get(user=user, game=game)
-            serializer = self.serializer_class(user_game_set, data=request.data)
+            serializer = UserGameSetsSerializer(user_game_set, data=validator)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except UserGameSet.DoesNotExist:
-            serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=user, game=game)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            user_game_set = UserGameSet(user=user, game=game, mark=data['mark'], like=data['like'])
+            serializer = UserGameSetsSerializer(user_game_set, data=validator)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # def post(self, request, game_id):
+    #     user = request.user
+    #     data = request.data
+    #     print(user)
+    #     game = get_object_or_404(Game, id=game_id)
+    #     try:
+    #         user_game_set = UserGameSet.objects.get(user=user, game=game, mark=data['mark'], like=data['like'])
+    #     except UserGameSet.DoesNotExist:
+    #         user_game_set = UserGameSet(user=user, game=game, mark=data['mark'], like=data['like'])
+    #     serializer = UserGameSetsSerializer(user_game_set, data=request.data)
+    #     print(serializer.is_valid())
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

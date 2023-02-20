@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        refresh: authTokens?.refresh,
+        refresh: authTokens.refresh,
       }),
     });
     let data = await response.json();
@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
   };
   const contextData = {
     user: user,
-	tokens: authTokens,
+	  tokens: authTokens,
     loginUser: loginUser,
     logoutUser: logoutUser,
   };

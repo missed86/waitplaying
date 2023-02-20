@@ -1,6 +1,5 @@
 from django.contrib import admin
-from api.models import Game, Company, Platform, ReleaseDate, Cover, Screenshot, Scrapping, Note
-
+from api.models import Game, Company, Platform, ReleaseDate, Cover, Screenshot, Scrapping, Note,UserGameSet
 
 class GameAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'category',
@@ -25,6 +24,6 @@ admin.site.register(ReleaseDate, ReleaseDateAdmin)
 admin.site.register(Cover)
 admin.site.register(Screenshot)
 admin.site.register(Scrapping, ScrappingAdmin)
-# admin.site.register(YourModelAdmin)
+admin.site.register(UserGameSet)
 
 admin.site.register(Note)
