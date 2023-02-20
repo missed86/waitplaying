@@ -19,17 +19,17 @@ const Avatar = styled.img`
 
 export default function UserButton() {
   const [actived, setActived] = useState(false);
-  const modalEl = useRef();
+  const element = useRef();
 
   const handleClick = () => {
     setActived(!actived);
   };
   useEffect(() => {
     const handler = (event) => {
-      if (!modalEl.current) {
+      if (!element.current) {
         return;
       }
-      if (!modalEl.current.contains(event.target)) {
+      if (!element.current.contains(event.target)) {
         setActived(false);
       }
     };
@@ -39,7 +39,7 @@ export default function UserButton() {
     };
   }, []);
   return (
-    <Component ref={modalEl} onClick={handleClick}>
+    <Component ref={element} onClick={handleClick}>
       <Avatar src="/assets/default_user.png" alt="default_user" />
       <UserMenu actived={actived} />
     </Component>

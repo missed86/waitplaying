@@ -18,20 +18,6 @@ const Component = styled.div`
   transition: all 0.3s ease-in-out;
   padding: 10px 0px;
 
-  &::before {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-  }
-
   &.show {
     visibility: visible;
     opacity: 1;
@@ -84,6 +70,7 @@ const GameURL = (slug) => `/game/${slug}`;
 export default function SearchWindow({ query, active, setActive }) {
   const [debouncedQuery, setDebouncedQuery] = useState("");
 
+
   useEffect(() => {
     console.log(query);
     const timeoutId = setTimeout(() => {
@@ -95,13 +82,12 @@ export default function SearchWindow({ query, active, setActive }) {
   }, [query]);
 
   const { data, error, status } = useQuery({
-    queryKey: active ? ["SearchBox", { q: debouncedQuery }] : null,
-    queryFn: active
-      ? () =>
+    queryKey: ["SearchBox", { q: debouncedQuery }],
+    queryFn: 
+      () =>
           fetch(`http://127.0.0.1:8000/api/search/?q=${debouncedQuery}`).then(
             (res) => res.json()
           )
-      : () => {},
   });
 
   if (status === "loading") {

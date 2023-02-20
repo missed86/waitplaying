@@ -132,3 +132,4 @@ def getNotes(request):
     notes = user.note_set.all()
     serializer = NoteSerializer(notes, many=True)
     return Response(serializer.data)
+
