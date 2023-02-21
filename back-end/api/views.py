@@ -92,19 +92,6 @@ def group_games(queryset, date):
             {"date": date, "game": serializer.data, "platforms": platforms})
     return result
 
-# def group_games(queryset, date):
-#     result = []
-#     queryset = queryset.values("game", "platform__abbreviation", "platform__alternative_name")
-#     queryset = sorted(queryset, key=lambda x: x["game"])
-#     for game, game_group in groupby(queryset, key=lambda x: x["game"]):
-#         platforms = [x["platform__abbreviation"] for x in game_group]
-#         if platforms[0] is None:
-#             print(platforms)
-#         game = Game.objects.get(id=game)
-#         serializer = SimpleGame(game)
-#         result.append({"date": date, "game": serializer.data, "platforms": platforms})
-#     return result
-
 class GamesByDateView(APIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = GameDatesSerializer
