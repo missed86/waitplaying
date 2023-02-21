@@ -85,19 +85,3 @@ class UserGameSetsView(APIView):
                 serializer.save()
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    # def post(self, request, game_id):
-    #     user = request.user
-    #     data = request.data
-    #     print(user)
-    #     game = get_object_or_404(Game, id=game_id)
-    #     try:
-    #         user_game_set = UserGameSet.objects.get(user=user, game=game, mark=data['mark'], like=data['like'])
-    #     except UserGameSet.DoesNotExist:
-    #         user_game_set = UserGameSet(user=user, game=game, mark=data['mark'], like=data['like'])
-    #     serializer = UserGameSetsSerializer(user_game_set, data=request.data)
-    #     print(serializer.is_valid())
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data)
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
