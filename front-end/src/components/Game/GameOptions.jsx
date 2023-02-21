@@ -143,18 +143,21 @@ export default function GameOptions({ gameid }) {
       like: options.like===false ? null: false,
     });
   };
+  const clkNoUser = () => {
+	alert("no user")
+  }
 
 	return (
 		<Component>
-			<Button className={options.mark ? "active" : ""} onClick={clkFollow}>
+			<Button className={options.mark ? "active" : ""} onClick={user ? clkFollow : clkNoUser}>
 				<Icon>{ICONS.add}</Icon>
 				<span>Follow</span>
 			</Button>
-			<Button className={options.like ? "active" : ""} onClick={clkLike}>
+			<Button className={options.like ? "active" : ""} onClick={user ? clkLike : clkNoUser}>
 				<Icon>{ICONS.like}</Icon>
 				<span>Like</span>
 			</Button>
-			<Button className={options.like===false ? "active" : ""} onClick={clkDislike}>
+			<Button className={options.like===false ? "active" : ""} onClick={user ? clkDislike : clkNoUser}>
 				<Icon>{ICONS.dislike}</Icon>
 				<span>Dislike</span>
 			</Button>

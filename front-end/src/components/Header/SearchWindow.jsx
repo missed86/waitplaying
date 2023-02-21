@@ -78,16 +78,20 @@ export default function SearchWindow({ query, active, setActive }) {
     }, 500);
     return () => {
       clearTimeout(timeoutId);
+      console.log("🚀 ~ file: SearchWindow.jsx:83 ~ return ~ timeoutId:", timeoutId)
     };
   }, [query]);
 
   const { data, error, status } = useQuery({
     queryKey: ["SearchBox", { q: debouncedQuery }],
     queryFn: 
-      () =>
-          fetch(`http://127.0.0.1:8000/api/search/?q=${debouncedQuery}`).then(
+      () =>{
+        if(query.length > 2) {
+          return fetch(`http://127.0.0.1:8000/api/search/?q=${debouncedQuery}`).then(
             (res) => res.json()
           )
+        }
+      }
   });
 
   if (status === "loading") {

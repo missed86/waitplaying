@@ -123,7 +123,7 @@ class SearchBoxView(generics.ListAPIView):
         query = self.request.GET.get("q")
         if query:
             queryset = queryset.filter(name__icontains=query)[:5]
-        return queryset
+            return queryset
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
