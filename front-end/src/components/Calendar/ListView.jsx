@@ -48,7 +48,7 @@ const Month = styled.div`
   font-weight: 500;
 `;
 
-
+const prueba = [{name:"God of War Ragnarök", cover:23123},{name:"God of War Ragnarök 2", cover:23123}]
 
 
 export default function ListView() {
@@ -57,9 +57,9 @@ export default function ListView() {
       <Header>My Next Releases</Header>
       <Wrapper>
         <Month>February 2023</Month>
-        <Item name="God of War Ragnarök" date="2023-02-21" />
-        <Item name="God of War 2" date="2023-02-23" />
-        <Item name="God of War 3" date="2023-02-24" />
+        <Item games={prueba} date="2023-02-21" />
+        <Item games={prueba} date="2023-02-23" />
+        <Item games={prueba} date="2023-02-24" />
         
       </Wrapper>
     </Component>
