@@ -47,6 +47,7 @@ class SimpleGame(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ('__all__')
+
 class GameDatesSerializer(serializers.ModelSerializer):
     game = SimpleGame()
     platform = PlatformSerializer()
@@ -65,3 +66,13 @@ class UserGameSetsSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserGameSet
         fields = '__all__'
+
+class UserCalendarSerializer(serializers.ModelSerializer):
+    class GameSubsetSerializer(GameSerializer):
+        class Meta:
+            model = Game
+            fields = ('name', 'cover', 'slug', 'release_dates')
+    game = GameSubsetSerializer()
+    class Meta:
+        model = UserGameSet
+        fields = ('game',)

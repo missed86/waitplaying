@@ -11,8 +11,11 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from api.serializers import UserGameSetsSerializer
+from api.serializers import UserGameSetsSerializer, UserCalendarSerializer
 from api.models import UserGameSet
+
+import collections
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -24,7 +27,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         # ...
 
         return token
-    
+
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -55,7 +58,6 @@ class UserGameSetsView(APIView):
 
     def get(self, request, game_id):
         user = request.user
-        print
         game = get_object_or_404(Game, id=game_id)
         # print(user, game)
         try:
@@ -69,7 +71,8 @@ class UserGameSetsView(APIView):
         data = request.data
         user = request.user
         game = get_object_or_404(Game, id=game_id)
-        validator = {'user':user.id, 'game':game.id, 'mark':data['mark'], 'like':data['like']}
+        validator = {'user': user.id, 'game': game.id,
+                     'mark': data['mark'], 'like': data['like']}
         # print(validator)
         try:
             user_game_set = UserGameSet.objects.get(user=user, game=game)
@@ -79,9 +82,38 @@ class UserGameSetsView(APIView):
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except UserGameSet.DoesNotExist:
-            user_game_set = UserGameSet(user=user, game=game, mark=data['mark'], like=data['like'])
+            user_game_set = UserGameSet(
+                user=user, game=game, mark=data['mark'], like=data['like'])
             serializer = UserGameSetsSerializer(user_game_set, data=validator)
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserCalendarView(APIView):
+    serializer_class = UserCalendarSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        user_game_sets = UserGameSet.objects.filter(user=user, mark=True)
+        serializer = self.serializer_class(user_game_sets, many=True)
+
+        # Reorganizar el diccionario del serializador
+        reorganized_data = {}
+        for data in serializer.data:
+            game = data['game']
+            name = game['name']
+            cover = game['cover']
+            slug = game['slug']
+            dates = game['release_dates']
+            for date in dates:
+                reorganized_data.setdefault(date['date'], [])
+                game_list = reorganized_data[date['date']]
+                is_game_exist = any(game['name'] == name for game in game_list)
+                if not is_game_exist:
+                    game_list.append({'name': name, 'cover': cover, 'slug': slug})
+        sorted_data = collections.OrderedDict(sorted(reorganized_data.items()))
+        return Response(reorganized_data)

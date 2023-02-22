@@ -1,15 +1,13 @@
 import { useState } from "react";
 // import "./Calendar.css";
 import styled from "styled-components";
-import Item from "./Item";
+import ListViewMonth from "./ListViewMonth"
 
 const Component = styled.div`
+  max-width: 350px;
   display: flex;
   flex: 1 1 0px;
   flex-direction: column;
-  border: 2px solid rgb(32, 32, 32);
-  /* max-height: 90vh; */
-  /* height: 90vh; */
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
@@ -17,14 +15,15 @@ const Component = styled.div`
 const Header = styled.div`
   display: flex;
   background-color: #202020;
-    text-transform: uppercase;
-  /* flex: 1 1 0%; */
+  text-transform: uppercase;
   padding: 10px;
-  /* height: 45px; */
 `;
 const Wrapper = styled.div`
   overflow-y: auto;
   flex: 1 1 0px;
+  border-right: 2px solid rgb(32, 32, 32);
+  border-left: 2px solid rgb(32, 32, 32);
+  border-bottom: 2px solid rgb(32, 32, 32);
   &::-webkit-scrollbar {
     width: 5px;
     background-color: transparent;
@@ -38,29 +37,68 @@ const Wrapper = styled.div`
     border-radius: 5px;
   }
 `;
-const Month = styled.div`
-  padding: 10px;
-  height: 50px;
-  background-color: #959595;
-  color: black;
-  font-size: 1.2em;
+
+
+const prueba = [
+  { name: "God of War Ragnarök", cover: 23123 },
+  { name: "God of War Ragnarök 2", cover: 23123 },
+];
+const monthList = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function dateToString(date) {
+  // 2022-03 -> March 2022
+  const datetime = new Date(date+"-01")
+  return `${monthList[datetime.getMonth()]} ${datetime.getFullYear()}`
+}
+
+export default function ListView({ list }) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const nowMonth = today.getMonth();
+  const nowYear = today.getFullYear();
   
-  font-weight: 500;
-`;
+  const reorganized_list = [];
+  let max_date = "";
+  for (const date in list) {
+    const datetime = new Date(date);
+    
+    const year = datetime.getFullYear();
+    const month = `${year}-${String(datetime.getMonth()+1).padStart(2, '0')}`;
+    
+    if (datetime.getTime()>=today.getTime()) {
+      max_date = month > max_date ? month : max_date;
+      
+      reorganized_list[month] = !reorganized_list[month]
+      ? (reorganized_list[month] = [])
+      : reorganized_list[month];
+      reorganized_list[month][date] = list[date];
+    }
+    
+  }
+  console.log("🚀 ~ file: ListView.jsx:98 ~ ListView ~ Object.entries(reorganized_list):", Object.entries(reorganized_list))
 
-const prueba = [{name:"God of War Ragnarök", cover:23123},{name:"God of War Ragnarök 2", cover:23123}]
-
-
-export default function ListView() {
   return (
     <Component>
       <Header>My Next Releases</Header>
       <Wrapper>
-        <Month>February 2023</Month>
-        <Item games={prueba} date="2023-02-21" />
-        <Item games={prueba} date="2023-02-23" />
-        <Item games={prueba} date="2023-02-24" />
-        
+        {
+          Object.entries(reorganized_list).map(([month, dates]) => 
+            	<ListViewMonth month={dateToString(month)} dates={dates}/>
+          	)
+        }
       </Wrapper>
     </Component>
   );
