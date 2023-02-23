@@ -39,10 +39,6 @@ const Wrapper = styled.div`
 `;
 
 
-const prueba = [
-  { name: "God of War Ragnarök", cover: 23123 },
-  { name: "God of War Ragnarök 2", cover: 23123 },
-];
 const monthList = [
   "January",
   "February",
@@ -88,7 +84,7 @@ export default function ListView({ list }) {
     }
     
   }
-  console.log("🚀 ~ file: ListView.jsx:98 ~ ListView ~ Object.entries(reorganized_list):", Object.entries(reorganized_list))
+  // console.log("🚀 ~ file: ListView.jsx:98 ~ ListView ~ Object.entries(reorganized_list):", Object.entries(reorganized_list))
 
   return (
     <Component>
@@ -96,7 +92,7 @@ export default function ListView({ list }) {
       <Wrapper>
         {
           Object.entries(reorganized_list).map(([month, dates]) => 
-            	<ListViewMonth month={dateToString(month)} dates={dates}/>
+            	<ListViewMonth key={month} month={dateToString(month)} dates={dates}/>
           	)
         }
       </Wrapper>

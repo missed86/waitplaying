@@ -48,7 +48,7 @@ export default function Item({ games, date }) {
       </DateDiv>
       <Games>
         {games.map(game => (
-          <Game>{game.name}</Game>
+          <Game key={game.name}>{game.name}</Game>
         ))}
       </Games>
     </Component>

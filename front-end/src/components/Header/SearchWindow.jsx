@@ -78,7 +78,6 @@ export default function SearchWindow({ query, active, setActive }) {
     }, 500);
     return () => {
       clearTimeout(timeoutId);
-      console.log("🚀 ~ file: SearchWindow.jsx:83 ~ return ~ timeoutId:", timeoutId)
     };
   }, [query]);
 
