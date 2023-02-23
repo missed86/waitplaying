@@ -16,6 +16,7 @@ const Page = styled.div`
 export default function CalendarPage() {
 	const { user, tokens, logoutUser } = useContext(AuthContext);
 	const [list, setList] = useState(null);
+	const [calendarView, setCalendarView] = useState(false)
 	const getFollows = async () => {
 		let response = await fetch(`http://localhost:8000/auth/calendar/`, {
 			method: "GET",
@@ -44,8 +45,8 @@ export default function CalendarPage() {
 	return (
     user ?
 		<Page>
-			<ListView list={list} />
-			<Calendar list={list} />
+			<ListView list={list} calendarView={calendarView} setCalendarView={setCalendarView}/>
+			<Calendar list={list} calendarView={calendarView} setCalendarView={setCalendarView}/>
 		</Page>
     :
     {logoutUser}

@@ -1,22 +1,29 @@
 import { useState } from "react";
 // import "./Calendar.css";
+
 import styled from "styled-components";
-import ListViewMonth from "./ListViewMonth"
+import ListViewMonth from "./ListViewMonth";
+import {calendar_days} from "../../assets/icons"
 
 const Component = styled.div`
   max-width: 350px;
-  display: flex;
+  display:flex;
   flex: 1 1 0px;
   flex-direction: column;
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
+  @media screen and (max-width: 900px) {
+    display: ${(props) => (props.calendarView ? "none" : "flex")};
+    max-width: inherit;
+  }
 `;
 const Header = styled.div`
   display: flex;
   background-color: #202020;
   text-transform: uppercase;
   padding: 10px;
+  justify-content: space-between;
 `;
 const Wrapper = styled.div`
   overflow-y: auto;
@@ -37,7 +44,26 @@ const Wrapper = styled.div`
     border-radius: 5px;
   }
 `;
-
+const ToogleButton = styled.button`
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 30px;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+  cursor: pointer;
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+`
 
 const monthList = [
   "January",
@@ -56,45 +82,52 @@ const monthList = [
 
 function dateToString(date) {
   // 2022-03 -> March 2022
-  const datetime = new Date(date+"-01")
-  return `${monthList[datetime.getMonth()]} ${datetime.getFullYear()}`
+  const datetime = new Date(date + "-01");
+  return `${monthList[datetime.getMonth()]} ${datetime.getFullYear()}`;
 }
 
-export default function ListView({ list }) {
+export default function ListView({ list, calendarView, setCalendarView }) {
   const today = new Date();
-  today.setHours(0,0,0,0);
+  today.setHours(0, 0, 0, 0);
   const nowMonth = today.getMonth();
   const nowYear = today.getFullYear();
-  
+
   const reorganized_list = [];
   let max_date = "";
   for (const date in list) {
     const datetime = new Date(date);
-    
+
     const year = datetime.getFullYear();
-    const month = `${year}-${String(datetime.getMonth()+1).padStart(2, '0')}`;
-    
-    if (datetime.getTime()>=today.getTime()) {
+    const month = `${year}-${String(datetime.getMonth() + 1).padStart(2, "0")}`;
+
+    if (datetime.getTime() >= today.getTime()) {
       max_date = month > max_date ? month : max_date;
-      
+
       reorganized_list[month] = !reorganized_list[month]
-      ? (reorganized_list[month] = [])
-      : reorganized_list[month];
+        ? (reorganized_list[month] = [])
+        : reorganized_list[month];
       reorganized_list[month][date] = list[date];
     }
-    
   }
-  // console.log("🚀 ~ file: ListView.jsx:98 ~ ListView ~ Object.entries(reorganized_list):", Object.entries(reorganized_list))
 
+  const toogleCalendar = () => {
+    setCalendarView(!calendarView);
+  };
   return (
-    <Component>
-      <Header>My Next Releases</Header>
+    <Component calendarView={calendarView}>
+      <Header>
+        <span>My Next Releases</span>
+        
+        <ToogleButton onClick={toogleCalendar}>{calendar_days}</ToogleButton>
+      </Header>
       <Wrapper>
-        {
-          Object.entries(reorganized_list).map(([month, dates]) => 
-            	<ListViewMonth key={month} month={dateToString(month)} dates={dates}/>
-          	)
-        }
+        {Object.entries(reorganized_list).map(([month, dates]) => (
+          <ListViewMonth
+            key={month}
+            month={dateToString(month)}
+            dates={dates}
+          />
+        ))}
       </Wrapper>
     </Component>
   );

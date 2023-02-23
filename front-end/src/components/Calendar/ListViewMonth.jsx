@@ -13,6 +13,7 @@ const Title = styled.div`
   background-size: cover;
   background-position: center;
   font-weight: 500;
+  text-shadow: -2px -2px 2px #00000070, 2px -2px 2px #00000070, -2px 2px 2px #00000070, 2px 2px 2px #00000070;
 `;
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
