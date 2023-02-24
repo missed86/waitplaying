@@ -16,7 +16,8 @@ const Page = styled.div`
 export default function CalendarPage() {
 	const { user, tokens, logoutUser } = useContext(AuthContext);
 	const [list, setList] = useState(null);
-	const [calendarView, setCalendarView] = useState(false)
+	const [calendarView, setCalendarView] = useState(false);
+	
 	const getFollows = async () => {
 		let response = await fetch(`http://localhost:8000/auth/calendar/`, {
 			method: "GET",
@@ -27,13 +28,13 @@ export default function CalendarPage() {
 		});
 		let data = await response.json();
 		if (response.status === 200) {
-      const ordered = Object.keys(data).sort().reduce(
-        (obj, key) => { 
-          obj[key] = data[key]; 
-          return obj;
-        }, 
-        {}
-      );
+			// algoritmo de ordenación
+			const ordered = Object.keys(data)
+				.sort()
+				.reduce((obj, key) => {
+					obj[key] = data[key];
+					return obj;
+				}, {});
 			setList(ordered);
 		} else if (response.status === 401) {
 			logoutUser();
@@ -42,13 +43,20 @@ export default function CalendarPage() {
 	useEffect(() => {
 		getFollows();
 	}, []);
-	return (
-    user ?
+	return user ? (
 		<Page>
-			<ListView list={list} calendarView={calendarView} setCalendarView={setCalendarView}/>
-			<Calendar list={list} calendarView={calendarView} setCalendarView={setCalendarView}/>
+			<ListView
+				list={list}
+				calendarView={calendarView}
+				setCalendarView={setCalendarView}
+			/>
+			<Calendar
+				list={list}
+				calendarView={calendarView}
+				setCalendarView={setCalendarView}
+			/>
 		</Page>
-    :
-    {logoutUser}
+	) : (
+		{ logoutUser }
 	);
 }
