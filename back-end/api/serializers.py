@@ -57,11 +57,6 @@ class GameDatesSerializer(serializers.ModelSerializer):
         # read_only_fields = ('__all__')
 
 
-class NoteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Note
-        fields = '__all__'
-        
 class UserGameSetsSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserGameSet

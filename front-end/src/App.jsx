@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
 
@@ -10,11 +9,9 @@ import GamePage from "./pages/GamePage";
 import CalendarPage from "./pages/CalendarPage";
 import LoginPage from "./pages/LoginPage";
 
-const queryClient = new QueryClient();
 
 function App() {
 	return (
-		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
 				<div className="App">
 					<Header />
@@ -29,7 +26,6 @@ function App() {
 					</main>
 				</div>
 			</AuthProvider>
-		</QueryClientProvider>
 	);
 }
 

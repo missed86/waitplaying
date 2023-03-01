@@ -1,7 +1,7 @@
 from django.urls import re_path, path, include
 from rest_framework import routers
 from .api import GameViewSet
-from .views import GameDetailsView, NextGamesView, GamesByDateView, SearchBoxView, getNotes
+from .views import GameDetailsView, NextGamesView, GamesByDateView, SearchBoxView
 from api.views import scrapping_view
 
 
@@ -14,7 +14,6 @@ urlpatterns = [
     path('releases/<str:date>/', GamesByDateView.as_view()),
     path('nextgames/', NextGamesView.as_view(), name='next-games'),
     path('search/', SearchBoxView.as_view(), name='search'),
-    path('notes/', getNotes, name='notes'), # pruebas
     path('scrapping/', scrapping_view, name='scrapping'),
     path('', include(router.urls))
 ]

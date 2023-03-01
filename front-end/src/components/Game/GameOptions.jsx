@@ -105,7 +105,7 @@ export default function GameOptions({ gameid }) {
       }),
     });
     let data = await response.json();
-    console.log("🚀 ~ file: GameOptions.jsx:101 ~ updateOptions ~ data:", data);
+    // console.log("🚀 ~ file: GameOptions.jsx:101 ~ updateOptions ~ data:", data);
 
     setLoading(false);
     if (response.status === 200) {

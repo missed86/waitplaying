@@ -1,29 +1,33 @@
 # from django.shortcuts import render
 from itertools import groupby
-from api.models import Game, ReleaseDate, Platform, Note  # , Company, Cover, Screenshot
+# , Company, Cover, Screenshot
+from api.models import Game, ReleaseDate, Platform, UserGameSet
 
 from django.http import HttpResponse
-from django.db.models import Count, Prefetch
-from rest_framework import (generics, 
-                            viewsets, 
-                            permissions, 
-                            serializers, 
+from django.db.models import Count, Prefetch, F
+from rest_framework import (generics,
+                            viewsets,
+                            permissions,
+                            serializers,
                             exceptions)
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from django.contrib.auth import get_user_model
+
 
 from .serializers import (
-    GameSerializer, 
-    NextGamesSerializer, 
-    GameDatesSerializer, 
-    SimpleGame, 
-    NoteSerializer)
+    GameSerializer,
+    NextGamesSerializer,
+    GameDatesSerializer,
+    SimpleGame,
+    UserGameSetsSerializer)
 from datetime import datetime
 
-from .scrapper import (scrape_games, 
-                       scrape_platforms, 
+from .scrapper import (scrape_games,
+                       scrape_platforms,
                        scrape_release_dates)
 
 
@@ -74,7 +78,26 @@ class NextGamesView(APIView):
         return Response(serializer.data)
 
 
-def group_games(queryset, date):
+
+# def group_games(queryset, date):
+#     result = []
+#     queryset = queryset.values(
+#         "game", "platform__abbreviation", "platform__alternative_name")
+#     queryset = sorted(queryset, key=lambda x: x["game"])
+#     for game, game_group in groupby(queryset, key=lambda x: x["game"]):
+#         platforms = []
+#         for x in game_group:
+#             if x["platform__abbreviation"] is not None:
+#                 platforms.append(x["platform__abbreviation"])
+#             else:
+#                 platforms.append(x["platform__alternative_name"])
+#         game = Game.objects.get(id=game)
+#         serializer = SimpleGame(game)
+#         result.append(
+#             {"date": date, "game": serializer.data, "platforms": platforms})
+#     return result
+
+def group_games(queryset, date, user):
     result = []
     queryset = queryset.values(
         "game", "platform__abbreviation", "platform__alternative_name")
@@ -87,19 +110,44 @@ def group_games(queryset, date):
             else:
                 platforms.append(x["platform__alternative_name"])
         game = Game.objects.get(id=game)
-        serializer = SimpleGame(game)
-        result.append(
-            {"date": date, "game": serializer.data, "platforms": platforms})
+        if user is not None and user.is_authenticated:
+            user_games = UserGameSet.objects.filter(
+            user=user, game=game, mark=True)
+            if user_games.exists():
+                userSerializer = UserGameSetsSerializer(user_games, many=True)
+                gameSerializer = SimpleGame(game)
+                result.append(
+                    {"date": date, "game": gameSerializer.data, "platforms": platforms, "mark": userSerializer.data[0]['mark']})
+            else:
+                serializer = SimpleGame(game)
+                result.append(
+                    {"date": date, "game": serializer.data, "platforms": platforms})
+        else:
+            serializer = SimpleGame(game)
+            result.append(
+                {"date": date, "game": serializer.data, "platforms": platforms})
     return result
 
 class GamesByDateView(APIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = GameDatesSerializer
+    authentication_classes = [JWTAuthentication]
 
     def get(self, request, date, format=None):
         date = self.kwargs.get("date")
         queryset = ReleaseDate.objects.filter(date=date)
-        return Response(group_games(queryset, date))
+        user = request.user if request.user.is_authenticated else None
+        return Response(group_games(queryset, date, user))
+
+
+# class GamesByDateView(APIView):
+#     permission_classes = [permissions.AllowAny]
+#     serializer_class = GameDatesSerializer
+
+#     def get(self, request, date, format=None):
+#         date = self.kwargs.get("date")
+#         queryset = ReleaseDate.objects.filter(date=date)
+#         return Response(group_games(queryset, date))
 
 
 class SearchBoxView(generics.ListAPIView):
@@ -112,11 +160,10 @@ class SearchBoxView(generics.ListAPIView):
             queryset = queryset.filter(name__icontains=query)[:5]
             return queryset
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def getNotes(request):
-    user = request.user
-    notes = user.note_set.all()
-    serializer = NoteSerializer(notes, many=True)
-    return Response(serializer.data)
-
+# @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+# def getNotes(request):
+#     user = request.user
+#     notes = user.note_set.all()
+#     serializer = NoteSerializer(notes, many=True)
+#     return Response(serializer.data)

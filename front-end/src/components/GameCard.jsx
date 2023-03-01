@@ -48,7 +48,8 @@ const main_platforms = ["PS5", "PS4", "Series X", "PC"];
 const only_main_platforms = (array) =>
   array.filter((p) => main_platforms.includes(p));
 
-export default function GameCard({ image, title, platforms }) {
+export default function GameCard({ image, title, platforms, marked }) {
+// console.log("🚀 ~ file: GameCard.jsx:52 ~ GameCard ~ marked:", marked)
 
   platforms = [...new Set(platforms)]
   const handleClick = (event) => {
@@ -56,7 +57,7 @@ export default function GameCard({ image, title, platforms }) {
     // console.log(event);
     setActived(!actived);
   };
-  const [actived, setActived] = useState(false);
+  const [actived, setActived] = useState(marked);
   return (
     <Component className="GameCard">
       <div
