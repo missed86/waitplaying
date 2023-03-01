@@ -46,19 +46,21 @@ const InputIcon = styled.span`
 const Background = styled.div`
   opacity: 0;
   visibility: hidden;
-
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  content: "";
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
   &.show {
     visibility: visible;
     opacity: 1;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     z-index: -1;
     transition: all 0.3s ease-in-out;
   }
