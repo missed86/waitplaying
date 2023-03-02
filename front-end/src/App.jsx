@@ -14,7 +14,7 @@ function App() {
 	return (
 			<AuthProvider>
 				<div className="App">
-					<Header />
+					<Header/>
 					<main>
 						<Routes>
 							<Route path="/" element={<HomePage />} exact/>

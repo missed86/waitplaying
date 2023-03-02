@@ -28,7 +28,7 @@ export default function GamePage() {
 				setError(err);
 				setLoading(false);
 			});
-	}, []);
+	}, [slug]);
 
 	let {
 		id,

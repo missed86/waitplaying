@@ -39,26 +39,36 @@ const Component = styled.div`
   overflow: hidden;
   position: relative;
   cursor: pointer;
-`
+`;
 
-
-const CoverURL = (cover) => `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`
+const CoverURL = (cover) =>
+  `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`;
 const main_platforms = ["PS5", "PS4", "Series X", "PC"];
 
 const only_main_platforms = (array) =>
   array.filter((p) => main_platforms.includes(p));
 
-export default function GameCard({ image, title, platforms, marked }) {
-// console.log("🚀 ~ file: GameCard.jsx:52 ~ GameCard ~ marked:", marked)
+export default function GameCard({
+  image,
+  title,
+  platforms,
+  marked,
+  empty = false,
+}) {
+  // console.log("🚀 ~ file: GameCard.jsx:52 ~ GameCard ~ marked:", marked)
 
-  platforms = [...new Set(platforms)]
+  platforms = [...new Set(platforms)];
   const handleClick = (event) => {
     event.preventDefault();
     // console.log(event);
     setActived(!actived);
   };
   const [actived, setActived] = useState(marked);
-  return (
+  return empty ? (
+    <Component className="GameCard">
+      <img className="cover" src="./assets/emptycover.png" alt={title} />
+    </Component>
+  ) : (
     <Component className="GameCard">
       <div
         className={`button ${actived ? "actived" : ""}`}
@@ -71,7 +81,7 @@ export default function GameCard({ image, title, platforms, marked }) {
           {platforms.length <= 3
             ? platforms.map((platform) => {
                 return (
-                  <span key={platform+title} className="platform-pill">
+                  <span key={platform + title} className="platform-pill">
                     {platform}
                   </span>
                 );
@@ -80,16 +90,18 @@ export default function GameCard({ image, title, platforms, marked }) {
                 .slice(0, 3)
                 .map((platform) => {
                   return (
-                    <span key={platform+title} className="platform-pill">
+                    <span key={platform + title} className="platform-pill">
                       {platform}
                     </span>
                   );
                 })}
-                {(platforms.length>3)?(
-                  <span key={title} className="platform-pill">
-                    +
-                  </span>
-                ):""}
+          {platforms.length > 3 ? (
+            <span key={title} className="platform-pill">
+              +
+            </span>
+          ) : (
+            ""
+          )}
           {/* {only_main_platforms.slice(0, 3).map((platform) => {
             return (
               <span key={platform} className="platform-pill">

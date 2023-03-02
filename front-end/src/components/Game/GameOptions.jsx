@@ -69,7 +69,7 @@ export default function GameOptions({ gameid }) {
     like: null,
   });
   const [loading, setLoading] = useState(false);
-  const { user, tokens, logoutUser } = useContext(AuthContext);
+  const { user, tokens, logoutUser, showLoginWindow } = useContext(AuthContext);
 
   const getOptions = async () => {
     let response = await fetch(`http://localhost:8000/auth/go/${gameid}/`, {
@@ -143,7 +143,7 @@ export default function GameOptions({ gameid }) {
     });
   };
   const clkNoUser = () => {
-    alert("no user");
+    showLoginWindow(true)
   };
 
   return (

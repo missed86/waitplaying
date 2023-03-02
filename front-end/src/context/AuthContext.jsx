@@ -7,6 +7,7 @@ const AuthContext = createContext();
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
+  const [loginWindow, setLoginWindow] = useState(false)
   const [authTokens, setAuthTokens] = useState(() =>
     localStorage.getItem("authTokens")
       ? JSON.parse(localStorage.getItem("authTokens"))
@@ -50,17 +51,19 @@ export const AuthProvider = ({ children }) => {
       setAuthTokens(data);
       setUser(jwt_decode(data.access));
       localStorage.setItem("authTokens", JSON.stringify(data));
-      navigate("/");
+      // navigate("");
     } else {
       alert("Something went wrong!");
     }
   };
-
+  const showLoginWindow = (value) => {
+    setLoginWindow(value)
+  }
   const logoutUser = () => {
     setAuthTokens(null);
     setUser(null);
     localStorage.removeItem("authTokens");
-    navigate("/");
+    // navigate("");
   };
 
   const updateToken = async () => {
@@ -92,6 +95,8 @@ export const AuthProvider = ({ children }) => {
 	  tokens: authTokens,
     loginUser: loginUser,
     logoutUser: logoutUser,
+    loginWindow: loginWindow,
+    showLoginWindow: showLoginWindow
   };
 
   useEffect(() => {

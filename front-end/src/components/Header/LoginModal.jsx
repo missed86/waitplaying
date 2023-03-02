@@ -109,28 +109,28 @@ const LoginButton = styled.button`
 `;
 
 export default function LoginModal({ actived, setActived }) {
-	const { loginUser } = useContext(AuthContext);
+	const { loginUser, showLoginWindow, loginWindow } = useContext(AuthContext);
     const inputRef  = useRef()
 
     useEffect(()=>{
-        if(actived) {
+        if(loginWindow) {
             setTimeout(()=>{
                 inputRef.current.focus()
             },100)
         }
         
-    }, [actived])
+    }, [loginWindow])
 
 	const clkBackground = (e) => {
-		setActived(false);
+		showLoginWindow(false);
 	};
 	const clkClose = () => {
-		setActived(false);
+		showLoginWindow(false);
 	};
 	return (
 		<>
 			
-				<Modal className={actived && "show"}>
+				<Modal className={loginWindow && "show"}>
 					<Content>
 						<CloseWrapper>
 							<CloseButton onClick={clkClose}>
@@ -164,7 +164,7 @@ export default function LoginModal({ actived, setActived }) {
 						</Form>
 					</Content>
 				</Modal>
-                <Background className={actived && "show"} onClick={clkBackground}/>
+                <Background className={loginWindow && "show"} onClick={clkBackground}/>
 		</>
 	);
 }

@@ -9,18 +9,11 @@ import "./Home.css";
 // const today = new Date();
 const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2"];
 
-// for (let i = 0; i <= 10; i++) {
-// 	const nextDate = new Date();
-// 	nextDate.setDate(today.getDate() - i);
-// 	const formattedDate = nextDate.toISOString().slice(0, 10);
-// 	dates.push(formattedDate);
-// }
-
-const MAX_NUM_DATES = 100
+const MAX_NUM_DATES = 31
 
 function HomePage() {
 	const [dates, setDates] = useState([]);
-	const [numDates, setNumDates] = useState(10);
+	const [numDates, setNumDates] = useState(5);
   const [key, setKey] = useState(0);
 
 	const [filters, setFilters] = useState(
@@ -41,8 +34,8 @@ function HomePage() {
 	}, [numDates]);
 	// console.log("🚀 ~ file: HomePage.jsx:39 ~ HomePage ~ numDates:", numDates);
 	useEffect(() => {
-    if (numDates > 30) {
-      setNumDates(10);
+    if (numDates > 5) {
+      setNumDates(5);
       setKey((prevKey) => prevKey + 1);
     }
 	}, [filters]);
@@ -58,7 +51,7 @@ function HomePage() {
 					if (numDates >= MAX_NUM_DATES) {
 						return; // no cargues más fechas si se ha alcanzado el límite máximo
 					}
-					setNumDates(numDates + 3);
+					setNumDates(numDates + 1);
 				}}
 				hasMore={numDates < MAX_NUM_DATES} // no hay más fechas si se ha alcanzado el límite máximo
 			>

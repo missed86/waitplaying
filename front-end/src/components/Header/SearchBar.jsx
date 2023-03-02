@@ -57,7 +57,7 @@ const Background = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  
+
   &.show {
     visibility: visible;
     opacity: 1;
@@ -89,7 +89,6 @@ export default function SearchBar() {
   const [inputValue, setInputValue] = useState("");
   const [showSearch, setShowSearch] = useState(false);
 
-
   const handleChange = (event) => {
     setInputValue(event.target.value);
     if (event.target.value.length > 2) {
@@ -107,8 +106,8 @@ export default function SearchBar() {
     }
   };
   const handleBlur = () => {
-	setShowSearch(false)
-  }
+    setShowSearch(false);
+  };
   return (
     <Component>
       <Input
@@ -116,15 +115,17 @@ export default function SearchBar() {
         type="text"
         placeholder="Search"
         onChange={handleChange}
-      ></Input>
+      />
       <InputIcon>{SEARCH_ICON}</InputIcon>
-        <SearchWindow
-          query={inputValue}
-          setActive={setShowSearch}
-          active={showSearch}
-        />
-      	<Background onClick={handleBlur} className={showSearch ? "show" : ""}></Background>
-
+      <SearchWindow
+        query={inputValue}
+        setActive={setShowSearch}
+        active={showSearch}
+      />
+      <Background
+        onClick={handleBlur}
+        className={showSearch ? "show" : ""}
+      ></Background>
     </Component>
   );
 }
