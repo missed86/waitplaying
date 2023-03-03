@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import ListView from "../components/Calendar/ListView";
 import Calendar from "../components/Calendar/Calendar";
+import { useNavigate } from "react-router-dom";
 
 const Page = styled.div`
 	display: flex;
@@ -17,6 +18,8 @@ export default function CalendarPage() {
 	const { user, tokens, logoutUser } = useContext(AuthContext);
 	const [list, setList] = useState(null);
 	const [calendarView, setCalendarView] = useState(false);
+	const navigate = useNavigate()
+	if (!user) navigate("/")
 	
 	const getFollows = async () => {
 		let response = await fetch(`http://localhost:8000/auth/calendar/`, {

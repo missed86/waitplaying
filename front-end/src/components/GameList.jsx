@@ -90,9 +90,9 @@ export default function GameList({ date, filters }) {
     fetchData();
   }, []);
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+  //   if (loading) {
+  //     return <div>Loading...</div>;
+  //   }
 
   if (error) {
     logoutUser();
@@ -114,9 +114,7 @@ export default function GameList({ date, filters }) {
       <GameGroup ref={parent}>
         <DateDiv>{getFormattedDate(date)}</DateDiv>
         <List ref={parent}>
-          <GameCard
-			empty={true}
-          />
+          <GameCard empty={true} />
         </List>
       </GameGroup>
     ) : (

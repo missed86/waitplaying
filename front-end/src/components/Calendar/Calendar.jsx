@@ -2,7 +2,12 @@ import styled from "styled-components";
 import { useState } from "react";
 
 import { Day } from "./Day";
-import { chevron_right, chevron_left, menu_icon } from "../../assets/icons";
+import {
+  chevron_right,
+  chevron_left,
+  menu_icon,
+  calendar_today,
+} from "../../assets/icons";
 
 const Component = styled.div`
   display: flex;
@@ -50,6 +55,7 @@ const Row = styled.div`
 `;
 const Buttons = styled.div`
   display: inline-flex;
+  align-items: center;
 `;
 const Button = styled.button`
   color: white;
@@ -60,13 +66,21 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
-  width: 41px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
   /* margin: 0 10px 0 0; */
   svg {
     height: 25px;
     width: 25px;
+    ${(props) =>
+      props.calendar &&
+      `
+        height: 30px;
+        width: 30px;
+        transform: translateY(-1px);
+      `
+      }
   }
 `;
 const ToogleButton = styled.button`
@@ -163,7 +177,11 @@ export default function Calendar({ list, calendarView, setCalendarView }) {
   const [date, setDate] = useState(new Date());
   const year = date.getFullYear();
   const month = date.getMonth();
+  const today = new Date().getDate();
 
+  const handleToday = () => {
+    setDate(new Date());
+  };
   const handlePrevMonth = () => {
     setDate(new Date(year, month - 1, 1));
   };
@@ -178,6 +196,9 @@ export default function Calendar({ list, calendarView, setCalendarView }) {
       <Header>
         <Month>{`${getMonthName(month)} ${year}`}</Month>
         <Buttons>
+          <Button calendar onClick={handleToday}>
+            {calendar_today(today)}
+          </Button>
           <Button onClick={handlePrevMonth}>{chevron_left}</Button>
           <Button onClick={handleNextMonth}>{chevron_right}</Button>
 

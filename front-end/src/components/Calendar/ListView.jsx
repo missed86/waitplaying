@@ -12,6 +12,9 @@ const Component = styled.div`
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
+  border-right: 2px solid rgb(32, 32, 32);
+  border-left: 2px solid rgb(32, 32, 32);
+  border-bottom: 2px solid rgb(32, 32, 32);
   @media screen and (max-width: 900px) {
     display: ${(props) => (props.calendarView ? "none" : "flex")};
     max-width: inherit;
@@ -27,9 +30,6 @@ const Header = styled.div`
 const Wrapper = styled.div`
   overflow-y: auto;
   flex: 1 1 0px;
-  border-right: 2px solid rgb(32, 32, 32);
-  border-left: 2px solid rgb(32, 32, 32);
-  border-bottom: 2px solid rgb(32, 32, 32);
   &::-webkit-scrollbar {
     width: 5px;
     background-color: transparent;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Component = styled.div`
   padding: 10px;
@@ -48,7 +49,13 @@ export default function Item({ games, date }) {
       </DateDiv>
       <Games>
         {games.map(game => (
+            <Link
+            key={game.id}
+            to={`/game/${game.slug}`}
+            className="no-link"
+          >
           <Game key={game.name}>{game.name}</Game>
+          </Link>
         ))}
       </Games>
     </Component>
