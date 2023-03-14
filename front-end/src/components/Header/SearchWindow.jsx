@@ -116,7 +116,7 @@ export default function SearchWindow({ query, active, setActive }) {
 						to={`/game/${e.slug}`}
 						className="no-link flex"
 					>
-						<Item>
+						<Item key={e.name}>
 							<CoverAside>
 								<Cover src={CoverURL(e.cover)}></Cover>
 							</CoverAside>

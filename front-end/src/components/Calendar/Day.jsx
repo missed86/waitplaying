@@ -7,6 +7,7 @@ const Component = styled.div`
 	border: 1px solid #303030;
 	overflow: hidden;
 	position: relative;
+	background-color: ${(props) => (props.today ? "#101010" : "")};
 `;
 const Number = styled.span`
 	position: absolute;
@@ -35,16 +36,16 @@ const Wrapper = styled.div`
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
 
-export function Day({ date, day, data }) {
-	console.log("🚀 ~ file: Day.jsx:39 ~ Day ~ data:", data)
-	
+export function Day({ date, day, data, today }) {
 	return (
-		<Component>
+		<Component today={today}>
 			<Number>{day}</Number>
 			{data &&
 				data.map((game) => (
 					<Wrapper key={game.cover}>
-						<Link to={`../game/${game.slug}`}><Cover alt={game.name} src={CoverURL(game.cover)} /></Link>
+						<Link to={`../game/${game.slug}`}>
+							<Cover alt={game.name} src={CoverURL(game.cover)} />
+						</Link>
 					</Wrapper>
 				))}
 		</Component>

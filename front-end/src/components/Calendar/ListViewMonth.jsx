@@ -24,9 +24,9 @@ export default function Month({ month, dates }) {
   return (
     <>
       <Title background={CoverURL(dates[Object.keys(dates)[0]][0].cover)}>{month}</Title>
-      {Object.entries(dates).map(([date,game]) => (
+      {Object.entries(dates).map(([date,game], index) => (
       
-        <Day key={date} games={game} date={date} />
+        <Day key={'DayItem-'+date+'-'+index} games={game} date={date} />
         
       ))}
     </>

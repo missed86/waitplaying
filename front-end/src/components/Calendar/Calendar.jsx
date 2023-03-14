@@ -105,8 +105,11 @@ const ToogleButton = styled.button`
 `;
 
 const generateMonthRows = (year, month, list) => {
-  let firstDay = new Date(year, month, 1).getDay() + 1;
-
+  let firstDay = new Date(year, month, 1).getDay()+2;
+  const today = `${year}-${(month + 1).toString().padStart(2, "0")}-${new Date().getDate()
+    .toString()
+    .padStart(2, "0")}`;
+    
   const numDays = getDaysInMonth(year, month);
   const rows = [];
   let days = [];
@@ -131,6 +134,7 @@ const generateMonthRows = (year, month, list) => {
         date={date}
         day={i}
         data={list && list[date] ? list[date] : null}
+        today= {date == today}
       />
     );
     if (cellCount % 7 === 0) {
