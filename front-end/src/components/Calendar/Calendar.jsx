@@ -106,7 +106,8 @@ const ToogleButton = styled.button`
 
 const generateMonthRows = (year, month, list) => {
   let firstDay = new Date(year, month, 1).getDay()+2;
-  const today = `${year}-${(month + 1).toString().padStart(2, "0")}-${new Date().getDate()
+  const dateToday = new Date()
+  const today = `${dateToday.getFullYear()}-${(dateToday.getMonth() + 1).toString().padStart(2, "0")}-${dateToday.getDate()
     .toString()
     .padStart(2, "0")}`;
     

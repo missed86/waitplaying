@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 import axios from "axios";
+import moment from "moment";
+
 import "./Game.css";
 
 import GameOptions from "../components/Game/GameOptions";
+import Gallery from "../components/Game/Gallery";
 
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
 const ScreenshotURL = (id) =>
-	`https://images.igdb.com/igdb/image/upload/t_screenshot_big/${id}.jpg`;
+	`https://images.igdb.com/igdb/image/upload/t_original/${id}.jpg`;
 
 export default function GamePage() {
 	const { slug } = useParams();
@@ -42,6 +46,7 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
+	const release_date = moment(first_release_date);
 
 	return (
 		<>
@@ -64,7 +69,9 @@ export default function GamePage() {
 						<div className="description">
 							<div className="title">
 								<h1>{name}</h1>
-								<h2>{first_release_date}</h2>
+								<h2>
+									{release_date.format("LL")} ({release_date.fromNow()})
+								</h2>
 							</div>
 							<p>
 								{platforms
@@ -81,6 +88,7 @@ export default function GamePage() {
 							<p>User Rating: {Math.round(extra.total_rating * 10) / 10}</p>
 						</div>
 					</div>
+					<Gallery screenshots={screenshots} />
 				</div>
 			)}
 		</>

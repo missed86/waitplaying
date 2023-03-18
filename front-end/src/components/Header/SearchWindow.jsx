@@ -65,6 +65,8 @@ const Data = styled.div`
 
 const CoverURL = (cover) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`;
+const CoverSmallURL = (cover) =>
+	`https://images.igdb.com/igdb/image/upload/t_cover_small/${cover}.png`;
 const GameURL = (slug) => `/game/${slug}`;
 
 export default function SearchWindow({ query, active, setActive }) {
@@ -118,7 +120,7 @@ export default function SearchWindow({ query, active, setActive }) {
 					>
 						<Item key={e.name}>
 							<CoverAside>
-								<Cover src={CoverURL(e.cover)}></Cover>
+								<Cover src={CoverSmallURL(e.cover)}></Cover>
 							</CoverAside>
 							<Data>
 								<h1>{e.name}</h1>
