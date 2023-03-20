@@ -29,6 +29,7 @@
     /* width: 200px; */
     height: 100%;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 .Game .main .side-menu .cover {
     width: 264px;
@@ -60,7 +61,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-left:20px;
+    margin:0 20px;
 }
 .Game .main .description h1 {
     margin: 0 0 20px 0;
@@ -72,7 +73,11 @@
     text-shadow: 3px 3px 10px black;
 }
 .Game .main .description h2 {
-    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.Game .main .description p {
+    margin: 5px 0 10px 0;
     font-weight: 400;
 }
 

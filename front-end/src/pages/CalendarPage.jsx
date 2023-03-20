@@ -18,9 +18,10 @@ export default function CalendarPage() {
 	const { user, tokens, logoutUser } = useContext(AuthContext);
 	const [list, setList] = useState(null);
 	const [calendarView, setCalendarView] = useState(false);
+	
 	const navigate = useNavigate()
 	if (!user) navigate("/")
-	
+
 	const getFollows = async () => {
 		let response = await fetch(`http://localhost:8000/auth/calendar/`, {
 			method: "GET",
@@ -44,9 +45,10 @@ export default function CalendarPage() {
 		}
 	};
 	useEffect(() => {
+		if (!user) navigate("/")
 		getFollows();
 	}, []);
-	return user ? (
+	return user && (
 		<Page>
 			<ListView
 				list={list}
@@ -59,7 +61,5 @@ export default function CalendarPage() {
 				setCalendarView={setCalendarView}
 			/>
 		</Page>
-	) : (
-		{ logoutUser }
 	);
 }

@@ -4,7 +4,16 @@ const Component = styled.div`
 	display: flex;
 	flex: 1;
 	padding: 0;
-	border: 1px solid #303030;
+	border: 1px solid #222;
+	${'' /* border: 1px solid #303030; */}
+		transition: all 0.5s ease-in-out;
+		${(props) => !props.empty ?
+			`&:hover {
+			border: 1px solid #888;
+			transition: all 0s ease-in-out;
+		}`: ''
+		}
+	
 	overflow: hidden;
 	position: relative;
 	${"" /* background-color: ${(props) => (props.today ? "#101010" : "")}; */}
@@ -72,9 +81,9 @@ const CoverURL = (id) =>
 const CoverSmallURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_small/${id}.png`;
 
-export function Day({ date, day, data, today }) {
+export function Day({ date, day, data, today, empty }) {
 	return (
-		<Component today={today} background={data ? data[0].cover : false}>
+		<Component empty={empty} today={today} background={data ? data[0].cover : false}>
 			{data &&
 				data.map((game) => (
 					<Wrapper key={game.cover}>

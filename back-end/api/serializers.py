@@ -12,7 +12,7 @@ class PlatformSerializer (serializers.ModelSerializer):
 class ReleaseDateSerializer(serializers.ModelSerializer):
     class Meta:
         model = ReleaseDate
-        fields = ('game', 'platform', 'date')
+        fields = ('game', 'platform', 'date', 'category')
 
 # class GameSerializerStandard(serializers.ModelSerializer):
 #     class Meta:

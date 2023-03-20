@@ -59,11 +59,11 @@ export const AuthProvider = ({ children }) => {
   const showLoginWindow = (value) => {
     setLoginWindow(value)
   }
-  const logoutUser = () => {
+  const logoutUser = (navigate = "/") => {
     setAuthTokens(null);
     setUser(null);
     localStorage.removeItem("authTokens");
-    // navigate("");
+    navigate(navigate);
   };
 
   const updateToken = async () => {

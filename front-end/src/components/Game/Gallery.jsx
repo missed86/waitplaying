@@ -11,7 +11,7 @@ const Component = styled.div`
 	display: flex;
 	flex: 1 1 0%;
     max-width: 95vw;
-    margin-top: 40px;
+    margin-top: 10px;
 `;
 
 const Wrapper = styled.div`

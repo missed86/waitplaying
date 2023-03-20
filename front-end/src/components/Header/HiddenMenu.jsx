@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 
 const Drawer = styled.div`
 	position: fixed;
@@ -65,6 +67,7 @@ const ItemLink = styled(NavLink)`
 	}
 `;
 export default function HiddenMenu({ show, toogle, close }) {
+	const { user } = useContext(AuthContext);
 	return (
 		<>
 			<Background onClick={close} className={show ? "show" : ""} />
@@ -85,10 +88,11 @@ export default function HiddenMenu({ show, toogle, close }) {
 					<ItemLink onClick={close} to="/services">
 						<Item>On Services</Item>
 					</ItemLink>
-
+					{user && (
 					<ItemLink onClick={close} to="/calendar">
 						<Item>My calendar</Item>
 					</ItemLink>
+					)}
 				</Menu>
 			</Drawer>
 		</>

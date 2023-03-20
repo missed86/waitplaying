@@ -119,7 +119,7 @@ const generateMonthRows = (year, month, list) => {
   // Agregar días vacíos antes del primer día del mes
   const firstEmptyDays = 7 - firstDay;
   for (let i = 0; i < firstEmptyDays; i++) {
-    days.push(<Day key={`empty-${i}`} />);
+    days.push(<Day empty key={`empty-${i}`} />);
     cellCount++;
   }
 
@@ -148,7 +148,7 @@ const generateMonthRows = (year, month, list) => {
   if (days.length > 0) {
     const numEmptyDays = 7 - days.length;
     for (let i = 0; i < numEmptyDays; i++) {
-      days.push(<Day key={`empty-${i}`} />);
+      days.push(<Day empty key={`empty-${i}`} />);
     }
     rows.push(<Row key={numDays}>{days}</Row>);
   }

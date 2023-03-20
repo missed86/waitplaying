@@ -81,6 +81,7 @@ export default function GameList({ date, filters }) {
       setData(response.data);
       setLoading(false);
     } catch (error) {
+      logoutUser("/");
       setError(error);
       setLoading(false);
     }
@@ -88,14 +89,14 @@ export default function GameList({ date, filters }) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [error]);
 
   //   if (loading) {
   //     return <div>Loading...</div>;
   //   }
 
   if (error) {
-    logoutUser();
+    logoutUser("/");
     return <div>Error: {error.message}</div>;
   }
 

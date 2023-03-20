@@ -33,6 +33,7 @@ class ReleaseDate(models.Model):
         'Game', on_delete=models.SET_NULL, null=True, blank=True)
     m = models.IntegerField()
     y = models.IntegerField()
+    category = models.IntegerField(default=0)
     platform = models.ForeignKey(
         'Platform', on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.IntegerField()

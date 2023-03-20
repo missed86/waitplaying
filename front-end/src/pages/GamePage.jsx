@@ -8,11 +8,19 @@ import "./Game.css";
 
 import GameOptions from "../components/Game/GameOptions";
 import Gallery from "../components/Game/Gallery";
+import { ReleasesTable } from "../components/Game/ReleasesTable";
 
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
 const ScreenshotURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_original/${id}.jpg`;
+
+const Label = styled.h2`
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #333;
+`;
 
 export default function GamePage() {
 	const { slug } = useParams();
@@ -43,6 +51,7 @@ export default function GamePage() {
 		first_release_date,
 		summary,
 		platforms,
+		release_dates,
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
@@ -73,21 +82,29 @@ export default function GamePage() {
 									{release_date.format("LL")} ({release_date.fromNow()})
 								</h2>
 							</div>
-							<p>
+							{/* <p>
 								{platforms
 									.map((e) => e.name)
 									.sort()
 									.join(", ")}
-							</p>
+							</p> */}
+
+							<Label>Release Dates</Label>
+							<ReleasesTable
+								platforms={platforms}
+								release_dates={release_dates}
+							/>
 							{/* <p>{genres.join(", ")}</p> */}
+							<Label>Summary</Label>
 							<p>{summary}</p>
-							<p>Follows: {extra.follows}</p>
+							{/* <p>Follows: {extra.follows}</p>
 							<p>
 								Critic Rating: {Math.round(extra.aggregated_rating * 10) / 10}
 							</p>
-							<p>User Rating: {Math.round(extra.total_rating * 10) / 10}</p>
+							<p>User Rating: {Math.round(extra.total_rating * 10) / 10}</p> */}
 						</div>
 					</div>
+							<Label>Screenshots</Label>
 					<Gallery screenshots={screenshots} />
 				</div>
 			)}
