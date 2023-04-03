@@ -5,3 +5,4 @@
 /back-end/api/models/__pycache__
 /back-end/api/migrations/__pycache__
 *.sqlite3
+back-end/data.json
