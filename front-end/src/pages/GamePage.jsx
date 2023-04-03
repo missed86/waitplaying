@@ -24,6 +24,8 @@ const Label = styled.h2`
 const releaseText = (date) => {
 	const release_date = moment(date.date);
 	switch (date.category) {
+		case 0:
+			return `${release_date.format("LL")} (${release_date.fromNow()})`;
 		case 1:
 			return `${release_date.format("MMMM, YYYY")}`;
 		case 2:
@@ -75,8 +77,7 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
-	// console.log("🚀 ~ file: GamePage.jsx:101 ~ GamePage ~ release_dates[0].date:", release_dates[0].category)
-	
+
 	return (
 		<>
 			{loading && <div>Loading...</div>}
