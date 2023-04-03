@@ -48,5 +48,8 @@ class Game(models.Model):
     aggregated_rating = models.FloatField(null=True)
     aggregated_rating_count = models.IntegerField(null=True)
     follows = models.IntegerField(null=True)
-    # artworks = models.
 
+    
+    # artworks = models.
+    def __str__(self):
+        return self.name
