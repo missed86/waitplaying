@@ -289,7 +289,7 @@ def scrape_release_dates():
                     game = data['game'] if 'game' in data else None
                     platform = data['platform'] if 'platform' in data else None
                     region = data['region'] if 'region' in data else None
-                    category = data['category'] if 'region' in data else None
+                    category = data['category'] if 'category' in data else None
                     created_at = data['created_at'] if 'created_at' in data else None
                     updated_at = data['updated_at'] if 'updated_at' in data else None
                     select = ReleaseDate.objects.filter(game=Game.objects.get(id=game), platform=Platform.objects.get(id=platform))

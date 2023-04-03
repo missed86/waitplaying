@@ -40,8 +40,8 @@ const Component = styled.div`
 `;
 const Number = styled.span`
 	position: absolute;
-	top: 10px;
-	left: 10px;
+	top: 5%;
+	left: 5%;
 	width: 20px;
 	height: 20px;
 	text-align: center;

@@ -50,6 +50,8 @@ export default function CalendarPage() {
 	}, []);
 	return user && (
 		<Page>
+		{/* {console.log("🚀 ~ file: CalendarPage.jsx:54 ~ CalendarPage ~ list:", list)} */}
+			
 			<ListView
 				list={list}
 				calendarView={calendarView}

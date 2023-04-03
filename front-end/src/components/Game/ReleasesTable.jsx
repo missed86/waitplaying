@@ -37,7 +37,6 @@ const FromNow = styled.span`
 export function ReleasesTable({ platforms, release_dates }) {
 
 	const releaseText = (date) => {
-		console.log("🚀 ~ file: ReleasesTable.jsx:29 ~ releaseText ~ date:", date)
 		const release_date = moment(date.release_date)
 		switch (date.category) {
 			case 1:

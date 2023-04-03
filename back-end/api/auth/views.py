@@ -103,6 +103,7 @@ class UserCalendarView(APIView):
 
         # Reorganizar el diccionario del serializador
         reorganized_data = {}
+        tbd = set()
         for data in serializer.data:
             game = data['game']
             name = game['name']
@@ -110,10 +111,21 @@ class UserCalendarView(APIView):
             slug = game['slug']
             dates = game['release_dates']
             for date in dates:
-                reorganized_data.setdefault(date['date'], [])
-                game_list = reorganized_data[date['date']]
+                if date['category'] != 0:
+                    tbd.add((name, cover, slug))
+                    continue
+                date_str = date['date']
+                reorganized_data.setdefault(date_str, [])
+                game_list = reorganized_data[date_str]
                 is_game_exist = any(game['name'] == name for game in game_list)
                 if not is_game_exist:
-                    game_list.append({'name': name, 'cover': cover, 'slug': slug})
+                    game_list.append({'name': name, 'cover': cover, 'slug': slug, 'category': date['category']})
+                # if all(date['category'] == 0 for date in dates):
+                #     tbd.append({'name': name, 'cover': cover, 'slug': slug})
         sorted_data = collections.OrderedDict(sorted(reorganized_data.items()))
-        return Response(reorganized_data)
+        for date_str, games in sorted_data.items():
+            sorted_games = sorted(games, key=lambda game: game['category'])
+            sorted_data[date_str] = sorted_games
+        tbd_list = list(tbd)
+        sorted_data.update({'tbd': tbd_list})
+        return Response(sorted_data)

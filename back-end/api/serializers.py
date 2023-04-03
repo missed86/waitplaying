@@ -26,10 +26,11 @@ class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ('__all__')
+        ordering = ['platform','date']
         # read_only_fields = ('__all__')
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['release_dates'] = ReleaseDateSerializer(instance.releasedate_set.all(), many=True).data
+        data['release_dates'] = ReleaseDateSerializer(instance.releasedate_set.all().order_by('date', 'platform'), many=True).data
         return data
 
 

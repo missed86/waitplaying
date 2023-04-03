@@ -21,7 +21,27 @@ const Label = styled.h2`
 	text-transform: uppercase;
 	border-bottom: 1px solid #333;
 `;
-
+const releaseText = (date) => {
+	const release_date = moment(date.date);
+	switch (date.category) {
+		case 1:
+			return `${release_date.format("MMMM, YYYY")}`;
+		case 2:
+			return `${release_date.format("YYYY")}`;
+		case 3:
+			return `Q1 ${release_date.format("YYYY")}`;
+		case 4:
+			return `Q2 ${release_date.format("YYYY")}`;
+		case 5:
+			return `Q3 ${release_date.format("YYYY")}`;
+		case 6:
+			return `Q4 ${release_date.format("YYYY")}`;
+		case 7:
+			return "TBD";
+		default:
+			return "TBD";
+	}
+};
 export default function GamePage() {
 	const { slug } = useParams();
 	const [data, setData] = useState(null);
@@ -55,8 +75,8 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
-	const release_date = moment(first_release_date);
-
+	// console.log("🚀 ~ file: GamePage.jsx:101 ~ GamePage ~ release_dates[0].date:", release_dates[0].category)
+	
 	return (
 		<>
 			{loading && <div>Loading...</div>}
@@ -78,9 +98,7 @@ export default function GamePage() {
 						<div className="description">
 							<div className="title">
 								<h1>{name}</h1>
-								<h2>
-									{release_date.format("LL")} ({release_date.fromNow()})
-								</h2>
+								<h2>{releaseText(release_dates[0])}</h2>
 							</div>
 							{/* <p>
 								{platforms
@@ -104,7 +122,7 @@ export default function GamePage() {
 							<p>User Rating: {Math.round(extra.total_rating * 10) / 10}</p> */}
 						</div>
 					</div>
-							<Label>Screenshots</Label>
+					<Label>Screenshots</Label>
 					<Gallery screenshots={screenshots} />
 				</div>
 			)}

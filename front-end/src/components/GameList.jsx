@@ -88,8 +88,10 @@ export default function GameList({ date, filters }) {
   };
 
   useEffect(() => {
+    // logoutUser();
+    if (error) logoutUser();
     fetchData();
-  }, [error]);
+  }, [error, user, tokens]);
 
   //   if (loading) {
   //     return <div>Loading...</div>;

@@ -135,7 +135,7 @@ class GamesByDateView(APIView):
 
     def get(self, request, date, format=None):
         date = self.kwargs.get("date")
-        queryset = ReleaseDate.objects.filter(date=date)
+        queryset = ReleaseDate.objects.filter(date=date, category=0)
         user = request.user if request.user.is_authenticated else None
         return Response(group_games(queryset, date, user))
 
