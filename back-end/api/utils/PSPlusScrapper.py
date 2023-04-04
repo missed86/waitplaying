@@ -41,32 +41,35 @@ def PsPlusScrapper():
 blacklist = (
     '®',
     '™',
-    ' PS4 & PS5',
-    ' PS4 &  PS5',
-    ' - PlayStation4 Edition',
-    ' – PlayStation4 Edition',
-    ' (PlayStation Plus)',
-    ' PlayStation5 Version',
-    ' (PS1/PS4)',
-    ' (PS1/PS5)',
-    ' (PS3)',
-    ' - Standard Edition',
-    ' Standard Edition',
-    ' - PS4',
-    ' for PS4'
-    ' for PS5',
-    ' Digital Edition',
+    '- PS5 & PS4'
+    'PS4 & PS5',
+    'PS4 &  PS5',
+    '- PlayStation4 Edition',
+    '– PlayStation4 Edition',
+    '(PlayStation Plus)',
+    'PlayStation5 Version',
+    '(PS1/PS4)',
+    '(PS1/PS5)',
+    '(PS3)',
+    '(PS4)',
+    '(PS5)',
+    '- Standard Edition',
+    'Standard Edition',
+    '- PS4',
+    'for PS4',
+    'for PS5',
+    'Digital Edition',
     )
 
 def cleaner(string):
     for word in blacklist:
-        string = string.replace(word, '').strip()
+        string = string.strip().replace(word, '').strip()
     return string
 
 
 # prueba = requestData(GamePassScrapper(URLS))
 def search_game(term):
-    gameid = Game.objects.filter(name__iexact=cleaner(term)).order_by('-first_release_date')
+    gameid = Game.objects.filter(name__iexact=cleaner(term))
     if gameid.exists():
         return [gameid.first().id]
 
@@ -93,36 +96,36 @@ def PsPlusScrappe():
                     # pc=game['pc'],
                     # console=game['console'],
                     )
-        # try:
+        try:
             # Buscar el objeto por el campo name
-        existing_game = PsPlusCatalog.objects.filter(name=element.name).first()
-        
-        if existing_game:
-            if existing_game.game is None:
+            existing_game = PsPlusCatalog.objects.filter(name=element.name).first()
+            
+            if existing_game:
+                if existing_game.game is None:
+                    gamesearch = search_game(game['name'].replace('®','').replace('™',''))
+                    if len(gamesearch) == 1:
+                        element.game = Game.objects.get(id=gamesearch[0])
+                # else:
+                #     element.game = None
+                # Actualizar el objeto existente con los nuevos datos
+                # existing_game.short_name = element.short_name
+                existing_game.slug_catalog = element.slug_catalog
+                # existing_game.start_date = element.start_date
+                # existing_game.end_date = element.end_date
+                # existing_game.pc = element.pc
+                # existing_game.console = element.console
+                existing_game.game = element.game if existing_game.game is None else existing_game.game
+                
+                existing_game.save()
+            else:
+                # Crear un nuevo objeto si no existe uno con el mismo nombre
                 gamesearch = search_game(game['name'].replace('®','').replace('™',''))
                 if len(gamesearch) == 1:
                     element.game = Game.objects.get(id=gamesearch[0])
-            # else:
-            #     element.game = None
-            # Actualizar el objeto existente con los nuevos datos
-            # existing_game.short_name = element.short_name
-            existing_game.slug_catalog = element.slug_catalog
-            # existing_game.start_date = element.start_date
-            # existing_game.end_date = element.end_date
-            # existing_game.pc = element.pc
-            # existing_game.console = element.console
-            existing_game.game = element.game if existing_game.game is None else existing_game.game
-            
-            existing_game.save()
-        else:
-            # Crear un nuevo objeto si no existe uno con el mismo nombre
-            gamesearch = search_game(game['name'].replace('®','').replace('™',''))
-            if len(gamesearch) == 1:
-                element.game = Game.objects.get(id=gamesearch[0])
-            else:
-                element.game = None
-            element.save()
-        counter += 1
-        print("\r{}/{} - {} - {}".format(counter, total, element.name, element.game), end="                           ")
-        # except Exception:
-        #     print("\nFailed {}\n")
+                else:
+                    element.game = None
+                element.save()
+            counter += 1
+            print("\r{}/{} - {}".format(counter, total, element.name), end="                           ")
+        except Exception:
+            print("\nFailed {}\n")
