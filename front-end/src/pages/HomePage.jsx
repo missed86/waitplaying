@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GameList from "../components/GameList";
 import PlatformBar from "../components/PlatformBar";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 import "./Home.css";
 import styled from "styled-components";
@@ -21,6 +22,8 @@ function HomePage() {
   const [dates, setDates] = useState([]);
   const [numDates, setNumDates] = useState(5);
   const [key, setKey] = useState(0);
+
+  const [parent] = useAutoAnimate()
 
   const [filters, setFilters] = useState(
     localStorage.getItem("filtersStore")
@@ -49,7 +52,7 @@ function HomePage() {
     <Home>
       <PlatformBar filters={filters} setFilters={setFilters} />
       <h1>New Releases</h1>
-      <InfiniteScroll
+      <InfiniteScroll ref={parent}
         style={{ overflow: "hidden" }}
         key={key}
         dataLength={numDates}
@@ -62,7 +65,7 @@ function HomePage() {
         hasMore={numDates < MAX_NUM_DATES} // no hay más fechas si se ha alcanzado el límite máximo
       >
         {dates.slice(0, numDates).map((date) => (
-          <GameList key={date} date={date} filters={filters} />
+          <GameList key={date} date={date} filters={filters}/>
         ))}
       </InfiniteScroll>
     </Home>

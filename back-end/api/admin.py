@@ -22,6 +22,40 @@ class ReleaseDateAdmin(admin.ModelAdmin):
 
 
 
+blacklist = (
+' (PC)',
+' (Win)',
+' (Windows 10)',
+' Xbox One',
+' Xbox Series X|S',
+' (Game Preview)',
+' EA Play Edition',
+' for Windows 10',
+' - Windows Edition'
+' - Windows 10 Edition'
+' - Windows',
+' - Microsoft Store Edition',
+' - PC',
+'®',
+'™',
+'!',
+'?',
+'.',
+':',
+"Assassin’s",
+"’s",
+"Û",
+' PS4 & PS5',
+' - PlayStation4 Edition',
+' (PlayStation Plus)',
+' PlayStation5 Version',
+' (PS1/PS4)',
+)
+
+def cleaner(string):
+    for word in blacklist:
+        string = string.replace(word, '')
+    return string
 
 
 class GamepassCatalogAdmin(admin.ModelAdmin):
@@ -29,8 +63,9 @@ class GamepassCatalogAdmin(admin.ModelAdmin):
                     'start_date', 'end_date', 'active', 'pc', 'console']
     ordering = ['game','id']
     
+
     def search_game(self, term):
-        words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()
+        words = cleaner(term).strip().split()
         matching_games = []
         while words:
             search_term = " ".join(words)
@@ -55,8 +90,34 @@ class GamepassCatalogAdmin(admin.ModelAdmin):
     
 
 class PsPlusCatalogAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'slug_catalog',
+    list_display = ['id', 'name', 'game', 'slug_catalog',
                     'start_date', 'end_date', 'active']
+    ordering = ['game','id']
+    
+
+    def search_game(self, term):
+        words = cleaner(term).strip().split()
+        matching_games = []
+        while words:
+            search_term = " ".join(words)
+            matching_games = Game.objects.filter(name__icontains=search_term)
+            if matching_games:
+                break
+            words.pop()
+        return [game.id for game in matching_games]
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "game":
+            obj_id = request.resolver_match.kwargs.get('object_id')
+            if obj_id:
+                obj = PsPlusCatalog.objects.get(id=obj_id)
+                term = obj.name
+                game_ids = self.search_game(term)
+                if game_ids:
+                    kwargs["queryset"] = Game.objects.filter(id__in=game_ids)
+                else:
+                    kwargs["queryset"] = Game.objects.none()
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
 admin.site.register(Game, GameAdmin)

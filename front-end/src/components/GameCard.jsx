@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import "./GameCard.css";
 
+
 const ICONS = {
   add: (
     <svg
@@ -55,7 +56,7 @@ export default function GameCard({
   marked,
   empty = false,
 }) {
-  // console.log("🚀 ~ file: GameCard.jsx:52 ~ GameCard ~ marked:", marked)
+
 
   platforms = [...new Set(platforms)];
   const handleClick = (event) => {

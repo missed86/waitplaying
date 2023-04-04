@@ -29,14 +29,16 @@ from datetime import datetime
 from .scrapper import (scrape_games,
                        scrape_platforms,
                        scrape_release_dates)
-from .utils.GPScrapper import GamepassScrape
+from .utils.GPScrapper import GamepassScrappe
+from .utils.PSPlusScrapper import PsPlusScrappe
 
 
 def scrapping_view(request):
     scrape_platforms()
     scrape_games()
     scrape_release_dates()
-    GamepassScrape()
+    GamepassScrappe()
+    PsPlusScrappe()
 
     return HttpResponse("Scrapped")
     

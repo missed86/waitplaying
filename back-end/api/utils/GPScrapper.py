@@ -115,7 +115,7 @@ def search_game(term):
         words.pop()
     return [game.id for game in matching_games]
 
-def GamepassScrape():
+def GamepassScrappe():
     games = requestData(GamePassScrapper(URLS))
     counter = 0
     total = len(games)
@@ -135,11 +135,12 @@ def GamepassScrape():
             existing_game = GamepassCatalog.objects.filter(name=element.name).first()
             
             if existing_game:
-                gamesearch = search_game(game['title'].replace('®','').replace('™',''))
-                if existing_game.game is None and len(gamesearch) == 1:
-                    element.game = Game.objects.get(id=gamesearch[0])
-                else:
-                    element.game = None
+                if existing_game.game is None:
+                    gamesearch = search_game(game['title'].replace('®','').replace('™',''))
+                    if len(gamesearch) == 1:
+                        element.game = Game.objects.get(id=gamesearch[0])
+                # else:
+                #     element.game = None
                 # Actualizar el objeto existente con los nuevos datos
                 existing_game.short_name = element.short_name
                 existing_game.slug_catalog = element.slug_catalog
@@ -152,6 +153,7 @@ def GamepassScrape():
                 existing_game.save()
             else:
                 # Crear un nuevo objeto si no existe uno con el mismo nombre
+                gamesearch = search_game(game['title'].replace('®','').replace('™',''))
                 if len(gamesearch) == 1:
                     element.game = Game.objects.get(id=gamesearch[0])
                 else:
