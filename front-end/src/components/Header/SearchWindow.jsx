@@ -17,6 +17,18 @@ const Component = styled.div`
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
 	padding: 10px 0px;
+	max-height: 50vh;
+	overflow-y: auto;
+	::-webkit-scrollbar-thumb {
+		background-color: #505050;
+		padding: 10px;
+		border-radius: 5px;
+	}
+	::-webkit-scrollbar {
+		width: 5px;
+		background-color: transparent;
+		
+	}
 
 	&.show {
 		visibility: visible;

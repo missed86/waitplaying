@@ -39,7 +39,17 @@ def scrapping_view(request):
     GamepassScrape()
 
     return HttpResponse("Scrapped")
-
+    
+def search_game(self, term):
+    words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()
+    matching_games = []
+    while words:
+        search_term = " ".join(words)
+        matching_games = Game.objects.filter(name__icontains=search_term)
+        if matching_games:
+            break
+        words.pop()
+    return [game.id for game in matching_games]
 
 class GameDetailsView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
@@ -157,12 +167,18 @@ class SearchBoxView(generics.ListAPIView):
     serializer_class = GameSerializer
 
     def get_queryset(self):
-        queryset = Game.objects.all().order_by('-first_release_date')
-        query = self.request.GET.get("q")
-        if query:
-            queryset = queryset.filter(name__icontains=query)[:5]
-            return queryset
+        term = self.request.GET.get("q")
+        words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()
+        matching_games = []
+        while words:
+            search_term = " ".join(words)
+            matching_games = Game.objects.filter(name__icontains=search_term)
+            if matching_games:
+                break
+            words.pop()
+        return matching_games.order_by('-first_release_date')
 
+    
 # @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # def getNotes(request):
