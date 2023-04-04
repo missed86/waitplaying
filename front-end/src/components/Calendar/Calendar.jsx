@@ -105,19 +105,19 @@ const ToogleButton = styled.button`
 `;
 
 const generateMonthRows = (year, month, list) => {
-  let firstDay = new Date(year, month, 1).getDay()+2;
+  let firstDay = new Date(year, month, 1).getUTCDay();
   const dateToday = new Date()
-  const today = `${dateToday.getFullYear()}-${(dateToday.getMonth() + 1).toString().padStart(2, "0")}-${dateToday.getDate()
+  const today = `${dateToday.getFullYear()}-${(dateToday.getMonth()+1).toString().padStart(2, "0")}-${dateToday.getDate()
     .toString()
     .padStart(2, "0")}`;
     
-  const numDays = getDaysInMonth(year, month);
+  const numDays = new Date(year, month+1, 0).getDate();
   const rows = [];
   let days = [];
   let cellCount = 0;
 
   // Agregar días vacíos antes del primer día del mes
-  const firstEmptyDays = 7 - firstDay;
+  const firstEmptyDays = firstDay;
   for (let i = 0; i < firstEmptyDays; i++) {
     days.push(<Day empty key={`empty-${i}`} />);
     cellCount++;
@@ -125,7 +125,7 @@ const generateMonthRows = (year, month, list) => {
 
   // Agregar los días del mes
   for (let i = 1; i <= numDays; i++) {
-    const date = `${year}-${(month + 1).toString().padStart(2, "0")}-${i
+    const date = `${year}-${(month+1).toString().padStart(2, "0")}-${i
       .toString()
       .padStart(2, "0")}`;
     cellCount++;
@@ -174,9 +174,6 @@ const getMonthName = (month) => {
   return months[month];
 };
 
-const getDaysInMonth = (year, month) => {
-  return new Date(year, month + 1, 0).getDate();
-};
 
 export default function Calendar({ list, calendarView, setCalendarView }) {
   const [date, setDate] = useState(new Date());
