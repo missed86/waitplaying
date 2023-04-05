@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 from itertools import groupby
 # , Company, Cover, Screenshot
-from api.models import Game, ReleaseDate, Platform, UserGameSet
+from api.models import Game, ReleaseDate, Platform, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog,PsPlusCatalog
 
 from django.http import HttpResponse
 from django.db.models import Count, Prefetch, F
@@ -23,13 +23,18 @@ from .serializers import (
     NextGamesSerializer,
     GameDatesSerializer,
     SimpleGame,
-    UserGameSetsSerializer)
+    UserGameSetsSerializer,
+    GPCatalogSerializerPC,
+    GPCatalogSerializerConsole,
+    PSPCatalogSerializer,
+    )
 from datetime import datetime
 
 from .scrapper import (scrape_games,
                        scrape_platforms,
                        scrape_release_dates)
-from .utils.GPScrapper import GamepassScrappe
+from .utils.GPScrapper_forConsole import GamepassScrappeConsole
+from .utils.GPScrapper_forPC import GamepassScrappePC
 from .utils.PSPlusScrapper import PsPlusScrappe
 
 
@@ -37,7 +42,8 @@ def scrapping_view(request):
     scrape_platforms()
     scrape_games()
     scrape_release_dates()
-    GamepassScrappe()
+    GamepassScrappeConsole()
+    GamepassScrappePC()
     PsPlusScrappe()
 
     return HttpResponse("Scrapped")
@@ -93,25 +99,6 @@ class NextGamesView(APIView):
         return Response(serializer.data)
 
 
-
-# def group_games(queryset, date):
-#     result = []
-#     queryset = queryset.values(
-#         "game", "platform__abbreviation", "platform__alternative_name")
-#     queryset = sorted(queryset, key=lambda x: x["game"])
-#     for game, game_group in groupby(queryset, key=lambda x: x["game"]):
-#         platforms = []
-#         for x in game_group:
-#             if x["platform__abbreviation"] is not None:
-#                 platforms.append(x["platform__abbreviation"])
-#             else:
-#                 platforms.append(x["platform__alternative_name"])
-#         game = Game.objects.get(id=game)
-#         serializer = SimpleGame(game)
-#         result.append(
-#             {"date": date, "game": serializer.data, "platforms": platforms})
-#     return result
-
 def group_games(queryset, date, user):
     result = []
     queryset = queryset.values(
@@ -154,17 +141,39 @@ class GamesByDateView(APIView):
         user = request.user if request.user.is_authenticated else None
         return Response(group_games(queryset, date, user))
 
+'''
+Services Page
+'''
+class ServicesView(APIView):
+    # permission_classes = [permissions.AllowAny]
+    # serializer_class = SimpleGame
+    # authentication_classes = [JWTAuthentication]
 
-# class GamesByDateView(APIView):
-#     permission_classes = [permissions.AllowAny]
-#     serializer_class = GameDatesSerializer
+    def get(self, request):
+        gamepass_pc = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        gamepass_console = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        psplus = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        
+        gamepass_pc_serializer = GPCatalogSerializerPC(gamepass_pc, many=True)
+        gamepass_console_serializer = GPCatalogSerializerConsole(gamepass_console, many=True)
+        psplus_serializer = PSPCatalogSerializer(psplus, many=True)
 
-#     def get(self, request, date, format=None):
-#         date = self.kwargs.get("date")
-#         queryset = ReleaseDate.objects.filter(date=date)
-#         return Response(group_games(queryset, date))
+        response_data = {
+            'gamepass_pc': gamepass_pc_serializer.data,
+            'gamepass_console': gamepass_console_serializer.data,
+            'psplus': psplus_serializer.data
+        }
+        
+        return Response(response_data)
 
 
+
+
+
+
+'''
+Searchbox
+'''
 class SearchBoxView(generics.ListAPIView):
     serializer_class = GameSerializer
 
@@ -180,11 +189,3 @@ class SearchBoxView(generics.ListAPIView):
             words.pop()
         return matching_games.order_by('-first_release_date')
 
-    
-# @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# def getNotes(request):
-#     user = request.user
-#     notes = user.note_set.all()
-#     serializer = NoteSerializer(notes, many=True)
-#     return Response(serializer.data)

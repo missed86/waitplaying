@@ -6,8 +6,9 @@ from .cover import Cover
 from .screenshot import Screenshot
 from .scrapping import Scrapping
 from .user_game_set import UserGameSet
-from .gamepass_catalog import GamepassCatalog
 from .psplus_catalog import PsPlusCatalog
+from .gamepass_console_catalog import GamepassConsoleCatalog
+from .gamepass_pc_catalog import GamepassPCCatalog
 
 from django.db import models
 from django.contrib.auth.models import User

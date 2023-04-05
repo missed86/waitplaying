@@ -8,6 +8,7 @@ import ComingSoonPage from "./pages/ComingSoonPage";
 import GamePage from "./pages/GamePage";
 import CalendarPage from "./pages/CalendarPage";
 import LoginPage from "./pages/LoginPage";
+import ServicesPage from "./pages/ServicesPage";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 						<Routes>
 							<Route path="/" element={<HomePage />} exact/>
 							<Route path="/coming-soon" element={<ComingSoonPage />} />
+							<Route path="/services" element={<ServicesPage />} />
 							<Route path="/game/:slug" element={<GamePage />} />
 							<Route path="/calendar" element={<CalendarPage />} />
 							<Route path="/login" element={<LoginPage />} />

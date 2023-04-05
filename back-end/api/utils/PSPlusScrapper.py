@@ -31,7 +31,7 @@ def PsPlusScrapper():
     for e in elements:
         element = {}
         name = e.text.replace('*','').replace('®','').replace('™','')
-        element['name'] = name
+        element['name'] = name.strip()
         element['slug'] = slugger(e.text)
         result.append(element)
             
@@ -54,6 +54,7 @@ blacklist = (
     '(PS4)',
     '(PS5)',
     '- Standard Edition',
+    '(Standard Version)',
     'Standard Edition',
     '- PS4',
     'for PS4',

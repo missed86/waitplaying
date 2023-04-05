@@ -5,7 +5,7 @@ import re
 import json
 from unidecode import unidecode
 
-from api.models import GamepassCatalog, Game
+from api.models import GamepassConsoleCatalog, Game
 from django.db.models import Max
 from django.http import HttpResponse
 from django.utils import timezone
@@ -16,7 +16,7 @@ PC_URL = 'https://catalog.gamepass.com/sigls/v2?id=fdd9e2a7-0fee-49f6-ad69-43540
 
 URLS = {
     'console': 'https://catalog.gamepass.com/sigls/v2?id=f6f1f99f-9b49-4ccd-b3bf-4d9767a77f5e&language=en-us&market=US',
-    'pc': 'https://catalog.gamepass.com/sigls/v2?id=fdd9e2a7-0fee-49f6-ad69-4354098401ff&language=en-us&market=US'
+    # 'pc': 'https://catalog.gamepass.com/sigls/v2?id=fdd9e2a7-0fee-49f6-ad69-4354098401ff&language=en-us&market=US'
 }
 
 
@@ -67,15 +67,12 @@ def requestData(input):
             #     key: True
             # }
             object[responseID] = object[responseID] if responseID in object else {}
-            object[responseID]['title'] = game['LocalizedProperties'][0]['ProductTitle']
-            object[responseID]['short_title'] = game['LocalizedProperties'][0]['ShortTitle']
-            object[responseID]['end_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['EndDate']
-            object[responseID]['start_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['StartDate']
+            object[responseID]['title'] = game['LocalizedProperties'][0]['ProductTitle'].strip()
+            object[responseID]['short_title'] = game['LocalizedProperties'][0]['ShortTitle'].strip()
+            object[responseID]['xbox_end_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['EndDate']
+            object[responseID]['xbox_start_date'] = game['DisplaySkuAvailabilities'][0]['Availabilities'][0]['Conditions']['StartDate']
             object[responseID]['slug_catalog'] = slugger(
-                game['LocalizedProperties'][0]['ProductTitle'])
-            object[responseID]['console'] = False if 'console' not in object else object[responseID]['console']
-            object[responseID]['pc'] = False if 'console' not in object else object[responseID]['pc']
-            object[responseID][key] = True
+                game['LocalizedProperties'][0]['ProductTitle'].strip())
 
     return object
 
@@ -122,68 +119,56 @@ def search_game(term):
     return [game.id for game in matching_games]
 
 
-def GamepassScrappe():
+def GamepassScrappeConsole():
     games = requestData(GamePassScrapper(URLS))
     counter = 0
     total = len(games)
     for key in games.keys():
         game = games[key]
-        platform_start_field = 'start_date_'+key
-        element = GamepassCatalog(
+        element = GamepassConsoleCatalog(
             name=game['title'].replace('®', '').replace('™', ''),
             short_name=game['short_title'].replace('®', '').replace('™', ''),
             slug_catalog=game['slug_catalog'],
-            start_date=game['start_date'],
-            end_date=game['end_date'],
-            pc=game['pc'],
-            console=game['console'],
+            xbox_start_date=game['xbox_start_date'],
+            xbox_end_date=game['xbox_end_date']
         )
-        if (key == "pc"):
-            element.start_date_pc = datetime.date.today
-        elif(key == "console"):
-            element.start_date_console = datetime.date.today
-        try:
+        # try:
             # Buscar el objeto por el campo name
-            existing_game = GamepassCatalog.objects.filter(
-                name=element.name).first()
+        existing_game = GamepassConsoleCatalog.objects.filter(
+            name=element.name).first()
 
-            if existing_game:
-                if existing_game.game is None:
-                    gamesearch = search_game(
-                        game['title'].replace('®', '').replace('™', ''))
-                    if len(gamesearch) == 1:
-                        element.game = Game.objects.get(id=gamesearch[0])
-                # else:
-                #     element.game = None
-                # Actualizar el objeto existente con los nuevos datos
-                existing_game.short_name = element.short_name
-                existing_game.slug_catalog = element.slug_catalog
-                existing_game.start_date = element.start_date
-                existing_game.end_date = element.end_date
-                existing_game.pc = element.pc
-                existing_game.console = element.console
-                existing_game.game = element.game if existing_game.game is None else existing_game.game
-                if (key == "pc"):
-                    existing_game.start_date_pc = element.start_date_pc if existing_game.active is False or element.start_date_pc is None else existing_game.start_date_pc
-                elif(key == "console"):
-                    existing_game.start_date_console = element.start_date_console if existing_game.active is False or element.start_date_console is None else existing_game.start_date_pc
-
-                existing_game.save()
-            else:
-                # Crear un nuevo objeto si no existe uno con el mismo nombre
+        if existing_game:
+            if existing_game.game is None:
                 gamesearch = search_game(
                     game['title'].replace('®', '').replace('™', ''))
                 if len(gamesearch) == 1:
                     element.game = Game.objects.get(id=gamesearch[0])
-                else:
-                    element.game = None
-                element.save()
-            counter += 1
-            print("\r{}/{} - {} - {}".format(counter, total, element.name,
-                  element.game), end="                           ")
-        except Exception:
-            print("\nFailed {}\n")
-    GamepassCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
-        active=False, end_date=timezone.now())
-    GamepassCatalog.objects.filter(
-        updated_at__gte=datetime.date.today()).update(active=True)
+            # else:
+            #     element.game = None
+            # Actualizar el objeto existente con los nuevos datos
+            existing_game.short_name = element.short_name
+            existing_game.slug_catalog = element.slug_catalog
+            existing_game.xbox_start_date = element.xbox_start_date
+            existing_game.xbox_end_date = element.xbox_end_date
+            existing_game.game = element.game if existing_game.game is None else existing_game.game
+
+            existing_game.save()
+        else:
+            # Crear un nuevo objeto si no existe uno con el mismo nombre
+            gamesearch = search_game(
+                game['title'].replace('®', '').replace('™', ''))
+            if len(gamesearch) == 1:
+                element.game = Game.objects.get(id=gamesearch[0])
+            else:
+                element.game = None
+            element.save()
+        counter += 1
+        print("\r{}/{} - {} - {}".format(counter, total, element.name,
+                element.game), end="                           ")
+        # except Exception:
+        #     print("\nFailed {}\n")
+    GamepassConsoleCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
+        active=False, end_date=datetime.date.today())
+    GamepassConsoleCatalog.objects.filter(
+        updated_at__gte=datetime.date.today(), active=False
+    ).update(active=True, start_date=datetime.date.today())

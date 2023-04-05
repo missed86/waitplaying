@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Game, Platform, ReleaseDate, Note, UserGameSet
+from .models import Game, Platform, ReleaseDate, Note, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog
 
 
 class PlatformSerializer (serializers.ModelSerializer):
@@ -14,10 +14,6 @@ class ReleaseDateSerializer(serializers.ModelSerializer):
         model = ReleaseDate
         fields = ('game', 'platform', 'date', 'category')
 
-# class GameSerializerStandard(serializers.ModelSerializer):
-#     class Meta:
-#         model = Game
-#         fields = ('__all__')
 
 
 class GameSerializer(serializers.ModelSerializer):
@@ -48,6 +44,22 @@ class SimpleGame(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ('__all__')
+
+class GPCatalogSerializerPC(serializers.ModelSerializer):
+    game = SimpleGame()
+    class Meta:
+        model = GamepassPCCatalog
+        fields = ('game', 'start_date', 'end_date')
+class GPCatalogSerializerConsole(serializers.ModelSerializer):
+    game = SimpleGame()
+    class Meta:
+        model = GamepassConsoleCatalog
+        fields = ('game', 'start_date', 'end_date')
+class PSPCatalogSerializer(serializers.ModelSerializer):
+    game = SimpleGame()
+    class Meta:
+        model = PsPlusCatalog
+        fields = ('game', 'start_date', 'end_date')
 
 class GameDatesSerializer(serializers.ModelSerializer):
     game = SimpleGame()

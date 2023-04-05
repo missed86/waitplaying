@@ -15,6 +15,8 @@ class GamepassCatalog(models.Model):
     console = models.BooleanField(default=False)
     game = models.ForeignKey('Game', on_delete=models.SET_NULL, null=True, blank=True)
     updated_at = models.DateField(auto_now=True)
+    start_date_pc = models.DateField(null=True)
+    start_date_console = models.DateField(null=True)
 
     def __str__(self):
         return self.name
