@@ -60,7 +60,7 @@ def cleaner(string):
 
 class GamepassCatalogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'game', 'short_name', 'slug_catalog',
-                    'start_date', 'end_date', 'active', 'pc', 'console']
+                    'start_date', 'end_date', 'pc', 'console', 'updated_at', 'active']
     ordering = ['game','id']
     
 
@@ -91,7 +91,7 @@ class GamepassCatalogAdmin(admin.ModelAdmin):
 
 class PsPlusCatalogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'game', 'slug_catalog',
-                    'start_date', 'end_date', 'active']
+                    'start_date', 'end_date', 'updated_at', 'active']
     ordering = ['game','id']
     
 

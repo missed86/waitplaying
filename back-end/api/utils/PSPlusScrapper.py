@@ -129,3 +129,8 @@ def PsPlusScrappe():
             print("\r{}/{} - {}".format(counter, total, element.name), end="                           ")
         except Exception:
             print("\nFailed {}\n")
+
+    PsPlusCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(active=False, end_date=datetime.date.today())
+    PsPlusCatalog.objects.filter(
+        updated_at__gte=datetime.date.today(), active=False
+        ).update(active=True, start_date=datetime.date.today())

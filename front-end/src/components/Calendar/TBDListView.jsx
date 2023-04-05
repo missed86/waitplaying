@@ -29,6 +29,7 @@ const Title = styled.div`
 	font-weight: 500;
 	text-shadow: -2px -2px 2px #00000070, 2px -2px 2px #00000070,
 		-2px 2px 2px #00000070, 2px 2px 2px #00000070;
+	cursor: default;
 `;
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
@@ -36,7 +37,7 @@ const CoverURL = (id) =>
 export default function TBDListView({ TBDListView }) {
 	return (
 		<>
-			<Title background={CoverURL(TBDListView[0][1])}>TBD</Title>
+			<Title background={CoverURL(TBDListView[0][1])} alt="To Be Determinated">TBD</Title>
             <Games>
 			{TBDListView.map((game, index) => (
 				<Link key={'ItemLink'+index+game[0]} to={`/game/${game[2]}`} className="no-link">

@@ -14,6 +14,7 @@ const Title = styled.div`
   background-color: rgba(128, 128, 128, 0.5);
   font-weight: 500;
   text-shadow: -2px -2px 2px #00000070, 2px -2px 2px #00000070, -2px 2px 2px #00000070, 2px 2px 2px #00000070;
+  cursor: default;
 `;
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;

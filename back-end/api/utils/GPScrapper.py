@@ -8,6 +8,7 @@ from unidecode import unidecode
 from api.models import GamepassCatalog, Game
 from django.db.models import Max
 from django.http import HttpResponse
+from django.utils import timezone
 
 
 console_URL = 'https://catalog.gamepass.com/sigls/v2?id=f6f1f99f-9b49-4ccd-b3bf-4d9767a77f5e&language=en-us&market=US'
@@ -163,3 +164,5 @@ def GamepassScrappe():
             print("\r{}/{} - {} - {}".format(counter, total, element.name, element.game), end="                           ")
         except Exception:
             print("\nFailed {}\n")
+    GamepassCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(active=False, end_date=timezone.now())
+    GamepassCatalog.objects.filter(updated_at__gte=datetime.date.today()).update(active=True)
