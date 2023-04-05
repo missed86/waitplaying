@@ -41,7 +41,7 @@ def PsPlusScrapper():
 blacklist = (
     '®',
     '™',
-    '- PS5 & PS4'
+    '- PS5 & PS4',
     'PS4 & PS5',
     'PS4 &  PS5',
     '- PlayStation4 Edition',
@@ -50,6 +50,7 @@ blacklist = (
     'PlayStation5 Version',
     '(PS1/PS4)',
     '(PS1/PS5)',
+    '(PSP/PS4)',
     '(PS3)',
     '(PS4)',
     '(PS5)',
@@ -70,7 +71,10 @@ def cleaner(string):
 
 # prueba = requestData(GamePassScrapper(URLS))
 def search_game(term):
-    gameid = Game.objects.filter(name__iexact=cleaner(term))
+    replaced_name = re.sub(r'\W+', '.*', cleaner(term))
+    regex_pattern = r'(?i)^{}$'.format(replaced_name)
+    gameid = Game.objects.filter(name__regex=regex_pattern)
+    # gameid = Game.objects.filter(name__iexact=cleaner(term))
     if gameid.exists():
         return [gameid.first().id]
 

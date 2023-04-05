@@ -81,16 +81,20 @@ blacklist = (
     ' (PC)',
     ' (Win)',
     ' (Windows 10)',
-    ' Xbox One',
-    ' Xbox Series X|S',
     ' (Game Preview)',
-    ' EA Play Edition',
-    ' for Windows 10',
-    ' - Windows Edition'
-    ' - Windows 10 Edition'
+    ' (Windows)',
+    ' - Xbox One Edition',
+    ' - Windows Edition',
+    ' - Windows 10 Edition',
     ' - Windows',
     ' - Microsoft Store Edition',
     ' - PC',
+    ' Xbox One',
+    ' Xbox Series X|S',
+    ' EA Play Edition',
+    ' for Windows 10',
+    ' Windows 10',
+    ' Standard Edition',
     '®',
     '™',
 )
@@ -104,8 +108,12 @@ def cleaner(string):
 
 # prueba = requestData(GamePassScrapper(URLS))
 def search_game(term):
-    gameid = Game.objects.filter(name__iexact=cleaner(term))
+    replaced_name = re.sub(r'\W+', '.*', cleaner(term))
+    regex_pattern = r'(?i)^{}$'.format(replaced_name)
+    gameid = Game.objects.filter(name__regex=regex_pattern)
+    # gameid = Game.objects.filter(name__iexact=cleaner(term))
     if gameid.exists():
+        print("Encontrado:", term)
         return [gameid.first().id]
 
     words = cleaner(term).replace('!', '').replace('?', '').strip().split()
