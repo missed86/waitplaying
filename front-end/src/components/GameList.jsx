@@ -105,6 +105,11 @@ export default function GameList({ date, filters }) {
 		}
 	}, [error, user, tokens]);
 
+
+	useEffect(() => {
+		fetchData();
+	  }, [user]);
+
 	if (error) {
 		return <div>Error: {error.message}</div>;
 	}
