@@ -51,6 +51,7 @@ blacklist = (
     '(PS1/PS4)',
     '(PS1/PS5)',
     '(PSP/PS4)',
+    '(PSP/PS5)',
     '(PS3)',
     '(PS4)',
     '(PS5)',
@@ -61,6 +62,7 @@ blacklist = (
     'for PS4',
     'for PS5',
     'Digital Edition',
+    'Disney·PIXAR',
     )
 
 def cleaner(string):
@@ -131,9 +133,9 @@ def PsPlusScrappe():
                     element.game = None
                 element.save()
             counter += 1
-            print("\r{}/{} - {}".format(counter, total, element.name), end="                           ")
+            print("\rPSPlus: {}/{} - {} - {}".format(counter, total, element.name, element.game or existing_game.game), end="")
         except Exception:
-            print("\nFailed {}\n")
+            print("\nFailed {}\n", name=game['name'])
 
     PsPlusCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(active=False, end_date=datetime.date.today())
     PsPlusCatalog.objects.filter(

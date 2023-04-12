@@ -30,9 +30,12 @@ from .serializers import (
     )
 from datetime import datetime
 
-from .scrapper import (scrape_games,
-                       scrape_platforms,
-                       scrape_release_dates)
+from .scrapper import (
+    scrape_games,
+    scrape_platforms,
+    scrape_release_dates,
+    # scrape_websites
+    )
 from .utils.GPScrapper_forConsole import GamepassScrappeConsole
 from .utils.GPScrapper_forPC import GamepassScrappePC
 from .utils.PSPlusScrapper import PsPlusScrappe
@@ -42,6 +45,7 @@ def scrapping_view(request):
     scrape_platforms()
     scrape_games()
     scrape_release_dates()
+    # scrape_websites()
     GamepassScrappeConsole()
     GamepassScrappePC()
     PsPlusScrappe()

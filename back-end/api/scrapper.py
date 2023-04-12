@@ -64,7 +64,7 @@ def scrape_games():
                                     };')
         if query.status_code == 200:
             try:
-            # print(query.json())
+                # print(query.json())
 
                 for data in query.json()[0]['result']:
                     id = data['id'] if 'id' in data else None
@@ -120,7 +120,7 @@ def scrape_games():
                                 total_rating=total_rating,
                                 aggregated_rating_count=aggregated_rating_count,
                                 aggregated_rating=aggregated_rating,
-                                follows = follows
+                                follows=follows
                                 )
                     game.save()
 
@@ -129,7 +129,7 @@ def scrape_games():
 
                     print(end='\x1b[2K')
                     print("Scrapping Games: ", id, name,
-                        'Successfully added', end="\r")
+                          'Successfully added', end="\r")
                     total += 1
                 if len(query.json()[0]['result']) < 500:
 
@@ -138,7 +138,7 @@ def scrape_games():
 
                     print(end='\x1b[2K')
                     print("Terminado Games: Se han guardado " + str(total) + " elementos en",
-                        time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
+                          time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
 
                     # Update the value of updated_at
                     max_id = Game.objects.aggregate(Max('id'))['id__max']
@@ -292,32 +292,33 @@ def scrape_release_dates():
                     category = data['category'] if 'category' in data else None
                     created_at = data['created_at'] if 'created_at' in data else None
                     updated_at = data['updated_at'] if 'updated_at' in data else None
-                    select = ReleaseDate.objects.filter(game=Game.objects.get(id=game), platform=Platform.objects.get(id=platform))
+                    select = ReleaseDate.objects.filter(game=Game.objects.get(
+                        id=game), platform=Platform.objects.get(id=platform))
                     if select.exists():
                         # Realiza la operación de actualización
-                        select = select.first() # Obtiene el primer objeto que cumple las condiciones
-                        select.date=date
-                        select.m=m
-                        select.y=y
-                        select.region=region
-                        select.category=category
-                        select.created_at=created_at
-                        select.updated_at=updated_at
+                        select = select.first()  # Obtiene el primer objeto que cumple las condiciones
+                        select.date = date
+                        select.m = m
+                        select.y = y
+                        select.region = region
+                        select.category = category
+                        select.created_at = created_at
+                        select.updated_at = updated_at
                         select.save()
                     else:
                         # Realiza la operación de inserción
                         objeto = ReleaseDate(id=id,
-                                                date=date,
-                                                m=m,
-                                                y=y,
-                                                game=Game.objects.get(id=game),
-                                                platform=Platform.objects.get(
-                                                    id=platform),
-                                                region=region,
-                                                category=category,
-                                                created_at=created_at,
-                                                updated_at=updated_at,
-                                                )
+                                             date=date,
+                                             m=m,
+                                             y=y,
+                                             game=Game.objects.get(id=game),
+                                             platform=Platform.objects.get(
+                                                 id=platform),
+                                             region=region,
+                                             category=category,
+                                             created_at=created_at,
+                                             updated_at=updated_at,
+                                             )
                         objeto.save()
 
                     print(end='\x1b[2K')
@@ -355,4 +356,84 @@ def scrape_release_dates():
             time.sleep(5)
 
 
-# scrape_games()
+# def scrape_websites():
+#     print("Scrapping Websites...")
+#     start_time = time.time()
+#     games_url = "https://api.igdb.com/v4/websites"
+#     offset = 0
+#     total = 0
+#     cuttime = 0
+#     try:
+#         cuttime = Scrapping.objects.get(table_name='Website').updated_at
+#     except Scrapping.DoesNotExist:
+#         Scrapping.objects.create(
+#             table_name='Website', updated_at=0, last_id=0)
+
+#     while True:
+#         query = requests.post(
+#             games_url,
+#             headers={
+#                 'Client-ID': client_id,
+#                 'Authorization': 'Bearer '+access_token
+#             },
+#             data='fields *; \
+#             offset '+str(offset)+'; \
+#             limit 500;'
+#             )
+#             # where updated_at > '+str(cuttime)+'; \
+#         # print(query.json())
+#         if query.status_code == 200:
+#             # print(query.json())
+#             for data in query.json():
+#                 try:
+#                     id = data['id'] if 'id' in data else None
+#                     game = data['game'] if 'game' in data else None
+#                     category = data['category'] if 'category' in data else None
+#                     trusted = data['trusted'] if 'trusted' in data else None
+#                     url = data['url'] if 'url' in data else None
+
+#                     # created_at = data['created_at'] if 'created_at' in data else None
+#                     # updated_at = data['updated_at'] if 'updated_at' in data else None
+
+#                     website = Website(id=id,
+#                                     game=Game.objects.get(id=game),
+#                                     category=category,
+#                                     trusted=trusted,
+#                                     url=url,
+#                                     # created_at=created_at,
+#                                     # updated_at=updated_at,
+#                                     )
+#                     website.save()
+
+#                     print(end='\x1b[2K')
+#                     print("Scrapping Websites: ", id, url[:40],
+#                         'Successfully added', end="\r")
+#                     total += 1
+#                 except Game.DoesNotExist:
+#                     pass
+
+#             if len(query.json()) < 500:
+
+#                 end_time = time.time()
+#                 elapsed_time = end_time - start_time
+
+#                 print(end='\x1b[2K')
+#                 print("Terminado Websites: Se han guardado " + str(total) + " elementos en",
+#                       time.strftime("%M minutos, %S segundos", time.gmtime(elapsed_time)))
+
+#                 # Update the value of updated_at
+#                 max_id = Website.objects.aggregate(Max('id'))['id__max']
+#                 max_updated_at = Website.objects.aggregate(Max('updated_at'))[
+#                     'updated_at__max']
+#                 Scrapping.objects.filter(table_name='Website').update(
+#                     last_id=max_id, updated_at=max_updated_at)
+
+#                 break
+
+#             else:
+#                 offset += 500
+
+#         else:
+#             print("Error: ", response.status_code)
+#             print(response.json())
+#             time.sleep(5)

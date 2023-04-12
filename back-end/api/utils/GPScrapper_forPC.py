@@ -140,41 +140,41 @@ def GamepassScrappePC():
             xbox_start_date=game['xbox_start_date'],
             xbox_end_date=game['xbox_end_date']
         )
-        # try:
+        try:
             # Buscar el objeto por el campo name
-        existing_game = GamepassPCCatalog.objects.filter(
-            name=element.name).first()
+            existing_game = GamepassPCCatalog.objects.filter(
+                name=element.name).first()
 
-        if existing_game:
-            if existing_game.game is None:
+            if existing_game:
+                if existing_game.game is None:
+                    gamesearch = search_game(
+                        game['title'].replace('®', '').replace('™', ''))
+                    if len(gamesearch) == 1:
+                        element.game = Game.objects.get(id=gamesearch[0])
+                # else:
+                #     element.game = None
+                # Actualizar el objeto existente con los nuevos datos
+                existing_game.short_name = element.short_name
+                existing_game.slug_catalog = element.slug_catalog
+                existing_game.xbox_start_date = element.xbox_start_date
+                existing_game.xbox_end_date = element.xbox_end_date
+                existing_game.game = element.game if existing_game.game is None else existing_game.game
+
+                existing_game.save()
+            else:
+                # Crear un nuevo objeto si no existe uno con el mismo nombre
                 gamesearch = search_game(
                     game['title'].replace('®', '').replace('™', ''))
                 if len(gamesearch) == 1:
                     element.game = Game.objects.get(id=gamesearch[0])
-            # else:
-            #     element.game = None
-            # Actualizar el objeto existente con los nuevos datos
-            existing_game.short_name = element.short_name
-            existing_game.slug_catalog = element.slug_catalog
-            existing_game.xbox_start_date = element.xbox_start_date
-            existing_game.xbox_end_date = element.xbox_end_date
-            existing_game.game = element.game if existing_game.game is None else existing_game.game
-
-            existing_game.save()
-        else:
-            # Crear un nuevo objeto si no existe uno con el mismo nombre
-            gamesearch = search_game(
-                game['title'].replace('®', '').replace('™', ''))
-            if len(gamesearch) == 1:
-                element.game = Game.objects.get(id=gamesearch[0])
-            else:
-                element.game = None
-            element.save()
-        counter += 1
-        print("\r{}/{} - {} - {}".format(counter, total, element.name,
-                element.game), end="                           ")
-        # except Exception:
-        #     print("\nFailed {}\n")
+                else:
+                    element.game = None
+                element.save()
+            counter += 1
+            print(" \rGPPC: {}/{} - {} - {}".format(counter, total, element.name,
+                    element.game or existing_game.game), end="")
+        except Exception:
+            print("\nFailed {}\n", name=game['title'])
     GamepassPCCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
         active=False, end_date=datetime.date.today())
     GamepassPCCatalog.objects.filter(

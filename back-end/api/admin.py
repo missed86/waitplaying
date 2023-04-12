@@ -1,5 +1,6 @@
 from django.contrib import admin
-from api.models import Game, Company, Platform, ReleaseDate, Cover, Screenshot, Scrapping, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog
+from api.models import (Game, Company, Platform, ReleaseDate, Cover, Screenshot,
+                        Scrapping, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog)
 
 
 class GameAdmin(admin.ModelAdmin):
@@ -14,43 +15,47 @@ class PlatformAdmin(admin.ModelAdmin):
 
 class ScrappingAdmin(admin.ModelAdmin):
     list_display = ['table_name', 'updated_at', 'last_id']
-    
 
 
 class ReleaseDateAdmin(admin.ModelAdmin):
     list_display = ['id', 'platform', 'date', 'updated_at']
 
 
+# class WebsiteAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'game', 'url', 'category', 'trusted', 'updated_at']
+
 
 blacklist = (
-' (PC)',
-' (Win)',
-' (Windows 10)',
-' Xbox One',
-' Xbox Series X|S',
-' (Game Preview)',
-' EA Play Edition',
-' for Windows 10',
-' - Windows Edition'
-' - Windows 10 Edition'
-' - Windows',
-' - Microsoft Store Edition',
-' - PC',
-'®',
-'™',
-'!',
-'?',
-'.',
-':',
-"Assassin’s",
-"’s",
-"Û",
-' PS4 & PS5',
-' - PlayStation4 Edition',
-' (PlayStation Plus)',
-' PlayStation5 Version',
-' (PS1/PS4)',
+    ' (PC)',
+    ' (Win)',
+    ' (Windows 10)',
+    ' Xbox One',
+    ' Xbox Series X|S',
+    ' (Game Preview)',
+    ' EA Play Edition',
+    ' for Windows 10',
+    ' - Windows Edition'
+    ' - Windows 10 Edition'
+    ' - Windows',
+    ' - Microsoft Store Edition',
+    ' - PC',
+    '®',
+    '™',
+    '!',
+    '?',
+    '.',
+    ':',
+    "Assassin’s",
+    "’s",
+    "Û",
+    ' PS4 & PS5',
+    ' - PlayStation4 Edition',
+    ' (PlayStation Plus)',
+    ' PlayStation5 Version',
+    ' (PS1/PS4)',
+    'Disney·PIXAR '
 )
+
 
 def cleaner(string):
     for word in blacklist:
@@ -60,9 +65,8 @@ def cleaner(string):
 
 class GamepassConsoleCatalogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'game', 'short_name', 'slug_catalog',
-                    'start_date','end_date', 'updated_at', 'active']
-    ordering = ['game','id']
-    
+                    'start_date', 'end_date', 'updated_at', 'active']
+    ordering = ['game', 'id']
 
     def search_game(self, term):
         words = cleaner(term).strip().split()
@@ -87,12 +91,12 @@ class GamepassConsoleCatalogAdmin(admin.ModelAdmin):
                 else:
                     kwargs["queryset"] = Game.objects.none()
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
-    
+
+
 class GamepassPCCatalogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'game', 'short_name', 'slug_catalog',
-                    'start_date','end_date', 'updated_at', 'active']
-    ordering = ['game','id']
-    
+                    'start_date', 'end_date', 'updated_at', 'active']
+    ordering = ['game', 'id']
 
     def search_game(self, term):
         words = cleaner(term).strip().split()
@@ -117,13 +121,12 @@ class GamepassPCCatalogAdmin(admin.ModelAdmin):
                 else:
                     kwargs["queryset"] = Game.objects.none()
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
-    
+
 
 class PsPlusCatalogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'game', 'slug_catalog',
                     'start_date', 'end_date', 'updated_at', 'active']
-    ordering = ['game','id']
-    
+    ordering = ['game', 'id']
 
     def search_game(self, term):
         words = cleaner(term).strip().split()
@@ -154,6 +157,7 @@ admin.site.register(Game, GameAdmin)
 
 admin.site.register(Platform, PlatformAdmin)
 admin.site.register(ReleaseDate, ReleaseDateAdmin)
+# admin.site.register(Website, WebsiteAdmin)
 admin.site.register(Cover)
 admin.site.register(Screenshot)
 admin.site.register(Scrapping, ScrappingAdmin)
