@@ -69,7 +69,7 @@ export default function GameOptions({ gameid }) {
     like: null,
   });
   const [loading, setLoading] = useState(false);
-  const { user, tokens, logoutUser, showLoginWindow } = useContext(AuthContext);
+  const { user, tokens, logoutUser, updateToken, showLoginWindow } = useContext(AuthContext);
 
   const getOptions = async () => {
     let response = await fetch(`http://localhost:8000/auth/go/${gameid}/`, {
@@ -87,7 +87,7 @@ export default function GameOptions({ gameid }) {
         like: data.like,
       });
     } else if (response.status === 401) {
-      logoutUser();
+      updateToken();
     }
   };
 
@@ -114,7 +114,7 @@ export default function GameOptions({ gameid }) {
         like: data.like,
       });
     } else if (response.status === 401) {
-      logoutUser();
+      updateToken();
     }
   };
 
@@ -123,7 +123,7 @@ export default function GameOptions({ gameid }) {
       getOptions();
     }
   }, []);
-
+  useEffect(()=>{},[tokens])
   const clkFollow = () => {
     updateOptions({
       mark: !options.mark,

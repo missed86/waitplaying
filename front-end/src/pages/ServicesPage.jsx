@@ -12,7 +12,7 @@ import ServiceBox from "../components/Services/ServiceBox";
 const Page = styled.div``;
 
 export default function ServicesPage() {
-	const { user, tokens, logoutUser } = useContext(AuthContext);
+	const { user, tokens, logoutUser,updateToken } = useContext(AuthContext);
 	const [parent] = useAutoAnimate();
 
 	const [data, setData] = useState(null);
@@ -39,18 +39,20 @@ export default function ServicesPage() {
 			setData(response.data);
 			setLoading(false);
 		} catch (error) {
-			logoutUser();
-			setError(error);
-			setLoading(true);
+			// logoutUser();
+			// setError(error);
+			// setLoading(true);
+			updateToken();
 		}
 	};
 
 	useEffect(() => {
 		// logoutUser();
 		if (error) {
-			logoutUser();
-			setError(null);
-			setLoading(true);
+			// logoutUser();
+			// setError(null);
+			// setLoading(true);
+			updateToken();
 		} else {
 			fetchData();
 			setLoading(false);

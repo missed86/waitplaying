@@ -57,7 +57,7 @@ function getFormattedDate(date) {
 }
 
 export default function GameList({ date, filters }) {
-	const { user, tokens, logoutUser } = useContext(AuthContext);
+	const { user, tokens, logoutUser, updateToken } = useContext(AuthContext);
 	const [parent] = useAutoAnimate()
 
 
@@ -85,18 +85,20 @@ export default function GameList({ date, filters }) {
 			setData(response.data);
 			setLoading(false);
 		} catch (error) {
-			logoutUser();
-			setError(error);
-			setLoading(true);
+			// logoutUser();
+			// setError(error);
+			// setLoading(true);
+			updateToken();
 		}
 	};
 
 	useEffect(() => {
 		// logoutUser();
 		if (error) {
-			logoutUser();
-			setError(null);
-			setLoading(true);
+			// logoutUser();
+			// setError(null);
+			// setLoading(true);
+			updateToken();
 		} else {
 			fetchData();
 			setLoading(false);

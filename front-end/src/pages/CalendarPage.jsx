@@ -15,7 +15,7 @@ const Page = styled.div`
 `;
 
 export default function CalendarPage() {
-	const { user, tokens, logoutUser } = useContext(AuthContext);
+	const { user, tokens, logoutUser, updateToken } = useContext(AuthContext);
 	const [list, setList] = useState(null);
 	const [calendarView, setCalendarView] = useState(false);
 	
@@ -41,13 +41,17 @@ export default function CalendarPage() {
 				}, {});
 			setList(ordered);
 		} else if (response.status === 401) {
-			logoutUser();
+			// logoutUser();
+			updateToken();
+			getFollows();
 		}
 	};
 	useEffect(() => {
 		if (!user) navigate("/")
 		getFollows();
 	}, []);
+
+	useEffect(()=>{},[tokens])
 	return user && (
 		<Page>
 		{/* {console.log("🚀 ~ file: CalendarPage.jsx:54 ~ CalendarPage ~ list:", list)} */}
