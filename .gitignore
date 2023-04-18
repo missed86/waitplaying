@@ -6,3 +6,4 @@
 /back-end/api/migrations/__pycache__
 *.sqlite3
 back-end/data.json
+back-end/db.sqlite3-journal
