@@ -31,14 +31,22 @@ const Title = styled.div`
 		-2px 2px 2px #00000070, 2px 2px 2px #00000070;
 	cursor: default;
 `;
+const Center = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+`
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
 
 export default function TBDListView({ TBDListView }) {
 	return (
+		TBDListView.lenght>0 ? 
 		<>
 			<Title background={CoverURL(TBDListView[0][1])} alt="To Be Determinated">TBD</Title>
             <Games>
+			
 			{TBDListView.map((game, index) => (
 				<Link key={'ItemLink'+index+game[0]} to={`/game/${game[2]}`} className="no-link">
                     <Game>{game[0]}</Game>
@@ -46,6 +54,10 @@ export default function TBDListView({ TBDListView }) {
 			))}
 
             </Games>
+		</>
+		:
+		<>
+			<Center>No following games</Center>
 		</>
 	);
 }

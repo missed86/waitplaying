@@ -188,3 +188,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOW_CREDENTIALS = True
 
 # AUTH_USER_MODEL = 'users.User'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', 
+    'api.auth.backends.EmailBackend',
+    )
+AUTH_USER_MODEL = 'auth.User'

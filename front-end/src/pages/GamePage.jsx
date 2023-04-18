@@ -77,7 +77,6 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
-
 	return (
 		<>
 			{loading && <div>Loading...</div>}

@@ -7,7 +7,7 @@ import "./Home.css";
 
 // const dates = [];
 // const today = new Date();
-const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2"];
+const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2", "Meta Quest 2"];
 
 // for (let i = 0; i <= 10; i++) {
 // 	const nextDate = new Date();

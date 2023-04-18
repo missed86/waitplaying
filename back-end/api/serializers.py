@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth import get_user_model
 
 from .models import Game, Platform, ReleaseDate, Note, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog
 
@@ -84,3 +85,22 @@ class UserCalendarSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserGameSet
         fields = ('game',)
+
+class UserSerializer(serializers.ModelSerializer):
+    user = serializers.CharField(required=True)
+    email = serializers.EmailField(required=True)
+    password = serializers.CharField(required=True, write_only=True)
+    fecha_nacimiento = serializers.DateField(required=True)
+
+    class Meta:
+        model = get_user_model()
+        fields = ['user', 'email', 'password', 'fecha_nacimiento']
+
+    def create(self, validated_data):
+        user = get_user_model().objects.create_user(
+            username=validated_data['user'],
+            email=validated_data['email'],
+            password=validated_data['password'],
+            fecha_nacimiento=validated_data['fecha_nacimiento'],
+        )
+        return user

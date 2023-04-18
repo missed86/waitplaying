@@ -35,6 +35,8 @@ const FromNow = styled.span`
 `
 
 export function ReleasesTable({ platforms, release_dates }) {
+console.log("🚀 ~ file: ReleasesTable.jsx:38 ~ ReleasesTable ~ release_dates:", release_dates)
+console.log("🚀 ~ file: ReleasesTable.jsx:38 ~ ReleasesTable ~ platforms:", platforms)
 
 	const releaseText = (date) => {
 		const release_date = moment(date.release_date)
@@ -96,6 +98,7 @@ export function ReleasesTable({ platforms, release_dates }) {
 			const platform = platforms.find(
 				(platform) => platform.id === releaseDate.platform
 			);
+			if (!platform) return null;
 			releaseDates.push({
 				platform: platform.name,
 				abbreviation: platform.abbreviation,

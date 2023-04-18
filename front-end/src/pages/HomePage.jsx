@@ -14,7 +14,7 @@ const Home = styled.div`
 `;
 // const dates = [];
 // const today = new Date();
-const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2"];
+const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2", "Meta Quest 2"];
 
 const MAX_NUM_DATES = 31;
 

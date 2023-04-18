@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from api.models import Game
@@ -13,6 +13,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from api.serializers import UserGameSetsSerializer, UserCalendarSerializer
 from api.models import UserGameSet
+from api.serializers import UserSerializer
 
 import collections
 
@@ -129,3 +130,7 @@ class UserCalendarView(APIView):
         tbd_list = list(tbd)
         sorted_data.update({'tbd': tbd_list})
         return Response(sorted_data)
+
+class UserCreateAPIView(generics.CreateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = (AllowAny,)
