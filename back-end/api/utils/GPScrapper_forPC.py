@@ -174,7 +174,7 @@ def GamepassScrappePC():
             print(" \rGPPC: {}/{} - {} - {}".format(counter, total, element.name,
                     element.game or existing_game.game), end="")
         except Exception:
-            print("\nFailed {}\n", name=game['title'])
+            print("\nFailed {}\n")
     GamepassPCCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
         active=False, end_date=datetime.date.today())
     GamepassPCCatalog.objects.filter(
