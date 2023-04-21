@@ -7,109 +7,129 @@ const AuthContext = createContext();
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
-  const [loginWindow, setLoginWindow] = useState(false)
-  const [authTokens, setAuthTokens] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? JSON.parse(localStorage.getItem("authTokens"))
-      : null
-  );
-  console.log(
-    "🚀 ~ file: AuthContext.jsx:15 ~ AuthProvider ~ authTokens",
-    authTokens
-  );
-  const [user, setUser] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? jwt_decode(localStorage.getItem("authTokens"))
-      : null
-  );
+	const navigate = useNavigate();
+	const [loading, setLoading] = useState(true);
+	const [loginWindow, setLoginWindow] = useState(false);
+	const [authTokens, setAuthTokens] = useState(() =>
+		localStorage.getItem("authTokens")
+			? JSON.parse(localStorage.getItem("authTokens"))
+			: null
+	);
+	const [user, setUser] = useState(() =>
+		localStorage.getItem("authTokens")
+			? jwt_decode(localStorage.getItem("authTokens"))
+			: null
+	);
 
-  const [loading, setLoading] = useState(true);
-  console.log("🚀 ~ file: AuthContext.jsx:20 ~ AuthProvider ~ user", user);
-  const navigate = useNavigate();
+	console.log(
+		"🚀 ~ file: AuthContext.jsx:15 ~ AuthProvider ~ authTokens",
+		authTokens
+	);
 
-  const loginUser = async (e) => {
-    e.preventDefault();
-    console.log(
-      "🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
-      "Form submitted"
-    );
+	console.log("🚀 ~ file: AuthContext.jsx:20 ~ AuthProvider ~ user", user);
 
-    let response = await fetch("http://localhost:8000/auth/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: e.target.username.value,
-        password: e.target.password.value,
-      }),
-    });
-    let data = await response.json();
-    console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
+	const loginUser = async (e) => {
+		// setLoading(true);
+		e.preventDefault();
+		console.log(
+			"🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
+			"Form submitted"
+		);
 
-    if (response.status === 200) {
-      setAuthTokens(data);
-      setUser(jwt_decode(data.access));
-      localStorage.setItem("authTokens", JSON.stringify(data));
-      // navigate("");
-    } else {
-      alert("Something went wrong!");
-    }
-  };
-  const showLoginWindow = (value) => {
-    setLoginWindow(value)
-  }
-  const logoutUser = () => {
-    setAuthTokens(null);
-    setUser(null);
-    localStorage.removeItem("authTokens");
-    navigate("/");
-  };
+		let response = await fetch("http://localhost:8000/auth/token/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				username: e.target.username.value,
+				password: e.target.password.value,
+			}),
+		});
+		let data = await response.json();
+		console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
 
-  const updateToken = async () => {
-    console.log("Update token called");
-    let response = await fetch("http://localhost:8000/auth/token/refresh/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        refresh: authTokens.refresh,
-      }),
-    });
-    let data = await response.json();
+		if (response.status === 200) {
+			setAuthTokens(data);
+			setUser(jwt_decode(data.access));
+			localStorage.setItem("authTokens", JSON.stringify(data));
+			// navigate("");
+		} else {
+			alert("Something went wrong!");
+		}
+		// setLoading(false);
+	};
+	const showLoginWindow = (value) => {
+		setLoginWindow(value);
+	};
+	const logoutUser = () => {
+		setAuthTokens(null);
+		setUser(null);
+		localStorage.removeItem("authTokens");
+		navigate("/");
+	};
 
-    if (response.status === 200) {
-      setAuthTokens(data);
-      setUser(jwt_decode(data.access));
-      localStorage.setItem("authTokens", JSON.stringify(data));
-    } else {
-      setAuthTokens(null);
-      setUser(null);
-      localStorage.removeItem("authTokens");
-      navigate("/");
-    }
-  };
-  const contextData = {
-    user: user,
-	  tokens: authTokens,
-    loginUser: loginUser,
-    logoutUser: logoutUser,
-    updateToken: updateToken,
-    loginWindow: loginWindow,
-    showLoginWindow: showLoginWindow
-  };
+	// const [isUpdatingToken, setIsUpdatingToken] = useState(false);
 
-  useEffect(() => {
-    let fourMinutes = 1000 * 60 * 4;
-    let interval = setInterval(() => {
-      if (authTokens) {
-        updateToken();
-      }
-    }, fourMinutes);
-    return () => clearInterval(interval);
-  }, [authTokens, loading]);
-  return (
-    <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
-  );
+	let updatingToken = false;
+	const updateToken = async () => {
+		if (updatingToken) {
+			return; // Si está actualizando el token, no haga nada
+		}
+
+		console.log("Update token called");
+		updatingToken = true; // Establecer a true para indicar que estamos actualizando el token
+
+		try {
+			let response = await fetch("http://localhost:8000/auth/token/refresh/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					refresh: authTokens.refresh,
+				}),
+			});
+			let data = await response.json();
+
+			if (response.status === 200) {
+        console.log("Token updated");
+				setAuthTokens(data);
+				setUser(jwt_decode(data.access));
+				localStorage.setItem("authTokens", JSON.stringify(data));
+			} else {
+				setAuthTokens(null);
+				setUser(null);
+				localStorage.removeItem("authTokens");
+				navigate("/");
+			}
+		} catch (error) {
+			console.error(error);
+		} finally {
+			updatingToken = false; // Establecer a false para indicar que terminamos de actualizar el token
+		}
+	};
+
+	const contextData = {
+		user: user,
+		tokens: authTokens,
+		loginUser: loginUser,
+		logoutUser: logoutUser,
+		updateToken: updateToken,
+		loginWindow: loginWindow,
+		showLoginWindow: showLoginWindow,
+	};
+
+	useEffect(() => {
+		let fourMinutes = 1000 * 60 * 4;
+		let interval = setInterval(() => {
+			if (authTokens) {
+				updateToken();
+			}
+		}, fourMinutes);
+		return () => clearInterval(interval);
+	}, [authTokens, loading]);
+	return (
+		<AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
+	);
 };

@@ -329,6 +329,9 @@ def scrape_release_dates():
                     pass
                 except Platform.DoesNotExist:
                     pass
+                except Exception as e:
+                    print(e)
+
             if len(query.json()) < 500:
 
                 end_time = time.time()
