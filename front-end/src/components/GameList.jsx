@@ -85,7 +85,6 @@ export default function GameList({ date, filters }) {
 			setLoading(false);
 			setError(null);
 		} catch (error) {
-			console.log('tokens 401', tokens)
 			// logoutUser();
 			
 			// setLoading(true);
@@ -94,7 +93,6 @@ export default function GameList({ date, filters }) {
 	};
 
 	useEffect(() => {
-		console.log('username', user?.username)
 		if(!updatingToken){
 			fetchData();
 		}

@@ -30,6 +30,19 @@ class GameSerializer(serializers.ModelSerializer):
         data['release_dates'] = ReleaseDateSerializer(instance.releasedate_set.all().order_by('date', 'platform'), many=True).data
         return data
 
+class GameForSearch(serializers.ModelSerializer):
+    platforms = PlatformSerializer(many = True)
+    release_dates = ReleaseDateSerializer(many=True, source='releasedate_set')
+    class Meta:
+        model = Game
+        fields = ('cover', 'name', 'slug', 'id', 'platforms', 'release_dates', 'first_release_date')
+        ordering = ['platform','date']
+        # read_only_fields = ('__all__')
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['release_dates'] = ReleaseDateSerializer(instance.releasedate_set.all().order_by('date', 'platform'), many=True).data
+        return data
+
 
 class NextGamesSerializer(serializers.Serializer):
     

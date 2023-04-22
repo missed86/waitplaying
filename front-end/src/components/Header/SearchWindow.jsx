@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import moment from "moment";
+
 
 const Component = styled.div`
 	position: absolute;
@@ -117,6 +119,30 @@ export default function SearchWindow({ query, active, setActive }) {
 		setActive(false);
 	};
 
+	const releaseText = (date) => {
+		const release_date = moment(date.date);
+		switch (date.category) {
+			case 0:
+				return `${release_date.format("LL")} (${release_date.fromNow()})`;
+			case 1:
+				return `${release_date.format("MMMM, YYYY")}`;
+			case 2:
+				return `${release_date.format("YYYY")}`;
+			case 3:
+				return `Q1 ${release_date.format("YYYY")}`;
+			case 4:
+				return `Q2 ${release_date.format("YYYY")}`;
+			case 5:
+				return `Q3 ${release_date.format("YYYY")}`;
+			case 6:
+				return `Q4 ${release_date.format("YYYY")}`;
+			case 7:
+				return "TBD";
+			default:
+				return "TBD";
+		}
+	};
+	console.log('data search window:'	, data)
 	return (
 		<Component className={active ? "show" : ""}>
 			{loading && <Item>Loading...</Item>}
@@ -136,7 +162,7 @@ export default function SearchWindow({ query, active, setActive }) {
 							</CoverAside>
 							<Data>
 								<h1>{e.name}</h1>
-								<h2>{e.first_release_date}</h2>
+								<h2>{e.release_dates ? releaseText(e.release_dates[0]) : e.first_release_date}</h2>
 							</Data>
 						</Item>
 					</Link>

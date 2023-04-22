@@ -28,6 +28,7 @@ from .serializers import (
     GPCatalogSerializerPC,
     GPCatalogSerializerConsole,
     PSPCatalogSerializer,
+    GameForSearch,
     )
 from datetime import datetime
 
@@ -232,7 +233,7 @@ class ServicesView(APIView):
 Searchbox
 '''
 class SearchBoxView(generics.ListAPIView):
-    serializer_class = GameSerializer
+    serializer_class = GameForSearch
 
     def get_queryset(self):
         term = self.request.GET.get("q")
@@ -244,5 +245,5 @@ class SearchBoxView(generics.ListAPIView):
             if matching_games:
                 break
             words.pop()
-        return matching_games.order_by('-first_release_date')
+        return matching_games.order_by('-first_release_date')[:50]
 
