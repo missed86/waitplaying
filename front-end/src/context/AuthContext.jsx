@@ -93,7 +93,6 @@ export const AuthProvider = ({ children }) => {
 			let data = await response.json();
 
 			if (response.status === 200) {
-        console.log("Token updated");
 				setAuthTokens(data);
 				setUser(jwt_decode(data.access));
 				localStorage.setItem("authTokens", JSON.stringify(data));
@@ -118,17 +117,20 @@ export const AuthProvider = ({ children }) => {
 		updateToken: updateToken,
 		loginWindow: loginWindow,
 		showLoginWindow: showLoginWindow,
+		updatingToken:updatingToken,
 	};
 
-	useEffect(() => {
-		let fourMinutes = 1000 * 60 * 4;
-		let interval = setInterval(() => {
-			if (authTokens) {
-				updateToken();
-			}
-		}, fourMinutes);
-		return () => clearInterval(interval);
-	}, [authTokens, loading]);
+	// useEffect(() => {
+	// 	let fourMinutes = 1000 * 60 * 4;
+	// 	let interval = setInterval(() => {
+	// 		if (authTokens) {
+	// 			updateToken();
+	// 		}
+	// 	}, fourMinutes);
+	// 	return () => clearInterval(interval);
+	// }, [authTokens, loading]);
+
+
 	return (
 		<AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
 	);

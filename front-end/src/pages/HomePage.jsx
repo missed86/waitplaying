@@ -16,7 +16,7 @@ const Home = styled.div`
 // const today = new Date();
 const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2", "Meta Quest 2"];
 
-const MAX_NUM_DATES = 31;
+const MAX_NUM_DATES = 90;
 
 function HomePage() {
   const [dates, setDates] = useState([]);

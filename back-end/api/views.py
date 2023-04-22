@@ -23,6 +23,7 @@ from .serializers import (
     NextGamesSerializer,
     GameDatesSerializer,
     SimpleGame,
+    GamesForLists,
     UserGameSetsSerializer,
     GPCatalogSerializerPC,
     GPCatalogSerializerConsole,
@@ -121,18 +122,21 @@ def group_games(queryset, date, user):
             user=user, game=game, mark=True)
             if user_games.exists():
                 userSerializer = UserGameSetsSerializer(user_games, many=True)
-                gameSerializer = SimpleGame(game)
+                gameSerializer = GamesForLists(game)
                 result.append(
                     {"date": date, "game": gameSerializer.data, "platforms": platforms, "mark": userSerializer.data[0]['mark']})
             else:
-                serializer = SimpleGame(game)
+                serializer = GamesForLists(game)
                 result.append(
                     {"date": date, "game": serializer.data, "platforms": platforms})
         else:
-            serializer = SimpleGame(game)
+            serializer = GamesForLists(game)
             result.append(
                 {"date": date, "game": serializer.data, "platforms": platforms})
     return result
+
+
+
 
 class GamesByDateView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -144,6 +148,19 @@ class GamesByDateView(APIView):
         queryset = ReleaseDate.objects.filter(date=date, category=0)
         user = request.user if request.user.is_authenticated else None
         return Response(group_games(queryset, date, user))
+    
+# class GamesByDateView(APIView):
+#     permission_classes = [permissions.AllowAny]
+#     serializer_class = GameDatesSerializer
+#     authentication_classes = [JWTAuthentication]
+
+#     def get(self, request, date, format=None):
+#         date = self.kwargs.get("date")
+#         queryset = ReleaseDate.objects.filter(date=date, category=0)
+#         user = request.user if request.user.is_authenticated else None
+#         return Response(group_games(queryset, date, user))
+
+
 
 '''
 Services Page
@@ -154,21 +171,57 @@ class ServicesView(APIView):
     # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
-        gamepass_pc = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
-        gamepass_console = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
-        psplus = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        gamepass_pc_in = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
+        gamepass_pc_out = GamepassPCCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
+        gamepass_console_in = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
+        gamepass_console_out = GamepassConsoleCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
+        psplus_in = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
+        psplus_out = PsPlusCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
         
-        gamepass_pc_serializer = GPCatalogSerializerPC(gamepass_pc, many=True)
-        gamepass_console_serializer = GPCatalogSerializerConsole(gamepass_console, many=True)
-        psplus_serializer = PSPCatalogSerializer(psplus, many=True)
+        gamepass_pc_in_serializer = GPCatalogSerializerPC(gamepass_pc_in, many=True)
+        gamepass_console_in_serializer = GPCatalogSerializerConsole(gamepass_console_in, many=True)
+        psplus_in_serializer = PSPCatalogSerializer(psplus_in, many=True)
+        gamepass_pc_out_serializer = GPCatalogSerializerPC(gamepass_pc_out, many=True)
+        gamepass_console_out_serializer = GPCatalogSerializerConsole(gamepass_console_out, many=True)
+        psplus_out_serializer = PSPCatalogSerializer(psplus_out, many=True)
 
         response_data = {
-            'gamepass_pc': gamepass_pc_serializer.data,
-            'gamepass_console': gamepass_console_serializer.data,
-            'psplus': psplus_serializer.data
+            'gamepass_pc': {
+                'in': gamepass_pc_in_serializer.data,
+                'out': gamepass_pc_out_serializer.data,
+            },
+            'gamepass_console': {
+                'in': gamepass_console_in_serializer.data,
+                'out': gamepass_console_out_serializer.data,
+            },
+            'psplus': {
+                'in': psplus_in_serializer.data,
+                'out': psplus_out_serializer.data,
+            }
         }
         
         return Response(response_data)
+# class ServicesView(APIView):
+#     # permission_classes = [permissions.AllowAny]
+#     # serializer_class = SimpleGame
+#     # authentication_classes = [JWTAuthentication]
+
+#     def get(self, request):
+#         gamepass_pc = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+#         gamepass_console = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+#         psplus = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        
+#         gamepass_pc_serializer = GPCatalogSerializerPC(gamepass_pc, many=True)
+#         gamepass_console_serializer = GPCatalogSerializerConsole(gamepass_console, many=True)
+#         psplus_serializer = PSPCatalogSerializer(psplus, many=True)
+
+#         response_data = {
+#             'gamepass_pc': gamepass_pc_serializer.data,
+#             'gamepass_console': gamepass_console_serializer.data,
+#             'psplus': psplus_serializer.data
+#         }
+        
+#         return Response(response_data)
 
 
 

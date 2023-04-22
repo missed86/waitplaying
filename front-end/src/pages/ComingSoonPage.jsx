@@ -16,7 +16,7 @@ const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2", "M
 // 	dates.push(formattedDate);
 // }
 
-const MAX_NUM_DATES = 100
+const MAX_NUM_DATES = 90
 
 function HomePage() {
 	const [dates, setDates] = useState([]);

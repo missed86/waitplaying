@@ -28,7 +28,7 @@ const List = styled.div`
 	@media only screen and (max-width: 450px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-  opacity: ${(props) => (props.isLoading ? 0 : 1)};
+	opacity: ${(props) => (props.isLoading ? 0 : 1)};
 	transition: all 1s ease-in-out;
 `;
 
@@ -57,9 +57,8 @@ function getFormattedDate(date) {
 }
 
 export default function GameList({ date, filters }) {
-	const { user, tokens, logoutUser, updateToken } = useContext(AuthContext);
-	const [parent] = useAutoAnimate()
-
+	const { user, tokens, logoutUser, updateToken, updatingToken } = useContext(AuthContext);
+	const [parent] = useAutoAnimate();
 
 	const [data, setData] = useState([]);
 	const [error, setError] = useState(null);
@@ -79,40 +78,35 @@ export default function GameList({ date, filters }) {
 					url: `http://127.0.0.1:8000/api/releases/${date}/`,
 			  };
 	const fetchData = async () => {
-    setLoading(true);
+		setLoading(true);
 		try {
 			const response = await axios.request(options());
 			setData(response.data);
 			setLoading(false);
+			setError(null);
 		} catch (error) {
+			console.log('tokens 401', tokens)
 			// logoutUser();
-			// setError(error);
+			
 			// setLoading(true);
 			updateToken();
 		}
 	};
 
 	useEffect(() => {
-		// logoutUser();
-		if (error) {
-			// logoutUser();
-			// setError(null);
-			// setLoading(true);
-			updateToken();
-		} else {
+		console.log('username', user?.username)
+		if(!updatingToken){
 			fetchData();
-			setLoading(false);
 		}
-	}, [error, user, tokens]);
+	}, [tokens]);
 
+	// useEffect(() => {
+	// 	fetchData();
+	//   }, [user]);
 
-	useEffect(() => {
-		fetchData();
-	  }, [user]);
-
-	if (error) {
-		return <div>Error: {error.message}</div>;
-	}
+	// if (error) {
+	// 	return <div>Error: {error.message}</div>;
+	// }
 
 	const filteredData = data.filter(({ platforms }) =>
 		platforms.some((e) => filters.includes(e))
@@ -122,10 +116,9 @@ export default function GameList({ date, filters }) {
 		return null;
 	}
 
-	// console.log("🚀 ~ file: GameList.jsx:106 ~ GameList ~ filteredData:",date, filteredData)
 	return (
 		filteredData[0].game.cover &&
-		(loading ? (
+		(loading || error ? (
 			<GameGroup ref={parent} isLoading={loading}>
 				<DateDiv>{getFormattedDate(date)}</DateDiv>
 				<List ref={parent}>

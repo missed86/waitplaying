@@ -43,13 +43,12 @@ export default function CalendarPage() {
 		} else if (response.status === 401) {
 			// logoutUser();
 			updateToken();
-			getFollows();
 		}
 	};
 	useEffect(() => {
 		if (!user) navigate("/")
 		getFollows();
-	}, []);
+	}, [tokens]);
 
 	useEffect(()=>{},[tokens])
 	return user && (

@@ -11,6 +11,7 @@ router.register('games', GameViewSet, 'games')
 
 urlpatterns = [
     path('games/<slug>/', GameDetailsView.as_view()),
+    # path('releases/', GamesByDateView.as_view()),
     path('releases/<str:date>/', GamesByDateView.as_view()),
     path('nextgames/', NextGamesView.as_view(), name='next-games'),
     path('search/', SearchBoxView.as_view(), name='search'),

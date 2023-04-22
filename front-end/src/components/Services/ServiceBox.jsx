@@ -51,7 +51,26 @@ export default function ServiceBox({service, data}) {
             </Header>
             <Body>
             {data &&
-				data.map((e) =>
+				data.in.map((e) =>
+					e.game && e.game.cover ? (
+						<Link
+							key={e.game.id}
+							to={`/game/${e.game.slug}`}
+							className="no-link flex"
+						>
+							<GameCard
+								image={e.game.cover}
+								title={e.game.name}
+								platforms={null}
+								// marked={user ? (mark ? mark : false) : false}
+							/>
+						</Link>
+					) : null
+				)}
+            </Body>
+            <Body>
+            {data &&
+				data.out.map((e) =>
 					e.game && e.game.cover ? (
 						<Link
 							key={e.game.id}

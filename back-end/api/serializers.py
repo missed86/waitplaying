@@ -45,6 +45,13 @@ class SimpleGame(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ('__all__')
+class GamesForLists(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ('id','name', 'slug', 'cover')
+
+
+
 
 class GPCatalogSerializerPC(serializers.ModelSerializer):
     game = SimpleGame()
@@ -62,6 +69,10 @@ class PSPCatalogSerializer(serializers.ModelSerializer):
         model = PsPlusCatalog
         fields = ('game', 'start_date', 'end_date')
 
+
+
+
+
 class GameDatesSerializer(serializers.ModelSerializer):
     game = SimpleGame()
     platform = PlatformSerializer()
@@ -69,7 +80,6 @@ class GameDatesSerializer(serializers.ModelSerializer):
         model = ReleaseDate
         fields = ('date', 'platform', 'game', 'games')
         # read_only_fields = ('__all__')
-
 
 class UserGameSetsSerializer(serializers.ModelSerializer):
     class Meta:
