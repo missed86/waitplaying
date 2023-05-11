@@ -42,7 +42,7 @@ const CoverURL = (id) =>
 
 export default function TBDListView({ TBDListView }) {
 	return (
-		TBDListView.length>0 ? 
+		TBDListView.length>0 && 
 		<>
 			<Title background={CoverURL(TBDListView[0][1])} alt="To Be Determinated">TBD</Title>
             <Games>
@@ -54,10 +54,6 @@ export default function TBDListView({ TBDListView }) {
 			))}
 
             </Games>
-		</>
-		:
-		<>
-			<Center>No following games</Center>
 		</>
 	);
 }

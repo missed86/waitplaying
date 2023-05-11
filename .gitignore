@@ -1,6 +1,7 @@
 
 /back-end/api/secret.py
 /back-end/waitplayingAPI/__pycache__
+/back-end/waitplayingAPI/settings.py
 /back-end/api/__pycache__
 /back-end/api/models/__pycache__
 /back-end/api/migrations/__pycache__
@@ -9,3 +10,5 @@ back-end/data.json
 back-end/db.sqlite3-journal
 /waitplaying-web.tar
 /waitplaying.sql
+*.env.dev
+*config.py

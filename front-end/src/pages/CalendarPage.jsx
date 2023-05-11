@@ -23,7 +23,7 @@ export default function CalendarPage() {
 	if (!user) navigate("/")
 
 	const getFollows = async () => {
-		let response = await fetch(`http://localhost:8000/auth/calendar/`, {
+		let response = await fetch(`https://api.waitplaying.com/auth/calendar/`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

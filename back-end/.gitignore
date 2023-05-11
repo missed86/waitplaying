@@ -1,2 +1,2 @@
-/waitplayingAPI/config.py
 /.env.dev
+/waitplayingAPI/settings.py

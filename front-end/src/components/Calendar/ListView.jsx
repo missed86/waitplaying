@@ -65,6 +65,12 @@ const ToogleButton = styled.button`
 	}
 `;
 
+const Center = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+`;
 const monthList = [
 	"January",
 	"February",
@@ -117,7 +123,16 @@ export default function ListView({ list, calendarView, setCalendarView }) {
 	const toogleCalendar = () => {
 		setCalendarView(!calendarView);
 	};
-
+	const comprobarDatos = (reorganized_list) => {
+		const keys = Object.keys(reorganized_list);
+	  
+		if (keys.length === 1 && reorganized_list.hasOwnProperty("tbd")) {
+		  const tbdData = reorganized_list["tbd"];
+		  return tbdData.length > 0;
+		} else {
+		  return keys.length > 0;
+		}
+	  }
 	return (
 		<Component calendarView={calendarView}>
 			<Header>
@@ -126,24 +141,29 @@ export default function ListView({ list, calendarView, setCalendarView }) {
 				<ToogleButton onClick={toogleCalendar}>{calendar_days}</ToogleButton>
 			</Header>
 			<Wrapper>
-				{Object.entries(reorganized_list).map(
-					([month, dates]) =>
-						month !== "tbd" && (
-							<ListViewMonth
-								key={month}
-								month={dateToString(month)}
-								dates={dates}
-							/>
-						)
+				{comprobarDatos(reorganized_list)? (
+					<>
+						{Object.entries(reorganized_list).map(
+							([month, dates]) =>
+								month !== "tbd" && (
+									<ListViewMonth
+										key={month}
+										month={dateToString(month)}
+										dates={dates}
+									/>
+								)
+						)}
+						{
+							reorganized_list["tbd"] && (
+								<TBDListView TBDListView={reorganized_list["tbd"]} />
+							)
+						}
+					</>
+				) : (
+					<>
+						<Center>No following games</Center>
+					</>
 				)}
-				{ 
-          // si reorganized_list["tbd"] no esta vacio
-
-
-          reorganized_list["tbd"] && (
-					<TBDListView TBDListView={reorganized_list["tbd"]} />
-				)
-        }
 			</Wrapper>
 		</Component>
 	);

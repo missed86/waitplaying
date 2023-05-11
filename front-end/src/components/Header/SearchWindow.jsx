@@ -102,7 +102,7 @@ export default function SearchWindow({ query, active, setActive }) {
 		if (debouncedQuery.length > 2) {
 			setLoading(true);
 			axios
-				.get(`http://127.0.0.1:8000/api/search/?q=${debouncedQuery}`)
+				.get(`https://api.waitplaying.com/search/?q=${debouncedQuery}`)
 				.then((response) => {
 					setData(response.data);
 					setError(null);

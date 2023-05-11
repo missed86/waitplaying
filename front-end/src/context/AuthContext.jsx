@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 			"Form submitted"
 		);
 
-		let response = await fetch("http://localhost:8000/auth/token/", {
+		let response = await fetch("https://api.waitplaying.com/auth/token/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 			"Form submitted"
 		);
 
-		let response = await fetch("http://localhost:8000/auth/register/", {
+		let response = await fetch("https://api.waitplaying.com/auth/register/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -118,7 +118,7 @@ export const AuthProvider = ({ children }) => {
 		updatingToken = true; // Establecer a true para indicar que estamos actualizando el token
 
 		try {
-			let response = await fetch("http://localhost:8000/auth/token/refresh/", {
+			let response = await fetch("https://api.waitplaying.com/auth/token/refresh/", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

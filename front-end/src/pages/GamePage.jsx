@@ -53,7 +53,7 @@ export default function GamePage() {
 	useEffect(() => {
 		setLoading(true);
 		axios
-			.get(`http://127.0.0.1:8000/api/games/${slug}/`)
+			.get(`https://api.waitplaying.com/games/${slug}/`)
 			.then((response) => {
 				setData(response.data[0]);
 				setLoading(false);

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-zip": "npm run build && zip -r build.zip build",
     "preview": "vite preview",
     "relocate": "vite build && rd /s /q ..\\back-end\\build && move build ..\\back-end\\"
   },

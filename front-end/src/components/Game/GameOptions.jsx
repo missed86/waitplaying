@@ -73,7 +73,7 @@ export default function GameOptions({ gameid }) {
 		useContext(AuthContext);
 
 	const getOptions = async () => {
-		let response = await fetch(`http://localhost:8000/auth/go/${gameid}/`, {
+		let response = await fetch(`https://api.waitplaying.com/auth/go/${gameid}/`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -94,7 +94,7 @@ export default function GameOptions({ gameid }) {
 
 	const updateOptions = async ({ mark, like }) => {
 		setLoading(true);
-		let response = await fetch(`http://localhost:8000/auth/go/${gameid}/`, {
+		let response = await fetch(`https://api.waitplaying.com/auth/go/${gameid}/`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

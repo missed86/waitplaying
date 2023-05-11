@@ -86,7 +86,7 @@ export default function SearchWindow({ query, active, setActive }) {
     queryFn: 
       () =>{
         if(query.length > 2) {
-          return fetch(`http://127.0.0.1:8000/api/search/?q=${debouncedQuery}`).then(
+          return fetch(`https://api.waitplaying.com/search/?q=${debouncedQuery}`).then(
             (res) => res.json()
           )
         }

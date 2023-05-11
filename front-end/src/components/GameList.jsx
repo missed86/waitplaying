@@ -68,14 +68,14 @@ export default function GameList({ date, filters }) {
 		user
 			? {
 					method: "GET",
-					url: `http://127.0.0.1:8000/api/releases/${date}/`,
+					url: `https://api.waitplaying.com/releases/${date}/`,
 					headers: {
 						Authorization: `Bearer ${tokens.access}`,
 					},
 			  }
 			: {
 					method: "GET",
-					url: `http://127.0.0.1:8000/api/releases/${date}/`,
+					url: `https://api.waitplaying.com/releases/${date}/`,
 			  };
 	const fetchData = async () => {
 		setLoading(true);

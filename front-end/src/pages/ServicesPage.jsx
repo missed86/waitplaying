@@ -23,14 +23,14 @@ export default function ServicesPage() {
 		user
 			? {
 					method: "GET",
-					url: `http://127.0.0.1:8000/api/services/`,
+					url: `https://api.waitplaying.com/services/`,
 					headers: {
 						Authorization: `Bearer ${tokens.access}`,
 					},
 			  }
 			: {
 					method: "GET",
-					url: `http://127.0.0.1:8000/api/services/`,
+					url: `https://api.waitplaying.com/services/`,
 			  };
 	const fetchData = async () => {
 		setLoading(true);
