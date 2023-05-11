@@ -44,7 +44,9 @@ const UserData = styled.div`
 	flex: 1;
 `;
 const UserText = styled.span``;
-const EmailText = styled.span``;
+const EmailText = styled.span`
+	color: #999999;
+`;
 
 const Menu = styled.div`
 	ul {
@@ -93,7 +95,7 @@ export default function UserMenu({ actived, setActived }) {
 				</AvatarWrapper>
 				<UserData>
 					<UserText>{user.username}</UserText>
-					<EmailText>{user.username}</EmailText>
+					<EmailText>{user.email}</EmailText>
 				</UserData>
 			</Header>
 			<Menu>

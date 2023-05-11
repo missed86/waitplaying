@@ -8,6 +8,8 @@ export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
 	const navigate = useNavigate();
+	const [registerData, setRegisterData] = useState({error: null, success: null});
+	const [loginError, setLoginError] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [loginWindow, setLoginWindow] = useState(false);
 	const [authTokens, setAuthTokens] = useState(() =>
@@ -31,6 +33,7 @@ export const AuthProvider = ({ children }) => {
 	const loginUser = async (e) => {
 		// setLoading(true);
 		e.preventDefault();
+		setLoginError(null);
 		console.log(
 			"🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
 			"Form submitted"
@@ -47,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 			}),
 		});
 		let data = await response.json();
-		console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
+		// console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
 
 		if (response.status === 200) {
 			setAuthTokens(data);
@@ -55,10 +58,44 @@ export const AuthProvider = ({ children }) => {
 			localStorage.setItem("authTokens", JSON.stringify(data));
 			// navigate("");
 		} else {
-			alert("Something went wrong!");
+			// alert("Something went wrong!");
+			setLoginError(data.detail);
 		}
 		// setLoading(false);
 	};
+	const registerUser = async (e) => {
+		e.preventDefault();
+		console.log(
+			"🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
+			"Form submitted"
+		);
+
+		let response = await fetch("http://localhost:8000/auth/register/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				username: e.target.username.value,
+				email: e.target.email.value,
+				password: e.target.password.value,
+			}),
+		});
+		let data = await response.json();
+		console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
+
+		if (response.status === 201) {
+			setAuthTokens(data);
+			setUser(jwt_decode(data.access));
+			localStorage.setItem("authTokens", JSON.stringify(data));
+			setRegisterData(data)
+		} else {
+			setRegisterData(data);
+			console.log(data)
+			// alert("Something went wrong!");
+		}
+		// setLoading(false);
+	}
 	const showLoginWindow = (value) => {
 		setLoginWindow(value);
 	};
@@ -118,6 +155,9 @@ export const AuthProvider = ({ children }) => {
 		loginWindow: loginWindow,
 		showLoginWindow: showLoginWindow,
 		updatingToken:updatingToken,
+		registerUser:registerUser,
+		registerData:registerData,
+		loginError:loginError,
 	};
 
 	// useEffect(() => {

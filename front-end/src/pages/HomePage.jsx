@@ -43,8 +43,8 @@ function HomePage() {
   }, [numDates]);
   // console.log("🚀 ~ file: HomePage.jsx:39 ~ HomePage ~ numDates:", numDates);
   useEffect(() => {
-    if (numDates > 5) {
-      setNumDates(5);
+    if (numDates > 30) {
+      setNumDates(10);
       setKey((prevKey) => prevKey + 1);
     }
   }, [filters]);

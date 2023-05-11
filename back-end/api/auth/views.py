@@ -6,6 +6,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from api.models import Game
+from django.contrib.auth import get_user_model
+from rest_framework.exceptions import ValidationError
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -25,6 +27,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         # Add custom claims
         token['username'] = user.username
+        token['email'] = user.email
         # ...
 
         return token
@@ -131,6 +134,28 @@ class UserCalendarView(APIView):
         sorted_data.update({'tbd': tbd_list})
         return Response(sorted_data)
 
+
 class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = (AllowAny,)
+
+    def perform_create(self, serializer):
+        User = get_user_model()
+        email = serializer.validated_data.get('email')
+        username = serializer.validated_data.get('username')
+        password = serializer.validated_data.get('password')
+        if User.objects.filter(email=email).exists():
+            raise ValidationError({'email': 'This email is already in use.'})
+        if User.objects.filter(username=username).exists():
+            raise ValidationError({'username': 'This username is already in use.'})
+        if len(password) < 8:
+            raise ValidationError({'password': 'Password must be at least 8 characters.'})
+        user = serializer.save()
+        return user
+
+    def create(self, request, *args, **kwargs):
+        try:
+            response = super().create(request, *args, **kwargs)
+        except ValidationError as exc:
+            response = Response({'error': exc.detail}, status=status.HTTP_400_BAD_REQUEST)
+        return response
