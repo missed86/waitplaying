@@ -24,7 +24,6 @@ function HomePage() {
       : platforms
   );
   useEffect(()=> {
-	  console.log("🚀 ~ file: HomePage.jsx:29 ~ HomePage ~ filters", filters)
   }, [filters])
   return (
     <div className="Home">

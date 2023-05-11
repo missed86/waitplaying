@@ -124,7 +124,6 @@ export default function LoginModal({ actived, setActived }) {
 
 	useEffect(() => {
 		if (registerData.error) {
-			console.log(registerData.error)
 		}
 	}, [registerData]);
 

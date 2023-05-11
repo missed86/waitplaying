@@ -52,7 +52,6 @@ const Day = styled.span`
 `;
 
 export default function CalendarCell({ game, children, ...other }) {
-	console.log(game);
 	return (
 		<>
 			{game ? (

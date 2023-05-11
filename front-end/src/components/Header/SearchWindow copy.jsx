@@ -72,7 +72,6 @@ export default function SearchWindow({ query, active, setActive }) {
 
 
   useEffect(() => {
-    console.log(query);
     const timeoutId = setTimeout(() => {
       setDebouncedQuery(query);
     }, 500);

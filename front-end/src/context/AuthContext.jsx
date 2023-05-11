@@ -23,21 +23,11 @@ export const AuthProvider = ({ children }) => {
 			: null
 	);
 
-	console.log(
-		"🚀 ~ file: AuthContext.jsx:15 ~ AuthProvider ~ authTokens",
-		authTokens
-	);
-
-	console.log("🚀 ~ file: AuthContext.jsx:20 ~ AuthProvider ~ user", user);
 
 	const loginUser = async (e) => {
 		// setLoading(true);
 		e.preventDefault();
 		setLoginError(null);
-		console.log(
-			"🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
-			"Form submitted"
-		);
 
 		let response = await fetch("https://api.waitplaying.com/auth/token/", {
 			method: "POST",
@@ -50,7 +40,6 @@ export const AuthProvider = ({ children }) => {
 			}),
 		});
 		let data = await response.json();
-		// console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
 
 		if (response.status === 200) {
 			setAuthTokens(data);
@@ -65,10 +54,6 @@ export const AuthProvider = ({ children }) => {
 	};
 	const registerUser = async (e) => {
 		e.preventDefault();
-		console.log(
-			"🚀 ~ file: AuthContext.jsx:15 ~ loginUser ~ e",
-			"Form submitted"
-		);
 
 		let response = await fetch("https://api.waitplaying.com/auth/register/", {
 			method: "POST",
@@ -82,16 +67,15 @@ export const AuthProvider = ({ children }) => {
 			}),
 		});
 		let data = await response.json();
-		console.log("🚀 ~ file: AuthContext.jsx:29 ~ loginUser ~ data", data);
 
 		if (response.status === 201) {
-			setAuthTokens(data);
-			setUser(jwt_decode(data.access));
-			localStorage.setItem("authTokens", JSON.stringify(data));
+			// setAuthTokens(data);
+			// setUser(jwt_decode(data.access));
+			// localStorage.setItem("authTokens", JSON.stringify(data));
 			setRegisterData(data)
+			loginUser(e)
 		} else {
 			setRegisterData(data);
-			console.log(data)
 			// alert("Something went wrong!");
 		}
 		// setLoading(false);

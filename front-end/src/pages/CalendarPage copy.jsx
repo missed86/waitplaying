@@ -90,7 +90,6 @@ export default function CalendarPage() {
 	const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
 	const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
 	const firstDayOfMonthWeekday = firstDayOfMonth.getDay() + 1;
-	console.log(firstDayOfMonthWeekday);
 
 	const days = [];
 	const month = currentMonth < 10 ? `0${currentMonth + 1}` : currentMonth + 1;
@@ -117,7 +116,6 @@ export default function CalendarPage() {
 				{day}
 			</CalendarCell>
 		);
-    console.log(dateString)
 	}
 
 	const handleClickPrevMonth = () => {

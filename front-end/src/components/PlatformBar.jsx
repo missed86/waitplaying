@@ -60,7 +60,6 @@ const platforms = [
 ];
 
 function PlatformBar({filters, setFilters}) {
-  // console.log(platforms)
   
   const handleClick = (filter) => {
     const filtersCopy = [...filters];

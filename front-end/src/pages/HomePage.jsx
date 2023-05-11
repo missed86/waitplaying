@@ -41,7 +41,6 @@ function HomePage() {
     }
     setDates(newDates);
   }, [numDates]);
-  // console.log("🚀 ~ file: HomePage.jsx:39 ~ HomePage ~ numDates:", numDates);
   useEffect(() => {
     if (numDates > 30) {
       setNumDates(10);

@@ -142,7 +142,6 @@ export default function SearchWindow({ query, active, setActive }) {
 				return "TBD";
 		}
 	};
-	console.log('data search window:'	, data)
 	return (
 		<Component className={active ? "show" : ""}>
 			{loading && <Item>Loading...</Item>}

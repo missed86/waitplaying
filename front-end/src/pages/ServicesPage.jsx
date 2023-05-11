@@ -63,7 +63,6 @@ export default function ServicesPage() {
 	const gamepass_console = data && data["gamepass_console"];
 	const psplus = data && data["psplus"];
 
-	// console.log("🚀 ~ file: ServicesPage.jsx:61 ~ ServicesPage ~ data:", data);
 	return (
 		<Page>
         <ServiceBox service="psplus" data={psplus}/>

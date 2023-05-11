@@ -53,7 +53,6 @@ export default function CalendarPage() {
 	useEffect(()=>{},[tokens])
 	return user && (
 		<Page>
-		{/* {console.log("🚀 ~ file: CalendarPage.jsx:54 ~ CalendarPage ~ list:", list)} */}
 			
 			<ListView
 				list={list}

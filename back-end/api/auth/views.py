@@ -16,6 +16,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from api.serializers import UserGameSetsSerializer, UserCalendarSerializer
 from api.models import UserGameSet
 from api.serializers import UserSerializer
+from django.utils import timezone
 
 import collections
 
@@ -28,7 +29,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         # Add custom claims
         token['username'] = user.username
         token['email'] = user.email
-        # ...
 
         return token
 
@@ -36,6 +36,13 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
+    # actualiza el ultimo login del usuario
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        user = get_user_model().objects.get(username=request.data['username'])
+        user.last_login = timezone.now()
+        user.save()
+        return response
 
 @api_view(['GET'])
 def getRoutes(request):

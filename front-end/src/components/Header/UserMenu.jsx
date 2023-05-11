@@ -75,12 +75,10 @@ const Avatar = styled.img`
 `;
 
 export default function UserMenu({ actived, setActived }) {
-	// console.log("🚀 ~ file: UserMenu.jsx:64 ~ UserMenu ~ actived", actived);
 	const { user, logoutUser, loginWindow, showLoginWindow } = useContext(AuthContext);
 	const [modal, setModal] = useState(false);
 
 	useEffect(() => {
-		console.log(loginWindow);
 	}, [loginWindow]);
 
   const clkLogin = () => {

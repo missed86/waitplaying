@@ -36,7 +36,6 @@ const Game = styled.div`
 `;
 
 export default function Item({ games, date }) {
-	//   console.log("🚀 ~ file: Item.jsx:38 ~ Item ~ games:", games);
 	const datetime = new Date(date);
 	const weekday = datetime.getDay();
 	const day = datetime.getDate();

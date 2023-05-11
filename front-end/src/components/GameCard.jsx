@@ -61,8 +61,6 @@ export default function GameCard({
   platforms = [...new Set(platforms)];
   const handleClick = (event) => {
     event.preventDefault();
-    // console.log(event);
-    // setActived(!actived);
   };
   const [actived, setActived] = useState(marked);
   return empty ? (

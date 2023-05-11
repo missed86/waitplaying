@@ -178,7 +178,6 @@ export default function LoginModal({ actived, setActived }) {
 
 	const validateRegisterUser = (e) => {
 		e.preventDefault();
-		// console.log(e.target);
 		let error = false;
 		setErrorMessages([]);
 		const messages = [];
@@ -204,11 +203,7 @@ export default function LoginModal({ actived, setActived }) {
 			repeatpassword: false,
 		};
 		for (const field in fields) {
-			console.log(fields[field].value.trim());
-		}
-		for (const field in fields) {
 			if (fields[field].value.trim() === "") {
-				console.log("error en el campo " + field);
 				error = true;
 				validationErrors[field] = "Required field";
 				messages.push(fieldNames[field] + ": Required field");
@@ -245,7 +240,6 @@ export default function LoginModal({ actived, setActived }) {
 	useEffect(() => {
 		if (registerData?.error) {
 			const messages = [];
-			console.log(registerData.error);
 			for (const error in registerData.error) {
 				messages.push(registerData.error[error]);
 			}
