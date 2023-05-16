@@ -29,7 +29,9 @@ DEBUG = True
 
 SECRET_KEY = SECRET_KEY
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['waitplaying.com',
+                 'www.waitplaying.com', 
+                 'api.waitplaying.com']
 
 
 # Application definition
@@ -146,7 +148,7 @@ DATABASES = {
         'PASSWORD': PASSWORD,
         'HOST': HOST,
         'PORT': PORT,
-        
+
     }
 }
 
@@ -208,7 +210,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # AUTH_USER_MODEL = 'users.User'
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend', 
+    'django.contrib.auth.backends.ModelBackend',
     'api.auth.backends.EmailBackend',
-    )
+)
 AUTH_USER_MODEL = 'auth.User'

@@ -14,5 +14,11 @@ class GamepassPCCatalog(models.Model):
     active = models.BooleanField(default=True)
     game = models.ForeignKey('Game', on_delete=models.SET_NULL, null=True, blank=True)
 
+    class Meta:
+        """Meta definition for GamepassPCCatalog."""
+        
+        verbose_name = 'Gamepass PC Catalog'
+        verbose_name_plural = 'Gamepass PC Catalogs'
+
     def __str__(self):
         return self.name
