@@ -232,7 +232,7 @@ export default function LoginModal({ actived, setActived }) {
 			messages.push("Password must be at least 8 characters");
 		}
 		setValidationError(validationErrors);
-		setErrorMessages(errorMessages);
+		setErrorMessages(messages);
 		if (!error) {
 			registerUser(e);
 		}
