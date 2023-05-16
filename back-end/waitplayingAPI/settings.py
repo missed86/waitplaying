@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     "django_crontab"
 ]
 
-CRONJOBS = [('0 0 * * *', 'api.views.scrapping_view')]
+CRONJOBS = [('0 0 * * *', 'api.views.scrapping_schedule')]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

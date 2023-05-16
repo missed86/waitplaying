@@ -41,9 +41,12 @@ from .scrapper import (
 from .utils.GPScrapper_forConsole import GamepassScrappeConsole
 from .utils.GPScrapper_forPC import GamepassScrappePC
 from .utils.PSPlusScrapper import PsPlusScrappe
+from .global_functions import logger, Type
 
 
 def scrapping_view(request):
+    logger(Type.info, "scrapping_view", "Scrapping started")
+
     scrape_platforms()
     scrape_games()
     scrape_release_dates()
@@ -54,6 +57,16 @@ def scrapping_view(request):
     
     return HttpResponse("Scrapped")
     
+def scrapping_schedule:
+    logger(Type.info, "Scheduler", "Scrapping started")
+
+    scrape_platforms()
+    scrape_games()
+    scrape_release_dates()
+    GamepassScrappeConsole()
+    GamepassScrappePC()
+    PsPlusScrappe()
+
 def search_game(self, term):
     words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()
     matching_games = []

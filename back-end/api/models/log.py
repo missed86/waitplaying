@@ -1,7 +1,7 @@
 from django.db import models
 from enum import Enum
 
-class LogEnum(Enum):
+class Type(Enum):
     info = 1
     warning = 2
     error = 3
