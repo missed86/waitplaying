@@ -10,16 +10,25 @@ const Component = styled.div`
 	flex-direction: column;
 	display: flex;
 	visibility: hidden;
-	top: 0;
-	right: 0;
-	width: 500px;
+	${props => (props.mobile 
+	? `
+		width: 100%;
+		top: 50px;
+		height:calc(100vh - 140px);
+	` 
+	
+	: `
+		top: 0;
+		right: 0;
+		width: 500px;
+		max-height: 50vh;
+	`)}
 	min-height: 80px;
 	background-color: #202020;
 	border-radius: 7px;
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
 	padding: 10px 0px;
-	max-height: 50vh;
 	overflow-y: auto;
 	::-webkit-scrollbar-thumb {
 		background-color: #505050;
@@ -83,7 +92,7 @@ const CoverSmallURL = (cover) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_small/${cover}.png`;
 const GameURL = (slug) => `/game/${slug}`;
 
-export default function SearchWindow({ query, active, setActive }) {
+export default function SearchWindow({ query, active, setActive, mobile, mobileSetSearch }) {
 	const [debouncedQuery, setDebouncedQuery] = useState("");
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
@@ -97,7 +106,6 @@ export default function SearchWindow({ query, active, setActive }) {
 			clearTimeout(timeoutId);
 		};
 	}, [query]);
-
 	useEffect(() => {
 		if (debouncedQuery.length > 2) {
 			setLoading(true);
@@ -117,6 +125,8 @@ export default function SearchWindow({ query, active, setActive }) {
 
 	const handleClick = () => {
 		setActive(false);
+		if(mobile)
+			mobileSetSearch(false);
 	};
 
 	const releaseText = (date) => {
@@ -143,7 +153,7 @@ export default function SearchWindow({ query, active, setActive }) {
 		}
 	};
 	return (
-		<Component className={active ? "show" : ""}>
+		<Component className={active ? "show" : ""} mobile={mobile}>
 			{loading && <Item>Loading...</Item>}
 			{!loading && error && <Item>Error: {error.message}</Item>}
 			{!loading &&

@@ -8,6 +8,8 @@ import Logo from "../assets/logo";
 import MenuIcon from "../assets/menu-icon";
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
+import { search_icon, close_icon } from "../assets/icons";
+
 // import "./Header.css";
 
 const Component = styled.div`
@@ -120,14 +122,55 @@ const Menu = styled.div`
 	}
 `;
 
+const RoundButton = styled.button`
+	position: absolute;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 50%;
+	object-fit: fill;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	${(props) => (props.close 
+	? `right: 5px; top:8px; z-index:2000;`
+	: "right: 35px;")}
+	@media only screen and (min-width: 540px) {
+		display: none;
+	}
+	transition: all 0.3s ease-in-out;
+`;
+
+const SearchWindow = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 1);
+	visibility: ${({ show }) => (show ? "visible" : "hidden")};
+`;
+
 export default function Header() {
 	const { user } = useContext(AuthContext);
 	const [showMenu, setShowMenu] = useState(false);
+	const [showSearch, setShowSearch] = useState(false);
+
 	const toogleMenu = () => {
 		setShowMenu(!showMenu);
 	};
 	const closeMenu = () => {
 		setShowMenu(false);
+	};
+	const toogleSearch = () => {
+		showSearch ? setShowSearch(false) : setShowSearch(true);
+	};
+
+	const closeSearch = () => {
+		setShowSearch(false);
 	};
 
 	return (
@@ -162,7 +205,18 @@ export default function Header() {
 					</ul>
 				</Menu>
 				<SearchBar />
+				<RoundButton onClick={toogleSearch}>{search_icon(2)}</RoundButton>
 				<UserButton />
+				{showSearch && (
+					<>
+						<SearchWindow show={showSearch}>
+							<RoundButton close onClick={closeSearch}>
+								{close_icon}
+							</RoundButton>
+							<SearchBar mobile mobileSetSearch={setShowSearch}/>
+						</SearchWindow>
+					</>
+				)}
 			</Wrapper>
 		</Component>
 	);

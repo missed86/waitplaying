@@ -1,4 +1,13 @@
 import styled from "styled-components";
+import { ScrollMenu } from "react-horizontal-scrolling-menu";
+import "react-horizontal-scrolling-menu/dist/styles.css";
+import {
+	LeftArrow,
+	RightArrow,
+	onWheel,
+	usePreventBodyScroll,
+} from "../utils/ScrollMenuFunctions";
+import { Screenshot } from "./Screenshot";
 
 const ScreenshotURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_original/${id}.jpg`;
@@ -8,31 +17,54 @@ const ScreenshotThumbURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_thumb/${id}.jpg`;
 
 const Component = styled.div`
-	display: flex;
-	flex: 1 1 0%;
-    max-width: 95vw;
-    margin-top: 10px;
+	max-width: 95vw;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+		display: none;
+	}
+
+	.react-horizontal-scrolling-menu--scroll-container {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.react-horizontal-scrolling-menu--arrow-left {
+		position: relative;
+	}
+	.react-horizontal-scrolling-menu--arrow-right {
+		position: relative;
+	}
 `;
 
 const Wrapper = styled.div`
-    max-width:100%;
-    overflow-x: hidden;
+	max-width: 100%;
+	overflow-x: hidden;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	flex-direction: column;
 `;
 
-const Thumb = styled.img`
-    height: 200px;
-` 
-
 export default function Gallery({ screenshots }) {
+	const { disableScroll, enableScroll } = usePreventBodyScroll();
 	return (
 		<Component>
-			<Wrapper>
-				{screenshots.map((code) => {
-					return <Thumb src={ScreenshotMedURL(code)} alt={code} key={code} />;
-				})}
+			<Wrapper onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
+				<ScrollMenu
+					LeftArrow={LeftArrow}
+					RightArrow={RightArrow}
+					onWheel={onWheel}
+				>
+					{screenshots.map((code) => {
+						return (
+							<Screenshot
+								image={ScreenshotMedURL(code)}
+								alt={code}
+								itemId={code}
+								key={code}
+							/>
+						);
+					})}
+				</ScrollMenu>
 			</Wrapper>
 		</Component>
 	);

@@ -172,8 +172,11 @@ def GamepassScrappeConsole():
             counter += 1
             print("\rGPConsole: {}/{} - {} - {}".format(counter, total, element.name,
                     element.game or existing_game.game), end="")
-        except Exception:
-            print("\nFailed {}\n")
+        except Exception as e:
+            if hasattr(e, 'message'):
+                print(e.message)
+            else:
+                print(e)
     GamepassConsoleCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
         active=False, end_date=datetime.date.today())
     GamepassConsoleCatalog.objects.filter(

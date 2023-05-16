@@ -134,8 +134,11 @@ def PsPlusScrappe():
                 element.save()
             counter += 1
             print("\rPSPlus: {}/{} - {} - {}".format(counter, total, element.name, element.game or existing_game.game), end="")
-        except Exception:
-            print("\nFailed {}\n")
+        except Exception as e:
+            if hasattr(e, 'message'):
+                print(e.message)
+            else:
+                print(e)
 
     PsPlusCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(active=False, end_date=datetime.date.today())
     PsPlusCatalog.objects.filter(

@@ -62,11 +62,13 @@ def scrape_games():
                                     limit 500; \
                                     sort id asc; \
                                     };')
+        print("Query: ", query.status_code)
         if query.status_code == 200:
             try:
                 # print(query.json())
 
                 for data in query.json()[0]['result']:
+                    print(data['id'], data['name'], data['first_release_date'])
                     id = data['id'] if 'id' in data else None
                     category = data['category'] if 'category' in data else None
                     cover = data['cover']['image_id'] if 'cover' in data else None
@@ -127,9 +129,9 @@ def scrape_games():
                     platformsField = Platform.objects.filter(id__in=platforms)
                     game.platforms.set(platformsField)
 
-                    print(end='\x1b[2K')
-                    print("Scrapping Games: ", id, name,
-                          'Successfully added', end="\r")
+                    # print(end='\x1b[2K')
+                    # print("Scrapping Games: ", id, name,
+                    #       'Successfully added', end="\r")
                     total += 1
                 if len(query.json()[0]['result']) < 500:
 
@@ -146,14 +148,18 @@ def scrape_games():
                         Max('updated_at'))['updated_at__max']
                     Scrapping.objects.filter(table_name='Game').update(
                         last_id=max_id, updated_at=max_updated_at)
-
+                    print("Last ID: ", max_id)
+                    print("Last Updated At: ", max_updated_at)
                     break
 
                 else:
                     offset += 500
 
-            except:
-                print("\nFailed {}\n")
+            except Exception as e:
+                if hasattr(e, 'message'):
+                    print(e.message)
+                else:
+                    print(e)
         else:
             print("Error: ", response.status_code)
             print(response.json())
@@ -217,12 +223,15 @@ def scrape_platforms():
                                         )
                     platform.save()
 
-                    print(end='\x1b[2K')
-                    print("Scrapping Platforms: ", id, name,
-                          'Successfully added', end="\r")
+                    # print(end='\x1b[2K')
+                    # print("Scrapping Platforms: ", id, name,
+                    #       'Successfully added', end="\r")
                     total += 1
-                except:
-                    print("\nFailed to insert into MySQL table {}\n")
+                except Exception as e:
+                    if hasattr(e, 'message'):
+                        print(e.message)
+                    else:
+                        print(e)
 
             if len(query.json()) < 500:
 
@@ -321,16 +330,19 @@ def scrape_release_dates():
                                              )
                         objeto.save()
 
-                    print(end='\x1b[2K')
-                    print("Scrapping Release Dates: ", id, date,
-                          'Successfully added', end="\r")
+                    # print(end='\x1b[2K')
+                    # print("Scrapping Release Dates: ", id, date,
+                    #       'Successfully added', end="\r")
                     total += 1
                 except Game.DoesNotExist:
                     pass
                 except Platform.DoesNotExist:
                     pass
                 except Exception as e:
-                    print(e)
+                    if hasattr(e, 'message'):
+                        print(e.message)
+                    else:
+                        print(e)
 
             if len(query.json()) < 500:
 

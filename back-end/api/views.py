@@ -51,7 +51,7 @@ def scrapping_view(request):
     GamepassScrappeConsole()
     GamepassScrappePC()
     PsPlusScrappe()
-
+    
     return HttpResponse("Scrapped")
     
 def search_game(self, term):
