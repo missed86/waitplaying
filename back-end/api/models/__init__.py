@@ -10,7 +10,7 @@ from .user_game_set import UserGameSet
 from .psplus_catalog import PsPlusCatalog
 from .gamepass_console_catalog import GamepassConsoleCatalog
 from .gamepass_pc_catalog import GamepassPCCatalog
-from .log import Log
+from .log import Log, Type
 
 from django.db import models
 from django.contrib.auth.models import User

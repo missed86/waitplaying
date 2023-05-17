@@ -1,6 +1,6 @@
 from django.contrib import admin
 from api.models import (Game, Company, Platform, ReleaseDate, Cover, Screenshot,
-                        Scrapping, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog)
+                        Scrapping, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog, PsPlusCatalog, Log, Type)
 
 
 class GameAdmin(admin.ModelAdmin):
@@ -19,6 +19,9 @@ class ScrappingAdmin(admin.ModelAdmin):
 
 class ReleaseDateAdmin(admin.ModelAdmin):
     list_display = ['id', 'platform', 'date', 'updated_at']
+
+class LogAdmin(admin.ModelAdmin):
+    list_display = ['created_at', 'type', 'source', 'message', ]
 
 
 # class WebsiteAdmin(admin.ModelAdmin):
@@ -165,3 +168,4 @@ admin.site.register(UserGameSet)
 admin.site.register(GamepassPCCatalog, GamepassPCCatalogAdmin)
 admin.site.register(GamepassConsoleCatalog, GamepassConsoleCatalogAdmin)
 admin.site.register(PsPlusCatalog, PsPlusCatalogAdmin)
+admin.site.register(Log, LogAdmin)

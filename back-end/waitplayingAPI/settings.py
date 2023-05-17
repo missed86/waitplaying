@@ -25,7 +25,7 @@ FRONTEND_DIR = BASE_DIR.parent / 'front-end'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 SECRET_KEY = SECRET_KEY
 
@@ -187,7 +187,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATICFILES_DIRS = [FRONTEND_DIR / 'build' / 'assets']
+# STATICFILES_DIRS = [FRONTEND_DIR / 'build' / 'assets']
 
 STATICFILES_STORAGE = (
     'whitenoise.storage.CompressedManifestStaticFilesStorage')

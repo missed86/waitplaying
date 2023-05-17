@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 from itertools import groupby
 # , Company, Cover, Screenshot
-from api.models import Game, ReleaseDate, Platform, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog,PsPlusCatalog
+from api.models import Game, ReleaseDate, Platform, UserGameSet, GamepassPCCatalog, GamepassConsoleCatalog,PsPlusCatalog, Type
 
 from django.http import HttpResponse
 from django.db.models import Count, Prefetch, F
@@ -41,11 +41,11 @@ from .scrapper import (
 from .utils.GPScrapper_forConsole import GamepassScrappeConsole
 from .utils.GPScrapper_forPC import GamepassScrappePC
 from .utils.PSPlusScrapper import PsPlusScrappe
-from .global_functions import logger, Type
+from .global_functions import logger
 
 
 def scrapping_view(request):
-    logger(Type.info, "scrapping_view", "Scrapping started")
+    logger(Type.info, "scrapping_view", "Manual scrapping started")
 
     scrape_platforms()
     scrape_games()
@@ -54,11 +54,13 @@ def scrapping_view(request):
     GamepassScrappeConsole()
     GamepassScrappePC()
     PsPlusScrappe()
+
+    logger(Type.info, "scrapping_view", "Manual scrapping finished")
     
     return HttpResponse("Scrapped")
     
-def scrapping_schedule:
-    logger(Type.info, "Scheduler", "Scrapping started")
+def scrapping_schedule():
+    logger(Type.info, "Scheduler", "Scheduled scrapping started")
 
     scrape_platforms()
     scrape_games()
@@ -66,6 +68,8 @@ def scrapping_schedule:
     GamepassScrappeConsole()
     GamepassScrappePC()
     PsPlusScrappe()
+
+    logger(Type.info, "Scheduler", "Scheduled scrapping finished")
 
 def search_game(self, term):
     words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()

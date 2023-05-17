@@ -14,5 +14,9 @@ class GamepassConsoleCatalog(models.Model):
     active = models.BooleanField(default=True)
     game = models.ForeignKey('Game', on_delete=models.SET_NULL, null=True, blank=True)
 
+    class Meta:
+        verbose_name = 'Gamepass Console Game'
+        verbose_name_plural = 'Gamepass Console Games'
+
     def __str__(self):
         return self.name

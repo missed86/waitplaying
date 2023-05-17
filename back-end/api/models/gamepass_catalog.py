@@ -18,6 +18,10 @@ class GamepassCatalog(models.Model):
     start_date_pc = models.DateField(null=True)
     start_date_console = models.DateField(null=True)
 
+    class Meta:
+        verbose_name = 'Gamepass Game'
+        verbose_name_plural = 'Gamepass Games'
+
     def __str__(self):
         return self.name
     

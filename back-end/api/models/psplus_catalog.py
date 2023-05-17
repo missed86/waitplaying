@@ -11,5 +11,9 @@ class PsPlusCatalog(models.Model):
     active = models.BooleanField(default=True)
     game = models.ForeignKey('Game', on_delete=models.SET_NULL, null=True, blank=True)
 
+    class Meta:
+        verbose_name = 'PS Plus Game'
+        verbose_name_plural = 'PS Plus Games'
+
     def __str__(self):
         return self.name
