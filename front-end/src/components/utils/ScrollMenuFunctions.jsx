@@ -62,6 +62,7 @@ const ArrowButton = styled.button`
 	height: 100%;
 	margin: 0px;
 	color: white;
+	transition: opacity 0.3s ease-in-out;
 	align-items: ${(props) => (props.direction == "left" ? "start" : "end")};
 	font-size: 2rem;
 	background: ${(props) =>
@@ -69,10 +70,6 @@ const ArrowButton = styled.button`
 			? "linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
 			: "linear-gradient(270deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"};
 	width: 70px;
-	${
-		"" /* box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 1);
-		  box-shadow: rgba(0, 0, 0, 1) 0px 5px 5px, rgba(0, 0, 0, 1) 0px 0px 0px 3px; */
-	}
 	border: none;
 	left: ${(props) => (props.direction == "left" ? "0px" : "auto")};
 	right: ${(props) => (props.direction == "right" ? "0px" : "auto")};

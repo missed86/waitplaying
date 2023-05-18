@@ -48,11 +48,14 @@ export default function Gallery({ screenshots }) {
 	const { disableScroll, enableScroll } = usePreventBodyScroll();
 	return (
 		<Component>
-			<Wrapper onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
+			<Wrapper 
+			// onMouseEnter={disableScroll} 
+			// onMouseLeave={enableScroll}
+			>
 				<ScrollMenu
 					LeftArrow={LeftArrow}
 					RightArrow={RightArrow}
-					onWheel={onWheel}
+					// onWheel={onWheel}
 				>
 					{screenshots.map((code) => {
 						return (

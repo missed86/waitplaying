@@ -152,6 +152,9 @@ const SearchWindow = styled.div`
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 1);
 	visibility: ${({ show }) => (show ? "visible" : "hidden")};
+	@media only screen and (min-width: 540px) {
+		display: none;
+	}
 `;
 
 export default function Header() {
@@ -161,6 +164,11 @@ export default function Header() {
 
 	const toogleMenu = () => {
 		setShowMenu(!showMenu);
+		
+		setTimeout(() => {
+			setShowSearch(false);
+		}, 500);
+		
 	};
 	const closeMenu = () => {
 		setShowMenu(false);

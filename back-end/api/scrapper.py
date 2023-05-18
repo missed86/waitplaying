@@ -164,6 +164,7 @@ def scrape_games():
             print("Error: ", response.status_code)
             print(response.json())
             time.sleep(5)
+    return total
 
 
 def scrape_platforms():
@@ -258,6 +259,7 @@ def scrape_platforms():
             print("Error: ", response.status_code)
             print(response.json())
             time.sleep(5)
+    return total
 
 
 def scrape_release_dates():
@@ -369,6 +371,7 @@ def scrape_release_dates():
             print("Error: ", response.status_code)
             print(response.json())
             time.sleep(5)
+    return total
 
 
 # def scrape_websites():

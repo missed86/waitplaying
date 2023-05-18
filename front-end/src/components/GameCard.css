@@ -31,15 +31,21 @@
   max-width: 100%;
   object-fit: cover;
   aspect-ratio: 0.75;
+  filter:none;
+}
+.GameCard .cover.out {
+  filter: grayscale(1);
+  /* opacity :1; */
 }
 .GameCard .hover {
   position: absolute;
   bottom: -30%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 30%;
   display: flex;
   transition: all 0.3s ease-in-out;
+  z-index: 3;
 }
 .GameCard:hover .hover {
   bottom: 0;
@@ -69,10 +75,12 @@
   transition: all 0.3s ease-in-out;
   z-index: 2;
   cursor: initial;
+  display: none;
 }
 
 .GameCard .button.actived {
   color: orangered;
+  display: block;
   /* background-color: rgba(0, 0, 0, 0.75); */
 }
 .GameCard .button svg {

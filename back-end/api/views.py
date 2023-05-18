@@ -32,44 +32,19 @@ from .serializers import (
     )
 from datetime import datetime
 
-from .scrapper import (
-    scrape_games,
-    scrape_platforms,
-    scrape_release_dates,
-    # scrape_websites
-    )
-from .utils.GPScrapper_forConsole import GamepassScrappeConsole
-from .utils.GPScrapper_forPC import GamepassScrappePC
-from .utils.PSPlusScrapper import PsPlusScrappe
-from .global_functions import logger
 
+from api.global_functions import logger, Type
+import api.main_scrapper as main_scrapper
 
 def scrapping_view(request):
-    logger(Type.info, "scrapping_view", "Manual scrapping started")
+    logger(Type.info, "scrapping_view", "View scrapping started")
 
-    scrape_platforms()
-    scrape_games()
-    scrape_release_dates()
-    # scrape_websites()
-    GamepassScrappeConsole()
-    GamepassScrappePC()
-    PsPlusScrappe()
+    scrapped_dict = main_scrapper()
 
-    logger(Type.info, "scrapping_view", "Manual scrapping finished")
+    logger(Type.info, "scrapping_view", "View scrapping finished: " + str(scrapped_dict))
     
     return HttpResponse("Scrapped")
     
-def scrapping_schedule():
-    logger(Type.info, "Scheduler", "Scheduled scrapping started")
-
-    scrape_platforms()
-    scrape_games()
-    scrape_release_dates()
-    GamepassScrappeConsole()
-    GamepassScrappePC()
-    PsPlusScrappe()
-
-    logger(Type.info, "Scheduler", "Scheduled scrapping finished")
 
 def search_game(self, term):
     words = term.replace('®','').replace('™','').replace('!','').replace('?','').strip().split()
@@ -189,12 +164,12 @@ class ServicesView(APIView):
     # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
-        gamepass_pc_in = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
-        gamepass_pc_out = GamepassPCCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
-        gamepass_console_in = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
-        gamepass_console_out = GamepassConsoleCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
-        psplus_in = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:6]
-        psplus_out = PsPlusCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:6]
+        gamepass_pc_in = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        gamepass_pc_out = GamepassPCCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:10]
+        gamepass_console_in = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        gamepass_console_out = GamepassConsoleCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:10]
+        psplus_in = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
+        psplus_out = PsPlusCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')[:10]
         
         gamepass_pc_in_serializer = GPCatalogSerializerPC(gamepass_pc_in, many=True)
         gamepass_console_in_serializer = GPCatalogSerializerConsole(gamepass_console_in, many=True)

@@ -28,7 +28,6 @@ const Component = styled.div`
 `;
 const Input = styled.input`
   flex-grow: 1;
-  padding: 0 10px 0 040px;
   background-color: rgb(39, 39, 39);
   border: none;
   border-radius: 5px;
@@ -41,15 +40,34 @@ const Input = styled.input`
   &::placeholder {
     color: gray;
   }
-`;
+  ${props => props.mobile ? `
+  padding: 0 15px 0 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  width: 100%;
+  `:`
+
+  padding: 0 10px 0 40px;
+  `
+  }
+`;	
 const InputIcon = styled.span`
   position: absolute;
   color: lightgrey;
+  z-index: 3;
+  ${props => props.mobile ? `
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  top: 10px;
+  
+  `:`
+  
   top: 9px;
   left: 7px;
   width: 20px;
   height: 20px;
-  z-index: 3;
+  `}
 `;
 
 const Background = styled.div`
@@ -133,13 +151,14 @@ export default function SearchBar({mobile, mobileSetSearch}) {
   return (
     <Component mobile={mobile}>
       <Input
+        mobile={mobile}
         ref={inputRef}
         onFocus={handleFocus}
         type="search"
         placeholder="Search"
         onChange={handleChange}
       />
-      <InputIcon>{SEARCH_ICON}</InputIcon>
+      <InputIcon mobile={mobile}>{SEARCH_ICON}</InputIcon>
       <SearchWindow
         mobile={mobile}
         mobileSetSearch={mobileSetSearch}

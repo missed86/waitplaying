@@ -57,7 +57,8 @@ function getFormattedDate(date) {
 }
 
 export default function GameList({ date, filters }) {
-	const { user, tokens, logoutUser, updateToken, updatingToken } = useContext(AuthContext);
+	const { user, tokens, logoutUser, updateToken, updatingToken } =
+		useContext(AuthContext);
 	const [parent] = useAutoAnimate();
 
 	const [data, setData] = useState([]);
@@ -86,29 +87,34 @@ export default function GameList({ date, filters }) {
 			setError(null);
 		} catch (error) {
 			// logoutUser();
-			
+
 			// setLoading(true);
 			updateToken();
 		}
 	};
 
 	useEffect(() => {
-		if(!updatingToken){
+		if (!updatingToken) {
 			fetchData();
 		}
 	}, [tokens]);
 
-	// useEffect(() => {
-	// 	fetchData();
-	//   }, [user]);
-
-	// if (error) {
-	// 	return <div>Error: {error.message}</div>;
-	// }
-
 	const filteredData = data.filter(({ platforms }) =>
 		platforms.some((e) => filters.includes(e))
 	);
+
+	function moveMarkedToFirst(array) {
+		// Filtrar los objetos cuya propiedad "mark" sea verdadera
+		const markedObjects = array.filter((obj) => obj.mark === true);
+
+		// Filtrar los objetos cuya propiedad "mark" sea falsa
+		const falseObjects = array.filter((obj) => obj.mark !== true);
+
+		// Unir los objetos verdaderos y falsos en un nuevo array
+		const newArray = [...markedObjects, ...falseObjects];
+
+		return newArray;
+	}
 
 	if (!filteredData.length) {
 		return null;
@@ -127,7 +133,7 @@ export default function GameList({ date, filters }) {
 			<GameGroup ref={parent}>
 				<DateDiv>{getFormattedDate(date)}</DateDiv>
 				<List ref={parent}>
-					{filteredData.map(({ game, platforms, mark }) =>
+					{moveMarkedToFirst(filteredData).map(({ game, platforms, mark }) =>
 						game.cover ? (
 							<Link
 								key={game.id}

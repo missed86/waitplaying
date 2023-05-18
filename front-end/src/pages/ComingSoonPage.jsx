@@ -7,7 +7,7 @@ import "./Home.css";
 
 // const dates = [];
 // const today = new Date();
-const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2", "Meta Quest 2"];
+const platforms = ["PS4", "PS5", "Switch", "XONE", "Series X", "PC", "PSVR2"]; //, "Meta Quest 2"
 
 // for (let i = 0; i <= 10; i++) {
 // 	const nextDate = new Date();
@@ -48,10 +48,10 @@ function HomePage() {
 	return (
 		<div className="Home">
 			<PlatformBar filters={filters} setFilters={setFilters} />
-			<h1>New Releases</h1>
+			<h1>Coming Soon</h1>
 			<InfiniteScroll
-        style={{"overflow":"hidden"}}
-        key={key}
+				style={{"overflow":"hidden"}}
+				key={key}
 				dataLength={numDates}
 				next={() => {
 					if (numDates >= MAX_NUM_DATES) {

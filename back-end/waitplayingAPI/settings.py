@@ -30,7 +30,7 @@ DEBUG = False
 SECRET_KEY = SECRET_KEY
 
 ALLOWED_HOSTS = ['waitplaying.com',
-                 'www.waitplaying.com', 
+                 'www.waitplaying.com',
                  'api.waitplaying.com']
 
 
@@ -56,7 +56,9 @@ INSTALLED_APPS = [
     "django_crontab"
 ]
 
-CRONJOBS = [('0 0 * * *', 'api.views.scrapping_schedule')]
+CRONJOBS = [('0 0 * * *', 'api.management.cron.scrapping_schedule')]
+
+DEFAULT_CHARSET = 'utf-8'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -148,6 +150,7 @@ DATABASES = {
         'PASSWORD': PASSWORD,
         'HOST': HOST,
         'PORT': PORT,
+        'OPTIONS': OPTIONS,
 
     }
 }

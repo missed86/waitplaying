@@ -40,6 +40,7 @@ const Component = styled.div`
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  ${(props) => props.actived && "border: 3px solid orangered;"}
 `;
 
 const CoverURL = (cover) =>
@@ -55,6 +56,7 @@ export default function GameCard({
   platforms,
   marked,
   empty = false,
+  out
 }) {
 
 
@@ -68,7 +70,7 @@ export default function GameCard({
       <img className="cover" src="./assets/emptycover.png" alt={title} />
     </Component>
   ) : (
-    <Component className="GameCard">
+    <Component className="GameCard" actived={actived}>
       <div
         className={`button ${actived ? "actived" : ""}`}
         onClick={handleClick}
@@ -114,7 +116,7 @@ export default function GameCard({
           <span className="title">{title}</span>
         </div>
       </div>
-      <img className="cover" src={CoverURL(image)} alt={title} />
+      <img className={`cover ${out && 'out'}`} src={CoverURL(image)} alt={title} />
     </Component>
   );
 }

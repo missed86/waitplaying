@@ -52,12 +52,13 @@ const platforms = [
     icon: "pc.svg",
     color: "pc",
   },
-  {
+
+]; 
+/*  {
     name: "Meta Quest 2",
     icon: "pc.svg",
     color: "pc",
-  },
-];
+  }, */
 
 function PlatformBar({filters, setFilters}) {
   

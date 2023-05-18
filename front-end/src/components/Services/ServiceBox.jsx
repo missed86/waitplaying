@@ -41,7 +41,22 @@ const Body = styled.div`
     margin:10px;
 
 `
-
+function removeDuplicateIds(array) {
+    const ids = new Set();
+  
+    // Filtrar el array manteniendo solo los objetos con ids únicos
+    const resultado = array.filter(obj => {
+      if (ids.has(obj.game.id)) {
+        // Si el id ya fue visto, se omite este objeto
+        return false;
+      }
+      // Si es la primera vez que se encuentra el id, se agrega al set
+      ids.add(obj.game.id);
+      return true;
+    });
+  
+    return resultado.slice(0, 6);
+  }
 
 export default function ServiceBox({service, data}) {
     return (
@@ -51,10 +66,10 @@ export default function ServiceBox({service, data}) {
             </Header>
             <Body>
             {data &&
-				data.in.map((e) =>
+				removeDuplicateIds(data.in).map((e) =>
 					e.game && e.game.cover ? (
 						<Link
-							key={e.game.id}
+							key={service+e.game.id}
 							to={`/game/${e.game.slug}`}
 							className="no-link flex"
 						>
@@ -70,14 +85,15 @@ export default function ServiceBox({service, data}) {
             </Body>
             <Body>
             {data &&
-				data.out.map((e) =>
+				removeDuplicateIds(data.out).map((e) =>
 					e.game && e.game.cover ? (
 						<Link
-							key={e.game.id}
+							key={service+e.game.id}
 							to={`/game/${e.game.slug}`}
 							className="no-link flex"
 						>
 							<GameCard
+                                out={true}
 								image={e.game.cover}
 								title={e.game.name}
 								platforms={null}

@@ -46,7 +46,7 @@ const Background = styled.div`
 	}
 `;
 const Menu = styled.ul`
-	margin: 60px 0 0 0;
+	margin: 100px 0 0 0;
 	padding: 0;
 `;
 const Item = styled.li`
@@ -54,7 +54,8 @@ const Item = styled.li`
 	display: flex;
 	height: 50px;
 	align-items: center;
-	padding: 0 0 0 40px;
+	padding: 5px 40px;
+	font-size: 1.1rem;
 `;
 const ItemLink = styled(NavLink)`
 	color: gray;
