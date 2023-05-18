@@ -140,7 +140,7 @@ def PsPlusScrappe():
             else:
                 print(e)
 
-    PsPlusCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(active=False, end_date=datetime.date.today())
+    PsPlusCatalog.objects.filter(updated_at__lt=datetime.date.today(), active=True).update(active=False, end_date=datetime.date.today())
     PsPlusCatalog.objects.filter(
         updated_at__gte=datetime.date.today(), active=False
         ).update(active=True, start_date=datetime.date.today())

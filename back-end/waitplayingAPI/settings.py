@@ -25,7 +25,7 @@ FRONTEND_DIR = BASE_DIR.parent / 'front-end'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 SECRET_KEY = SECRET_KEY
 

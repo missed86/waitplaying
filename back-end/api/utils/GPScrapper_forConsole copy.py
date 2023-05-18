@@ -169,7 +169,7 @@ def GamepassScrappeConsole():
                 else:
                     element.game = None
                 element.save()
-            counter += 1
+                counter += 1
             print("\rGPConsole: {}/{} - {} - {}".format(counter, total, element.name,
                     element.game or existing_game.game), end="")
         except Exception as e:
@@ -177,10 +177,10 @@ def GamepassScrappeConsole():
                 print(e.message)
             else:
                 print(e)
-    GamepassConsoleCatalog.objects.filter(updated_at__lt=datetime.date.today(), active=True).update(
+    GamepassConsoleCatalog.objects.filter(updated_at__lt=datetime.date.today()).update(
         active=False, end_date=datetime.date.today())
     GamepassConsoleCatalog.objects.filter(
         updated_at__gte=datetime.date.today(), active=False
     ).update(active=True, start_date=datetime.date.today())
-    
+
     return counter

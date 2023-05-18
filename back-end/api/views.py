@@ -194,27 +194,58 @@ class ServicesView(APIView):
         }
         
         return Response(response_data)
-# class ServicesView(APIView):
-#     # permission_classes = [permissions.AllowAny]
-#     # serializer_class = SimpleGame
-#     # authentication_classes = [JWTAuthentication]
 
-#     def get(self, request):
-#         gamepass_pc = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
-#         gamepass_console = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
-#         psplus = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')[:10]
-        
-#         gamepass_pc_serializer = GPCatalogSerializerPC(gamepass_pc, many=True)
-#         gamepass_console_serializer = GPCatalogSerializerConsole(gamepass_console, many=True)
-#         psplus_serializer = PSPCatalogSerializer(psplus, many=True)
 
-#         response_data = {
-#             'gamepass_pc': gamepass_pc_serializer.data,
-#             'gamepass_console': gamepass_console_serializer.data,
-#             'psplus': psplus_serializer.data
-#         }
+'''
+Services Page v2
+'''
+
+class ServicesView2(APIView):
+    # permission_classes = [permissions.AllowAny]
+    # serializer_class = SimpleGame
+    # authentication_classes = [JWTAuthentication]
+
+    def get(self, request):
+        gamepass_pc_in = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')
+        gamepass_pc_out = GamepassPCCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')
+        gamepass_console_in = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')
+        gamepass_console_out = GamepassConsoleCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')
+        psplus_in = PsPlusCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')
+        psplus_out = PsPlusCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')
         
-#         return Response(response_data)
+        gamepass_pc_in_data = GPCatalogSerializerPC(gamepass_pc_in, many=True).data
+        gamepass_pc_out_data = GPCatalogSerializerPC(gamepass_pc_out, many=True).data
+        gamepass_console_in_data = GPCatalogSerializerConsole(gamepass_console_in, many=True).data
+        gamepass_console_out_data = GPCatalogSerializerConsole(gamepass_console_out, many=True).data
+        psplus_in_data = PSPCatalogSerializer(psplus_in, many=True).data
+        psplus_out_data = PSPCatalogSerializer(psplus_out, many=True).data
+
+        # Añadir propiedad "type" a las consultas "_in" y "_out"
+        for game in gamepass_pc_in_data:
+            game['type'] = 'in'
+        for game in gamepass_console_in_data:
+            game['type'] = 'in'
+        for game in psplus_in_data:
+            game['type'] = 'in'
+        for game in gamepass_pc_out_data:
+            game['type'] = 'out'
+        for game in gamepass_console_out_data:
+            game['type'] = 'out'
+        for game in psplus_out_data:
+            game['type'] = 'out'
+
+        # Concatenar todas las listas de juegos y ordenar por fecha de entrada o salida
+        all_games = gamepass_pc_in_data + gamepass_pc_out_data + gamepass_console_in_data + gamepass_console_out_data + psplus_in_data + psplus_out_data
+        all_games.sort(key=lambda game: game['start_date'] if game['type'] == 'in' else game['end_date'], reverse=True)
+
+        # Establecer la fecha de actualización como la fecha actual
+
+        for game in all_games:
+            game['update_date'] = game['start_date'] if game['type'] == 'in' else game['end_date']
+                
+        response_data = all_games
+        
+        return Response(response_data)
 
 
 
