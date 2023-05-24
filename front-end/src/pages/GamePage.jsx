@@ -9,6 +9,7 @@ import "./Game.css";
 import GameOptions from "../components/Game/GameOptions";
 import Gallery from "../components/Game/Gallery";
 import { ReleasesTable } from "../components/Game/ReleasesTable";
+import Error404 from "../components/404";
 
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
@@ -57,6 +58,7 @@ export default function GamePage() {
 			.then((response) => {
 				setData(response.data[0]);
 				setLoading(false);
+				setError(null);
 			})
 			.catch((err) => {
 				setError(err);
@@ -77,54 +79,61 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
+
 	return (
 		<>
-			{loading && <div>Loading...</div>}
-			{!loading && error && <Item>Error: {error.message}</Item>}
-			{!loading && (
-				<div className="Game">
-					<div className="backcover-wrapper">
-						<img
-							className="backcover"
-							src={ScreenshotURL(screenshots[0])}
-							alt={name}
-						/>
-					</div>
-					<div className="main">
-						<div className="side-menu">
-							<img className="cover" src={CoverURL(cover)} alt={name} />
-							<GameOptions gameid={id} />
-						</div>
-						<div className="description">
-							<div className="title">
-								<h1>{name}</h1>
-								<h2>{releaseText(release_dates[0])}</h2>
+			{error && error.response.status === 404 ? (
+				<Error404 />
+			) : (
+				<>
+					{loading && <div>Loading...</div>}
+					{!loading && error && <Item>Error: {error.message}</Item>}
+					{!loading && (
+						<div className="Game">
+							<div className="backcover-wrapper">
+								<img
+									className="backcover"
+									src={ScreenshotURL(screenshots[0])}
+									alt={name}
+								/>
 							</div>
-							{/* <p>
+							<div className="main">
+								<div className="side-menu">
+									<img className="cover" src={CoverURL(cover)} alt={name} />
+									<GameOptions gameid={id} />
+								</div>
+								<div className="description">
+									<div className="title">
+										<h1>{name}</h1>
+										<h2>{releaseText(release_dates[0])}</h2>
+									</div>
+									{/* <p>
 								{platforms
 									.map((e) => e.name)
 									.sort()
 									.join(", ")}
 							</p> */}
 
-							<Label>Release Dates</Label>
-							<ReleasesTable
-								platforms={platforms}
-								release_dates={release_dates}
-							/>
-							{/* <p>{genres.join(", ")}</p> */}
-							<Label>Summary</Label>
-							<p>{summary}</p>
-							{/* <p>Follows: {extra.follows}</p>
+									<Label>Release Dates</Label>
+									<ReleasesTable
+										platforms={platforms}
+										release_dates={release_dates}
+									/>
+									{/* <p>{genres.join(", ")}</p> */}
+									<Label>Summary</Label>
+									<p>{summary}</p>
+									{/* <p>Follows: {extra.follows}</p>
 							<p>
 								Critic Rating: {Math.round(extra.aggregated_rating * 10) / 10}
 							</p>
 							<p>User Rating: {Math.round(extra.total_rating * 10) / 10}</p> */}
+								</div>
+							</div>
+							<Label>Screenshots</Label>
+							<Gallery screenshots={screenshots} />
 						</div>
-					</div>
-					<Label>Screenshots</Label>
-					<Gallery screenshots={screenshots} />
-				</div>
+					)}
+				</>
 			)}
 		</>
 	);
