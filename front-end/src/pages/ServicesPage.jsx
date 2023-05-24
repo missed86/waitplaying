@@ -10,6 +10,8 @@ import styled from "styled-components";
 import ServicesBar from "../components/Services/ServicesBar";
 import { arrow_in, arrow_out } from "../assets/icons";
 
+import moment from "moment";
+
 const Page = styled.div`
 	width: 100%;
 `;
@@ -23,10 +25,10 @@ const Table = styled.div`
 const Row = styled.div`
 	display: table-row;
 	&:hover {
-		${'' /* background-color: #3C3C3C; */}
+		${"" /* background-color: #3C3C3C; */}
 		border-radius: 5px;
 		box-shadow: 0px 0px 3px 0px #888;
-		cursor:pointer
+		cursor: pointer;
 	}
 `;
 const Cell = styled.div`
@@ -46,13 +48,15 @@ const Cell = styled.div`
 	${(props) =>
 		props.dates &&
 		`
-	@media only screen and (max-width: 600px) {
-            display: none;
-        }
-	
+		@media only screen and (max-width: 600px) {
+			display: none;
+		}
+		white-space: nowrap;
 	`}
 
-	${(props) => props.styled == "title" && `
+	${(props) =>
+		props.styled == "title" &&
+		`
 		font-size: 1.1rem;
 		padding-left: 20px;
 	`}
@@ -70,9 +74,10 @@ const Box = styled.div`
 	width: 150px;
 	flex-direction: row;
 	${(props) =>
-		props.service && `background-color: ${service_colors[props.service]};`
-	}
-	${(props) => props.active && `
+		props.service && `background-color: ${service_colors[props.service]};`}
+	${(props) =>
+		props.active &&
+		`
 		opacity: 0.7;
 	`}
 `;
@@ -81,18 +86,17 @@ const Badge = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding: 0 2px;
-
 `;
 const service_colors = {
 	psplus: "#003087",
 	gamepass_pc: "#232323",
-	gamepass_console: "#167416"
-}
+	gamepass_console: "#167416",
+};
 const img_routes = {
-    psplus: "/assets/services/psplus-mini.png",
-    gamepass_pc: "/assets/services/gppc-mini.png",
-    gamepass_console: "/assets/services/gpxbox-mini.png",
-}
+	psplus: "/assets/services/psplus-mini.png",
+	gamepass_pc: "/assets/services/gppc-mini.png",
+	gamepass_console: "/assets/services/gpxbox-mini.png",
+};
 const CoverURL = (cover) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`;
 
@@ -114,6 +118,11 @@ function removeDuplicateIds(array) {
 	return array;
 }
 
+const formattedDate = (date) => {
+	const momentDate = moment(date);
+	return momentDate.format("LL");
+};
+
 export default function ServicesPage() {
 	const { user, tokens, logoutUser, updateToken } = useContext(AuthContext);
 	const [parent] = useAutoAnimate();
@@ -126,20 +135,19 @@ export default function ServicesPage() {
 		gamepass_pc: true,
 		gamepass_console: true,
 		psplus: true,
-		in_out: "all"
+		in_out: "all",
 	});
-	
+
 	const options = {
-			method: "GET",
-			url: `https://api.waitplaying.com/services2/`,
-			params: {
-				gamepass_pc: filter.gamepass_pc.toString(),
-				gamepass_console: filter.gamepass_console.toString(),
-				psplus: filter.psplus.toString(),
-				in_out: filter.in_out,
-				
-			}
-		}
+		method: "GET",
+		url: `https://api.waitplaying.com/services2/`,
+		params: {
+			gamepass_pc: filter.gamepass_pc.toString(),
+			gamepass_console: filter.gamepass_console.toString(),
+			psplus: filter.psplus.toString(),
+			in_out: filter.in_out,
+		},
+	};
 	const fetchData = async (notfirst) => {
 		if (!notfirst) setLoading(true);
 		try {
@@ -155,9 +163,9 @@ export default function ServicesPage() {
 		}
 	};
 
-	useEffect(()=>{
+	useEffect(() => {
 		fetchData(true);
-	},[filter])
+	}, [filter]);
 
 	useEffect(() => {
 		// logoutUser();
@@ -175,8 +183,8 @@ export default function ServicesPage() {
 	const navigate = useNavigate();
 	const customLink = (slug) => {
 		navigate(`/game/${slug}`);
-	}
-	
+	};
+
 	return (
 		<Page>
 			<h1>On Services</h1>
@@ -190,24 +198,33 @@ export default function ServicesPage() {
 						<Table>
 							{removeDuplicateIds(data).map((element, index) => {
 								return (
-
-									<Row onClick={()=>customLink(element.game.slug)} key={element.game.id + element.service + index} service={element.service}>
+									<Row
+										onClick={() => customLink(element.game.slug)}
+										key={element.game.id + element.service + index}
+										service={element.service}
+									>
 										<Cell styled="type">
 											{element.type == "in"
 												? arrow_in("#548935")
 												: arrow_out("#962b2b")}
 										</Cell>
 										<Cell>
-											<Box service={element.service} active={element.type == 'out'}>
+											<Box
+												service={element.service}
+												active={element.type == "out"}
+											>
 												<Cover src={CoverURL(element.game.cover)} />
-												<Badge><img src={img_routes[element.service]}></img></Badge>
+												<Badge>
+													<img src={img_routes[element.service]}></img>
+												</Badge>
 											</Box>
 										</Cell>
 										<Cell styled="title">{element.game.name}</Cell>
 										<Cell dates>
 											{element.type == "in"
-												? `Activo desde ${element.start_date}`
-												: `Inactivo desde ${element.end_date}`}
+												? <>Since <span>{formattedDate(element.start_date)}</span></>
+												: <>Until <span>{formattedDate(element.end_date)}</span></>
+											}
 										</Cell>
 									</Row>
 								);

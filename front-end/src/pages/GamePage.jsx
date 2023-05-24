@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+
 import moment from "moment";
+
 
 import "./Game.css";
 
@@ -10,6 +12,7 @@ import GameOptions from "../components/Game/GameOptions";
 import Gallery from "../components/Game/Gallery";
 import { ReleasesTable } from "../components/Game/ReleasesTable";
 import Error404 from "../components/404";
+import OnServicesTable from "../components/Game/OnServicesTable";
 
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
@@ -24,6 +27,7 @@ const Label = styled.h2`
 `;
 const releaseText = (date) => {
 	const release_date = moment(date.date);
+	console.log("🚀 ~ file: GamePage.jsx:29 ~ releaseText ~ release_date:", release_date.format('YYYY-MM-DD HH:mm:ss'))
 	switch (date.category) {
 		case 0:
 			return `${release_date.format("LL")} (${release_date.fromNow()})`;
@@ -56,7 +60,7 @@ export default function GamePage() {
 		axios
 			.get(`https://api.waitplaying.com/games/${slug}/`)
 			.then((response) => {
-				setData(response.data[0]);
+				setData(response.data);
 				setLoading(false);
 				setError(null);
 			})
@@ -76,10 +80,11 @@ export default function GamePage() {
 		summary,
 		platforms,
 		release_dates,
+		services,
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
-
+	console.log('Fecha y hora actual:', moment().format('YYYY-MM-DD HH:mm:ss'));
 	return (
 		<>
 			{error && error.response.status === 404 ? (
@@ -107,21 +112,19 @@ export default function GamePage() {
 										<h1>{name}</h1>
 										<h2>{releaseText(release_dates[0])}</h2>
 									</div>
-									{/* <p>
-								{platforms
-									.map((e) => e.name)
-									.sort()
-									.join(", ")}
-							</p> */}
 
 									<Label>Release Dates</Label>
 									<ReleasesTable
 										platforms={platforms}
 										release_dates={release_dates}
 									/>
-									{/* <p>{genres.join(", ")}</p> */}
+									<Label>On Services</Label>
+									<OnServicesTable services={services} />
+
+
 									<Label>Summary</Label>
 									<p>{summary}</p>
+
 									{/* <p>Follows: {extra.follows}</p>
 							<p>
 								Critic Rating: {Math.round(extra.aggregated_rating * 10) / 10}

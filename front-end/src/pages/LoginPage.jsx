@@ -8,7 +8,7 @@ export default function LoginPage() {
 		<div>
 			<form onSubmit={loginUser}>
 				<input type="text" name="username" placeholder="Enter Username" />
-				<input type="password" name="password" placeholder="Enter Password" />
+				<input type="password" autocomplete="current-password" name="password" placeholder="Enter Password" />
 				<input type="submit" />
 			</form>
 		</div>

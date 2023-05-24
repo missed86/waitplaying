@@ -9,7 +9,8 @@ from rest_framework import (generics,
                             viewsets,
                             permissions,
                             serializers,
-                            exceptions)
+                            exceptions,
+                            status)
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view, permission_classes
@@ -57,26 +58,68 @@ def search_game(self, term):
         words.pop()
     return [game.id for game in matching_games]
 
-class GameDetailsView(generics.ListAPIView):
+class GameDetailsView(APIView):
     permission_classes = [permissions.AllowAny]
-    serializer_class = GameSerializer
 
-    def get_queryset(self):
-        """
-        Devuelve un queryset filtrado por `id` o `slug` según lo que se haya especificado en el URL.
-        Si el valor especificado en el URL es un número entero, se filtra por el campo `id`.
-        Si el valor especificado en el URL es una cadena, se filtra por el campo `slug`.
-        """
-        lookup = self.kwargs['slug']
+    def get(self, request, *args, **kwargs):
+        lookup = kwargs['slug']
+        queryset = Game.objects.none()
 
         if lookup is not None:
             if lookup.isdigit():
                 queryset = Game.objects.filter(id=lookup)
             else:
                 queryset = Game.objects.filter(slug=lookup)
+
             if queryset.count() == 0:
-                raise exceptions.NotFound()
-        return queryset
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+        game_id = queryset.first().id if queryset.exists() else None
+
+        if game_id is not None:
+            gamepass_pc_queryset = GamepassPCCatalog.objects.filter(game=game_id)
+            gamepass_console_queryset = GamepassConsoleCatalog.objects.filter(game=game_id)
+            psplus_queryset = PsPlusCatalog.objects.filter(game=game_id)
+
+            # Obtener los datos de las tablas extra
+            gamepass_pc_data = GPCatalogSerializerPC(gamepass_pc_queryset.first()).data
+            gamepass_console_data = GPCatalogSerializerConsole(gamepass_console_queryset.first()).data
+            psplus_data = PSPCatalogSerializer(psplus_queryset.first()).data
+
+            # Agregar los datos de las tablas extra a la respuesta
+            response_data = GameSerializer(queryset.first()).data
+            response_data['services'] = {
+                'gamepass_pc': gamepass_pc_data,
+                'gamepass_console': gamepass_console_data,
+                'psplus': psplus_data
+            }
+
+            return Response(response_data)
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+
+# class GameDetailsView(generics.ListAPIView):
+#     permission_classes = [permissions.AllowAny]
+#     serializer_class = GameSerializer
+
+#     def get_queryset(self):
+#         """
+#         Devuelve un queryset filtrado por `id` o `slug` según lo que se haya especificado en el URL.
+#         Si el valor especificado en el URL es un número entero, se filtra por el campo `id`.
+#         Si el valor especificado en el URL es una cadena, se filtra por el campo `slug`.
+#         """
+#         lookup = self.kwargs['slug']
+
+#         if lookup is not None:
+#             if lookup.isdigit():
+#                 queryset = Game.objects.filter(id=lookup)
+#             else:
+#                 queryset = Game.objects.filter(slug=lookup)
+#             if queryset.count() == 0:
+#                 raise exceptions.NotFound()
+#         return queryset
+
 
 
 class NextGamesView(APIView):
@@ -141,18 +184,6 @@ class GamesByDateView(APIView):
         queryset = ReleaseDate.objects.filter(date=date, category=0)
         user = request.user if request.user.is_authenticated else None
         return Response(group_games(queryset, date, user))
-    
-# class GamesByDateView(APIView):
-#     permission_classes = [permissions.AllowAny]
-#     serializer_class = GameDatesSerializer
-#     authentication_classes = [JWTAuthentication]
-
-#     def get(self, request, date, format=None):
-#         date = self.kwargs.get("date")
-#         queryset = ReleaseDate.objects.filter(date=date, category=0)
-#         user = request.user if request.user.is_authenticated else None
-#         return Response(group_games(queryset, date, user))
-
 
 
 '''

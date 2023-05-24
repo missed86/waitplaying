@@ -70,17 +70,17 @@ class GPCatalogSerializerPC(serializers.ModelSerializer):
     game = GamesForLists()
     class Meta:
         model = GamepassPCCatalog
-        fields = ('game', 'start_date', 'end_date', 'id')
+        fields = ('game', 'start_date', 'end_date', 'id', 'active')
 class GPCatalogSerializerConsole(serializers.ModelSerializer):
     game = GamesForLists()
     class Meta:
         model = GamepassConsoleCatalog
-        fields = ('game', 'start_date', 'end_date', 'id')
+        fields = ('game', 'start_date', 'end_date', 'id', 'active')
 class PSPCatalogSerializer(serializers.ModelSerializer):
     game = GamesForLists()
     class Meta:
         model = PsPlusCatalog
-        fields = ('game', 'start_date', 'end_date', 'id')
+        fields = ('game', 'start_date', 'end_date', 'id', 'active')
 
 
 

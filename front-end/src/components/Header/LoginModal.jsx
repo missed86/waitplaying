@@ -278,11 +278,17 @@ export default function LoginModal({ actived, setActived }) {
 									name="username"
 									placeholder="username"
 									ref={inputRef}
+									autoComplete="username"
 								/>
 							</FormGroup>
 							<FormGroup>
 								<label htmlFor="password">Your password</label>
-								<Input type="password" name="password" placeholder="••••••••" />
+								<Input
+									type="password"
+									name="password"
+									placeholder="••••••••"
+									autoComplete="current-password"
+								/>
 							</FormGroup>
 							<div>
 								<ul>{loginError && <li>{loginError}</li>}</ul>
@@ -310,6 +316,7 @@ export default function LoginModal({ actived, setActived }) {
 									type="text"
 									name="username"
 									placeholder="username"
+									autoComplete="username"
 								/>
 							</FormGroup>
 							<FormGroup>
@@ -323,6 +330,7 @@ export default function LoginModal({ actived, setActived }) {
 									type="email"
 									name="email"
 									placeholder="email"
+									autoComplete="email"
 								/>
 							</FormGroup>
 							<FormGroup>
@@ -337,6 +345,7 @@ export default function LoginModal({ actived, setActived }) {
 									type="password"
 									name="password"
 									placeholder="••••••••"
+									autoComplete="new-password"
 								/>
 							</FormGroup>
 							<FormGroup>
@@ -351,6 +360,7 @@ export default function LoginModal({ actived, setActived }) {
 									type="password"
 									name="repeatpassword"
 									placeholder="••••••••"
+									autoComplete="new-password"
 								/>
 							</FormGroup>
 							<div>
