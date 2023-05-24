@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     "django_crontab"
 ]
 
-CRONJOBS = [('0 0 * * *', 'api.management.cron.scrapping_schedule')]
+CRONJOBS = [('0 */12 * * *', 'api.management.cron.scrapping_schedule')]
+CRONTAB_PYTHON_EXECUTABLE = '/home/waitplaying.com/api/public_html/bin/python'
 
 DEFAULT_CHARSET = 'utf-8'
 

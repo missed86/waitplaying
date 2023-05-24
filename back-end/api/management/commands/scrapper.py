@@ -9,8 +9,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Llama a tu función scrapping_schedule() aquí
-        logger(Type.info, "Scheduler", "Scheduled scrapping started")
+        logger(Type.info, "Scrapper command", "Command scrapping started")
 
         scrapped_dict = main_scrapper()
 
-        logger(Type.info, "Scheduler", "Scheduled scrapping finished: " + str(scrapped_dict))
+        logger(Type.info, "Scrapper command", "Command scrapping finished: " + str(scrapped_dict))

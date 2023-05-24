@@ -206,6 +206,11 @@ class ServicesView2(APIView):
     # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
+        gamepass_pc_param = request.query_params.get('gamepass_pc')
+        gamepass_console_param = request.query_params.get('gamepass_console')
+        psplus_param = request.query_params.get('psplus')
+        in_out_param = request.query_params.get('in_out')
+
         gamepass_pc_in = GamepassPCCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')
         gamepass_pc_out = GamepassPCCatalog.objects.filter(active=False, game__isnull=False).order_by('-end_date').select_related('game')
         gamepass_console_in = GamepassConsoleCatalog.objects.filter(active=True, game__isnull=False).order_by('-start_date').select_related('game')
@@ -223,19 +228,44 @@ class ServicesView2(APIView):
         # Añadir propiedad "type" a las consultas "_in" y "_out"
         for game in gamepass_pc_in_data:
             game['type'] = 'in'
+            game['service'] = 'gamepass_pc'
         for game in gamepass_console_in_data:
             game['type'] = 'in'
+            game['service'] = 'gamepass_console'
         for game in psplus_in_data:
             game['type'] = 'in'
+            game['service'] = 'psplus'
         for game in gamepass_pc_out_data:
             game['type'] = 'out'
+            game['service'] = 'gamepass_pc'
         for game in gamepass_console_out_data:
             game['type'] = 'out'
+            game['service'] = 'gamepass_console'
         for game in psplus_out_data:
             game['type'] = 'out'
+            game['service'] = 'psplus'
 
         # Concatenar todas las listas de juegos y ordenar por fecha de entrada o salida
-        all_games = gamepass_pc_in_data + gamepass_pc_out_data + gamepass_console_in_data + gamepass_console_out_data + psplus_in_data + psplus_out_data
+        # all_games = gamepass_pc_in_data + gamepass_pc_out_data + gamepass_console_in_data + gamepass_console_out_data + psplus_in_data + psplus_out_data
+        
+        if in_out_param == 'all':
+            gamepass_pc_collection = gamepass_pc_in_data + gamepass_pc_out_data
+            gamepass_console_collection = gamepass_console_in_data + gamepass_console_out_data
+            psplus_collection = psplus_in_data + psplus_out_data
+        elif in_out_param == 'in':
+            gamepass_pc_collection = gamepass_pc_in_data
+            gamepass_console_collection = gamepass_console_in_data
+            psplus_collection = psplus_in_data
+        elif in_out_param == 'out':
+            gamepass_pc_collection = gamepass_pc_out_data
+            gamepass_console_collection = gamepass_console_out_data
+            psplus_collection = psplus_out_data
+
+        all_games = []
+        all_games += gamepass_pc_collection if gamepass_pc_param == 'true' else []
+        all_games += gamepass_console_collection if gamepass_console_param == 'true' else []
+        all_games += psplus_collection if psplus_param == 'true' else []
+
         all_games.sort(key=lambda game: game['start_date'] if game['type'] == 'in' else game['end_date'], reverse=True)
 
         # Establecer la fecha de actualización como la fecha actual
@@ -243,7 +273,7 @@ class ServicesView2(APIView):
         for game in all_games:
             game['update_date'] = game['start_date'] if game['type'] == 'in' else game['end_date']
                 
-        response_data = all_games
+        response_data = all_games[:20]
         
         return Response(response_data)
 

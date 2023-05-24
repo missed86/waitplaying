@@ -178,7 +178,8 @@ def GamepassScrappePC():
                 print(e.message)
             else:
                 print(e)
-    GamepassPCCatalog.objects.filter(updated_at__lt=datetime.date.today(), active=True).update(
+    GamepassPCCatalog.objects.filter(
+        updated_at__lt=datetime.date.today(), active=True).update(
         active=False, end_date=datetime.date.today())
     GamepassPCCatalog.objects.filter(
         updated_at__gte=datetime.date.today(), active=False

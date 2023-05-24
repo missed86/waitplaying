@@ -49,8 +49,8 @@ function HomePage() {
   }, [filters]);
   return (
     <Home>
-      <PlatformBar filters={filters} setFilters={setFilters} />
       <h1>New Releases</h1>
+      <PlatformBar filters={filters} setFilters={setFilters} />
       <InfiniteScroll ref={parent}
         style={{ overflow: "hidden" }}
         key={key}
