@@ -18,11 +18,13 @@ export default function CalendarPage() {
 	const { user, tokens, logoutUser, updateToken } = useContext(AuthContext);
 	const [list, setList] = useState(null);
 	const [calendarView, setCalendarView] = useState(false);
-	
-	const navigate = useNavigate()
-	if (!user) navigate("/")
+	const [loading, setLoading] = useState(true);
+
+	const navigate = useNavigate();
+	if (!user) navigate("/");
 
 	const getFollows = async () => {
+		setLoading(true);
 		let response = await fetch(`https://api.waitplaying.com/auth/calendar/`, {
 			method: "GET",
 			headers: {
@@ -42,28 +44,33 @@ export default function CalendarPage() {
 			setList(ordered);
 		} else if (response.status === 401) {
 			// logoutUser();
+
 			updateToken();
 		}
+		setLoading(false);
 	};
 	useEffect(() => {
-		if (!user) navigate("/")
+		if (!user) navigate("/");
 		getFollows();
 	}, [tokens]);
 
-	useEffect(()=>{},[tokens])
-	return user && (
-		<Page>
-			
-			<ListView
-				list={list}
-				calendarView={calendarView}
-				setCalendarView={setCalendarView}
-			/>
-			<Calendar
-				list={list}
-				calendarView={calendarView}
-				setCalendarView={setCalendarView}
-			/>
-		</Page>
+	useEffect(() => {}, [tokens]);
+	return loading ? (
+		<Page>Loading...</Page>
+	) : (
+		user && (
+			<Page>
+				<ListView
+					list={list}
+					calendarView={calendarView}
+					setCalendarView={setCalendarView}
+				/>
+				<Calendar
+					list={list}
+					calendarView={calendarView}
+					setCalendarView={setCalendarView}
+				/>
+			</Page>
+		)
 	);
 }
