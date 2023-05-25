@@ -7,15 +7,14 @@ const Component = styled.div`
     justify-content: center;
     height: 100%;
     flex-direction: column;
-    `
+`
 const ErrorNumber = styled.div`
-font-size: 30vw;
-font-style: italic;
-font-weight: bold;
-
+    font-size: 16vh;
+    font-style: italic;
+    font-weight: bold;
 `
 const ErrorText = styled.div`
-font-size: 8vw;
+    font-size: 3vh;
 `
 
 export default function Error404({what}) {
