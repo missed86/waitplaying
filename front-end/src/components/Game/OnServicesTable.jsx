@@ -15,7 +15,9 @@ const Row = styled.div`
 	display: table-row;
     
     ${(props) => !props.active && `
-        opacity: 0.7;`
+        opacity: 0.5;
+		filter: grayscale(100%);
+		`
     }
 `;
 const Cell = styled.div`

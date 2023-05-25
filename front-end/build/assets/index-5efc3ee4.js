@@ -920,13 +920,12 @@ and limitations under the License.
     justify-content: center;
     height: 100%;
     flex-direction: column;
-    `,dS=_.div`
-font-size: 16vh;
-font-style: italic;
-font-weight: bold;
-
+`,dS=_.div`
+    font-size: 16vh;
+    font-style: italic;
+    font-weight: bold;
 `,fS=_.div`
-font-size: 3vh;
+    font-size: 3vh;
 `;function n5({what:e}){return a.jsxs(cS,{children:[a.jsx(dS,{children:"404"}),a.jsx(fS,{children:e=="page"?"Page Not Found":"Game Not Found"})]})}const pS=_.div`
 	display: flex;
 	margin: 0 0 15px 0;
@@ -939,7 +938,9 @@ font-size: 3vh;
 	display: table-row;
     
     ${e=>!e.active&&`
-        opacity: 0.7;`}
+        opacity: 0.5;
+		filter: grayscale(100%);
+		`}
 `,mo=_.div`
 	${""}
 	padding: 5px;
