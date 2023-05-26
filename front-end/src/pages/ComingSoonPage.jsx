@@ -4,6 +4,7 @@ import PlatformBar from "../components/PlatformBar";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import "./Home.css";
+import SEO from "../components/Services/SEO";
 
 // const dates = [];
 // const today = new Date();
@@ -47,6 +48,7 @@ function HomePage() {
 	}, [filters]);
 	return (
 		<div className="Home">
+			<SEO title="WaitPlaying - Coming Soon" path="comingsoon" />
 			<h1>Coming Soon</h1>
 			<PlatformBar filters={filters} setFilters={setFilters} />
 			<InfiniteScroll

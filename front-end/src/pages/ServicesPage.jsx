@@ -11,6 +11,7 @@ import ServicesBar from "../components/Services/ServicesBar";
 import { arrow_in, arrow_out } from "../assets/icons";
 
 import moment from "moment";
+import SEO from "../components/Services/SEO";
 
 const Page = styled.div`
 	width: 100%;
@@ -187,6 +188,7 @@ export default function ServicesPage() {
 
 	return (
 		<Page>
+			<SEO title="WaitPlaying - On Services" path="services"/>
 			<h1>On Services</h1>
 			<ServicesBar filter={filter} setFilter={setFilter} />
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SEO from "./Services/SEO";
 
 const Component = styled.div`
     display: flex;
@@ -20,6 +21,7 @@ const ErrorText = styled.div`
 export default function Error404({what}) {
     return (
         <Component>
+            <SEO title="WaitPlaying - Error 404"></SEO>
             <ErrorNumber>404</ErrorNumber>
             <ErrorText>{
                 what == 'page' ? 'Page Not Found' :'Game Not Found'

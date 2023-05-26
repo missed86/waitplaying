@@ -6,6 +6,7 @@ import styled from "styled-components";
 import ListView from "../components/Calendar/ListView";
 import Calendar from "../components/Calendar/Calendar";
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/Services/SEO";
 
 const Page = styled.div`
 	display: flex;
@@ -55,22 +56,27 @@ export default function CalendarPage() {
 	}, [tokens]);
 
 	useEffect(() => {}, [tokens]);
-	return loading ? (
-		<Page>Loading...</Page>
-	) : (
-		user && (
-			<Page>
-				<ListView
-					list={list}
-					calendarView={calendarView}
-					setCalendarView={setCalendarView}
-				/>
-				<Calendar
-					list={list}
-					calendarView={calendarView}
-					setCalendarView={setCalendarView}
-				/>
-			</Page>
+	return <>
+			<SEO title="WaitPlaying - My Calendar" path="calendar" />
+		{	
+		loading ? (
+			<Page>Loading...</Page>
+		) : (
+			user && (
+				<Page>
+					<ListView
+						list={list}
+						calendarView={calendarView}
+						setCalendarView={setCalendarView}
+					/>
+					<Calendar
+						list={list}
+						calendarView={calendarView}
+						setCalendarView={setCalendarView}
+					/>
+				</Page>
+			)
 		)
-	);
+		}
+	</>
 }

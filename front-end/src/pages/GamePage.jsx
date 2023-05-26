@@ -13,6 +13,8 @@ import Gallery from "../components/Game/Gallery";
 import { ReleasesTable } from "../components/Game/ReleasesTable";
 import Error404 from "../components/404";
 import OnServicesTable from "../components/Game/OnServicesTable";
+import SEO from "../components/Services/SEO";
+
 
 const CoverURL = (id) =>
 	`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.png`;
@@ -70,6 +72,7 @@ export default function GamePage() {
 			});
 	}, [slug]);
 
+	
 	let {
 		id,
 		name,
@@ -84,7 +87,7 @@ export default function GamePage() {
 		...extra
 	} = data ? data : {};
 	screenshots = screenshots ? screenshots.split(",") : [];
-	console.log('Fecha y hora actual:', moment().format('YYYY-MM-DD HH:mm:ss'));
+
 	return (
 		<>
 			{error && error.response.status === 404 ? (
@@ -94,6 +97,14 @@ export default function GamePage() {
 					{loading && <div>Loading...</div>}
 					{!loading && error && <Item>Error: {error.message}</Item>}
 					{!loading && (
+						<>
+						<SEO 
+						title = {`${name} (${moment(release_dates[0].date).format("YYYY")}) - WaitPlaying`} 
+						description = {`${name} (${moment(release_dates[0].date).format("YYYY")})`}
+						image = {CoverURL(cover)}
+						path = {`game/${slug}`}
+						imageAlt = {`${name} (${moment(release_dates[0].date).format("YYYY")})`}
+						/>
 						<div className="Game">
 							<div className="backcover-wrapper">
 								<img
@@ -135,6 +146,7 @@ export default function GamePage() {
 							<Label>Screenshots</Label>
 							<Gallery screenshots={screenshots} />
 						</div>
+						</>
 					)}
 				</>
 			)}
