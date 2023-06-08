@@ -14,12 +14,23 @@ const GameGroup = styled.div`
 	transition: all 1s ease-in-out;
 `;
 const DateDiv = styled.div`
-	text-transform: uppercase;
-	display: flex;
-	${"" /* width: 100px; */}
+	/* text-transform: uppercase; */
+	/* display: flex;
 	padding: 5px;
 	background-color: rgb(26, 26, 26);
-	margin: 10px 0;
+	margin: 10px 0; */
+	/* height: 50px; */
+	background-color: #222;
+	display: flex;
+	border-radius: 5px;
+	border: 1px solid #2a2a2a;
+	padding: 3px 10px;
+	align-items: center;
+	/* width: 100%; */
+	margin-bottom: 10px;
+	color: #f0f0f0;
+	/* font-weight: 600; */
+	/* box-shadow: inset 0 0 5px 1px #0000003C; */
 `;
 const List = styled.div`
 	display: grid;

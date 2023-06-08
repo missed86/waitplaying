@@ -17,6 +17,7 @@ from api.serializers import UserGameSetsSerializer, UserCalendarSerializer
 from api.models import UserGameSet
 from api.serializers import UserSerializer
 from django.utils import timezone
+from django.db.models import Q
 
 import collections
 
@@ -39,9 +40,18 @@ class MyTokenObtainPairView(TokenObtainPairView):
     # actualiza el ultimo login del usuario
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
-        user = get_user_model().objects.get(username=request.data['username'])
-        user.last_login = timezone.now()
-        user.save()
+
+        user_model = get_user_model()
+        identifier = request.data['username']
+        if identifier:
+            try:
+                user = user_model.objects.get(
+                    Q(username=identifier) | Q(email=identifier)
+                )
+                user.last_login = timezone.now()
+                user.save()
+            except user_model.DoesNotExist:
+                pass
         return response
 
 @api_view(['GET'])

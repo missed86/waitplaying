@@ -4,6 +4,7 @@ import "./App.css";
 
 import Header from "./layout/Header";
 import HomePage from "./pages/HomePage";
+import NewReleases from "./pages/NewReleases";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import GamePage from "./pages/GamePage";
 import CalendarPage from "./pages/CalendarPage";
@@ -23,6 +24,7 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" exact element={<HomePage />} />
+						<Route path="/new-releases" exact element={<NewReleases />} />
 						<Route path="/coming-soon" element={<ComingSoonPage />} />
 						<Route path="/services" element={<ServicesPage />} />
 						<Route path="/game/:slug" element={<GamePage />} />

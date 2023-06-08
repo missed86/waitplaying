@@ -7,6 +7,7 @@ import ListView from "../components/Calendar/ListView";
 import Calendar from "../components/Calendar/Calendar";
 import { useNavigate } from "react-router-dom";
 import SEO from "../components/Services/SEO";
+import Loading from "../components/Loading";
 
 const Page = styled.div`
 	display: flex;
@@ -60,7 +61,7 @@ export default function CalendarPage() {
 			<SEO title="WaitPlaying - My Calendar" path="calendar" />
 		{	
 		loading ? (
-			<Page>Loading...</Page>
+			<Loading />
 		) : (
 			user && (
 				<Page>

@@ -78,7 +78,7 @@ export default function HiddenMenu({ show, toogle, close }) {
 						<Item>Home</Item>
 					</ItemLink>
 
-					<ItemLink onClick={close} to="/">
+					<ItemLink onClick={close} to="/new-releases">
 						<Item>Releases</Item>
 					</ItemLink>
 

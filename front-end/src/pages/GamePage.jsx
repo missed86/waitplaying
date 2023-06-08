@@ -14,6 +14,7 @@ import { ReleasesTable } from "../components/Game/ReleasesTable";
 import Error404 from "../components/404";
 import OnServicesTable from "../components/Game/OnServicesTable";
 import SEO from "../components/Services/SEO";
+import Loading from "../components/Loading";
 
 
 const CoverURL = (id) =>
@@ -90,11 +91,11 @@ export default function GamePage() {
 
 	return (
 		<>
-			{error && error.response.status === 404 ? (
+			{error && error.response && error.response.status === 404 ? (
 				<Error404 />
 			) : (
 				<>
-					{loading && <div>Loading...</div>}
+					{loading && <Loading />}
 					{!loading && error && <Item>Error: {error.message}</Item>}
 					{!loading && (
 						<>

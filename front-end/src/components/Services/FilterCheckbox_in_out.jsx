@@ -27,15 +27,17 @@ const Icon = styled.div`
 	}
 `;
 
-export default function FilterCheckboxInOut({ filter, setFilter }) {
+export default function FilterCheckboxInOut({ filter, setFilter, loading }) {
 	// console.log(filter);
 
 	const stages = ["all", "in", "out"];
 	const handleClick = () => {
-		const currentIndex = stages.indexOf(filter.in_out);
-		const nextIndex = (currentIndex + 1) % stages.length;
-		const nextValue = stages[nextIndex];
-		setFilter({ ...filter, in_out: nextValue });
+		if (!loading) {
+			const currentIndex = stages.indexOf(filter.in_out);
+			const nextIndex = (currentIndex + 1) % stages.length;
+			const nextValue = stages[nextIndex];
+			setFilter({ ...filter, in_out: nextValue });
+		}
 	};
 
 	return (

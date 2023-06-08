@@ -2,108 +2,143 @@ import { useState } from "react";
 import styled from "styled-components";
 import "./GameCard.css";
 
-
 const ICONS = {
-  add: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        fillRule="evenodd"
-        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-        clipRule="evenodd"
-      />
-    </svg>
-  ),
-  star: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        fillRule="evenodd"
-        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-        clipRule="evenodd"
-      />
-    </svg>
-  ),
+	add: (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			className="w-6 h-6"
+		>
+			<path
+				fillRule="evenodd"
+				d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+				clipRule="evenodd"
+			/>
+		</svg>
+	),
+	star: (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			className="w-6 h-6"
+		>
+			<path
+				fillRule="evenodd"
+				d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+				clipRule="evenodd"
+			/>
+		</svg>
+	),
 };
 
 const Component = styled.div`
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  ${(props) => props.actived && "border: 3px solid orangered;"}
+	display: flex;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	${(props) => props.actived && "border: 3px solid orangered;"}
+`;
+const Cover = styled.img`
+	box-sizing: border-box;
+	max-width: 100%;
+	object-fit: cover;
+	aspect-ratio: 0.75;
+	filter: none;
+	${(props) => props.out && "filter:grayscale(100%);"}
+`;
+const PlatformPill = styled.div`
+	height: fit-content;
+	background-color: rgba(53, 53, 53, 0.5);
+	padding: 1px 3px;
+	border-radius: 4px;
+	text-shadow: 0 0 3px black;
+`;
+const ReleaseDate = styled.div`
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: rgba(53, 53, 53, 0.5);
+	text-shadow: 0 0 3px black;
+	padding: 1px 3px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	/* font-weight: 600; */
+	color: white;
+	margin: 5px;
+	z-index: 1;
+
 `;
 
 const CoverURL = (cover) =>
-  `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`;
+	`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover}.png`;
 const main_platforms = ["PS5", "PS4", "Series X", "PC"];
 
 const only_main_platforms = (array) =>
-  array.filter((p) => main_platforms.includes(p));
+	array.filter((p) => main_platforms.includes(p));
 
 export default function GameCard({
-  image,
-  title,
-  platforms,
-  marked,
-  empty = false,
-  out
+	image,
+	title,
+	platforms,
+	marked,
+	empty = false,
+	out,
+	release_date,
 }) {
 
+	platforms = [...new Set(platforms)];
 
-  platforms = [...new Set(platforms)];
-  const handleClick = (event) => {
-    event.preventDefault();
-  };
-  const [actived, setActived] = useState(marked);
-  return empty ? (
-    <Component className="GameCard">
-      <img className="cover" src="./assets/emptycover.png" alt={title} />
-    </Component>
-  ) : (
-    <Component className="GameCard" actived={actived}>
-      <div
-        className={`button ${actived ? "actived" : ""}`}
-        onClick={handleClick}
-      >
-        {ICONS.add}
-      </div>
-      <div className="hover">
-        <div className="platforms">
-          {platforms.length <= 3
-            ? platforms.map((platform) => {
-                return (
-                  <span key={platform + title} className="platform-pill">
-                    {platform}
-                  </span>
-                );
-              })
-            : only_main_platforms(platforms)
-                .slice(0, 3)
-                .map((platform) => {
-                  return (
-                    <span key={platform + title} className="platform-pill">
-                      {platform}
-                    </span>
-                  );
-                })}
-          {platforms.length > 3 ? (
-            <span key={title} className="platform-pill">
-              +
-            </span>
-          ) : (
-            ""
-          )}
-          {/* {only_main_platforms.slice(0, 3).map((platform) => {
+	const handleClick = (event) => {
+		event.preventDefault();
+	};
+
+	const [actived, setActived] = useState(marked);
+
+	return empty ? (
+		<Component>
+			<Cover src="./assets/emptycover.png" alt={title} />
+		</Component>
+	) : (
+		<Component className="GameCard" actived={actived}>
+			<div
+				className={`button ${actived ? "actived" : ""}`}
+				onClick={handleClick}
+			>
+				{ICONS.add}
+			</div>
+			{release_date && (
+				<ReleaseDate>{release_date}</ReleaseDate>
+			)}
+			<div className="hover">
+				<div className="platforms">
+					{platforms.length <= 3
+						? platforms.map((platform) => {
+								return (
+									<PlatformPill key={platform + title}>
+										{platform}
+									</PlatformPill>
+								);
+						  })
+						: only_main_platforms(platforms)
+								.slice(0, 3)
+								.map((platform) => {
+									return (
+										<PlatformPill key={platform + title}>
+											{platform}
+										</PlatformPill>
+									);
+								})}
+					{platforms.length > 3 ? (
+						<PlatformPill key={title}>
+							+
+						</PlatformPill>
+					) : (
+						""
+					)}
+					{/* {only_main_platforms.slice(0, 3).map((platform) => {
             return (
               <span key={platform} className="platform-pill">
                 {platform}
@@ -111,12 +146,12 @@ export default function GameCard({
             );
           })}
           {platforms.length > 3 ? <span>+</span> : ""} */}
-        </div>
-        <div className="container">
-          <span className="title">{title}</span>
-        </div>
-      </div>
-      <img className={`cover ${out && 'out'}`} src={CoverURL(image)} alt={title} />
-    </Component>
-  );
+				</div>
+				<div className="container">
+					<span className="title">{title}</span>
+				</div>
+			</div>
+			<Cover out={out} src={CoverURL(image)} alt={title} />
+		</Component>
+	);
 }

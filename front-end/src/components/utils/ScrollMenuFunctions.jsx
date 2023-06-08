@@ -67,8 +67,8 @@ const ArrowButton = styled.button`
 	font-size: 2rem;
 	background: ${(props) =>
 		props.direction == "left"
-			? "linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
-			: "linear-gradient(270deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"};
+			? "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"
+			: "linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"};
 	width: 70px;
 	border: none;
 	left: ${(props) => (props.direction == "left" ? "0px" : "auto")};

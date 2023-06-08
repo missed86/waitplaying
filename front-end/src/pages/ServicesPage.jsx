@@ -12,6 +12,7 @@ import { arrow_in, arrow_out } from "../assets/icons";
 
 import moment from "moment";
 import SEO from "../components/Services/SEO";
+import Loading from "../components/Loading";
 
 const Page = styled.div`
 	width: 100%;
@@ -132,12 +133,16 @@ export default function ServicesPage() {
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
 
-	const [filter, setFilter] = useState({
-		gamepass_pc: true,
-		gamepass_console: true,
-		psplus: true,
-		in_out: "all",
-	});
+	const [filter, setFilter] = useState(() =>
+		localStorage.getItem("services_filter") 
+		? JSON.parse(localStorage.getItem("services_filter")) 
+		: {
+			gamepass_pc: true,
+			gamepass_console: true,
+			psplus: true,
+			in_out: "all",
+		}
+	);
 
 	const options = {
 		method: "GET",
@@ -166,6 +171,7 @@ export default function ServicesPage() {
 
 	useEffect(() => {
 		fetchData(true);
+		localStorage.setItem("services_filter", JSON.stringify(filter));
 	}, [filter]);
 
 	useEffect(() => {
@@ -190,13 +196,12 @@ export default function ServicesPage() {
 		<Page>
 			<SEO title="WaitPlaying - On Services" path="services"/>
 			<h1>On Services</h1>
-			<ServicesBar filter={filter} setFilter={setFilter} />
-
-			<List>
-				{loading ? (
-					<div>Loading...</div>
-				) : (
-					data && (
+			<ServicesBar loading={loading} filter={filter} setFilter={setFilter} />
+			{loading ? (
+					<Loading />
+				) : 
+			(<List>
+					{data && (
 						<Table>
 							{removeDuplicateIds(data).map((element, index) => {
 								return (
@@ -233,8 +238,9 @@ export default function ServicesPage() {
 							})}
 						</Table>
 					)
-				)}
-			</List>
+				}
+			</List>)
+			}
 		</Page>
 	);
 }

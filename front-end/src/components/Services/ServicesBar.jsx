@@ -42,7 +42,7 @@ const Spacer = styled.div`
 flex:1;
 `;
 
-export default function ServicesBar({filter, setFilter}) {
+export default function ServicesBar({filter, setFilter, loading}) {
 	const [fixedDivVisible, setFixedDivVisible] = useState(false);
 	const fixedDivRef = useRef(null);
 
@@ -68,11 +68,11 @@ export default function ServicesBar({filter, setFilter}) {
 		<Container ref={fixedDivRef}>
 			<Wrapper fixedDiv={fixedDivVisible}>
 				<Bar>
-					<FilterCheckbox filter={filter} setFilter={setFilter} service="gamepass_pc"/>
-					<FilterCheckbox filter={filter} setFilter={setFilter}  service="gamepass_console"/>
-					<FilterCheckbox filter={filter} setFilter={setFilter}  service="psplus"/>
+					<FilterCheckbox loading={loading} filter={filter} setFilter={setFilter} service="gamepass_pc"/>
+					<FilterCheckbox loading={loading} filter={filter} setFilter={setFilter}  service="gamepass_console"/>
+					<FilterCheckbox loading={loading} filter={filter} setFilter={setFilter}  service="psplus"/>
 					<Spacer/>
-					<FilterCheckboxInOut filter={filter} setFilter={setFilter}/>
+					<FilterCheckboxInOut loading={loading} filter={filter} setFilter={setFilter}/>
 				</Bar>{/*"Gamepass PC - Gamepass Console - Playstation Premium"*/}
 			</Wrapper>
 		</Container>

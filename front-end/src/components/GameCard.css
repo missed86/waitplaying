@@ -1,10 +1,4 @@
-.GameCard {
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
+
 .GameCard .hover .platforms {
   display: flex;
   position: absolute;
@@ -14,29 +8,7 @@
   transition: all 0.3s ease-in-out;
   top: -25px;
 }
-/* .GameCard:hover .hover .platforms {
-    transition: all 0.3s ease-in-out;
-} */
-.GameCard .hover .platforms .platform-pill {
-  height: fit-content;
-  background-color: rgba(53, 53, 53, 0.5);
-  padding: 1px 3px;
-  border-radius: 4px;
-}
-.GameCard .cover {
-  /* max-width: 200px;
-    min-width: 150px;
-    width: auto; */
-  box-sizing: border-box;
-  max-width: 100%;
-  object-fit: cover;
-  aspect-ratio: 0.75;
-  filter:none;
-}
-.GameCard .cover.out {
-  filter: grayscale(1);
-  /* opacity :1; */
-}
+
 .GameCard .hover {
   position: absolute;
   bottom: -30%;

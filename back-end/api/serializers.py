@@ -82,9 +82,24 @@ class PSPCatalogSerializer(serializers.ModelSerializer):
         model = PsPlusCatalog
         fields = ('game', 'start_date', 'end_date', 'id', 'active')
 
+''''''
 
+class PlatformSerializerMini(serializers.ModelSerializer):
+    class Meta:
+        model = Platform
+        fields = ('abbreviation','alternative_name','name','slug')
+class GamesForFeatured(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ('id','name', 'slug', 'cover', 'follows')
+class GameForFeaturedReleases(serializers.ModelSerializer):
+    game = GamesForFeatured()
+    platform = PlatformSerializerMini()
+    class Meta:
+        model = ReleaseDate
+        fields = ('date', 'platform', 'game')
 
-
+''''''
 
 class GameDatesSerializer(serializers.ModelSerializer):
     game = SimpleGame()

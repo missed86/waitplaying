@@ -212,10 +212,12 @@ const services = {
 	},
 };
 
-export default function FilterCheckbox({ service, filter, setFilter }) {
+export default function FilterCheckbox({ service, filter, setFilter, loading }) {
 	// console.log(filter);
     const handleClick = () => {
-        setFilter({ ...filter, [service]: !filter[service] })
+		if (!loading) {
+			setFilter({ ...filter, [service]: !filter[service] })
+		}
     }
 
 	return (
