@@ -15,7 +15,7 @@ const Row = styled.div`
 	display: table-row;
 
 	${(props) =>
-		!props.active &&
+		props.active &&
 		`
         opacity: 0.5;
 		filter: grayscale(100%);
@@ -41,7 +41,8 @@ const Cell = styled.div`
     span {
 		white-space: nowrap;
 	}
-	${(props) => !props.active && `text-decoration:line-through;`}
+	${(props) => props.active && `text-decoration:line-through;`}
+	${(props) => props.notseen && `opacity:0.5;`}
 `;
 
 const Icon = styled.div`
@@ -89,11 +90,11 @@ export default function OnServicesTable({ services }) {
 	const ServiceTile = ({ service, label }) => {
 		return (
 			services[service].game.id && (
-				<Row active={services[service].active}>
+				<Row active={!services[service].active}>
 					<Cell icon>
 						<Icon service={service}>{serviceIcon[service].icon}</Icon>
 					</Cell>
-					<Cell active={services[service].active}>{label}</Cell>
+					<Cell active={!services[service].active}>{label}</Cell>
 					<Cell date>{dateLabel(service)}</Cell>
 				</Row>
 			)
@@ -110,7 +111,7 @@ export default function OnServicesTable({ services }) {
 					!gamepass_console.game.id &&
 					!psplus.game.id && (
 						<Row>
-							<Cell>Not seen on services</Cell>
+							<Cell notseen={true}>Not seen on services</Cell>
 						</Row>
 					)}
 			</Table>
